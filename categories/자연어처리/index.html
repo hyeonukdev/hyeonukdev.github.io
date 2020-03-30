@@ -147,6 +147,99 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="image is-7by1">
+            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="자연어계산과이해">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-30T18:26:41.000Z">2020-03-31</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 465 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/">자연어계산과이해</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="2-1-자연어-계산과-이해"><a href="#2-1-자연어-계산과-이해" class="headerlink" title="2.1 자연어 계산과 이해"></a>2.1 자연어 계산과 이해</h1><p>컴퓨터는 자연어를 사람처럼 이해할 수 없다. 그러나 임베딩을 활용하면 컴퓨터가 자연어를 계산하는 것이 가능해진다.</p>
+<blockquote>
+<p>임베딩은 자연어를 컴퓨터가 처리할 수 있는 숫자들의 나열인 벡터로 바꾼 결과이기 때문이다. 컴퓨터는 임베딩을 계산/처리해 사람이 알아들을 수 있는 형태의 자연어로 출력한다.</p>
+</blockquote>
+<p>자연어의 통계적 패턴 ** statistical pattern** 정보를 통째로 임베딩에 넣는다.<br>임베딩을 만들 때 쓰는 통계 정보는 3가지가 있다.</p>
+<ol>
+<li>문장에 어떤 단어가 많이 쓰였는지</li>
+<li>단어가 어떤 순서로 등장하는지</li>
+<li>문장에 어떤 단어가 같이 나타났는지</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>백오프워즈 가정</th>
+<th>언어 모델</th>
+<th>분포가정</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>내용</td>
+<td>어떤 단어가 많이 쓰였는가</td>
+<td>단어가 어떤 순으로 쓰였는가</td>
+<td>어떤 단어가 같이 쓰였는가</td>
+</tr>
+<tr>
+<td>대표 통계량</td>
+<td>TF-IDF</td>
+<td>-</td>
+<td>PMI</td>
+</tr>
+<tr>
+<td>대표 모델</td>
+<td>Deep Averaging Network</td>
+<td>ELMo, GPT</td>
+<td>Word2Vec</td>
+</tr>
+</tbody></table>
+<p>언어 모델에서는 단어의 등장 순서를, 분포 가정에서는 이웃 단어를 우선시한다. 어떤 단어가 문장에서 주로 나타나는 순서는 해당 단어의 주변 문맥과 뗄래야 뗄 수 없는 관계를 가진다.<br>한편, 분포 가정에서는 어떤 쌍이 얼마나 자주 나타나는지와 관련한 정보를 수치화하기 위해 개별 단어 그리고 단어 쌍의 빈도 정보를 적극 활용한다.</p>
+<blockquote>
+<p>백오브워즈 가정, 언어 모델, 분포 가정은 말뭉치의 통계적 패턴을 서로 다른 각도에서 분석하는 것이며 상호 보완적이다.</p>
+</blockquote>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/03/31/1%EC%9E%A5%EC%A0%95%EB%A6%AC/" class="image is-7by1">
             <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="1장정리">
         </a>
@@ -777,7 +870,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            6
+                            7
                         </p>
                     </a>
                 </div>
@@ -867,7 +960,7 @@
                 <span class="level-item">자연어처리</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">
@@ -875,7 +968,7 @@
                 <span class="level-item">임베딩</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li></ul></li>
             </ul>
@@ -903,6 +996,25 @@
         
         <article class="media">
             
+            <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="자연어계산과이해">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-30T18:26:41.000Z">2020-03-31</time></div>
+                    <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">자연어계산과이해</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/31/1%EC%9E%A5%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="1장정리">
@@ -977,25 +1089,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/03/29/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98%EC%97%AD%ED%95%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="한국어임베딩-임베딩의역할">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T14:52:58.000Z">2020-03-29</time></div>
-                    <a href="/2020/03/29/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98%EC%97%AD%ED%95%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">한국어임베딩-임베딩의역할</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1013,7 +1106,7 @@
                     <span class="level-item">3월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1034,14 +1127,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/embedding/">
                         <span class="tag">embedding</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1069,6 +1162,25 @@
         
         <article class="media">
             
+            <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="자연어계산과이해">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-30T18:26:41.000Z">2020-03-31</time></div>
+                    <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="title has-link-black-ter is-size-6 has-text-weight-normal">자연어계산과이해</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/31/1%EC%9E%A5%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="1장정리">
@@ -1143,25 +1255,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/03/29/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98%EC%97%AD%ED%95%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="한국어임베딩-임베딩의역할">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T14:52:58.000Z">2020-03-29</time></div>
-                    <a href="/2020/03/29/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98%EC%97%AD%ED%95%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">한국어임베딩-임베딩의역할</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1179,7 +1272,7 @@
                     <span class="level-item">3월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
@@ -1200,14 +1293,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/embedding/">
                         <span class="tag">embedding</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
