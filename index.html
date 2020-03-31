@@ -136,6 +136,90 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/03/31/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="image is-7by1">
+            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="어떤단어가많이쓰였는가">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-31T08:38:07.000Z">2020-03-31</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7분 읽기 (대략 985 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/03/31/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/">어떤단어가많이쓰였는가</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="2-2-어떤-단어가-많이-쓰였는가"><a href="#2-2-어떤-단어가-많이-쓰였는가" class="headerlink" title="2.2 어떤 단어가 많이 쓰였는가"></a>2.2 어떤 단어가 많이 쓰였는가</h1><h2 id="2-2-1-백오브워즈-가정"><a href="#2-2-1-백오브워즈-가정" class="headerlink" title="2.2.1 백오브워즈 가정"></a>2.2.1 백오브워즈 가정</h2><p>수학에서 백이란 중복 원소를 허용한 집합 <strong>multiset</strong>을 뜻한다. 원소의 순서는 고려하지 않는다. 어쩌면 중복 집합과 같다.<br>자연어 처리 분야에서는 백오브워즈 <strong>bag of words</strong>란 </p>
+<ul>
+<li>단어의 등장 순서에 관계없이 문서 내 단어의 등장 빈도를 임베딩으로 쓰는 기법</li>
+<li>문장을 단어들로 나누고 이들을 중복집합에 넣어 임베딩으로 활용하는 것</li>
+<li>저자가 생각한 주제가 문서에서의 단어 사용에 녹아 있을 것</li>
+<li>주제가 비슷한 문서라면 단어 빈도 또는 단어 등장 역시 비슷하 것</li>
+<li>빈도를 그대로 백오브워즈로 쓴다면 많이 쓰인 단어가 주제와 더 강한 관련을 맺고 있을 것</li>
+</ul>
+<p><img src="https://gaussian37.github.io/assets/img/nlp/concept/bow/bow.png" alt="bagofwords"><br>위 처럼 문장을 단어로 쪼개고 임의의 주머니에 넣고 뽑았을 때 등장하면 1 아니면 0을 반영한 것이다.</p>
+<p>백오브워즈 임베딩은 단순하지만 정보 검색 ** Information Retrieval<strong>분야에서 많이 쓰인다.<br>사용자의 질의 ** query</strong>에 가장 적절한 문서를 보여줄 때 질의를 백오브워즈 임베딩으로 변환하고 질의와 검색 대상 문서 임베딩 간 코사인 유사도를 구해 유사도가 가장 높은 문서를 사용자에게 노출한다.</p>
+<h2 id="2-2-2-TF-IDF"><a href="#2-2-2-TF-IDF" class="headerlink" title="2.2.2 TF-IDF"></a>2.2.2 TF-IDF</h2><p>단어 빈도 또는 등장 여부를 그대로 임베딩으로 쓰는 것에는 단점이 있다. 해당 단어가 많이 나왔다고 하더라도  문서의 주제를 가늠하기 어렵다. 이유는 다음과 같다. ‘을/를’, ‘이/가’ 같은 조사들이 한국어 문서에 등장한다. 이 것으로 문서의 주제를 추측하기 어렵다.<br>이런 단점을 보완하기 위해서 Term Frequency-Inverse Document Frequency이다.<br>단어-문서 행렬에 가중치를 계산해 행렬 원소를 바꾼다. 이 또한 단어 등장 순서는 고려하지 않는다.<br><img src="https://1.bp.blogspot.com/-x7XJgGFrjeY/W-D8lFez1XI/AAAAAAACR6U/KY4z8-tElygmdQAljfXVB9bVNb37e2hAQCLcBGAs/s1600/image2018-11-5_13-31-16.png" alt="TF-IDF"></p>
+<p>위 수식을 자세히 알아보자</p>
+<ul>
+<li>TF는 어떤 단어가 특정 문서에 얼마나 많이 쓰였는지 빈도를 나타낸다.<ul>
+<li>A라는 단어가 문서1에 10번, 문서2에 5번 쓰였다면 문서1 - 단어A의 TF는 10, 문서2 - 단어A의 TF는 5</li>
+</ul>
+</li>
+<li>DF란 특정 단어가 나타난 문서의 수를 뜻한다.<ul>
+<li>문서1과 문서2에만 A가 등장했으므로 DF는 2D</li>
+<li>DF가 클수록 다수 문서에 쓰이는 범용적 단어이다</li>
+</ul>
+</li>
+<li>IDF는 전체 문서 수를 해당 단어의 DF로 나눈 뒤 로그를 취한 값이다.<ul>
+<li>그 값이 클수록 특이한 단어이다.</li>
+<li>주제 예측 능력과 직결된다</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>결국 TF-IDF는 어떤 단어의 주제 예측 능력이 강할 수록 가중치가 커지고 그 반대의 경우 작아진다<br>어떤 단어의 TF가 높으면 TF-IDF 값 역시 커진다<br>단어 사용 빈도는 저자가 상정한 주제와 관련을 맺고 있을 거라는 가정에 기초한 것이다</p>
+</blockquote>
+<h2 id="2-2-3-Deep-Averaging-Network"><a href="#2-2-3-Deep-Averaging-Network" class="headerlink" title="2.2.3 Deep Averaging Network"></a>2.2.3 Deep Averaging Network</h2><p>Deep Averaging Network는 백오브워즈 가정의 뉴럴 네트워크 버전이다.<br><img src="https://miro.medium.com/max/7586/1*dTDCBiClMUcFr1sJ2QdJTQ.png" alt="Deep Averaging Network"></p>
+<p>예를 들어 <code>애비는 종이었다</code> 라는 문장이 있다면<br>{애비, 종, 이, 었, 다}에 속한 단어의 임베딩을 평균을 취해 만든다. 문장 내에 어떤 단어가 쓰였는지, 쓰였다면 얼마나 많이 쓰였는지 그 빈도만을 고려한다. 문장 임베딩을 입력받아 해당 문서가 어떤 범주인지 분류 <strong>classifiation</strong> 한다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="image is-7by1">
             <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="자연어계산과이해">
         </a>
@@ -859,7 +943,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            7
+                            8
                         </p>
                     </a>
                 </div>
@@ -949,7 +1033,7 @@
                 <span class="level-item">자연어처리</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">
@@ -957,7 +1041,7 @@
                 <span class="level-item">임베딩</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a></li></ul></li>
             </ul>
@@ -985,6 +1069,25 @@
         
         <article class="media">
             
+            <a href="/2020/03/31/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="어떤단어가많이쓰였는가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-31T08:38:07.000Z">2020-03-31</time></div>
+                    <a href="/2020/03/31/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">어떤단어가많이쓰였는가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="자연어계산과이해">
@@ -1059,25 +1162,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/03/30/%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B8%B0%EB%B2%95%EC%9D%98%EC%97%AD%EC%82%AC%EC%99%80%EC%A2%85%EB%A5%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="임베딩기법의역사와종류">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T18:37:17.000Z">2020-03-30</time></div>
-                    <a href="/2020/03/30/%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B8%B0%EB%B2%95%EC%9D%98%EC%97%AD%EC%82%AC%EC%99%80%EC%A2%85%EB%A5%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">임베딩기법의역사와종류</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1095,7 +1179,7 @@
                     <span class="level-item">3월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -1116,14 +1200,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/embedding/">
                         <span class="tag">embedding</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1151,6 +1235,25 @@
         
         <article class="media">
             
+            <a href="/2020/03/31/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="어떤단어가많이쓰였는가">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-31T08:38:07.000Z">2020-03-31</time></div>
+                    <a href="/2020/03/31/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">어떤단어가많이쓰였는가</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/03/31/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="자연어계산과이해">
@@ -1225,25 +1328,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/03/30/%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B8%B0%EB%B2%95%EC%9D%98%EC%97%AD%EC%82%AC%EC%99%80%EC%A2%85%EB%A5%98/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="임베딩기법의역사와종류">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-29T18:37:17.000Z">2020-03-30</time></div>
-                    <a href="/2020/03/30/%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B8%B0%EB%B2%95%EC%9D%98%EC%97%AD%EC%82%AC%EC%99%80%EC%A2%85%EB%A5%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">임베딩기법의역사와종류</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1261,7 +1345,7 @@
                     <span class="level-item">3월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">7</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -1282,14 +1366,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/embedding/">
                         <span class="tag">embedding</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
