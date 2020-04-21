@@ -136,6 +136,90 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/02/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EB%8B%A8%EC%96%B4%EA%B0%80%EC%96%B4%EB%96%A4%EC%88%9C%EC%84%9C%EB%A1%9C%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="image is-7by1">
+            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="단어가어떤순서로쓰였는가">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-01T15:42:07.000Z">2020-04-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10분 읽기 (대략 1533 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/02/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EB%8B%A8%EC%96%B4%EA%B0%80%EC%96%B4%EB%96%A4%EC%88%9C%EC%84%9C%EB%A1%9C%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/">단어가어떤순서로쓰였는가</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="2-3-단어가-어떤-순서로-쓰였는가"><a href="#2-3-단어가-어떤-순서로-쓰였는가" class="headerlink" title="2.3 단어가 어떤 순서로 쓰였는가"></a>2.3 단어가 어떤 순서로 쓰였는가</h1><h2 id="2-3-1-통계-기반-언어-모델"><a href="#2-3-1-통계-기반-언어-모델" class="headerlink" title="2.3.1 통계 기반 언어 모델"></a>2.3.1 통계 기반 언어 모델</h2><p>언어 모델 ** language model**이란 단어 시퀀스에 확률을 부여하는 모델이다.<br>단어의 등장 순서를 무시하는 백오브워즈와 달리 언어 모델은 시퀀스 정보를 명시적으로 학습한다.</p>
+<p>단어가 n개 주어진 상황이라면 언어 모델은 n개 단어가 동시에 나타날 확률, 즉 P라는 것을 반환한다. 통계 기반의 언어 모델은 말뭉치에서 해당 단어 시퀀스가 얼마나 자주 등장하는지 빈도를 세어 학습한다. 이렇게 되면 주어진 단어 시퀀스 다음 단어는 무엇이 오는게 자연스러운지 알 수 있다.</p>
+<p>n-gram이란 n개 단어를 뜻하는 용어이다. <code>난폭,운전</code> <code>눈, 뜨다</code> 등은 2-gram 또는 bigram이라는 말을 쓴다. <code>누명, 을, 쓰다</code> 는 3-gram 혹은 trigram이라고 쓴다. 경우에 따라서 n-gram은 n-gram에 기반한 언어 모델을 의미하기도 한다. 말뭉치 내 단어들을 n개씩 묶어서 그 빈도를 학습했다는 뜻이다.</p>
+<p>예컨데 <code>내</code>, <code>내 마음</code> 말뭉치는 빈도가 많지만 <code>내 마음 속에 영원히 기억될 최고의 명작이다</code> 라는 말뭉치가 한 번도 없을 수 있다. 이럴 때에는 말뭉치로 학습한 언어 모델은 해당 표현이 나타날 확률을 0으로 부여하게 된다.</p>
+<blockquote>
+<p>문법적으로나 의미적으로 결함이 없는 훌륭한 한국어 문장임에도 해당 표현을 말이 되지 않는 문장으로 취급할 수 있다는 것이다.</p>
+</blockquote>
+<p><code>내 마음 속에 영원히 기억될 최고의</code> 라는 표현 다음에 <code>명작이다</code>라는 단어가 나타날 확률은 조건부확률 ** conditional probability**의 정의를 활용해 ==최대우도추정법== 으로 유도한다.</p>
+<p>$$<br>P(명작이다|내, 마음, 속에, 영원히, 기억될, 최고의) = { Freq(내, 마음, 속에, 영원히, 기억될, 최고의, 명작이다) \over Freq(내, 마음, 속에, 영원히, 기억될, 최고의)}<br>$$</p>
+<p>그러나 우변의 분자가 0이라서 전체 값은 0이된다.</p>
+<p>앞에서 배운 n-gram을 사용해보자. 직전 n-1개 단어의 등장 확률로 전체 단어 시퀀스 등장 확률을 근사하는 것이다. 이말을 다시 해석하면 한 상태** state<strong>의 확률은 그 직전 상태에만 영향을 받는 것이다. 마코프 가정 **Markov assumption</strong>에 기반한 것이다.</p>
+<p>$$<br>P(명작이다|내, 마음, 속에, 영원히, 기억될, 최고의) ≈ P(명작이다|최고의)={ Freq(최고의, 명작이다) \over Freq(최고의)}<br>$$</p>
+<p>처럼 전 상황에 대해서만 영향을 주는 것이다. 다시말해 <code>명작이다</code> 라는 직전의 1개 단어만 보고 전체 단어 시퀀스 등장 확률을 근사한 것이다.</p>
+<p>좀 더 늘려서 끝까지 계산하게 되면 다음과 같다.</p>
+<p>$$<br>P(내, 마음, 속에, 영원히, 기억될, 최고의, 명작이다) ≈ P(내)<em>P(마음|내)</em>P(속에|마음)<em>P(영원히|속에)</em>P(기억될|영원히)<em>P(최고의|기억될)</em>P(명작이다|최고의)<br>$$</p>
+<p>일반화를 시킨다면 다음과 같다. 바이그램모델에서는 1개만 참고하지만 일반화를 시키면 전체 단어 시퀀스 등장 확률 계산시 직전 n-1개 단어의 히스토리를 본다</p>
+<p>$$<br>P(Wn|W(n-1) = { Freq(W(n-1,W(n)) \over Freq(W(n-1))}<br>$$</p>
+<p>그러나 데이터에 한 번도 등장하지 않는 n-gram이 존재할 때 예측 문제가 발생할 수 있다. 처음 보는 단어를 본다면 그 확률은 0으로 보기 때문이다.</p>
+<p>이를 위해서 백오프** back-off<strong>, 스무딩 ** smoothing</strong>등의 방식이 제안된다.<br>백오프란 n-gram등장 빈도를 n보다 작은 범위의 단어 시퀀스 빈도로 근사하는 방식인데, n을 크게 하면 할 수록 등장하지 않은 케이스가 많아질 가능성이 높기 때문이다.<br><code>내 마음 속에 영원히 기억될 최고의 명작이다</code>는 7-gram에서는 0이지만 N을 4로 내린다면 달라진다.<br>스무딩이란 등장 빈도 표에 모두 K만큼 더하는 것이다. 높은 빈도를 가진 문자열 등장 확률을 일부 깎고 학습 데이터에 전혀 등장하지 않은 케이스들에는 일부 확률을 부여하게 된다.</p>
+<hr>
+<h2 id="2-3-2-뉴럴-네트워크-기반-언어-모델"><a href="#2-3-2-뉴럴-네트워크-기반-언어-모델" class="headerlink" title="2.3.2 뉴럴 네트워크 기반 언어 모델"></a>2.3.2 뉴럴 네트워크 기반 언어 모델</h2><p>뉴럴 네트워크는 입력과 출력 사이의 관계를 유연하게 포착해낼 수 있고, 그 자체로 확률 모델로 기능이 가능하기 때문에 뉴럴 네트워크로 사용한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">발 없는 말이 -&gt; [언어모델] -&gt; 천리</span><br></pre></td></tr></table></figure>
+
+<p>뉴럴 네트워크 기반 언어 모델은 위 그림처럼 단어 시퀀스를 가지고 다음 단어를 맞추는 과정에서 학습된다. 학습이 완료되면 이들 모델의 중간 혹은 말단 계산 결과물을 단어나 문장의 임베딩으로 활용한다. 대표적인 모델은 다음과 같다.</p>
+<ul>
+<li>ELMo</li>
+<li>GPT</li>
+</ul>
+<p>마스크 언어 모델 ** masked language model**은 언어 모델 기반 기법과 큰 틀에서 유사하지만 디테일에서 차이가 잇다. 문장 중간에 ‘마스크’를 씌워 놓고 해당 위치에 어떤 단어가 올지 예측하는 과정을 학습한다.</p>
+<p>대게 언어 모델 기반 기법은 단어를 순차적으로 입력받아 다음 단어를 맞춰야하기 때문에 태생적으로 일방향 ** uni-directional<strong>이다. 하지만 마스크 언어 모델 기반 기법은 문장 전체를 보고 중간을 예측하기 때문에 양방향 ** bi-directional</strong>학습이 가능하다. 대표적인 모델은 다음과 같다.</p>
+<ul>
+<li>BERT</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/01/%EB%85%BC%EB%AC%B8/%EB%85%BC%EB%AC%B8/" class="image is-7by1">
             <img class="thumbnail" src="http://www.booktory.com/file/product/thesis01-thumb04-510.jpg" alt="논문">
         </a>
@@ -1070,168 +1154,6 @@ em.info()
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/03/29/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98%EC%97%AD%ED%95%A0/" class="image is-7by1">
-            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="한국어임베딩-임베딩의역할">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-29T14:52:58.000Z">2020-03-29</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8분 읽기 (대략 1182 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/29/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98%EC%97%AD%ED%95%A0/">한국어임베딩-임베딩의역할</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-2-임베딩의-역할"><a href="#1-2-임베딩의-역할" class="headerlink" title="1.2 임베딩의 역할"></a>1.2 임베딩의 역할</h1><h4 id="임베딩은-다음-역할을-수행할-수-있다"><a href="#임베딩은-다음-역할을-수행할-수-있다" class="headerlink" title="임베딩은 다음 역할을 수행할 수 있다"></a>임베딩은 다음 역할을 수행할 수 있다</h4><ul>
-<li>단어/문장 간 관련도 계산</li>
-<li>의미적/문법적 정보 함축</li>
-<li>전이 학습</li>
-</ul>
-<hr>
-<h2 id="1-2-1-단어-문장-간-관련도-계산"><a href="#1-2-1-단어-문장-간-관련도-계산" class="headerlink" title="1.2.1 단어/문장 간 관련도 계산"></a>1.2.1 단어/문장 간 관련도 계산</h2><p>현업에서는 2013년 구글 연구 팀이 발표한 Word2Vec이라는 기법이 대표적이다.<br>단어들을 벡터로 바꾸는 방법이다.<br>한국어 위키백과, KorQuAD, 네이버 영화 리뷰 말뭉치 등은 은전한닢으로 형태소 분석을 한 뒤 100차원으로 학습한 Word2Vec 임베딩 중 <code>희망</code> 이라는 단어의 벡터는 다음과 같다</p>
-<blockquote>
-<p>[-0.00209 -0.03918 0.02419 … 0.01715 -0.04975 0.009300]</p>
-</blockquote>
-<p>위 수식의 숫자들은 모두 100개이다. 100차원으로 임베딩을 했기 때문이다.<br>단어를 벡터로 임베딩하는 순간 단어 벡터들 사이의 유사도 <strong>similarity</strong>를 계산하는 일이 가능해진다.</p>
-<hr>
-<h6 id="각-쿼리-단어별로-벡터-간-유사도-측정-기법의-일종인-코사인-유사도-cosine-similarity-기준-상위-4개"><a href="#각-쿼리-단어별로-벡터-간-유사도-측정-기법의-일종인-코사인-유사도-cosine-similarity-기준-상위-4개" class="headerlink" title="각 쿼리 단어별로 벡터 간 유사도 측정 기법의 일종인 코사인 유사도 cosine similarity 기준 상위 4개"></a>각 쿼리 단어별로 벡터 간 유사도 측정 기법의 일종인 코사인 유사도 <strong>cosine similarity</strong> 기준 상위 4개</h6><table>
-<thead>
-<tr>
-<th>희망</th>
-<th>절망</th>
-<th>학교</th>
-<th>학생</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>소망</td>
-<td>체념</td>
-<td>초등</td>
-<td>대학생</td>
-</tr>
-<tr>
-<td>희망찬</td>
-<td>절망감</td>
-<td>중학교</td>
-<td>대학원생</td>
-</tr>
-<tr>
-<td>꿈</td>
-<td>상실감</td>
-<td>야학교</td>
-<td>교직원</td>
-</tr>
-<tr>
-<td>열망</td>
-<td>번민</td>
-<td>중학</td>
-<td>학부모</td>
-</tr>
-</tbody></table>
-<p>희망과 코사인 유사도가 가장 높은 것은 소망이다.<br>자연어일 때는 불가능했던 코사인 유사도 계산이 임베딩 덕분에 가능해 졌다.<br>다음은 Word2Vec 임베딩을 통해서 단어 쌍 간 코사인 유사도를 시각화 한 것이다. 검정색일 수록 코사인 유사도가 높다</p>
-<p><img src="https://1.bp.blogspot.com/-Wh07ULdz5bQ/W1K-fmhSVUI/AAAAAAAA5Dw/eiAlXDfE0H4bdKhYAfFkRUhXiZ6vyhHpgCK4BGAYYCw/s640/%25EC%25BA%25A1%25EC%25B2%2598.JPG" alt="Word2Vec 임베딩을 통해서 단어 쌍 간 코사인 유사도 시각화"></p>
-<p>입베딩을 수행하면 벡터 공간을 기하학적으로 나타낸 시각화 역시 가능하다<br><img src="https://lh3.googleusercontent.com/proxy/9Z_1R71esglkxkcX3O2QpJWhu440qlZnDWLcHeHejMv70dkMIKiTwL53kakFnvi0qXjNPeDfig5QsGpTDyOTJ75j-Aqe8nZa0ypfjzPJESDsfrOtdwDyF9t06bmeyEeFpgDuc0rwK-e1guXe1-RG01XPYpo8Autuf36P4LDyriFWTxm8R3K1BaaG-UnImRsNWL3Fz55CojXmWwPF5ngUggmHPhrE0s4KaRlsw93He9z_PtrV8KXt4LElSemhB4jokfQqQAMDzc8tx8cB8El5Vyo6MWitmn2vYlz_bVoo8AqZU9K6APmBiXBBQUsFLmCU_3isFRZw" alt="Word2Vec 단어 벡터들의 2차원 시각화"></p>
-<h2 id="1-2-2-의미-문법-정보-함축"><a href="#1-2-2-의미-문법-정보-함축" class="headerlink" title="1.2.2 의미/문법 정보 함축"></a>1.2.2 의미/문법 정보 함축</h2><p>입베딩은 벡터인 만큼 <code>사칙연산</code>이 가능하다.<br>단어 벡터간 덧셈/뺄셈을 통해 단어들 사이의 의미적, 문법적 관계를 도출해낼 수 있다.</p>
-<h6 id="단어-유추-평가-word-analogy-test"><a href="#단어-유추-평가-word-analogy-test" class="headerlink" title="단어 유추 평가 word analogy test"></a>단어 유추 평가 <strong>word analogy test</strong></h6><p><img src="/images/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/img1_3.png" alt="단어유추평가"></p>
-<blockquote>
-<p>단어1 - 단어2 + 단어3 연산을 수행한 벡터와 코사인 유사도가 가장 높은 단어4를 배열한다</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>단어1</th>
-<th>단어2</th>
-<th>단어3</th>
-<th>단어4</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>아들</td>
-<td>딸</td>
-<td>소년</td>
-<td>소녀</td>
-</tr>
-<tr>
-<td>아들</td>
-<td>딸</td>
-<td>아빠</td>
-<td>엄마</td>
-</tr>
-<tr>
-<td>아들</td>
-<td>딸</td>
-<td>남성</td>
-<td>여성</td>
-</tr>
-<tr>
-<td>남동생</td>
-<td>여동생</td>
-<td>소년</td>
-<td>소녀</td>
-</tr>
-<tr>
-<td>남동생</td>
-<td>여동생</td>
-<td>아빠</td>
-<td>엄마</td>
-</tr>
-</tbody></table>
-<h2 id="1-2-3-전이학습"><a href="#1-2-3-전이학습" class="headerlink" title="1.2.3 전이학습"></a>1.2.3 전이학습</h2><p>임베딩은 다른 딥러닝 모델의 입력값으로 자주 쓰인다. 문서 분류를 위한 딥러닝 모델을 만든다.<br>예컨데 품질 좋은 임베딩을 쓰면 문서 분류 정확도와 학습 속도가 올라간다. 이렇게 임베딩을 다른 딥러닝 모델의 입력값으로 쓰는 기법을 전이 학습 <strong>transfer learning</strong> 이라고 한다.</p>
-<hr>
-<h3 id="전이학습"><a href="#전이학습" class="headerlink" title="전이학습"></a>전이학습</h3><h2 id="전이-학습-모델은-제로부터-시작하지-않는다-대규모-말뭉치를-활용해-임베딩을-미리-만들어-놓는다-임베딩에는-의미적-문법적-정보-등이-있다"><a href="#전이-학습-모델은-제로부터-시작하지-않는다-대규모-말뭉치를-활용해-임베딩을-미리-만들어-놓는다-임베딩에는-의미적-문법적-정보-등이-있다" class="headerlink" title="전이 학습 모델은 제로부터 시작하지 않는다. 대규모 말뭉치를 활용해 임베딩을 미리 만들어 놓는다. 임베딩에는 의미적, 문법적 정보 등이 있다."></a>전이 학습 모델은 제로부터 시작하지 않는다. 대규모 말뭉치를 활용해 임베딩을 미리 만들어 놓는다. 임베딩에는 <code>의미적</code>, <code>문법적</code> 정보 등이 있다.</h2><h4 id="문장의-극성을-예측하는-모델"><a href="#문장의-극성을-예측하는-모델" class="headerlink" title="문장의 극성을 예측하는 모델"></a>문장의 극성을 예측하는 모델</h4><ul>
-<li>양방향 LSTM에 어텐션 메커니즘을 적용</li>
-<li>bidirectional Long Short-Term Memory, Attention</li>
-</ul>
-<p>이 딥러닝의 모델의 입력값은 FastText 임베딩(100차원)을 사용했다.</p>
-<blockquote>
-<p>FastText 임베딩은 Word2Vec의 개선된 버전이며 59만 건에 이르는 한국어 문서를 미리 학습한 모델<br>학습 데이터는 다음과 같다</p>
-</blockquote>
-<ul>
-<li>이 영화 꿀잼 + 긍정 <strong>positive</strong></li>
-<li>이 영화 노잼 + 부정 <strong>negative</strong></li>
-</ul>
-<p>전이 학습 모델은 문장을 입력받으면 해당 문장이 긍정인지 부정인지를 출력한다. 문장을 형태소 분석한 뒤 각각의 형태소에 해당하는 FastText 단어 임베딩이 모델의 입력값이 된다.</p>
-<p><img src="https://i.imgur.com/Dd4e8u2.png" alt="임베딩 종류별 긍정/부정 문서 분류 정확도"><br><img src="https://i.imgur.com/3Yi6FjB.png" alt="임베딩 종류별 학습 손실"></p>
-<p>위의 그래프로 처음 부터 하는 것 보다 FastText 임베딩을 사용한 모델의 성능이 좋다. 즉, 임베딩의 품질이 좋으면 수행하려는 Task의 성능 역시 올라간다.</p>
-<h4 id="왜-임베딩이-중요한지-깨달았다"><a href="#왜-임베딩이-중요한지-깨달았다" class="headerlink" title="왜 임베딩이 중요한지 깨달았다"></a>왜 임베딩이 중요한지 깨달았다</h4>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1299,7 +1221,7 @@ em.info()
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            21
+                            22
                         </p>
                     </a>
                 </div>
@@ -1397,7 +1319,7 @@ em.info()
                 <span class="level-item">데이터사이언스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
@@ -1405,7 +1327,7 @@ em.info()
                 <span class="level-item">데이터분석</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/%EB%8F%85%EC%84%9C/">
@@ -1481,6 +1403,25 @@ em.info()
         
         <article class="media">
             
+            <a href="/2020/04/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%90%EB%A3%8C%ED%98%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="데이터 자료형">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-21T09:08:09.000Z">2020-04-21</time></div>
+                    <a href="/2020/04/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%90%EB%A3%8C%ED%98%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터 자료형</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/04/18/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EC%88%9C%EC%97%B4%EC%A1%B0%ED%95%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="순열과 조합">
@@ -1555,25 +1496,6 @@ em.info()
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/04/15/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%ED%86%B5%EA%B3%84%EC%9D%98%EB%AA%A9%EC%A0%81%EA%B3%BC%EC%97%91%EC%85%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EC%B4%88/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 목적과 엑셀 데이터 기초">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-15T08:28:11.000Z">2020-04-15</time></div>
-                    <a href="/2020/04/15/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%ED%86%B5%EA%B3%84%EC%9D%98%EB%AA%A9%EC%A0%81%EA%B3%BC%EC%97%91%EC%85%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EC%B4%88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 목적과 엑셀 데이터 기초</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1591,7 +1513,7 @@ em.info()
                     <span class="level-item">4월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">13</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1658,7 +1580,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -1672,7 +1594,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -1721,6 +1643,25 @@ em.info()
         
         <article class="media">
             
+            <a href="/2020/04/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%90%EB%A3%8C%ED%98%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="데이터 자료형">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-21T09:08:09.000Z">2020-04-21</time></div>
+                    <a href="/2020/04/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%90%EB%A3%8C%ED%98%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터 자료형</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/04/18/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EC%88%9C%EC%97%B4%EC%A1%B0%ED%95%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="순열과 조합">
@@ -1795,25 +1736,6 @@ em.info()
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/04/15/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%ED%86%B5%EA%B3%84%EC%9D%98%EB%AA%A9%EC%A0%81%EA%B3%BC%EC%97%91%EC%85%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EC%B4%88/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 목적과 엑셀 데이터 기초">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-15T08:28:11.000Z">2020-04-15</time></div>
-                    <a href="/2020/04/15/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%ED%86%B5%EA%B3%84%EC%9D%98%EB%AA%A9%EC%A0%81%EA%B3%BC%EC%97%91%EC%85%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EC%B4%88/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 목적과 엑셀 데이터 기초</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1831,7 +1753,7 @@ em.info()
                     <span class="level-item">4월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">13</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1898,7 +1820,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -1912,7 +1834,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -2069,7 +1991,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
