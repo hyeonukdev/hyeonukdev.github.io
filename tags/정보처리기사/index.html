@@ -207,7 +207,12 @@
 <li>해당 네트워크 내의 모든 컴퓨터는 <u>수신된 패킷에 대한 응답 메시지를 송신 주소인 공격 대상</u> 컴퓨터로 <u>집중적으로 전송</u>하게 되어 공격 대상지는 <u>네트워크 과부하</u>로 정상적인 서비스 수행이 불가능해짐</li>
 </ul>
 <h4 id="SYN-Flooding-Synchronize-sequence-number"><a href="#SYN-Flooding-Synchronize-sequence-number" class="headerlink" title="SYN Flooding(Synchronize sequence number)"></a>SYN Flooding(Synchronize sequence number)</h4><ul>
-<li><p>TCP는 신뢰성 있는 전송을 위해 3-way-handshake를 거친 후에 데이터를 전송 1. Client &gt; Server<br>SYN 패킷 전송<br>대상 서버에 접속한다고 손을 내밈 2. Server &gt; Client<br>SYN + ACK 패킷 전송<br>서버에는 접속해도 된다고 응답함 3. Client &gt; Server<br>ACK(Acknowledgment) 패킷 전송<br>응답메시지를 받으면 데이터를 보냄</p>
+<li><p>TCP는 신뢰성 있는 전송을 위해 3-way-handshake를 거친 후에 데이터를 전송 </p>
+<ol>
+<li>Client &gt; Server<br>SYN 패킷 전송<br>대상 서버에 접속한다고 손을 내밈 </li>
+<li>Server &gt; Client<br>SYN + ACK 패킷 전송<br>서버에는 접속해도 된다고 응답함 </li>
+<li>Client &gt; Server<br>ACK(Acknowledgment) 패킷 전송<br>응답메시지를 받으면 데이터를 보냄</li>
+</ol>
 </li>
 <li><p>공격자가 <u>가상의 클라이언트로 위장</u>한 후 공격 대상지인 서버로 <u>‘SYN’ 신호를 보냄</u></p>
 </li>
@@ -1182,7 +1187,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
