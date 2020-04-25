@@ -186,39 +186,28 @@
 <blockquote>
 <p>서비스 거부 공격</p>
 </blockquote>
-<ul>
-<li>서비스 공격은 일반적으로 서비스 거부(Dos) 공격을 뜻함</li>
-<li>서버는 서비스 요청에 대해 서비스를 제공하는 의무가 있음</li>
-<li>서버가 서비스 능력을 초과하는 요청을 도시다발적으로 받게 되면 서비스 불능상태로 마비됨</li>
-</ul>
-<h4 id="Ping-Flood"><a href="#Ping-Flood" class="headerlink" title="Ping Flood"></a>Ping Flood</h4><ul>
+<pre><code>- 서비스 공격은 일반적으로 서비스 거부(Dos) 공격을 뜻함
+- 서버는 서비스 요청에 대해 서비스를 제공하는 의무가 있음
+- 서버가 서비스 능력을 초과하는 요청을 도시다발적으로 받게 되면 서비스 불능상태로 마비됨</code></pre><h4 id="Ping-Flood"><a href="#Ping-Flood" class="headerlink" title="Ping Flood"></a>Ping Flood</h4><ul>
 <li>하나의 사이트로 <u>많은 양의 ICMP echo request를 요청</u>할 때 이 사이트에서 존재하는 시스템 자원은 개별 메시지들에 각각 <u>응답하기 위해 시스템 자원(resource)를 모두 사용</u>해 버리는 점을 이용</li>
 <li>ICMP : Internet Control Message Protocol</li>
-<li>TCP/IP 기반의 인터넷 통신 <blockquote>서비스에서 인터넷 프로토콜에 결합</blockquote>되어 전송되는 프로토콜로, IP에 대해 통신 중 발생하는 오류 처리와 전송 경로 변경, `에코 요청, 에코 응답` 등을 제어하기 위한 메시지를 취급<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping [주소]</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>TCP/IP 기반의 인터넷 통신 <blockquote>서비스에서 인터넷 프로토콜에 결합</blockquote>되어 전송되는 프로토콜로, IP에 대해 통신 중 발생하는 오류 처리와 전송 경로 변경, `에코 요청, 에코 응답` 등을 제어하기 위한 메시지를 취급</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping [주소]</span><br></pre></td></tr></table></figure>
+
 <h4 id="Ping-of-Death"><a href="#Ping-of-Death" class="headerlink" title="Ping of Death"></a>Ping of Death</h4><ul>
 <li><u>Ping 명령</u>을 전송할 때 <u>패킷의 크기</u>를 인터넷 프로토콜 <u>허용 범위(65,536 byte)이상으로 전송하여 공격 대상의 네트워크를 마비</u>시키는 서비스 거부 공격</li>
-<li>Ping 기본 크기 : 32byte<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -I 100 -n 5 [주소]</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Ping 기본 크기 : 32byte</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -I 100 -n 5 [주소]</span><br></pre></td></tr></table></figure>
+
 <h4 id="SMURFING"><a href="#SMURFING" class="headerlink" title="SMURFING"></a>SMURFING</h4><ul>
 <li><u>엄청난 양의 데이터를 한 사이트에 집중적으로 보냄</u>으로써 네트워크를 불능 상태로 만듬</li>
-<li>공격자는 <u>패킷의 송신 주소를 공격 대상의 IP주소로 위장</u>하고 해당 네트워크 라우터의 <u>브로드캐스트 주소를 수신지</u>로 하여 패킷을 전송하면 라우터의 브로드캐스트 주소로 <u>수신된 패킷</u>은 해당 네트워크 내의 모든 컴퓨터로 전송함<ul>
-<li>Broadcast : 네트워크에 연결된 전체 컴퓨터에 패킷을 전송할 때 사용하는 주소</li>
-</ul>
-</li>
+<li>공격자는 <u>패킷의 송신 주소를 공격 대상의 IP주소로 위장</u>하고 해당 네트워크 라우터의 <u>브로드캐스트 주소를 수신지</u>로 하여 패킷을 전송하면 라우터의 브로드캐스트 주소로 <u>수신된 패킷</u>은 해당 네트워크 내의 모든 컴퓨터로 전송함 - Broadcast : 네트워크에 연결된 전체 컴퓨터에 패킷을 전송할 때 사용하는 주소</li>
 <li>해당 네트워크 내의 모든 컴퓨터는 <u>수신된 패킷에 대한 응답 메시지를 송신 주소인 공격 대상</u> 컴퓨터로 <u>집중적으로 전송</u>하게 되어 공격 대상지는 <u>네트워크 과부하</u>로 정상적인 서비스 수행이 불가능해짐</li>
 </ul>
 <h4 id="SYN-Flooding-Synchronize-sequence-number"><a href="#SYN-Flooding-Synchronize-sequence-number" class="headerlink" title="SYN Flooding(Synchronize sequence number)"></a>SYN Flooding(Synchronize sequence number)</h4><ul>
-<li><p>TCP는 신뢰성 있는 전송을 위해 3-way-handshake를 거친 후에 데이터를 전송</p>
-<ol>
-<li>Client &gt; Server<br>SYN 패킷 전송<br>대상 서버에 접속한다고 손을 내밈</li>
-<li>Server &gt; Client<br>SYN + ACK 패킷 전송<br>서버에는 접속해도 된다고 응답함</li>
-<li>Client &gt; Server<br>ACK(Acknowledgment) 패킷 전송<br>응답메시지를 받으면 데이터를 보냄 </li>
-</ol>
+<li><p>TCP는 신뢰성 있는 전송을 위해 3-way-handshake를 거친 후에 데이터를 전송 1. Client &gt; Server<br>SYN 패킷 전송<br>대상 서버에 접속한다고 손을 내밈 2. Server &gt; Client<br>SYN + ACK 패킷 전송<br>서버에는 접속해도 된다고 응답함 3. Client &gt; Server<br>ACK(Acknowledgment) 패킷 전송<br>응답메시지를 받으면 데이터를 보냄</p>
 </li>
 <li><p>공격자가 <u>가상의 클라이언트로 위장</u>한 후 공격 대상지인 서버로 <u>‘SYN’ 신호를 보냄</u></p>
 </li>
@@ -231,33 +220,20 @@
 </ul>
 <h4 id="TearDrop"><a href="#TearDrop" class="headerlink" title="TearDrop"></a>TearDrop</h4><ul>
 <li>데이터의 송수신과정에서 <u>패킷</u>의 크기가 커서 여러 개로 분할되어 전송될 때 <u>분할 순서</u>를 알 수 있도록 <u>Fragment Offset 값</u>을 함께 전송</li>
-<li>이때 <u>Offset 값을 변경시켜 수신 측에서 패킷을 재조립할 때 오류로 인한 과부하</u> 발생시켜 시스템 다운 유도<ul>
-<li>일반적으로 128kb로 토막낸다. 8개</li>
-<li>다시 받을 때 합친다.</li>
+<li>이때 <u>Offset 값을 변경시켜 수신 측에서 패킷을 재조립할 때 오류로 인한 과부하</u> 발생시켜 시스템 다운 유도 - 일반적으로 128kb로 토막낸다. 8개 - 다시 받을 때 합친다.</li>
+<li>대비 - Fragment Offset 잘못된 경우 <blockquote>해당 패킷을 폐기</blockquote></li>
 </ul>
-</li>
-<li>대비<ul>
-<li>Fragment Offset 잘못된 경우 `해당 패킷을 폐기`<h4 id="Land"><a href="#Land" class="headerlink" title="Land"></a>Land</h4></li>
-</ul>
-</li>
+<h4 id="Land"><a href="#Land" class="headerlink" title="Land"></a>Land</h4><ul>
 <li>패킷을 전송할 때 <u>송신 IP주소와 수신 IP주소를 모두 공격 대상의 IP주소로 설정한 후 공격 대상에게 전송</u>하는 것</li>
 <li>이 패킷을 받은 공격 대상은 송신 IP주소가 자신이므로 자신에게 응답을 수행하는데 이러한 패킷이 계속해서 전송될 경우 자신에 대해 <u>무한 응답</u>하게 함</li>
-<li>대비<ul>
+<li>대비</li>
 <li>송신 IP주소와 수신 IP 주소를 <code>검사</code></li>
-</ul>
-</li>
 </ul>
 <h4 id="DDoS-Distributed-Denial-of-Service-분산-서비스-거부-공격"><a href="#DDoS-Distributed-Denial-of-Service-분산-서비스-거부-공격" class="headerlink" title="DDoS(Distributed Denial of Service, 분산 서비스 거부) 공격"></a>DDoS(Distributed Denial of Service, 분산 서비스 거부) 공격</h4><ul>
 <li>여러 곳에 <u>분산된 공격 지점에서 한 곳에 서버에 대해 서비스 거부 공격</u>을 수행</li>
 <li>일부 호스트에 다수의 에이전트를 관리할 수 있는 핸들러 프로그램을 설치하여 마스터로 지정후 공격</li>
 <li>취약점이 있는 호스트들을 탐색한 후 이들에 분산 서비스 공격용 툴을 설치하여 좀비PC로 만듬</li>
-<li>분산 서비스 공격용 툴<ul>
-<li>Trin00</li>
-<li>TFN</li>
-<li>TFN2K</li>
-<li>Stacheldraht</li>
-</ul>
-</li>
+<li>분산 서비스 공격용 툴 - Trin00 - TFN - TFN2K - Stacheldraht</li>
 </ul>
 <h3 id="네트워크-침해-공격-용어"><a href="#네트워크-침해-공격-용어" class="headerlink" title="네트워크 침해 공격 용어"></a>네트워크 침해 공격 용어</h3><h4 id="Smishing-스미싱"><a href="#Smishing-스미싱" class="headerlink" title="Smishing 스미싱"></a>Smishing 스미싱</h4><ul>
 <li><u>문자메시지</u>를 보낸 후 메시지에 있는 인터넷 주소를 클릭하면 <u>악성코드를 설치하여 금융정보 빼냄</u></li>
@@ -268,10 +244,7 @@
 <li>스턱스넷과 같이 악성코드가 담긴 USB로 전파</li>
 </ul>
 <h4 id="Spear-Phishing-스피어-피싱"><a href="#Spear-Phishing-스피어-피싱" class="headerlink" title="Spear Phishing 스피어 피싱"></a>Spear Phishing 스피어 피싱</h4><ul>
-<li><u>사회 공학</u>의 한 기법<ul>
-<li>Social Engineering : <u>인간 상호 작용</u>의 깊은 신뢰를 바탕으로 사람들을 속여 정상 보안절차를 깨뜨리기 위한 비기술적 시스템 침입 수단</li>
-</ul>
-</li>
+<li><u>사회 공학</u>의 한 기법 - Social Engineering : <u>인간 상호 작용</u>의 깊은 신뢰를 바탕으로 사람들을 속여 정상 보안절차를 깨뜨리기 위한 비기술적 시스템 침입 수단</li>
 <li>특정 대상을 선정 후 <u>일반적인 메일로 위장</u> 후 지속적으로 발송하여 <u>발송 메일의 링크나 첨부 파일을 클릭하도록 유도</u>해 사용자의 개인 정보를 탈취</li>
 </ul>
 <h4 id="Qshing-큐싱"><a href="#Qshing-큐싱" class="headerlink" title="Qshing 큐싱"></a>Qshing 큐싱</h4><ul>
