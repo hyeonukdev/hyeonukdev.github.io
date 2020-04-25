@@ -206,12 +206,12 @@
 </li>
 </ul>
 <h4 id="SMURFING"><a href="#SMURFING" class="headerlink" title="SMURFING"></a>SMURFING</h4><ul>
-<li>++엄청난 양의 데이터를 한 사이트에 집중적으로 보냄++으로써 네트워크를 불능 상태로 만듬</li>
-<li>공격자는 ++패킷의 송신 주소를 공격 대상의 IP주소로 위장++하고 해당 네트워크 라우터의++ 브로드캐스트 주소를 수신지++로 하여 패킷을 전송하면 라우터의 브로드캐스트 주소로 ++수신된 패++킷은 해당 네트워크 내의 모든 컴퓨터로 전송함<ul>
+<li><u>엄청난 양의 데이터를 한 사이트에 집중적으로 보냄</u>으로써 네트워크를 불능 상태로 만듬</li>
+<li>공격자는 <u>패킷의 송신 주소를 공격 대상의 IP주소로 위장</u>하고 해당 네트워크 라우터의 <u>브로드캐스트 주소를 수신지</u>로 하여 패킷을 전송하면 라우터의 브로드캐스트 주소로 <u>수신된 패킷</u>은 해당 네트워크 내의 모든 컴퓨터로 전송함<ul>
 <li>Broadcast : 네트워크에 연결된 전체 컴퓨터에 패킷을 전송할 때 사용하는 주소</li>
 </ul>
 </li>
-<li>해당 네트워크 내의 모든 컴퓨터는 ++수신된 패킷에 대한 응답 메시지를 송신 주소인 공격 대상++ 컴퓨터로 ++집중적으로 전송++하게 되어 공격 대상지는 ++네트워크 과부하++로 정상적인 서비스 수행이 불가능해짐</li>
+<li>해당 네트워크 내의 모든 컴퓨터는 <u>수신된 패킷에 대한 응답 메시지를 송신 주소인 공격 대상</u> 컴퓨터로 <u>집중적으로 전송</u>하게 되어 공격 대상지는 <u>네트워크 과부하</u>로 정상적인 서비스 수행이 불가능해짐</li>
 </ul>
 <h4 id="SYN-Flooding-Synchronize-sequence-number"><a href="#SYN-Flooding-Synchronize-sequence-number" class="headerlink" title="SYN Flooding(Synchronize sequence number)"></a>SYN Flooding(Synchronize sequence number)</h4><ul>
 <li><p>TCP는 신뢰성 있는 전송을 위해 3-way-handshake를 거친 후에 데이터를 전송</p>
@@ -221,18 +221,18 @@
 <li>Client &gt; Server<br>ACK(Acknowledgment) 패킷 전송<br>응답메시지를 받으면 데이터를 보냄 </li>
 </ol>
 </li>
-<li><p>공격자가 ++가상의 클라이언트로 위장++한 후 공격 대상지인 서버로 ++’SYN’ 신호를 보냄++</p>
+<li><p>공격자가 <u>가상의 클라이언트로 위장</u>한 후 공격 대상지인 서버로 <u>‘SYN’ 신호를 보냄</u></p>
 </li>
-<li><p>서버는 ++’SYN+ACK’신호를 가상의 클라이언트++로 보내면서 클라이언트의 ++접속을 받아들이기 위한 메모리의 일정 공간++을 확보함</p>
+<li><p>서버는 <u>‘SYN+ACK’신호를 가상의 클라이언트</u>로 보내면서 클라이언트의 <u>접속을 받아들이기 위한 메모리의 일정 공간</u>을 확보함</p>
 </li>
-<li><p>공격자가 사용할 수 없는 IP 주소를 이용하여 공격 대상지 서버로 반복적인 3-way-handshake 과정을 요청하면 ++공격 대상지 서버는 메모리 공간을 점점 더 많이 확보한 상태에서 대기++하게 됨</p>
+<li><p>공격자가 사용할 수 없는 IP 주소를 이용하여 공격 대상지 서버로 반복적인 3-way-handshake 과정을 요청하면 <u>공격 대상지 서버는 메모리 공간을 점점 더 많이 확보한 상태에서 대기</u>하게 됨</p>
 </li>
 <li><p>대비<br><code>SYN 수신 대기 시간을 줄이거</code>나 <code>침입 차단 시스템을 활용</code></p>
 </li>
 </ul>
 <h4 id="TearDrop"><a href="#TearDrop" class="headerlink" title="TearDrop"></a>TearDrop</h4><ul>
-<li>데이터의 송수신과정에서 ++패킷++의 크기가 커서 여러 개로 분할되어 전송될 때 ++분할 순서++를 알 수 있도록 ++Fragment Offset 값++을 함께 전송</li>
-<li>이때 ++Offset 값을 변경시켜 수신 측에서 패킷을 재조립할 때 오류로 인한 과부하++ 발생시켜 시스템 다운 유도<ul>
+<li>데이터의 송수신과정에서 <u>패킷</u>의 크기가 커서 여러 개로 분할되어 전송될 때 <u>분할 순서</u>를 알 수 있도록 <u>Fragment Offset 값</u>을 함께 전송</li>
+<li>이때 <u>Offset 값을 변경시켜 수신 측에서 패킷을 재조립할 때 오류로 인한 과부하</u> 발생시켜 시스템 다운 유도<ul>
 <li>일반적으로 128kb로 토막낸다. 8개</li>
 <li>다시 받을 때 합친다.</li>
 </ul>
@@ -241,15 +241,15 @@
 <li>Fragment Offset 잘못된 경우 <code>해당 패킷을 폐기</code><h4 id="Land"><a href="#Land" class="headerlink" title="Land"></a>Land</h4></li>
 </ul>
 </li>
-<li>패킷을 전송할 때 ++송신 IP주소와 수신 IP주소를 모두 공격 대상의 IP주소로 설정한 후 공격 대상에게 전송++하는 것</li>
-<li>이 패킷을 받은 공격 대상은 송신 IP주소가 자신이므로 자신에게 응답을 수행하는데 이러한 패킷이 계속해서 전송될 경우 자신에 대해 ++무한 응++답하게 함</li>
+<li>패킷을 전송할 때 <u>송신 IP주소와 수신 IP주소를 모두 공격 대상의 IP주소로 설정한 후 공격 대상에게 전송</u>하는 것</li>
+<li>이 패킷을 받은 공격 대상은 송신 IP주소가 자신이므로 자신에게 응답을 수행하는데 이러한 패킷이 계속해서 전송될 경우 자신에 대해 <u>무한 응답</u>하게 함</li>
 <li>대비<ul>
 <li>송신 IP주소와 수신 IP 주소를 <code>검사</code></li>
 </ul>
 </li>
 </ul>
 <h4 id="DDoS-Distributed-Denial-of-Service-분산-서비스-거부-공격"><a href="#DDoS-Distributed-Denial-of-Service-분산-서비스-거부-공격" class="headerlink" title="DDoS(Distributed Denial of Service, 분산 서비스 거부) 공격"></a>DDoS(Distributed Denial of Service, 분산 서비스 거부) 공격</h4><ul>
-<li>여러 곳에 ++분산된 공격 지점에서 한 곳에 서버에 대해 서비스 거부 공격++을 수행</li>
+<li>여러 곳에 <u>분산된 공격 지점에서 한 곳에 서버에 대해 서비스 거부 공격</u>을 수행</li>
 <li>일부 호스트에 다수의 에이전트를 관리할 수 있는 핸들러 프로그램을 설치하여 마스터로 지정후 공격</li>
 <li>취약점이 있는 호스트들을 탐색한 후 이들에 분산 서비스 공격용 툴을 설치하여 좀비PC로 만듬</li>
 <li>분산 서비스 공격용 툴<ul>
@@ -261,43 +261,43 @@
 </li>
 </ul>
 <h3 id="네트워크-침해-공격-용어"><a href="#네트워크-침해-공격-용어" class="headerlink" title="네트워크 침해 공격 용어"></a>네트워크 침해 공격 용어</h3><h4 id="Smishing-스미싱"><a href="#Smishing-스미싱" class="headerlink" title="Smishing 스미싱"></a>Smishing 스미싱</h4><ul>
-<li>++문자메시지++를 보낸 후 메시지에 있는 인터넷 주소를 클릭하면 ++악성코드를 설치하여 금융정보 빼냄++</li>
+<li><u>문자메시지</u>를 보낸 후 메시지에 있는 인터넷 주소를 클릭하면 <u>악성코드를 설치하여 금융정보 빼냄</u></li>
 </ul>
 <h4 id="APT-Advanced-Persistent-Threats-지능형-지속-위협"><a href="#APT-Advanced-Persistent-Threats-지능형-지속-위협" class="headerlink" title="APT(Advanced Persistent Threats, 지능형 지속 위협)"></a>APT(Advanced Persistent Threats, 지능형 지속 위협)</h4><ul>
-<li>특정기업이나 ++조직 네트워크에 침투++해 활동 거점을 마련한 뒤 때를 기다리면서 ++보안을 무력화하고 정보를 수집한 다음 외부로 빼돌리는 형태++의 공격</li>
+<li>특정기업이나 <u>조직 네트워크에 침투</u>해 활동 거점을 마련한 뒤 때를 기다리면서 <u>보안을 무력화하고 정보를 수집한 다음 외부로 빼돌리는 형태</u>의 공격</li>
 <li>내부자에게 악성코드가 포함된 이메일을 오랜 기간 동안 꾸준히 발송해 클릭하기를 기다림</li>
 <li>스턱스넷과 같이 악성코드가 담긴 USB로 전파</li>
 </ul>
 <h4 id="Spear-Phishing-스피어-피싱"><a href="#Spear-Phishing-스피어-피싱" class="headerlink" title="Spear Phishing 스피어 피싱"></a>Spear Phishing 스피어 피싱</h4><ul>
-<li>++사회 공학++의 한 기법<ul>
-<li>Social Engineering : ++인간 상호 작용++의 깊은 신뢰를 바탕으로 사람들을 속여 정상 보안절차를 깨뜨리기 위한 비기술적 시스템 침입 수단</li>
+<li><u>사회 공학</u>의 한 기법<ul>
+<li>Social Engineering : <u>인간 상호 작용</u>의 깊은 신뢰를 바탕으로 사람들을 속여 정상 보안절차를 깨뜨리기 위한 비기술적 시스템 침입 수단</li>
 </ul>
 </li>
-<li>특정 대상을 선정 후 ++일반적인 메일로 위장++ 후 지속적으로 발송하여 ++발송 메일의 링크나 첨부 파일을 클릭하도록 유도++해 사용자의 개인 정보를 탈취</li>
+<li>특정 대상을 선정 후 <u>일반적인 메일로 위장</u> 후 지속적으로 발송하여 ++발송 메일의 링크나 첨부 파일을 클릭하도록 유도++해 사용자의 개인 정보를 탈취</li>
 </ul>
 <h4 id="Qshing-큐싱"><a href="#Qshing-큐싱" class="headerlink" title="Qshing 큐싱"></a>Qshing 큐싱</h4><ul>
-<li>++QR(Quick Rsponse Code)를 통해 악성 앱의 다운로드 유도++</li>
+<li><u>QR(Quick Rsponse Code)를 통해 악성 앱의 다운로드 유도</u></li>
 </ul>
 <h3 id="정보-보안-침해-공격-용어"><a href="#정보-보안-침해-공격-용어" class="headerlink" title="정보 보안 침해 공격 용어"></a>정보 보안 침해 공격 용어</h3><h4 id="Botnet-봇넷"><a href="#Botnet-봇넷" class="headerlink" title="Botnet 봇넷"></a>Botnet 봇넷</h4><ul>
-<li>++악성 프로그램에 감염++되어 악의적인 의도로 사용될 수 있는 ++다수의 컴퓨터들이 네트워크로 연결++된 형태</li>
+<li><u>악성 프로그램에 감염&lt;/&gt;되어 악의적인 의도로 사용될 수 있는 <u>다수의 컴퓨터들이 네트워크로 연결</u>된 형태</li>
 </ul>
 <h4 id="Worm-웜"><a href="#Worm-웜" class="headerlink" title="Worm 웜"></a>Worm 웜</h4><ul>
-<li>네트워크를 통해 ++연속적으로 자신을 복제++하여 시++스템의 부하를 높임++으로써 결국 시스템을 다운시키는 바이러스</li>
+<li>네트워크를 통해 <u>연속적으로 자신을 복제</u>하여 <u>시스템의 부하를 높임</u>으로써 결국 시스템을 다운시키는 바이러스</li>
 </ul>
 <h4 id="Zero-Day-Attack-제로데이공격"><a href="#Zero-Day-Attack-제로데이공격" class="headerlink" title="Zero Day Attack 제로데이공격"></a>Zero Day Attack 제로데이공격</h4><ul>
-<li>++보안 취약점이 발견++되었을 때 발견된 취약점의 존재 자체가 널리 공표되기 전에 해당 취약점을 통하여 이루어지는 보안 공격으로 <code>공격의 신속성</code> 의미</li>
+<li><u>보안 취약점이 발견</u>되었을 때 발견된 취약점의 존재 자체가 널리 공표되기 전에 해당 취약점을 통하여 이루어지는 보안 공격으로 <code>공격의 신속성</code> 의미</li>
 </ul>
 <h4 id="Ransomware-랜섬웨어"><a href="#Ransomware-랜섬웨어" class="headerlink" title="Ransomware 랜섬웨어"></a>Ransomware 랜섬웨어</h4><ul>
-<li>인터넷 사용자의 컴퓨터에 잠입해 ++내부 문서나 파일 등을 암호화++해 사용자가 열지 못하게 하는 프로그램</li>
+<li>인터넷 사용자의 컴퓨터에 잠입해 <u>내부 문서나 파일 등을 암호화</u>해 사용자가 열지 못하게 하는 프로그램</li>
 <li>암호 해독용 프로그램의 전달을 조건으로 돈을 요구</li>
 </ul>
 <h4 id="Trojan-Horse-트로이-목마"><a href="#Trojan-Horse-트로이-목마" class="headerlink" title="Trojan Horse 트로이 목마"></a>Trojan Horse 트로이 목마</h4><ul>
 <li>정상적인 기능을 하는 프로그램으로 위장</li>
-<li>프로그램 내에 ++숨어 있다가 해당 프로그램이 동작할 때 활성화++ 되어 부작용을 일으킴</li>
-<li>++자기 복제 능력은 없음++</li>
+<li>프로그램 내에 <u>숨어 있다가 해당 프로그램이 동작할 때 활성화</u> 되어 부작용을 일으킴</li>
+<li><u>자기 복제 능력은 없음</u></li>
 </ul>
 <h4 id="Key-Logger-Attack-키로거-공격"><a href="#Key-Logger-Attack-키로거-공격" class="headerlink" title="Key Logger Attack 키로거 공격"></a>Key Logger Attack 키로거 공격</h4><ul>
-<li>컴퓨터 ++사용자의 키보드 움직임을 탐지++해 id, pw, 계좌번호 등 같은 개인의 중요한 정보를 몰래 빼가는 해킹</li>
+<li>컴퓨터 <u>사용자의 키보드 움직임을 탐지해</u> id, pw, 계좌번호 등 같은 개인의 중요한 정보를 몰래 빼가는 해킹</li>
 </ul>
 
         </div>
@@ -1210,7 +1210,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
