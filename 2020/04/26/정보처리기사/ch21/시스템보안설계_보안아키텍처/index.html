@@ -7,22 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>시스템보안설계(2) - 서버인증 - Hello Engineering</title>
+<title>시스템보안설계 - 보안아키텍처 - Hello Engineering</title>
 
 
-    <meta name="description" content="시스템 보안 설계서버 인증보안서버 개념 보안서버는 인터넷을 통한 개인정보를 암호화하여 송&#x2F;수신할 수 잇는 기능을 갖춘 서버 Sniffing(스니핑)을 이용한 정보유출, Phishing(피싱)을 이용한 위조 사이트 등에 대비하기 위해 보안 서버 구축 필요 개인정보의 기술적&#x2F;관리적 보호조치 기준에 따르면 다음을 갖추어야함 - 서버에 SSL(Secure Sock">
+    <meta name="description" content="시스템 보안 설계보안아키텍처보안 아키텍처의 개념 무결성, 가용성, 기밀성을 확보하기 위해 보안 요소 및 보안 체계를 식별하고 이들 간의 관계를 정의한 구조   보안의 3요소  Integrity 무결성  Availability 가용성  Confidentality 기밀성     관리적, 물리적, 기술적 보안 개념의 수립, 보안 관리 능력의 향상, 일관된 보안">
 <meta property="og:type" content="article">
-<meta property="og:title" content="시스템보안설계(2) - 서버인증">
-<meta property="og:url" content="https://hyeonukdev.github.io/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/index.html">
+<meta property="og:title" content="시스템보안설계 - 보안아키텍처">
+<meta property="og:url" content="https://hyeonukdev.github.io/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/index.html">
 <meta property="og:site_name" content="Hello Engineering">
-<meta property="og:description" content="시스템 보안 설계서버 인증보안서버 개념 보안서버는 인터넷을 통한 개인정보를 암호화하여 송&#x2F;수신할 수 잇는 기능을 갖춘 서버 Sniffing(스니핑)을 이용한 정보유출, Phishing(피싱)을 이용한 위조 사이트 등에 대비하기 위해 보안 서버 구축 필요 개인정보의 기술적&#x2F;관리적 보호조치 기준에 따르면 다음을 갖추어야함 - 서버에 SSL(Secure Sock">
+<meta property="og:description" content="시스템 보안 설계보안아키텍처보안 아키텍처의 개념 무결성, 가용성, 기밀성을 확보하기 위해 보안 요소 및 보안 체계를 식별하고 이들 간의 관계를 정의한 구조   보안의 3요소  Integrity 무결성  Availability 가용성  Confidentality 기밀성     관리적, 물리적, 기술적 보안 개념의 수립, 보안 관리 능력의 향상, 일관된 보안">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:image" content="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png">
-<meta property="article:published_time" content="2020-04-25T17:53:07.000Z">
-<meta property="article:modified_time" content="2020-04-25T17:53:07.000Z">
+<meta property="article:published_time" content="2020-04-25T18:22:04.000Z">
+<meta property="article:modified_time" content="2020-04-25T18:22:04.000Z">
 <meta property="article:author" content="Hyeonukdev">
 <meta property="article:tag" content="정보처리기사">
-<meta property="article:tag" content="서버인증">
+<meta property="article:tag" content="보안아키텍처">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png">
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/piglogo.svg" alt="시스템보안설계(2) - 서버인증" height="28">
+                <img src="/images/piglogo.svg" alt="시스템보안설계 - 보안아키텍처" height="28">
             
             </a>
         </div>
@@ -136,7 +136,7 @@
     
     <div class="card-image">
         <span  class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 서버인증">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 보안아키텍처">
         </span>
     </div>
     
@@ -144,7 +144,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-25T17:53:07.000Z">2020-04-26</time>
+                <time class="level-item has-text-grey" datetime="2020-04-25T18:22:04.000Z">2020-04-26</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
@@ -154,7 +154,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4분 읽기 (대략 558 단어)
+                    3분 읽기 (대략 380 단어)
                 </span>
                 
                 
@@ -163,43 +163,55 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                시스템보안설계(2) - 서버인증
+                시스템보안설계 - 보안아키텍처
             
         </h1>
         <div class="content">
-            <h2 id="시스템-보안-설계"><a href="#시스템-보안-설계" class="headerlink" title="시스템 보안 설계"></a>시스템 보안 설계</h2><h3 id="서버-인증"><a href="#서버-인증" class="headerlink" title="서버 인증"></a>서버 인증</h3><h3 id="보안서버-개념"><a href="#보안서버-개념" class="headerlink" title="보안서버 개념"></a>보안서버 개념</h3><ul>
-<li>보안서버는 <u>인터넷을 통한 개인정보를 암호화하여 송/수신할 수 잇는 기능을 갖춘 서버</u></li>
-<li>Sniffing(스니핑)을 이용한 정보유출, Phishing(피싱)을 이용한 위조 사이트 등에 대비하기 위해 <u>보안 서버 구축 필요</u></li>
-<li>개인정보의 기술적/관리적 보호조치 기준에 따르면 다음을 갖추어야함 - 서버에 <u>SSL(Secure Socket Laver) 인증서를 설치</u>하여 정송 정볼르 암호화하여 송/수신 하는 기능 - 서버에 암호화 응용 프로그램을 설치하고 전송 정볼르 암호화하여 송/수신하는 기능</li>
+            <h2 id="시스템-보안-설계"><a href="#시스템-보안-설계" class="headerlink" title="시스템 보안 설계"></a>시스템 보안 설계</h2><h2 id="보안아키텍처"><a href="#보안아키텍처" class="headerlink" title="보안아키텍처"></a>보안아키텍처</h2><h3 id="보안-아키텍처의-개념"><a href="#보안-아키텍처의-개념" class="headerlink" title="보안 아키텍처의 개념"></a>보안 아키텍처의 개념</h3><ul>
+<li><p><u>무결성, 가용성, 기밀성</u>을 확보하기 위해 보안 요소 및 보안 체계를 식별하고 이들 간의 관계를 정의한 <u>구조</u> </p>
+<ul>
+<li>보안의 3요소 <ol>
+<li>Integrity 무결성 </li>
+<li>Availability 가용성 </li>
+<li>Confidentality 기밀성</li>
+</ol>
+</li>
 </ul>
-<h3 id="Authentication-인증-의-개념"><a href="#Authentication-인증-의-개념" class="headerlink" title="Authentication(인증)의 개념"></a>Authentication(인증)의 개념</h3><ul>
-<li>인증은 다중 사용자 컴퓨터 시스템이나 네트워크 시스템에서 로그인을 요청한 <u>사용자의 정보를 확인하고 접근 권한을 검증</u>하는 보안절차</li>
-<li>인증의 종류 - 지식기반인증 Something You Know - 소유기반인증 Something You Have - 생체기반인증 Something You Are - 행위기반인증 Something You Do</li>
+</li>
+<li><p>관리적, 물리적, 기술적 보안 개념의 수립, 보안 관리 능력의 향상, 일관된 보안 수준의 유지를 기대함 </p>
+<ul>
+<li>관리적 보안 <ul>
+<li>정보보호 정책 </li>
+<li>조직 </li>
+<li>분류 </li>
+<li>교육 및 훈련 </li>
+<li>인적 보안 업무 연속성 관리 </li>
 </ul>
-<h4 id="지식기반인증"><a href="#지식기반인증" class="headerlink" title="지식기반인증"></a>지식기반인증</h4><ul>
-<li>사용자가 <u>기억하고 있는 정보를 기반</u>으로 인증을 수행하는 것</li>
-<li>사용자의 기억을 기반으로 하므로 <u>관리비용 저렴</u></li>
-<li>인증기법 중 <u>가장 보안에 취약함</u></li>
-<li>예 - 아이디/비밀번호 - 아이핀</li>
+</li>
+<li>물리적 보안 <ul>
+<li>건물 및 사물실 출입 통제 지침 </li>
+<li>전산실 관리 지침 </li>
+<li>재해 복구 센터 운영 </li>
 </ul>
-<h4 id="소유기반인증"><a href="#소유기반인증" class="headerlink" title="소유기반인증"></a>소유기반인증</h4><ul>
-<li>사용자가 <u>소유하고 있는 것을 기반</u>으로 인증하는 것</li>
-<li>소유물이 쉽게 도용될 수 있기 대문에 지식기반이나 생체기반 인증방식과 함께 사용</li>
-<li><u>분실 및 도용의 위험이 존재</u></li>
-<li>예 - 신분증 - 스마트 카드 - OTP</li>
+</li>
+<li>기술적 보안 <ul>
+<li>사용자 인증 </li>
+<li>접근 제어 </li>
+<li>서버 </li>
+<li>네트워크 </li>
+<li>데이터</li>
 </ul>
-<h4 id="생체기반인증"><a href="#생체기반인증" class="headerlink" title="생체기반인증"></a>생체기반인증</h4><ul>
-<li>사용자의 <u>고유한 생체 정보를 기반</u>으로 인증을 수행하는 것</li>
-<li>사용이 쉽고 도난 위험도 적으며 <u>위조가 어려움</u></li>
-<li>예 - 지문 - 홍채/망막 - 얼굴 - 음성 - 정맥</li>
+</li>
 </ul>
-<h4 id="행위기반인증"><a href="#행위기반인증" class="headerlink" title="행위기반인증"></a>행위기반인증</h4><ul>
-<li>사용자의 <u>행동 정보</u>를 이용해 인증 수행</li>
-<li>예 - 서명</li>
+</li>
+<li><p><u><b>보안 수준에 변화가 생겨도 기본 보안 아키텍처의 <i>수정 없이</i> 지원할 수 있어야함</b></u><br><img src="https://www.researchgate.net/profile/Piers_Ohanlon/publication/317036464/figure/fig15/AS:580598214467588@1515436809357/ITU-T-X805-Security-Architecture-for-Systems-Providing-End-to-End-Communications.png" alt="ResearchGateITU-T X.805 Security Architecture"></p>
+</li>
 </ul>
-<h4 id="위치기반인증"><a href="#위치기반인증" class="headerlink" title="위치기반인증"></a>위치기반인증</h4><ul>
-<li>인증을 시도하는 <u>위치</u>의 적절성 확인</li>
-<li>예 - GPS - IP</li>
+<h3 id="보안-프레임워크의-개념"><a href="#보안-프레임워크의-개념" class="headerlink" title="보안 프레임워크의 개념"></a>보안 프레임워크의 개념</h3><ul>
+<li>프레임워크는 뼈대, 골조를 의미</li>
+<li>안전한 정보시스템 환경을 유지하고 보안 수준을 향상시키기 위한 체계</li>
+<li><u>ISO 27001은 정보보안 관리를 위한 국제 표준</u></li>
+<li>조직에 대한 정보보안 <u>관리 규격이 정의되어 있어 실제 심사/인증용으로 사용됨</u><br><img src="https://www.ntrustadvisory.com/wp-content/uploads/2018/12/iso27001-benefits.jpg" alt="ISO27001 Assessments and Implementation"></li>
 </ul>
 
         </div>
@@ -208,7 +220,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" rel="tag">서버인증</a>, <a class="has-link-grey -link" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" rel="tag">정보처리기사</a>
+                    <a class="has-link-grey -link" href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" rel="tag">보안아키텍처</a>, <a class="has-link-grey -link" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" rel="tag">정보처리기사</a>
                 </div>
             </div>
         </div>
@@ -226,16 +238,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">시스템보안설계(2) - 서버접근통제</span>
+                <span class="level-item">시스템보안설계 - 핵심정리</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/">
-                <span class="level-item">시스템보안설계(1) - 서비스공격유형(2)</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/">
+                <span class="level-item">시스템보안설계 - 서버접근통제</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -523,16 +535,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(1) - 핵심정리">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 핵심정리">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:25:27.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(1) - 핵심정리</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -542,16 +554,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 보안아키텍처">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 보안아키텍처">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:22:04.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 보안아키텍처</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 보안아키텍처</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -561,16 +573,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 서버접근통제">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버접근통제">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:07:29.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 서버접근통제</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버접근통제</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -580,16 +592,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 서버인증">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버인증">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T17:53:07.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 서버인증</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버인증</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -599,16 +611,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(1) - 서비스공격유형(2)">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서비스공격유형(2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T17:35:36.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(1) - 서비스공격유형(2)</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서비스공격유형(2)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -840,16 +852,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(1) - 핵심정리">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 핵심정리">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:25:27.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(1) - 핵심정리</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -859,16 +871,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 보안아키텍처">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 보안아키텍처">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:22:04.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 보안아키텍처</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 보안아키텍처</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -878,16 +890,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 서버접근통제">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버접근통제">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:07:29.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 서버접근통제</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버접근통제</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -897,16 +909,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 서버인증">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버인증">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T17:53:07.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 서버인증</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버인증</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -916,16 +928,16 @@ s.setAttribute('data-timestamp', +new Date());
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(1) - 서비스공격유형(2)">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서비스공격유형(2)">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T17:35:36.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(1) - 서비스공격유형(2)</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서비스공격유형(2)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -1150,7 +1162,7 @@ s.setAttribute('data-timestamp', +new Date());
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/piglogo.svg" alt="시스템보안설계(2) - 서버인증" height="28">
+                    <img src="/images/piglogo.svg" alt="시스템보안설계 - 보안아키텍처" height="28">
                 
                 </a>
                 <p class="is-size-7">
