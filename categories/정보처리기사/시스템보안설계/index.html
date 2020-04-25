@@ -194,7 +194,7 @@
 - 서버가 서비스 능력을 초과하는 요청을 도시다발적으로 받게 되면 서비스 불능상태로 마비됨</code></pre><h4 id="Ping-Flood"><a href="#Ping-Flood" class="headerlink" title="Ping Flood"></a>Ping Flood</h4><ul>
 <li>하나의 사이트로 <u>많은 양의 ICMP echo request를 요청</u>할 때 이 사이트에서 존재하는 시스템 자원은 개별 메시지들에 각각 <u>응답하기 위해 시스템 자원(resource)를 모두 사용</u>해 버리는 점을 이용</li>
 <li>ICMP : Internet Control Message Protocol</li>
-<li>TCP/IP 기반의 인터넷 통신 <blockquote>서비스에서 인터넷 프로토콜에 결합</blockquote>되어 전송되는 프로토콜로, IP에 대해 통신 중 발생하는 오류 처리와 전송 경로 변경, `에코 요청, 에코 응답` 등을 제어하기 위한 메시지를 취급</li>
+<li>TCP/IP 기반의 인터넷 통신 <code>서비스에서 인터넷 프로토콜에 결합</code>되어 전송되는 프로토콜로, IP에 대해 통신 중 발생하는 오류 처리와 전송 경로 변경, `에코 요청, 에코 응답` 등을 제어하기 위한 메시지를 취급</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping [주소]</span><br></pre></td></tr></table></figure>
 
@@ -229,7 +229,7 @@
 <h4 id="TearDrop"><a href="#TearDrop" class="headerlink" title="TearDrop"></a>TearDrop</h4><ul>
 <li>데이터의 송수신과정에서 <u>패킷</u>의 크기가 커서 여러 개로 분할되어 전송될 때 <u>분할 순서</u>를 알 수 있도록 <u>Fragment Offset 값</u>을 함께 전송</li>
 <li>이때 <u>Offset 값을 변경시켜 수신 측에서 패킷을 재조립할 때 오류로 인한 과부하</u> 발생시켜 시스템 다운 유도 - 일반적으로 128kb로 토막낸다. 8개 - 다시 받을 때 합친다.</li>
-<li>대비 - Fragment Offset 잘못된 경우 <blockquote>해당 패킷을 폐기</blockquote></li>
+<li>대비 - Fragment Offset 잘못된 경우 <code>해당 패킷을 폐기</code></li>
 </ul>
 <h4 id="Land"><a href="#Land" class="headerlink" title="Land"></a>Land</h4><ul>
 <li>패킷을 전송할 때 <u>송신 IP주소와 수신 IP주소를 모두 공격 대상의 IP주소로 설정한 후 공격 대상에게 전송</u>하는 것</li>
@@ -1190,7 +1190,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
