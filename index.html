@@ -268,7 +268,7 @@
 - 서버가 서비스 능력을 초과하는 요청을 도시다발적으로 받게 되면 서비스 불능상태로 마비됨</code></pre><h4 id="Ping-Flood"><a href="#Ping-Flood" class="headerlink" title="Ping Flood"></a>Ping Flood</h4><ul>
 <li>하나의 사이트로 <u>많은 양의 ICMP echo request를 요청</u>할 때 이 사이트에서 존재하는 시스템 자원은 개별 메시지들에 각각 <u>응답하기 위해 시스템 자원(resource)를 모두 사용</u>해 버리는 점을 이용</li>
 <li>ICMP : Internet Control Message Protocol</li>
-<li>TCP/IP 기반의 인터넷 통신 <code>서비스에서 인터넷 프로토콜에 결합</code>되어 전송되는 프로토콜로, IP에 대해 통신 중 발생하는 오류 처리와 전송 경로 변경, `에코 요청, 에코 응답` 등을 제어하기 위한 메시지를 취급</li>
+<li>TCP/IP 기반의 인터넷 통신 <code>서비스에서 인터넷 프로토콜에 결합</code>되어 전송되는 프로토콜로, IP에 대해 통신 중 발생하는 오류 처리와 전송 경로 변경, <code>에코 요청, 에코 응답</code> 등을 제어하기 위한 메시지를 취급</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping [주소]</span><br></pre></td></tr></table></figure>
 
@@ -297,7 +297,7 @@
 </li>
 <li><p>공격자가 사용할 수 없는 IP 주소를 이용하여 공격 대상지 서버로 반복적인 3-way-handshake 과정을 요청하면 <u>공격 대상지 서버는 메모리 공간을 점점 더 많이 확보한 상태에서 대기</u>하게 됨</p>
 </li>
-<li><p>대비<br>`SYN 수신 대기 시간을 줄이거`나 `침입 차단 시스템을 활용`</p>
+<li><p>대비<br><code>SYN 수신 대기 시간을 줄이거</code>나 <code>침입 차단 시스템을 활용</code></p>
 </li>
 </ul>
 <h4 id="TearDrop"><a href="#TearDrop" class="headerlink" title="TearDrop"></a>TearDrop</h4><ul>
