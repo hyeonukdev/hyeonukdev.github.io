@@ -136,6 +136,80 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/01/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4%EC%84%A4%EC%B9%98/" class="image is-7by1">
+            <img class="thumbnail" src="https://wikibook.co.kr/images/cover/m/9791158391379.png" alt="아나콘다설치">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-31T15:32:50.000Z">2020-04-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/Anaconda/">Anaconda</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 384 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/01/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4%EC%84%A4%EC%B9%98/">아나콘다설치</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="아나콘다-가상-환경-구성"><a href="#아나콘다-가상-환경-구성" class="headerlink" title="아나콘다 가상 환경 구성"></a>아나콘다 가상 환경 구성</h1><p>아나콘다가 설치 되었다는 가정하에 진행하겠다<br>파이썬 프로젝트는 파이썬 실행 환경을 독립적으로 가능하게 해주므로 가상 환경을 만들어 보자.<br>conda 명령어를 통해 가상 환경을 생성하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda create --name pr_tensorflow python&#x3D;3</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>conda crate는 가상환경을 생성하는 것을 의미<br>–naeme 옵션에 pr_tensorflow입력하고 3버전을 입력</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda activate pr_tensorflow</span><br><span class="line">(pr_tensorflow</span><br></pre></td></tr></table></figure>
+
+<p>윈도우 환경에서는 activate로 가상환경을 실행해주면 (pr_tensorflow)가 만들어진다</p>
+<p>가상환경이름을 잊어버렸다면</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda env list</span><br><span class="line"># conda environments:</span><br><span class="line">#</span><br><span class="line">base                     C:\Users\lego7\Anaconda3</span><br><span class="line">pr_tensorflow         *  C:\Users\lego7\Anaconda3\envs\pr_tensorflow</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="실습-환경-구성"><a href="#실습-환경-구성" class="headerlink" title="실습 환경 구성"></a>실습 환경 구성</h2><p><a href="https://github.com/NLP-kr/tensorflow-ml-nlp.git">github링크</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;NLP-kr&#x2F;tensorflow-ml-nlp.git</span><br><span class="line">Cloning into &#39;tensorflow-ml-nlp&#39;...</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ ls</span><br><span class="line">tensorflow-ml-nlp&#x2F;</span><br><span class="line">(pr_tensorflow)</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ cd tensorflow-ml-nlp</span><br><span class="line">(pr_tensorflow)</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ ls</span><br><span class="line">1.Intro&#x2F;     3.NLP_INTRO&#x2F;            5.TEXT_SIM&#x2F;  main.png   requirements.txt</span><br><span class="line">2.NLP_PREP&#x2F;  4.TEXT_CLASSIFICATION&#x2F;  6.CHATBOT&#x2F;   README.md</span><br><span class="line">(pr_tensorflow)</span><br></pre></td></tr></table></figure>
+
+<p>python 3.6 버전을 설치해주자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ conda install python&#x3D;3.6</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ pip install -r requirements.txt</span><br><span class="line">Collecting tensorflow</span><br></pre></td></tr></table></figure>
+
+<p>주피터노트북 실행</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ jupyter notebook</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/01/Python/%ED%81%B4%EB%9E%98%EC%8A%A4%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" class="image is-7by1">
             <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99EB65375BBABFD020" alt="클래스란 무엇인가">
         </a>
@@ -1189,7 +1263,7 @@ em.info()
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            29
+                            30
                         </p>
                     </a>
                 </div>
@@ -1213,7 +1287,7 @@ em.info()
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            20
+                            21
                         </p>
                     </a>
                 </div>
@@ -1343,7 +1417,7 @@ em.info()
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">
@@ -1351,7 +1425,7 @@ em.info()
                 <span class="level-item">시스템보안설계</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/">
@@ -1380,7 +1454,7 @@ em.info()
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 12.5px;">NLP배경</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 20px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 17.5px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 17.5px;">데이터사이언스개념</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 15px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 15px;">정보처리기사</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 20px;">한국어임베딩</a>
+        <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 12px;">NLP배경</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 20px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 18px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 18px;">데이터사이언스개념</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 14px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 16px;">정보처리기사</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 20px;">한국어임베딩</a>
     </div>
 </div>
     
@@ -1392,6 +1466,25 @@ em.info()
         <h3 class="menu-label">
             최근 글
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 보안아키텍처">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:22:04.000Z">2020-04-26</time></div>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 보안아키텍처</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -1469,25 +1562,6 @@ em.info()
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/04/25/NLP/RecurrentNeuralNetwork/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Recurrent Neural Network">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T07:46:00.000Z">2020-04-25</time></div>
-                    <a href="/2020/04/25/NLP/RecurrentNeuralNetwork/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Recurrent Neural Network</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1505,7 +1579,7 @@ em.info()
                     <span class="level-item">4월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">21</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>
@@ -1619,6 +1693,13 @@ em.info()
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/">
+                        <span class="tag">보안아키텍처</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/">
                         <span class="tag">서버인증</span>
                         <span class="tag is-grey">1</span>
@@ -1663,7 +1744,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -1698,6 +1779,25 @@ em.info()
         
         <article class="media">
             
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 보안아키텍처">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:22:04.000Z">2020-04-26</time></div>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계(2) - 보안아키텍처</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_01_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계(2) - 서버접근통제">
@@ -1772,25 +1872,6 @@ em.info()
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/04/25/NLP/RecurrentNeuralNetwork/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Recurrent Neural Network">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T07:46:00.000Z">2020-04-25</time></div>
-                    <a href="/2020/04/25/NLP/RecurrentNeuralNetwork/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Recurrent Neural Network</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a> / <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -1808,7 +1889,7 @@ em.info()
                     <span class="level-item">4월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">21</span>
+                    <span class="level-item tag">22</span>
                 </span>
             </a>
         </li>
@@ -1922,6 +2003,13 @@ em.info()
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/">
+                        <span class="tag">보안아키텍처</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/">
                         <span class="tag">서버인증</span>
                         <span class="tag is-grey">1</span>
@@ -1966,7 +2054,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">4</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
@@ -2109,7 +2197,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
