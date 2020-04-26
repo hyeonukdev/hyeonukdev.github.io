@@ -136,6 +136,83 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/02/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EA%B0%99%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="image is-7by1">
+            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="어떤단어가같이쓰였는가">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-01T17:31:45.000Z">2020-04-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9분 읽기 (대략 1326 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/02/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EA%B0%99%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/">어떤단어가같이쓰였는가</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="2-4-어떤-단어가-같이-쓰였느가"><a href="#2-4-어떤-단어가-같이-쓰였느가" class="headerlink" title="2.4 어떤 단어가 같이 쓰였느가"></a>2.4 어떤 단어가 같이 쓰였느가</h1><h2 id="2-4-1-분포-가정"><a href="#2-4-1-분포-가정" class="headerlink" title="2.4.1 분포 가정"></a>2.4.1 분포 가정</h2><p>자연어 처리에서 분포 <strong>distribution</strong>란 특정 범위, 즉 ++윈도우++ 내에 동시에 등장하는 ++이웃 단어++ 또는 ++문맥의 집합++을 가리킨다. 개별 단어의 분포는 그 단어가 문장 내에서 주로 어느 위치에 나타나는지, 이웃한 위치에 어떤 단어가 자주 나타나는지에 따라 달라진다. 어떤 쌍이 비슷한 문맥 환경에서 자주 등장한다면 그 의미 도한 유사할 것이라는 게 분포 가정 ** distributional hypothesis**의 전제다.</p>
+<p>예컨데 한국어의 <code>빨래</code>, <code>세탁</code>이라는 단어의 의미를 전혀 모른다고 하자. 두 단어의 의미를 파악하기 위해서는 이들 단어가 실제 어떻게 쓰이고 있는지 관찰을 해야한다. 두 단어는 타깃 단어 ** target word**이고 <code>청소</code>, <code>물</code> 등은 그 주위에 등장한 문맥 단어가 된다</p>
+<blockquote>
+<p>특기는 자칭 청소와 빨래지만 요리는 절망적<br>재를 우려낸 물로 빨래 할 때 나<br>찬 물로 옷을 세탁한다.<br>세탁, 청소, 요리와 기사는</p>
+</blockquote>
+<p>이웃한 단어들이 서로 비슷하기 때문이다. <code>빨래</code>가 <code>청소</code> <code>물</code> 과 같이 등장하는 경향을 미루어 짐작해볼 때 이들끼리도 직간접적으로 관계를 지닐 가능성이 낮아보이지는 않는다. 그럼에도 개별 단어의 분포 정보와 그 의미 사이에는 논리적으로 직접적인 연관성은 사실 낮다. 다시 말해 분포 정보가 곧 의미라는 분포 가정에 의문접이 발생한다.</p>
+<h2 id="2-4-2-분포와-의미-1-형태소"><a href="#2-4-2-분포와-의미-1-형태소" class="headerlink" title="2.4.2 분포와 의미(1) : 형태소"></a>2.4.2 분포와 의미(1) : 형태소</h2><p>형태소** morpheme<strong>란 의미를 가지는 최소 단위를 말한다. 더 쪼개면 의미를 잃어버리는 것이다.<br>예를 들어 <code>철수가 밥을 먹었다</code> 라고 한다면 형태소 후보는 <code>철수</code>, <code>밥</code>, 이다.<br>조금 더 깊게 분석해보자. 계열관계 ** paradigmatic relation</strong>가 있다. </p>
+<p>계열 관계는 해당 형태소 자리에 다른 형태소가 ‘대치’되어 쓰일 수 있는 가를 따지는 것이다. 예컨데 <code>철수</code> 대신에 <code>영희</code>가 올 수 있고 <code>밥</code>대신 <code>빵</code>을 쓸 수 있다. 이를 근거로 형태소 자격을 부여한다.</p>
+<p>특정 타깃 단어 주변의 문맥 정보를 바탕으로 형태소를 확인한다는 이야기와 일맥상통한다.</p>
+<blockquote>
+<p>말뭉치의 분포 정보와 형태소가 밀접한 관계를 이루고 있다.</p>
+</blockquote>
+<h2 id="2-4-3-분포와-의미-2-품사"><a href="#2-4-3-분포와-의미-2-품사" class="headerlink" title="2.4.3 분포와 의미(2) : 품사"></a>2.4.3 분포와 의미(2) : 품사</h2><p>품사란 단어를 문법적 성질의 공통성에 따라 언어학자들이 몇 갈래로 묶어 놓은 것이다.</p>
+<ul>
+<li>기능</li>
+<li>의미</li>
+<li>형식<br>위 세가지를 기준으로 분류한다.</li>
+</ul>
+<ol>
+<li>기능<br>한 단어가 문장 가운데서 다른 단어와 맺는 관계를 가르킨다.<br><code>깊이</code> <code>높이</code>는 문장에서 주어로 쓰이고 <code>깊다</code> <code>높다</code>는 서술어로 사용되고 있다.</li>
+<li>의미<br>단어의 형식적 의미를 나타낸다. ``깊이<code></code>높이<code>를 하나로 묶고</code>깊다<code></code>높다`를 같은 군집으로 넣을 수 있다. 품사에서는 어휘적 의미보다 형식적 의미가 중요하다. 다시말해 어떤 단어가 사물의 이름을 나타내는가, 그렇지 않으면 움직임이나 성실, 상태를 나타내느냐 하는 것이다.</li>
+<li>형식<br>단어의 형태적 특징을 의미한다. <code>깊이</code> <code>높이</code>는 변화하지 않는다. <code>깊었다</code> <code>높았다</code> <code>깊겠다</code> <code>높겠따</code> 따위와 같이 어미가 붙어 여러 가지 모습으로 변화를 일으킬 수 있다.<br>그러나 예외가 있다. <code>공부</code> <code>공부하다</code> 두 개를 분류하려면 <code>공부</code>는 명사이지만 우리는 동작이라는 여지를 알고 있다. </li>
+</ol>
+<p>품사 분류에서 가장 중요한 기준은 ==기능==이다. 해당 단어가 문장 내에서 점하는 역할에 초점을 맞춰 품사를 분류한다는 것이다.<br>형태소의 경계를 정하거나 품사를 나누는 것과 같은 다양한 언어학적 문제는 말뭉치의 분포 정보와 깊은 관계를 갖고 있다. 이로인하여 분포 정보를 함축한다면 해당 벡터에 해당 단어의 의미를 자연스레 내재시킬 수 있는 것이다.</p>
+<h2 id="2-4-4-점별-상호-정보량"><a href="#2-4-4-점별-상호-정보량" class="headerlink" title="2.4.4 점별 상호 정보량"></a>2.4.4 점별 상호 정보량</h2><p>점별 상호 정보량은 두 확률변수사이의 상관성을 계량화하는 단위다. 두 확률변수가 완전히 독립인 경우 그 값이 0이 된다. 독립이라고 하면 A가 나타나는 것이 단어 B의 등장할 확률에 전혀 영향을 주지 않고, 단어 B등장이 단어 A에 영향을 주지 않는 경우를 가리킨다.<br>두 단어의 등장이 독립일 때 대비해 얼마나 자주 같이 등장하는지를 수치화한 것이다<br>$$<br>PMI(A,B) = log{P(A,B) \over P(A)*P(B)}<br>$$</p>
+<p>PMI 행렬의 행 벡터 자체를 해당 단어의 임베딩으로 사용할 수도 있다. </p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/02/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EB%8B%A8%EC%96%B4%EA%B0%80%EC%96%B4%EB%96%A4%EC%88%9C%EC%84%9C%EB%A1%9C%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="image is-7by1">
             <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="단어가어떤순서로쓰였는가">
         </a>
@@ -1056,104 +1133,6 @@ em.info()
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/03/30/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B8%B0%EB%B2%95%EC%9D%98%EC%97%AD%EC%82%AC%EC%99%80%EC%A2%85%EB%A5%98/" class="image is-7by1">
-            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="임베딩기법의역사와종류">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-29T18:37:17.000Z">2020-03-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    13분 읽기 (대략 2021 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/30/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B8%B0%EB%B2%95%EC%9D%98%EC%97%AD%EC%82%AC%EC%99%80%EC%A2%85%EB%A5%98/">임베딩기법의역사와종류</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="1-3-임베딩-기법의-역사와-종류"><a href="#1-3-임베딩-기법의-역사와-종류" class="headerlink" title="1.3 임베딩 기법의 역사와 종류"></a>1.3 임베딩 기법의 역사와 종류</h1><h2 id="1-3-1-통계-기반에서-뉴럴-네트워크-기반으로"><a href="#1-3-1-통계-기반에서-뉴럴-네트워크-기반으로" class="headerlink" title="1.3.1 통계 기반에서 뉴럴 네트워크 기반으로"></a>1.3.1 통계 기반에서 뉴럴 네트워크 기반으로</h2><p>초기 임베딩 기법은 대부분 말뭉칭의 통계량을 직접 활용했다. 대표적으로 잠재 의미 분석 ** Latent Semantic Analysis**이다.</p>
-<h6 id="잠재-의미-분석"><a href="#잠재-의미-분석" class="headerlink" title="잠재 의미 분석"></a><a href="https://wikidocs.net/24949">잠재 의미 분석</a></h6><p>잠재 의미 분석이란 단어 사용 빈도 등 말뭉치의 통계량 정보가 들어 있는 커다란 행렬 ** Matrix<strong>에 특이값 분해 ** Singular Value Decomposition</strong>등 수학적 기법을 적용해 행렬에 속한 벡터들의 차원을 축소하는 방법</p>
-<p><img src="https://miro.medium.com/max/1372/1*3xamNeDrFHBbf72yMV2FRg.png" alt="잠재 의미 분석"></p>
-<p>단어-문서 행렬에 잠재 의미 분석을 적용했다고 가정하자. 그런데 단어-문서 행렬을 행의 개수가 매우 많다. 어휘 수는 대개 10~20만 개일 것이다. 행렬의 대부분 요소 값은 0이다. 문서 하나에 모든 어휘가 쓰이는 경우는 매우 드물다. 이렇게 대부분의 요소 값이 0인 행렬을 희소 행렬 ** sparse matrix**이라고 한다.</p>
-<p><img src="data:image/png;base64,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" alt="희소행렬 예시"></p>
-<p>이런 희소 행렬을 다른 모델의 입력값으로 쓰게 되면 계산량도 메모리 소비량도 쓸데없이 커진다. 그래서 원래 행렬의 차원을 축소해 사용한다. <code>단어</code>와 <code>문서</code>를 기준으로 줄인다.</p>
-<hr>
-<p>잠재 의미 분석 행렬 수행 대상 행렬은 여러 종류가 될 수 있다.</p>
-<ul>
-<li>TF-IDF 행렬</li>
-<li>단어-문맥 행렬</li>
-<li>점별 상호 정보량 행렬</li>
-</ul>
-<p>최근에는 <strong>뉴럴 네트워크</strong> 기반의 임베딩 기법들이 주목받고 있다. 이전 단어들이 주어졌을 때 다음 단어가 뭐가 될지 예측하거나 문장 내 일부분에 구멍을 뚫어 놓고 해당 단어가 무엇일지 맞추는 과정에서 학습된다.</p>
-<hr>
-<h2 id="1-3-2-단어-수준에서-문장-수준으로"><a href="#1-3-2-단어-수준에서-문장-수준으로" class="headerlink" title="1.3.2 단어 수준에서 문장 수준으로"></a>1.3.2 단어 수준에서 문장 수준으로</h2><p>2017년 이전의 임베딩 기법들은 대게 단어 수준 모델이었다. NPLM, Word2Vec, Glove, FastText, Swivel 등이 있다. 단어 수준 임베딩 기법의 단점은 동음이의어 ** homonym<strong>을 구분하기 어렵다. 단어 형태가 같다면 동일한 단어로 보고, 문맥 정보를 해당 단어 벡터에 전달하기 때문이다.<br>다행히도 ELMo</strong>Embeddings from Language Modles**가 발표된 후 문장 수준 임베딩 기법이 주목받았다.<br><img src="http://www.aitimes.kr/news/photo/201901/13117_13464_48.jpg" alt="BERT는 양방향이며 OpenAI GPT는 단방향이며 ELMo는 양방향이다"></p>
-<h2 id="1-3-3-룰-gt-엔드투엔드-gt-프리트레인-파인-튜닝"><a href="#1-3-3-룰-gt-엔드투엔드-gt-프리트레인-파인-튜닝" class="headerlink" title="1.3.3 룰 -&gt; 엔드투엔드 -&gt; 프리트레인/파인 튜닝"></a>1.3.3 룰 -&gt; 엔드투엔드 -&gt; 프리트레인/파인 튜닝</h2><ul>
-<li>1990년 : 사람이 피처를 직접 뽑음</li>
-<li>2000년 중반 : 딥러닝 모델 주목, 입출력의 관계를 사람의 개입 없이 모델 스스로 처음부터 끝까지 이해하도록 유도</li>
-<li>2018년 : 말뭉치로 임베딩을 만듬, 구체적 문제에 맞는 소규모 데이터에 맞게 임베딩을 포함한 모델 전체를 업데이트함</li>
-</ul>
-<h6 id="다운스트림-태스크-Downstream-task"><a href="#다운스트림-태스크-Downstream-task" class="headerlink" title="다운스트림 태스크 ** Downstream task**"></a>다운스트림 태스크 ** Downstream task**</h6><ul>
-<li>품사판별 ** Part-of Speech tagging**</li>
-<li>개체명 인식 ** Named Entity Recognition**</li>
-<li>의미역 분석 ** Semantic Role Labeling**</li>
-</ul>
-<p>######예시</p>
-<ul>
-<li>품사 판별 : 나는 네가 지난 여름에 한 [일]을 알고 있다. → 일: 명사(Noun)</li>
-<li>문장 성분 분석 : 나는 [네가 지난 여름에 한 일]을 알고 있다. → 네가 지난 여름에 한 일 : 명사구(Noun Phrase)</li>
-<li>의존 관계 분석 : [자연어 처리는] 늘 그렇듯이 [재미있다]. → 자언어 처리는, 재미있다 : 주격명사구(Nsub)</li>
-<li>의미역 분석 : 나는 [네가 지난 여름에 한 일]을 알고 있다. → 네가 지난 여름에 한 일 : 피행위주역(Patient)</li>
-<li>상호 참조 해결 : 나는 어제 [성빈이]를 만났다. [그]는 스웨터를 입고 있었다. → 그=성빈이</li>
-</ul>
-<h6 id="업스트림-태스크-Upstream-task"><a href="#업스트림-태스크-Upstream-task" class="headerlink" title="업스트림 태스크 ** Upstream task**"></a>업스트림 태스크 ** Upstream task**</h6><ul>
-<li>단어/문장 임베딩을 프리트레인하는 작업</li>
-</ul>
-<hr>
-<h2 id="1-3-4-임베딩의-종류와-성능"><a href="#1-3-4-임베딩의-종류와-성능" class="headerlink" title="1.3.4 임베딩의 종류와 성능"></a>1.3.4 임베딩의 종류와 성능</h2><h3 id="임베딩-기법"><a href="#임베딩-기법" class="headerlink" title="임베딩 기법"></a>임베딩 기법</h3><ol>
-<li>행렬 분해</li>
-<li>예측</li>
-<li>토픽 기반</li>
-</ol>
-<h4 id="행렬-분해-기반-방법"><a href="#행렬-분해-기반-방법" class="headerlink" title="행렬 분해 기반 방법"></a>행렬 분해 기반 방법</h4><p>말뭉치 정보가 들어 있는 원래 행렬을 두 개 이상의 작은 행렬로 쪼개는 방식의 임베딩 기법<br>분해한 이후에 둘 중 하나의 행렬만 쓰거나 둘을 add 하거나 concatenate 임베딩으로 사용<br><img src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile24.uf.tistory.com%2Fimage%2F990F9B405A3923AF21FB8F" alt="행렬 분해 기반 방법"></p>
-<h4 id="예측-기반-방법"><a href="#예측-기반-방법" class="headerlink" title="예측 기반 방법"></a>예측 기반 방법</h4><p>어떤 단어 주변에 특정 단어가 나타날지 예측하거나, 이전 단어들이 주어졌을 때 다음 단어가 무엇일지 예측하거나, 문장 내 일부 단어를 지우고 해당 단어가 무엇일지 맞추는 과정에서 학습</p>
-<h4 id="토픽-기반-방법"><a href="#토픽-기반-방법" class="headerlink" title="토픽 기반 방법"></a>토픽 기반 방법</h4><p>주어진 문서에 잠재된 주제를 추론** inference**하는 방식으로 임베딩을 수행<br>모델은 학습이 완료되면 각 문서가 어떤 주제 분포를 갖는지 확률 벡터 형태로 반환 하기 때문에 가능</p>
-<h3 id="임베딩-성능-평가"><a href="#임베딩-성능-평가" class="headerlink" title="임베딩 성능 평가"></a>임베딩 성능 평가</h3><p>성능 측정 대상 다운스트림 태스크는 형태소 분석, 문장 성분 분석, 의존 관계 분석, 의미역 분석, 상호 참조 해결 등이다.<br>안타깝겓게도 한국어는 공개된 데이터가 많지 않아 높은 품질 측정을 기대하긴 어렵다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1223,7 +1202,7 @@ em.info()
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            32
+                            33
                         </p>
                     </a>
                 </div>
@@ -1247,7 +1226,7 @@ em.info()
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            23
+                            24
                         </p>
                     </a>
                 </div>
@@ -1377,7 +1356,7 @@ em.info()
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">
@@ -1385,7 +1364,7 @@ em.info()
                 <span class="level-item">시스템보안구축</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">
@@ -1422,7 +1401,7 @@ em.info()
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 12px;">NLP배경</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 20px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 16px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 16px;">데이터사이언스개념</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 14px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 18px;">정보처리기사</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 20px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 10px;">핵심정리</a>
+        <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 12px;">NLP배경</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 20px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 16px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 16px;">데이터사이언스개념</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 14px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 18px;">정보처리기사</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 20px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 10px;">핵심정리</a>
     </div>
 </div>
     
@@ -1437,16 +1416,16 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구축 - 로그분석">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구축 - 보안솔루션">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-26T03:21:14.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안구축 - 로그분석</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-26T03:50:36.000Z">2020-04-26</time></div>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안구축 - 보안솔루션</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">시스템보안구축</a>
                     </p>
@@ -1456,7 +1435,26 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구축 - 로그분석">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-26T03:21:14.000Z">2020-04-26</time></div>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안구축 - 로그분석</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">시스템보안구축</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 핵심정리">
                 </p>
@@ -1465,7 +1463,7 @@ em.info()
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:25:27.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 핵심정리</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -1475,7 +1473,7 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 보안아키텍처">
                 </p>
@@ -1484,7 +1482,7 @@ em.info()
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:22:04.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 보안아키텍처</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 보안아키텍처</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -1494,7 +1492,7 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버접근통제">
                 </p>
@@ -1503,26 +1501,7 @@ em.info()
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:07:29.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버접근통제</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버인증">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T17:53:07.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버인증</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버접근통제</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -1547,7 +1526,7 @@ em.info()
                     <span class="level-item">4월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">24</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -1668,6 +1647,13 @@ em.info()
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/">
+                        <span class="tag">보안솔루션</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/">
                         <span class="tag">보안아키텍처</span>
                         <span class="tag is-grey">1</span>
@@ -1719,7 +1705,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1761,16 +1747,16 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구축 - 로그분석">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구축 - 보안솔루션">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-26T03:21:14.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안구축 - 로그분석</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-26T03:50:36.000Z">2020-04-26</time></div>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안구축 - 보안솔루션</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">시스템보안구축</a>
                     </p>
@@ -1780,7 +1766,26 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구축 - 로그분석">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-26T03:21:14.000Z">2020-04-26</time></div>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95_%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안구축 - 로그분석</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">시스템보안구축</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 핵심정리">
                 </p>
@@ -1789,7 +1794,7 @@ em.info()
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:25:27.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 핵심정리</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -1799,7 +1804,7 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 보안아키텍처">
                 </p>
@@ -1808,7 +1813,7 @@ em.info()
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:22:04.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 보안아키텍처</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 보안아키텍처</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -1818,7 +1823,7 @@ em.info()
         
         <article class="media">
             
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
+            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버접근통제">
                 </p>
@@ -1827,26 +1832,7 @@ em.info()
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T18:07:29.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버접근통제</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버인증">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-25T17:53:07.000Z">2020-04-26</time></div>
-                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버인증</a>
+                    <a href="/2020/04/26/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/ch21/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84_%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">시스템보안설계 - 서버접근통제</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                     </p>
@@ -1871,7 +1857,7 @@ em.info()
                     <span class="level-item">4월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">24</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -1992,6 +1978,13 @@ em.info()
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/">
+                        <span class="tag">보안솔루션</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/">
                         <span class="tag">보안아키텍처</span>
                         <span class="tag is-grey">1</span>
@@ -2043,7 +2036,7 @@ em.info()
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
