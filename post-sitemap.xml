@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://hyeonukdev.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-05-02T08:50:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/</loc>
+        <lastmod>2020-05-02T08:11:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/</loc>
+        <lastmod>2020-05-02T07:52:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/</loc>
+        <lastmod>2020-05-02T07:52:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/</loc>
+        <lastmod>2020-05-02T06:44:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-05-01T13:20:18.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%ED%91%9C%EC%A4%80%ED%99%94/</loc>
+        <lastmod>2020-05-01T13:04:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/</loc>
+        <lastmod>2020-05-01T12:51:25.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/</loc>
+        <lastmod>2020-05-01T08:34:12.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/HW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-05-01T08:29:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/30/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/HW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/</loc>
+        <lastmod>2020-04-30T13:19:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/30/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/HW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/</loc>
+        <lastmod>2020-04-30T12:49:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/30/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/SW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-04-30T12:38:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/30/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/SW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/</loc>
+        <lastmod>2020-04-30T12:11:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/30/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/SW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/</loc>
+        <lastmod>2020-04-30T04:08:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/30/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-04-30T03:58:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/30/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/</loc>
+        <lastmod>2020-04-29T15:41:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/28/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/</loc>
+        <lastmod>2020-04-28T12:40:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/28/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-04-28T12:26:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/28/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/API%EC%98%A4%EC%9A%A9/</loc>
+        <lastmod>2020-04-28T12:09:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/28/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%BA%A1%EC%8A%90%ED%99%94/</loc>
+        <lastmod>2020-04-28T11:50:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/28/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/</loc>
+        <lastmod>2020-04-27T15:43:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</loc>
+        <lastmod>2020-04-27T14:59:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/</loc>
+        <lastmod>2020-04-27T04:26:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%97%90%EB%9F%AC%EC%B2%98%EB%A6%AC/</loc>
+        <lastmod>2020-04-27T04:14:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/27/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/</loc>
+        <lastmod>2020-04-26T16:41:34.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/</loc>
+        <lastmod>2020-04-26T16:30:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/Secure_SDLC/</loc>
+        <lastmod>2020-04-26T15:49:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/NLP-BASIC/Machine_Translation/</loc>
+        <lastmod>2020-04-26T11:16:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/NLP-BASIC/Sequence_Tagging/</loc>
+        <lastmod>2020-04-26T10:59:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-04-26T04:47:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/</loc>
+        <lastmod>2020-04-26T04:12:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/</loc>
+        <lastmod>2020-04-26T03:50:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/</loc>
+        <lastmod>2020-04-26T03:21:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/</loc>
+        <lastmod>2020-04-25T18:25:27.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/</loc>
+        <lastmod>2020-04-25T18:22:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/</loc>
+        <lastmod>2020-04-25T18:07:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/</loc>
+        <lastmod>2020-04-25T17:53:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/</loc>
+        <lastmod>2020-04-25T17:35:36.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9501/</loc>
+        <lastmod>2020-04-25T17:01:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/25/NLP-BASIC/RecurrentNeuralNetwork/</loc>
+        <lastmod>2020-04-25T07:46:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/25/NLP-BASIC/VectorforNLP/</loc>
+        <lastmod>2020-04-25T07:04:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/25/NLP-BASIC/BackgroundofNLP/</loc>
+        <lastmod>2020-04-25T06:35:05.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/21/DataScience/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%90%EB%A3%8C%ED%98%95/</loc>
+        <lastmod>2020-04-21T09:08:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/18/DataScience/%EC%88%9C%EC%97%B4%EC%A1%B0%ED%95%A9/</loc>
+        <lastmod>2020-04-18T06:53:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/16/books/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC_1/</loc>
+        <lastmod>2020-04-16T11:06:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-2%EA%B0%95%ED%95%A8%EC%88%98/</loc>
+        <lastmod>2020-04-16T06:10:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-1%EA%B0%95%EC%88%98%EC%8B%9D%EA%B3%BC%ED%95%A8%EC%88%98/</loc>
+        <lastmod>2020-04-16T05:32:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/15/DataScience/%ED%86%B5%EA%B3%84%EC%9D%98%EB%AA%A9%EC%A0%81%EA%B3%BC%EC%97%91%EC%85%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EC%B4%88/</loc>
+        <lastmod>2020-04-15T08:28:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/15/DataScience/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0(Big%20Data)%EC%9D%98%EC%9D%B4%ED%95%B4/</loc>
+        <lastmod>2020-04-14T17:21:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/15/DataScience/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0(Big%20Data)%EB%B6%84%EC%84%9D%EC%9D%98%EC%A4%91%EC%9A%94%EC%84%B1/</loc>
+        <lastmod>2020-04-14T16:49:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/02/KoreanEmbedding/2%EC%9E%A5%EC%9A%94%EC%95%BD/</loc>
+        <lastmod>2020-04-01T17:32:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/02/KoreanEmbedding/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EA%B0%99%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/</loc>
+        <lastmod>2020-04-01T17:31:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/02/KoreanEmbedding/%EB%8B%A8%EC%96%B4%EA%B0%80%EC%96%B4%EB%96%A4%EC%88%9C%EC%84%9C%EB%A1%9C%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/</loc>
+        <lastmod>2020-04-01T15:42:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/01/Paper/How_to_read_Paper/</loc>
+        <lastmod>2020-03-31T17:15:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/01/NLG-anaconda/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4%EC%84%A4%EC%B9%98/</loc>
+        <lastmod>2020-03-31T15:32:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/04/01/Python/%ED%81%B4%EB%9E%98%EC%8A%A4%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/</loc>
+        <lastmod>2020-03-31T15:02:23.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/31/KoreanEmbedding/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/</loc>
+        <lastmod>2020-03-31T08:38:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/31/KoreanEmbedding/%EC%9E%90%EC%97%B0%EC%96%B4%EA%B3%84%EC%82%B0%EA%B3%BC%EC%9D%B4%ED%95%B4/</loc>
+        <lastmod>2020-03-30T18:26:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/31/KoreanEmbedding/1%EC%9E%A5%EC%A0%95%EB%A6%AC/</loc>
+        <lastmod>2020-03-30T17:55:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/31/KoreanEmbedding/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%99%80%EC%A3%BC%EC%9A%94%EC%9A%A9%EC%96%B4/</loc>
+        <lastmod>2020-03-30T17:53:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/30/KoreanEmbedding/%ED%99%98%EA%B2%BD%EC%86%8C%EA%B0%9C/</loc>
+        <lastmod>2020-03-29T19:29:54.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/30/KoreanEmbedding/%EC%9E%84%EB%B2%A0%EB%94%A9%EA%B8%B0%EB%B2%95%EC%9D%98%EC%97%AD%EC%82%AC%EC%99%80%EC%A2%85%EB%A5%98/</loc>
+        <lastmod>2020-03-29T18:37:17.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/29/KoreanEmbedding/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%98%EC%97%AD%ED%95%A0/</loc>
+        <lastmod>2020-03-29T14:52:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/03/29/KoreanEmbedding/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%B4%EB%9E%80/</loc>
+        <lastmod>2020-03-29T12:06:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+</urlset>
+<!-- XML Sitemap generated by Hexo SEO Friendly Sitemap Generator -->
