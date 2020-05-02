@@ -70,7 +70,7 @@
     <link rel="stylesheet" href="/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
     
-    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
 
@@ -154,6 +154,11 @@
                     5분 읽기 (대략 787 단어)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
                 
             </div>
         </div>
@@ -1752,6 +1757,17 @@ s.setAttribute('data-timestamp', +new Date());
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 
+                <br>
+                 <!--만약 busuanzi 가 활성화됐으면-->
+                    <br>
+                    <span id="busuanzi_container_site_pv"> 
+                        총 조회 <span id="busuanzi_container_site_pv"></span> 회
+                    </span> |
+                    <span id="busuanzi_container_site_uv">
+                        총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+                    </span>
+                    
+                
                 </p>
             </div>
             <div class="level-end">
@@ -1859,7 +1875,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
