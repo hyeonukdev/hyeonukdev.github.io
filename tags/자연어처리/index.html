@@ -746,80 +746,25 @@
 
 
 
+
     
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/01/NLG-anaconda/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4%EC%84%A4%EC%B9%98/" class="image is-7by1">
-            <img class="thumbnail" src="https://wikibook.co.kr/images/cover/m/9791158391379.png" alt="아나콘다설치">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-31T15:32:50.000Z">2020-04-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/Anaconda/">Anaconda</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (대략 384 단어)
-                </span>
-                
-                
-            </div>
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/0/">이전</a>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/01/NLG-anaconda/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4%EC%84%A4%EC%B9%98/">아나콘다설치</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="아나콘다-가상-환경-구성"><a href="#아나콘다-가상-환경-구성" class="headerlink" title="아나콘다 가상 환경 구성"></a>아나콘다 가상 환경 구성</h1><p>아나콘다가 설치 되었다는 가정하에 진행하겠다<br>파이썬 프로젝트는 파이썬 실행 환경을 독립적으로 가능하게 해주므로 가상 환경을 만들어 보자.<br>conda 명령어를 통해 가상 환경을 생성하자.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda create --name pr_tensorflow python&#x3D;3</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>conda crate는 가상환경을 생성하는 것을 의미<br>–naeme 옵션에 pr_tensorflow입력하고 3버전을 입력</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda activate pr_tensorflow</span><br><span class="line">(pr_tensorflow</span><br></pre></td></tr></table></figure>
-
-<p>윈도우 환경에서는 activate로 가상환경을 실행해주면 (pr_tensorflow)가 만들어진다</p>
-<p>가상환경이름을 잊어버렸다면</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda env list</span><br><span class="line"># conda environments:</span><br><span class="line">#</span><br><span class="line">base                     C:\Users\lego7\Anaconda3</span><br><span class="line">pr_tensorflow         *  C:\Users\lego7\Anaconda3\envs\pr_tensorflow</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="실습-환경-구성"><a href="#실습-환경-구성" class="headerlink" title="실습 환경 구성"></a>실습 환경 구성</h2><p><a href="https://github.com/NLP-kr/tensorflow-ml-nlp.git">github링크</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;NLP-kr&#x2F;tensorflow-ml-nlp.git</span><br><span class="line">Cloning into &#39;tensorflow-ml-nlp&#39;...</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ ls</span><br><span class="line">tensorflow-ml-nlp&#x2F;</span><br><span class="line">(pr_tensorflow)</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ cd tensorflow-ml-nlp</span><br><span class="line">(pr_tensorflow)</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ ls</span><br><span class="line">1.Intro&#x2F;     3.NLP_INTRO&#x2F;            5.TEXT_SIM&#x2F;  main.png   requirements.txt</span><br><span class="line">2.NLP_PREP&#x2F;  4.TEXT_CLASSIFICATION&#x2F;  6.CHATBOT&#x2F;   README.md</span><br><span class="line">(pr_tensorflow)</span><br></pre></td></tr></table></figure>
-
-<p>python 3.6 버전을 설치해주자</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ conda install python&#x3D;3.6</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ pip install -r requirements.txt</span><br><span class="line">Collecting tensorflow</span><br></pre></td></tr></table></figure>
-
-<p>주피터노트북 실행</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ jupyter notebook</span><br></pre></td></tr></table></figure>
-
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/2/">다음</a>
         </div>
-        
-        
-        
-    </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link is-current" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">1</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
-
-
-
-
-
-
 </div>
                 
 
