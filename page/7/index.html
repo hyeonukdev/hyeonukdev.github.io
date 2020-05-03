@@ -140,6 +140,557 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 보안 설계 - 입력데이터 검증 및 표현">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-26T16:30:52.000Z">2020-04-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">소프트웨어개발보안구축</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 679 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/">SW개발 보안 설계 - 입력데이터 검증 및 표현</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="소프트웨어-개발-보안-구축"><a class="markdownIt-Anchor" href="#소프트웨어-개발-보안-구축"></a> 소프트웨어 개발 보안 구축</h2>
+<h2 id="sw개발-보안-설계"><a class="markdownIt-Anchor" href="#sw개발-보안-설계"></a> SW개발 보안 설계</h2>
+<h3 id="입력데이터-검증-및-표현의-개념"><a class="markdownIt-Anchor" href="#입력데이터-검증-및-표현의-개념"></a> 입력데이터 검증 및 표현의 개념</h3>
+<ul>
+<li>폼 양식의 입력란을 통해 <u>입력되는 데이터로 인해 발생하는 문제들을 예방</u>하기 위해 <u>구현 단계에서 검증해야 하는 보안 점검 항목들</u></li>
+<li>입력 데이터로 인해 발생하는 문제를 예방하기 위해서 소프트웨어개발의 구현 단계에서 <u>유효성 검증 체계</u>를 갖추고, 검증되지 않은 데이터가 입력되는 경우 이를 처리할 수 있도록 구현해야 함</li>
+<li>입력 데이터를 처리하는 객체에 지정된 <b>자료형이 올바른지 확인</b>하고 <u><b>일관된</b> 언어셋(Character Set)</u>을 사용하도록 코딩 함
+<ul>
+<li>Character Set
+<ul>
+<li>컴퓨터에서 처리하기 위해 사용하는 코드표를 의미</li>
+<li>ASCII</li>
+<li>Unicode</li>
+<li>UTF-8</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="입력데이터-검증-및-보안-약점-종류"><a class="markdownIt-Anchor" href="#입력데이터-검증-및-보안-약점-종류"></a> 입력데이터 검증 및 보안 약점 종류</h3>
+<ul>
+<li>SQL
+<ul>
+<li>입력란에 SQL을 삽입하며 무단으로 DB를 조회하거나 조작하는 보안 약점</li>
+<li>동적 쿼리에 사용되는 입력 데이터에 예약어 및 특수문자가 입력되지 않게 필터링 되도록 방지
+<ul>
+<li>동적쿼리
+<ul>
+<li>질의어 코드를 문자열 변수에 넣어 조건에 따라 질의를 동적으로 변경하여 처리하는 방식</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>XSS 크로스사이트 스크립트
+<ul>
+<li>웹페이지에 악의적인 스크립트를 삽입하여 방문자들의 정보를 탈취하거나 비정상적인 기능 수행을 유발하는 보안 약점</li>
+<li>HTML 태그의 사용을 제한하거나 스크립트에 삽입되지 않도록 ‘&lt;’, ‘&gt;’ 등의 문자를 다른 문자로 치환함으로써 방지</li>
+</ul>
+</li>
+<li>위험한 형식 파일 업로드
+<ul>
+<li>악의적인 명령어가 포함된 스크립트 파일을 업로드함으로써 시스템에 손상을 주거나 시스템을 제어할 수 있는 보안 약점</li>
+<li>업로드 되는 파일의 확장자 제한, 파일명의 암호화, 웹사이트와 파일 서버 경로 분리, 실행 속성을 제거하는 드으이 방법으로 방지</li>
+</ul>
+</li>
+<li>경로 조작 및 자원 삽입
+<ul>
+<li>데이터 입출력 경로를 조작하여 서버 자원을 수정/삭제할 수 있는 보안 약점</li>
+<li>사용자 입력값을 식별자로 사용하는 경우, 경로 순회 공격을 막는 필터를 사용하여 방지
+<ul>
+<li>경로 순회
+<ul>
+<li>경로를 탐색할때 사용하는 ‘/’, ‘’ 등의 기호를 악용하여 허가되지 않은 파일에 접근하는 방식</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/Secure_SDLC/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 보안 설계 - Secure SDLC">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-26T15:49:31.000Z">2020-04-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">소프트웨어개발보안구축</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8분 읽기 (대략 1189 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/Secure_SDLC/">SW개발 보안 설계 - Secure SDLC</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="소프트웨어-개발-보안-구축"><a class="markdownIt-Anchor" href="#소프트웨어-개발-보안-구축"></a> 소프트웨어 개발 보안 구축</h2>
+<h2 id="sw개발-보안-설계"><a class="markdownIt-Anchor" href="#sw개발-보안-설계"></a> SW개발 보안 설계</h2>
+<ul>
+<li>Secure SDLC 개념과 SDLC 단계별 보안활동에 대한 이해</li>
+<li><u>입력데이터 검증 및 표현, 보안기능, 에러처리, 세션통제</u> 보안 점검의 개념 이해</li>
+<li>각각의 <u>보안 약점 및 방지 방법</u> 이해</li>
+</ul>
+<h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3>
+<ul>
+<li>
+<p>Security Elements 보안요소</p>
+<ul>
+<li>소프트웨어 개발에 있어 충족시켜야 할 요소 및 요건을 의미하며, 주요 보안요소에는 <u>기밀성, 무결성, 가용성</u>이 있으며 그 외에 <u>인증, 부인방지</u>가 포함됨</li>
+</ul>
+</li>
+<li>
+<p>Session Control 세션통제</p>
+<ul>
+<li>세션은 <u>서버와 클라이언트의 연결</u>을 의미하고 세션통제는 세션의 연결과 <u>연결로 인해 발생하는 정보를 관리</u>하는 것</li>
+</ul>
+</li>
+</ul>
+<h3 id="secure-sdlcsoftware-development-life-cycle-개념"><a class="markdownIt-Anchor" href="#secure-sdlcsoftware-development-life-cycle-개념"></a> Secure SDLC(Software Development Life Cycle) 개념</h3>
+<ul>
+<li>보안상 안전한 소프트웨어를 개발하기 위해 <u>소프트웨어 개발 생명주기에 보안 강화</u>를 위한 프로세스를 포함한 것</li>
+<li>소프트웨어 유지 보수 단계에서 <u>보안 이슈를 해결하기 위해 소모되는 많은 비용을 최소화</u>하기 위해 등장</li>
+<li>요구사항 분석, 설계, 구현, 테스트, 유지보수 등 <u>SDLC 전체 단계에 걸쳐 수행되어야 할 보안 활동을 제시</u></li>
+</ul>
+<h3 id="secure-sdlc-단계별-활동"><a class="markdownIt-Anchor" href="#secure-sdlc-단계별-활동"></a> Secure SDLC 단계별 활동</h3>
+<h4 id="1요구사항-분석-단계에서의-보안-활동"><a class="markdownIt-Anchor" href="#1요구사항-분석-단계에서의-보안-활동"></a> 1.요구사항 분석 단계에서의 보안 활동</h4>
+<ul>
+<li><u>보안 항목에 해당하는 요구사항을 식별</u>하는 작업을 수행</li>
+<li>전산화되는 정보가 가지고 있는 <u>보안 수준을 보안 요소별로 등급</u>을 구분하여 분류</li>
+<li><u>보안정책항목들의 출처, 요구수준, 세부내용을 문서화</u></li>
+<li>보안요소
+<ul>
+<li><b>기밀성</b>
+<ul>
+<li>시스템 내의 정보와 자원은 인가된 사용자에게만 접근 허용</li>
+</ul>
+</li>
+<li><b>무결성</b>
+<ul>
+<li>시스템 내의 저보는 오직 인가된 사용자만 수정가능</li>
+</ul>
+</li>
+<li><b>가용성</b>
+<ul>
+<li>인가 받은 사용자는 언제든지 사용 가능</li>
+</ul>
+</li>
+<li>인증
+<ul>
+<li>시스템 내 정보와 자원을 사용하려는 자가 합법적인 사용자인지 확인</li>
+</ul>
+</li>
+<li>부인방지
+<ul>
+<li>데이터를 송/수신한 자가 송/수신 사실을 부인할 수 없도록 증거 제공</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-설계-단계에서의-보안-활동"><a class="markdownIt-Anchor" href="#2-설계-단계에서의-보안-활동"></a> 2. 설계 단계에서의 보안 활동</h4>
+<ul>
+<li><u>식별된 보안 요구사항들을 소프트웨어 설계서에 반영하고, 보안 설계서를 작성</u></li>
+<li>소프트웨어에서 발생할 수 있는 위협을 식별하여 보안대책, 소요예산, 사고발생 시 영향범위와 대응책 수립</li>
+<li>환경에 대한 보안 통제 기준 수립 및 설계 반영
+<ul>
+<li>네트워크
+<ul>
+<li>외부의 사이버 공격으로부터 개발 환경을 보호하기 위해 네트워크를 분리하거나 방화벽 설치</li>
+</ul>
+</li>
+<li>서버
+<ul>
+<li>보안이 뛰어난 운영체제를 사용하고 보안 업데이트, 외부접속에 대한 접근통제 실시</li>
+</ul>
+</li>
+<li>물리적 보안
+<ul>
+<li>출입통제, 개발 공간 제한, 폐쇄회로</li>
+</ul>
+</li>
+<li>개발프로그램
+<ul>
+<li>허가 되지 않은 프로그램을 통제하고 지속적인 데이터 무결성 검사 실시</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-구현-단계에서의-보안-활동"><a class="markdownIt-Anchor" href="#3-구현-단계에서의-보안-활동"></a> 3. 구현 단계에서의 보안 활동</h4>
+<ul>
+<li><u>표준 코딩 정의서 및 소프트웨어 개발 보안 가이드를 준수</u>하며, 설계서에 따라 보안 요구사항들을 구현</li>
+<li>갭라 과정 중에는 <u>지속적인 단위 테스트</u>를 통해 소프트웨어에 발생할 수 있는 보안 <u>취약점을 최소화</u>
+<ul>
+<li>단위 테스트
+<ul>
+<li>프로그램의 단위기능을 구현하는 모듈이 정해진 기능을 정확히 수행하는지 검증</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>코드 점검 및 소스 코드 진단 작업을 통해 <u>소스 코드의 안정성</u> 확보</li>
+</ul>
+<h4 id="4-테스트-단계에서의-보안-활동"><a class="markdownIt-Anchor" href="#4-테스트-단계에서의-보안-활동"></a> 4. 테스트 단계에서의 보안 활동</h4>
+<ul>
+<li>설계 단계에서 작성한 <u>보안 설계서를 바탕으로 보안 사항들이 정확히 반영되고 동작하는지 점검</u></li>
+<li>동적 분석 도구 또는 모의 침투테스트를 통해 설계 단계에서 식별된 위협들의 해결 여부 검증</li>
+<li>구현 단계에서 추가로 제시된 위협들과 취약점들을 점검할 수 있도록 테스트 계획을 수립하고 시행</li>
+<li>테스트 단계에서 수행한 <u>모든 결과는 문서화, 개발자에게 피드백 </u></li>
+</ul>
+<h4 id="5-유지보수-단계에서의-보안-활동"><a class="markdownIt-Anchor" href="#5-유지보수-단계에서의-보안-활동"></a> 5. 유지보수 단계에서의 보안 활동</h4>
+<ul>
+<li>이전 과정을 모두 수행했음에도 발생할 수 있는 보안사고들을 식별</li>
+<li>사고 발생 시 이를 해결하고 보안 패치를 설치</li>
+<li><b>보안 이슈</b>는 유지보수 단계</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/26/NLP-BASIC/Machine_Translation/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Machine Translation">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-26T11:16:41.000Z">2020-04-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 467 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/26/NLP-BASIC/Machine_Translation/">Machine Translation</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="neural-machine-translation"><a class="markdownIt-Anchor" href="#neural-machine-translation"></a> Neural Machine Translation</h3>
+<ul>
+<li>기계번역</li>
+<li>Sequence to Sequence
+<ul>
+<li>Encoder</li>
+<li>Decoder</li>
+<li>From English to Korean</li>
+<li>From German to Korean</li>
+<li>Speech to Text</li>
+<li>Text to Speech</li>
+</ul>
+</li>
+</ul>
+<h3 id="process"><a class="markdownIt-Anchor" href="#process"></a> Process</h3>
+<ul>
+<li>
+<p>Sequence to Sequence<br />
+<img src="/images/NLP/0426_05.png" alt="s2s" /><br />
+인코더와 디코더의 구조. 인코더는 이용하고자 하는 대상 즉 소스. 한글에서 영어로 번역하는 태스크 일때, 인코더는 한글데이터 디코더는 영어데이터. 한글문장을 바꾸어보자.<br />
+한글 형태소 토크나이저를 이용해 나누기. 그게 x1, x2, x3 … xj가 된다. 그다음 corpus(단어사전)를 만든다. 해당단어를 인덱스로 바꾸어준다. x1은 넘버링이 들어가고 넘버링을 원-핫 벡터로 치환해서 들어간다. 파란색이 임베딩 벡터를 가져옴 RNN input으로 들어감 그전에 weight 매트릭스를 곱하고 바이어스가 더해진 값이 들어간다.<br />
+Encoder의 output 값이 Decoder의 input 값이 된다.<br />
+SOS는 Start of Sentence<br />
+EOS는 End of Sentence<br />
+y1는 영어딕셔너리에서 뽑힌 값이다.<br />
+y1은 softmax를 통해서 가장 큰 값을 뽑아준다.</p>
+</li>
+<li>
+<p>with Attention<br />
+<img src="/images/NLP/0426_06.png" alt="attention" /><br />
+hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hidden state 값과 y2의 hidden state 값을 전부 내적한다. 어떤 스칼라의 값을 Attention Weight를 계산한다. 전부 0~1사이의 값으로 각각 바뀐다. 총 합이 1이 된다. 그리고 context vector로 만들어준다. 각 hidden state 별로 얼마나 가중있게 보아야하는지 척도를 알 수 있다.</p>
+</li>
+</ul>
+<h3 id="transformer"><a class="markdownIt-Anchor" href="#transformer"></a> Transformer</h3>
+<p><img src="/images/NLP/0426_07.png" alt="transformer" /></p>
+<ul>
+<li>Attention is all you need(Ashishi Vaswani et al, 2017)</li>
+<li>기존에는 RNN구조를 이용해서 Seq2Seq을 풀어냈다면 이 논문에서는 Attention 매커니즘만 이용하겠다. 훨씬 더 기계번역이 좋다.</li>
+<li>Using Only Attention Mechanism for Seq2Seq</li>
+<li>Basic concept of BERT</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/26/NLP-BASIC/Sequence_Tagging/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Sequence_Tagging">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-26T10:59:00.000Z">2020-04-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 405 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/26/NLP-BASIC/Sequence_Tagging/">Sequence_Tagging</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="tagging"><a class="markdownIt-Anchor" href="#tagging"></a> Tagging</h3>
+<ul>
+<li>
+<p>Make Label about the sentences</p>
+</li>
+<li>
+<p>레이블을 붙이는 과정</p>
+<ul>
+<li>This moive is so nice -&gt; Positive</li>
+<li>This moive is so boring -&gt; Negative</li>
+</ul>
+</li>
+<li>
+<p>Pair of Sentence and Label</p>
+</li>
+<li>
+<p>문장과 레이블에 대해 쌍관계를 유지하는걸 태깅</p>
+<ul>
+<li>It can use other Machine Learning Model’s Input Data</li>
+<li>이것을 바탕으로 데이터를 input할 수 수 있음</li>
+</ul>
+</li>
+</ul>
+<h4 id="sentiment-analysis"><a class="markdownIt-Anchor" href="#sentiment-analysis"></a> Sentiment Analysis</h4>
+<ul>
+<li>감성분석데이터</li>
+<li>어떤 문장에 대해서 긍정/부정, 평점등으로 평가하는데 이걸 예측하는 것</li>
+<li>Benchmark Dataset 논문에서 많이 이용됨
+<ul>
+<li>IMDB (Internet Moive DataBase)</li>
+<li>Yelp (음식점평)</li>
+<li>Amazon Review (도서평)</li>
+</ul>
+</li>
+<li>Crawling
+<ul>
+<li>네이버 영화 평</li>
+<li>yes24 도서 평</li>
+</ul>
+</li>
+</ul>
+<h4 id="question-answering"><a class="markdownIt-Anchor" href="#question-answering"></a> Question Answering</h4>
+<p>특정한 문단과 질문을 넣었을 때 딥러닝 모델이 답변을 주는 것</p>
+<ul>
+<li>Benchmark Dataset
+<ul>
+<li>SQuAD.(1.1,2.0) 스탠퍼드 QnA</li>
+<li>WikiQA</li>
+<li>CoQA</li>
+</ul>
+</li>
+</ul>
+<h4 id="pos"><a class="markdownIt-Anchor" href="#pos"></a> POS</h4>
+<ul>
+<li>Part-of-Speech Tagging
+<ul>
+<li>문장에서 해당 단어들이 어떤 역할을 하는지</li>
+<li>주어, 목적어, 서술어 등</li>
+</ul>
+</li>
+<li>Benchmark Dataset
+<ul>
+<li>Penn Treebank</li>
+<li>UD</li>
+</ul>
+</li>
+</ul>
+<h3 id="process"><a class="markdownIt-Anchor" href="#process"></a> Process</h3>
+<blockquote>
+<p>빨간색 Input<br />
+파란색 Output<br />
+초록색 RNN, LSTM, GRU<br />
+숫자는 시점</p>
+</blockquote>
+<p>빨간색에 문장을 넣으면<br />
+파란색에는 Postive</p>
+<ul>
+<li>
+<p>RNN</p>
+</li>
+<li>
+<p>hideen state를 바탕으로 태깅</p>
+<ul>
+<li>기본 RNN<br />
+<img src="/images/NLP/0426_01.png" alt="RNN1" /></li>
+<li>Stack RNN
+<ul>
+<li>Hidden state 결과를 새로운 input으로 받음<br />
+<img src="/images/NLP/0426_02.png" alt="RNN2" /></li>
+</ul>
+</li>
+<li>Bidirectional RNN
+<ul>
+<li>forward</li>
+<li>backward</li>
+<li>같은 시점에는 Concat 진행<br />
+<img src="/images/NLP/0426_03.png" alt="RNN3" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>CNN</p>
+</li>
+<li>
+<p>Convolutional Neural Networks for Sentence Classification(Yoon Kim et al, 2014)</p>
+</li>
+<li>
+<p>문장에 대해서 filter size(2,3,4,5)에 대해 합성곱을 하여 진행</p>
+</li>
+<li>
+<p>스트라이딩을 돌면서 feature maps을 만듬</p>
+</li>
+<li>
+<p>같은 레벨의 feature map에 max pooling을 진행</p>
+</li>
+<li>
+<p>문장특징을 뽑음</p>
+</li>
+<li>
+<p>해당 결과값에 대해 Fully connected layer를 통해 최종 결과를 낸다<br />
+<img src="/images/NLP/0426_04.png" alt="CNN1" /></p>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구현 - 핵심정리">
         </a>
@@ -172,9 +723,13 @@
             
         </h1>
         <div class="content">
-            <h2 id="시스템보안구축"><a href="#시스템보안구축" class="headerlink" title="시스템보안구축"></a>시스템보안구축</h2><h3 id="시스템보안구현-핵심정리"><a href="#시스템보안구현-핵심정리" class="headerlink" title="시스템보안구현 핵심정리"></a>시스템보안구현 핵심정리</h3><h3 id="로그분석"><a href="#로그분석" class="headerlink" title="로그분석"></a>로그분석</h3><ul>
+            <h2 id="시스템보안구축"><a class="markdownIt-Anchor" href="#시스템보안구축"></a> 시스템보안구축</h2>
+<h3 id="시스템보안구현-핵심정리"><a class="markdownIt-Anchor" href="#시스템보안구현-핵심정리"></a> 시스템보안구현 핵심정리</h3>
+<h3 id="로그분석"><a class="markdownIt-Anchor" href="#로그분석"></a> 로그분석</h3>
+<ul>
 <li>로그는 시스템 사용에 대한 모든 내역을 기록해 놓은 것으로 로그를 분석하여 시스템에 대한 침입 흔적이나 취약점 확인 가능</li>
-<li>리눅스 주요 로그 파일<table>
+<li>리눅스 주요 로그 파일
+<table>
 <thead>
 <tr>
 <th>로그</th>
@@ -183,7 +738,8 @@
 <th>내용</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>커널로그</td>
 <td><b><u>/dev/console</u></b></td>
 <td>kernel</td>
@@ -225,12 +781,15 @@
 <td>sendmail popper</td>
 <td><u>송수신 메일</u>에 대한 로그를 기록</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 </li>
 </ul>
-<h3 id="보안솔루션"><a href="#보안솔루션" class="headerlink" title="보안솔루션"></a>보안솔루션</h3><ul>
+<h3 id="보안솔루션"><a class="markdownIt-Anchor" href="#보안솔루션"></a> 보안솔루션</h3>
+<ul>
 <li>접근 통제, 침입차단 및 탐지 등을 수행하는 외부로 부터의 붋법적인 침입을 막는 기술 및 시스템</li>
-<li>주요 보안 솔루션<ul>
+<li>주요 보안 솔루션
+<ul>
 <li>방화벽</li>
 <li>IDS 침입 탐지 시스템</li>
 <li>IPS 침입 방지 시스템</li>
@@ -241,569 +800,17 @@
 </ul>
 </li>
 </ul>
-<h3 id="취약점-분석"><a href="#취약점-분석" class="headerlink" title="취약점 분석"></a>취약점 분석</h3><ul>
+<h3 id="취약점-분석"><a class="markdownIt-Anchor" href="#취약점-분석"></a> 취약점 분석</h3>
+<ul>
 <li>사이버 위협으로부터 정보시스템의 취약점을 분석 및 평가한 후 개선하는 일련의 과정</li>
-<li>수행 절차 및 방법<ol>
+<li>수행 절차 및 방법
+<ol>
 <li>취약점 분석/평가 계획 수립</li>
 <li>취약점 분석/평가 대상 선별</li>
 <li>취약점 분석 수행</li>
 <li>취약점 평가 수행</li>
 </ol>
 </li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구현 - 취약점분석">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-26T04:12:30.000Z">2020-04-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">시스템보안구축</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (대략 457 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/">시스템보안구현 - 취약점분석</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="시스템보안구축"><a href="#시스템보안구축" class="headerlink" title="시스템보안구축"></a>시스템보안구축</h2><h3 id="시스템보안구현"><a href="#시스템보안구현" class="headerlink" title="시스템보안구현"></a>시스템보안구현</h3><h3 id="취약점분석"><a href="#취약점분석" class="headerlink" title="취약점분석"></a>취약점분석</h3><h4 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h4><ul>
-<li>취약점 분석/평가의 개념<ul>
-<li><u>사이버 위협으로 부터 정보시스템의 취약점을 분석 및 평가한 후 <b>개선</b>하는 일련의 과정</u></li>
-<li>안정적인 정보시스템의 운영을 방해하는 사이버 위협에 대한 항목별 점검항목 파악후 취약점 분석 수행</li>
-<li>취약점이 발견되면 위험 등급 부여 후 개선 방향 수립</li>
-</ul>
-</li>
-</ul>
-<h4 id="범위-및-항목"><a href="#범위-및-항목" class="headerlink" title="범위 및 항목"></a>범위 및 항목</h4><ul>
-<li>취약점 분석/평가 범위 및 항목<ul>
-<li>정보시스템과 정보시스템 자산에 직/간접적으로 관여된 <u>물리적, 관리적, 기술적 분야</u>를 포함</li>
-<li><u>상, 중, 하 3 단계로 중요도 분리</u></li>
-<li>‘상’인 항목은 필수적으로 점검</li>
-<li>‘중’, ‘하’는 선택적으로 점검</li>
-</ul>
-</li>
-</ul>
-<h4 id="수행-절차-및-방법"><a href="#수행-절차-및-방법" class="headerlink" title="수행 절차 및 방법"></a>수행 절차 및 방법</h4><ol>
-<li>취약점 분석/평가 계획 수립<ul>
-<li>수행주체, 수행절차, 소요예산, 산출물 등의 세부 계획 수립</li>
-</ul>
-</li>
-<li>취약점 분석/평가 대상 선별<ul>
-<li>자산을 식별하고 유형별로 그룹화하여 평가 대상 목록을 작성</li>
-<li>식별된 대상 목록의 각 자산에 대해 중요도 산정</li>
-</ul>
-</li>
-<li><b>취약점 분석 수행</b><ul>
-<li>관리적, 물리적, 기술적 세부 점검 항목표 작성</li>
-<li>관리적 점검<ul>
-<li>정보보호 정책, 지침 등 관련 문서 확인</li>
-<li>정보보호 담당자, 시스템 관리자, 사용자 등과 면담</li>
-</ul>
-</li>
-<li>물리적 점검<ul>
-<li>전산실, 발전실 등 통제구역 현장 점검</li>
-</ul>
-</li>
-<li>기술적 점검<ul>
-<li>점검도구</li>
-<li>모의 해킹</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><b>취약점 평가 수행</b><ul>
-<li><u>세부 결과</u>를 작성</li>
-<li>위험등급 ‘상,중,하’ 표시</li>
-<li>‘상’ 은 조기 개선</li>
-<li>‘중’, ‘하’ 는 장기 개선으로 구분 후 개선 방향 수립</li>
-</ul>
-</li>
-</ol>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구현 - 보안솔루션">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-26T03:50:36.000Z">2020-04-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">시스템보안구축</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7분 읽기 (대략 1002 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/">시스템보안구현 - 보안솔루션</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="시스템보안구축"><a href="#시스템보안구축" class="headerlink" title="시스템보안구축"></a>시스템보안구축</h2><h3 id="시스템보안구현"><a href="#시스템보안구현" class="headerlink" title="시스템보안구현"></a>시스템보안구현</h3><h3 id="보안솔루션-개념"><a href="#보안솔루션-개념" class="headerlink" title="보안솔루션 개념"></a>보안솔루션 개념</h3><ul>
-<li><p>접근통제, 침입 차단 및 탐지 등을 수행하여 외부로부터 불법적인 침입을 막는 기술 시스템</p>
-</li>
-<li><p>주요 보안 솔루션</p>
-<ul>
-<li>방화벽</li>
-<li>IDS 침입 탐지 시스템</li>
-<li>IPS 침입 방지 시스템</li>
-<li>DLP 데이터 유출 방지</li>
-<li>웹 방화벽</li>
-<li>VPN</li>
-<li>NAC</li>
-</ul>
-</li>
-<li><p>Firewall 방화벽</p>
-<ul>
-<li>조직 내부의 네트워크와 인터넷 간에 전송되는 정보를 선별하여 수용/거부/수정하는 기능을 가진 <u>침입 차단 시스템</u></li>
-<li>내부 네트워크에서 <u>외부로 나가는 패킷은 그대로 통과</u>시킴</li>
-<li>외부에서 <u>내부 네트워크로 들어오는 패킷은 내용을 엄밀히 체크하여 인증된 패킷만 통과</u>시키는 구조</li>
-<li>해킹등으로 의한 외부로의 정보 유출을 막기 위해 사용</li>
-</ul>
-</li>
-<li><p>IDS(Intrusion Detection System) 침입 탐지 시스템</p>
-<ul>
-<li><u>컴퓨터의 비정상적인 사용, 오용, 남용 등을 실시간으로 탐지하는 시스템</u></li>
-<li>내부 사용자의 불법적인 행동과 외부 해킹에 100% 대처는 불가능</li>
-<li>문제발생시 해커 침앱 패턴에 대한 <u>추적과 유해 정보 감시 필요</u></li>
-<li>종류<ul>
-<li>오용탐지<ul>
-<li>미리 입력해둔 공격 패턴이 감지되면 알려줌</li>
-</ul>
-</li>
-<li>이상탐지<ul>
-<li>비정상적인 행위나 자원이 사용되면 알려줌</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>IPS(Intrusion Prevention System) 침입 방지 시스템</p>
-<ul>
-<li><u>방화벽 + 침입 탐지 시스템을 결합</u></li>
-<li>비정상적인 트래픽을 능동적으로 차단하고 격리하는 등의 방어 조치를 취하는 보안 솔루션</li>
-<li>침입 탐지 기능으로 패킷을 하나씩 검사한 후 비정상적인 패킷이 탐지되면 방화벽 기능으로 해당 패킷을 차단</li>
-</ul>
-</li>
-<li><p>DLP)Data Leakage/Loss Prevention) 데이터 유출 방지</p>
-<ul>
-<li><u>내부 정보의 외부 유출을 방지하는 보안 솔루션</u></li>
-<li>사내PC 및 네트워크상의 모든 정보 검색하고 <u>메일, 메신저, 웹하드, 프린트</u> 등의 사용자 행위를 탐지 및 통제함으로써 방지</li>
-</ul>
-</li>
-<li><p>Web Firewall 웹 방화벽</p>
-<ul>
-<li>일반 방화벽이 탐지하지 못하는 <u>SQL 삽입공격, Cross-Site Scripting(XSS)</u> 등의 웹 기반 공격을 방어할 목적으로 만들어진 <u><b>웹 서버에 특화된 방화벽</b></u></li>
-<li>웹 관련 공격을 감시하고 도달하기 전에 차단</li>
-</ul>
-</li>
-<li><p>VPN(Virtual Private Network, 가상 사설 통신망)</p>
-<ul>
-<li>인터넷 등 통신 사업자의 <u>공중 네트워크에 암호화 기술을 이용하여 사용자가 마치 자신의 전용 회선을 사용하는 것처럼 해주는 보안 솔루션</u></li>
-<li>암호화된 규격을 통해 인터넷망을 전용선의 사설망을 구축한 것처럼 이용<ul>
-<li>비용 부담이 줄어듬</li>
-<li>원격지의 지사, 이동 근무자가 지역적 제한 없어짐 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>NAC(Network Access Control)</p>
-<ul>
-<li>네트워크에 접속하는 <u>내부PC의 MAC주소를 IP관리시스템에 등록한 후 일관된 보안 관리 기능을 제공</u>하는 보안솔루션<ul>
-<li>MAC주소<ul>
-<li>랜카드</li>
-<li>48bit</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>내부PC의 소프트웨어 사용 현황을 관리하여 <u>불법적인 소프트웨어 설치를 방지</u></li>
-<li>일반적인 배포 관리 기능을 이용해 <u>백신이나 보안 패치 등의 설치 및 업그레이드 수행</u></li>
-<li>네트워크에 접속한 <u>비인가된 시스템을 자동으로 검출하여 자산을 관리</u></li>
-</ul>
-</li>
-<li><p>ESM(Enterprise Security Management)</p>
-<ul>
-<li><u>다양한 장비에서 발생하는 로그 및 보안 이벤트를 통하여 관리하는 보안 솔루션</u></li>
-<li>로그(방화벽, IDS, IPS, VPN) 및 보안 이벤트를 <b>통합하여 관리함</b>으로써 <u>비용 및 자원 절약</u></li>
-<li>보안 솔루션 간의 상호 연동을 통해 <u>종합적인 보완 관리체계</u> 수립 가능</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안구현 - 로그분석">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-26T03:21:14.000Z">2020-04-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">시스템보안구축</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5분 읽기 (대략 787 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/">시스템보안구현 - 로그분석</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="시스템보안구축"><a href="#시스템보안구축" class="headerlink" title="시스템보안구축"></a>시스템보안구축</h2><h3 id="시스템보안구현"><a href="#시스템보안구현" class="headerlink" title="시스템보안구현"></a>시스템보안구현</h3><ul>
-<li>로그 분석의 개념과 리눅스와 윈도우에서의 주요 <b>로그분석대상</b>을 이해</li>
-<li>보안 솔루션의 개념과 <b>보안 솔루션의 종류별 특징</b>을 이해</li>
-<li><b>취약점 분석/평가</b>의 개념과 범위 및 항목, 수행 절차를 이해</li>
-</ul>
-<h3 id="로그-분석"><a href="#로그-분석" class="headerlink" title="로그 분석"></a>로그 분석</h3><ul>
-<li><p>로그</p>
-<ul>
-<li>시스템 사용에 대한 <u>모든 내역을 기록</u>해 놓은 것</li>
-<li>로그 분석을 통해 시스템에 대한 침입 흔적이나 <u>취약점 확인</u> 가능</li>
-<li>로그 정보를 이용하면 <u>시스템 침해 사고 발생 시 해킹 흔적이나 공격 기법 파악 가능</u></li>
-</ul>
-</li>
-<li><p>Linux 리눅스 로그</p>
-<ul>
-<li><u>var/log 디렉토리에 기록 관리</u></li>
-<li>syslogd 데몬<ul>
-<li>로그 파일 관리</li>
-<li>etc/syslog.conf 읽어 로그 관련 파일들의 위치 파악 후 로그 작업 시작<ul>
-<li>데몬<ul>
-<li>사용자의 직접적인 개입없이 특정 상태가 되면 자동으로 동작하는 시스템 프로그램</li>
-<li>Linux, Unix 는 데몬</li>
-<li>Window 는 서비스</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>syslog.conf 파일을 수정하여 로그 관련 파일들의 <u>저장 위치와 파일명 변경 가능</u></li>
-</ul>
-</li>
-<li><p>리눅스 주요 로그 파일</p>
-<table>
-<thead>
-<tr>
-<th>로그</th>
-<th>파일명</th>
-<th>데몬</th>
-<th>내용</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>커널로그</td>
-<td><b><u>/dev/console</u></b></td>
-<td>kernel</td>
-<td>커널에 관련된 내용을 관리자에게 알리기 위해 파일로 저장하지 않고 <u>지정된 장치에 표시</u></td>
-</tr>
-<tr>
-<td>부팅로그</td>
-<td>/var/log/boot.log</td>
-<td>boot</td>
-<td><u>부팅 시 나타나는 메시지</u>들을 기록</td>
-</tr>
-<tr>
-<td>크론로그</td>
-<td>/var/log/cron</td>
-<td>crond</td>
-<td><u>작업 스케줄러</u>인 crond의 작업 내역을 기록</td>
-</tr>
-<tr>
-<td>시스템로그</td>
-<td>/var/log/messages</td>
-<td>syslogd</td>
-<td>커널에서 <u>실시간</u>으로 보내오는 메시지들을 기록</td>
-</tr>
-<tr>
-<td>보안로그</td>
-<td>/var/log/secure</td>
-<td>xinetd</td>
-<td>시스템의 <u>접속</u>에 대한 로그를 기록</td>
-</tr>
-<tr>
-<td>FTP로그</td>
-<td>/var/log/xferlog</td>
-<td>ftpd</td>
-<td>FTP로 접속하는 사용자에 대한 로그를 기록</td>
-</tr>
-<tr>
-<td>메일로그</td>
-<td>/var/log/mailog</td>
-<td>sendmail popper</td>
-<td><u>송수신 메일</u>에 대한 로그를 기록</td>
-</tr>
-</tbody></table>
-<ul>
-<li>커널<ul>
-<li>운영체제에서 가장 <u>핵심적인</u> 부분으로 하드웨어를 보호하고 프로그램과 하드웨어 간의 <u>인터페이스 역할</u>을 담당</li>
-<li>프로세스 관리</li>
-<li>기억장치 관리</li>
-<li>파일 관리</li>
-<li>입/출력 관리</li>
-<li>프로세스 간 통신 데이터 전송 및 변환</li>
-<li><b>커널의 로그파일은 Console</b></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Window 윈도우 로그</p>
-<ul>
-<li>이벤트 뷰어를 이용하여 이벤트 로그 확인</li>
-<li>[제어판]-[관리도구]-[이벤트뷰어]</li>
-<li>C:\Windows\System32\winevt\Logs</li>
-</ul>
-</li>
-<li><p>윈도우 이벤트 뷰어의 로그</p>
-<table>
-<thead>
-<tr>
-<th>로그</th>
-<th>내용</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>응용프로그램</td>
-<td>응용프로그램에서 발생하는 이벤트 기록</td>
-</tr>
-<tr>
-<td>보안</td>
-<td>로그온 시도, 파일이나 객체 생성, 조회, 제거 등의 리소스 사용관련 이벤트 기록</td>
-</tr>
-<tr>
-<td>시스템</td>
-<td>Windows 시스템 구성요소에 의해 발생하는 이벤트 기록</td>
-</tr>
-<tr>
-<td>Setup</td>
-<td>프로그램설치와 관련된 이벤트 기록</td>
-</tr>
-<tr>
-<td>Forwarded Events</td>
-<td>다른 컴퓨터와의 상호작용으로 발생하는 이벤트기록</td>
-</tr>
-</tbody></table>
-<ul>
-<li>로그인은 <b>보안</b> 로그 항목에 기록되는 내용</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 핵심정리">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-25T18:25:27.000Z">2020-04-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4분 읽기 (대략 544 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC.md/">시스템보안설계 - 핵심정리</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="시스템보안구축"><a href="#시스템보안구축" class="headerlink" title="시스템보안구축"></a>시스템보안구축</h2><h3 id="시스템-보안-설계-핵심정리"><a href="#시스템-보안-설계-핵심정리" class="headerlink" title="시스템 보안 설계 핵심정리"></a>시스템 보안 설계 핵심정리</h3><h3 id="서비스-공격-유형"><a href="#서비스-공격-유형" class="headerlink" title="서비스 공격 유형"></a>서비스 공격 유형</h3><ul>
-<li>서비스 거부 공격의 종류<ul>
-<li>Ping Flood</li>
-<li>Ping of Death</li>
-<li>Smurfing</li>
-<li>SYN Flooding</li>
-<li>TearDrop</li>
-<li>Land</li>
-<li>DDos</li>
-</ul>
-</li>
-<li>네트워크 침해 공격<ul>
-<li>Smishing</li>
-<li>APT</li>
-<li>Spear Phishing</li>
-<li>Qshing</li>
-</ul>
-</li>
-<li>정보 보안 침해 공격<ul>
-<li>Botnet</li>
-<li>Worm</li>
-<li>Zero Day Attack</li>
-<li>Ransomeware</li>
-<li>Trojan Horse</li>
-<li>Key Logger Attack</li>
-</ul>
-</li>
-</ul>
-<h3 id="서버-인증"><a href="#서버-인증" class="headerlink" title="서버 인증"></a>서버 인증</h3><ul>
-<li>보안 서버는 인터넷을 통해 개인정보를 암호화하여 송/수신할 수 있는 기능을 갖춘 서버<br>인증은 다중 사용자 컴퓨터나 시스템이나 네트워크 시스템에서 로그인을 요청한 사용자의 정보를 확인하고 접근 권한을 검증하는 보안 절차</li>
-<li>인증의 종류<ul>
-<li>지식기반인증</li>
-<li>소유기반인증</li>
-<li>생체기반인증</li>
-<li>행위기반인증</li>
-</ul>
-</li>
-</ul>
-<h3 id="서버-접근통제"><a href="#서버-접근통제" class="headerlink" title="서버 접근통제"></a>서버 접근통제</h3><ul>
-<li>사용자 및 장비의 접근 필요성에 따라 정보자산에 대한 접근 권한을 부여함으로써 비인가자의 무단 접근을 제한</li>
-<li>접근통제의 3요소<ul>
-<li>정책</li>
-<li>메커니즘</li>
-<li>보안모델</li>
-</ul>
-</li>
-<li>접근통제 정책 종류<ul>
-<li>임의적 접근통제</li>
-<li>강제적 접근통제</li>
-<li>역할기반 접근통제</li>
-<li>접근통제 행렬</li>
-<li>접근제어(AC)</li>
-</ul>
-</li>
-</ul>
-<h3 id="보안-아키텍처"><a href="#보안-아키텍처" class="headerlink" title="보안 아키텍처"></a>보안 아키텍처</h3><ul>
-<li>정보시스템의 무결성, 가용성, 기밀성을 확보하기 위해 보안 요소 및 보안 체계를 식별하고 이들간의 관계를 정의한 구조</li>
-<li>관리적, 물리적, 기술적 보안 개념의 수립, 보안관리 능력 향상, 일관된 보안 수준의 유지를 기대</li>
-<li>보안 수준에 변화가 생겨도 기본 보안 아키텍처의 수정 없이 지원할 수 있어야 함</li>
-<li>보안 요구사항의 변화나 추가를 수용할 수 있어야 함</li>
-</ul>
-<h3 id="보안-프레임워크"><a href="#보안-프레임워크" class="headerlink" title="보안 프레임워크"></a>보안 프레임워크</h3><ul>
-<li>프레임워크는 뼈대, 골조를 의미</li>
-<li>안전한 정보시스템 환경을 유지하고 보안 수준을 향상시키기 위한 체계</li>
-<li>ISO 27001은 정보보안 관리를 위한 국제 표준으로 일종의 보안 인증이자 가장 대표적인 보안 프레임워크</li>
 </ul>
 
         </div>
@@ -844,7 +851,7 @@
             
             <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/14/">14</a></li>
             
         </ul>
     </nav>
@@ -895,7 +902,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            65
+                            69
                         </p>
                     </a>
                 </div>
@@ -907,7 +914,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            20
+                            21
                         </p>
                     </a>
                 </div>
@@ -919,7 +926,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            51
+                            54
                         </p>
                     </a>
                 </div>
@@ -1049,7 +1056,7 @@
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">38</span>
+                <span class="level-item tag">42</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -1068,12 +1075,20 @@
                 <span class="level-item tag">3</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">
+        <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">
             <span class="level-start">
-                <span class="level-item">SW개발방법론활용</span>
+                <span class="level-item">SW개발방법론선정</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">
+            <span class="level-start">
+                <span class="level-item">SW개발방법론테일러링</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -1150,7 +1165,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">SW생명주기모델</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.5px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 12.5px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 12.5px;">데이터사이언스개념</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 10px;">예외처리</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 12.5px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.5px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 15px;">핵심정리</a>
+        <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/" style="font-size: 10px;">SW개발방법론선정</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" style="font-size: 10px;">SW개발표준</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.5px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 12.5px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 12.5px;">데이터사이언스개념</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">소프트웨어개발프레임워크</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 10px;">예외처리</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 12.5px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" style="font-size: 10px;">테일러링기준</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.5px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 15px;">핵심정리</a>
     </div>
 </div>
     
@@ -1165,7 +1180,83 @@
         
         <article class="media">
             
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:44:31.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 소프트웨어 개발 프레임워크">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:32:21.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 소프트웨어 개발 프레임워크</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 테일러링 기준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:22:00.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 테일러링 기준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 개발 표준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T06:52:04.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 개발 표준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
                 </p>
@@ -1174,85 +1265,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:50:17.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 비용 산정 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:11:56.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 비용 산정 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 요구공학 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:54.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 요구공학 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW개발 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:50.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW개발 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 생명주기 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T06:44:24.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 생명주기 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">SW개발방법론선정</a>
                     </p>
                 </div>
             </div>
@@ -1275,7 +1290,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1393,6 +1408,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">
+                        <span class="tag">SW개발방법론선정</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/">
                         <span class="tag">SW개발보안정책</span>
                         <span class="tag is-grey">1</span>
@@ -1400,15 +1422,15 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
-                        <span class="tag">SW관련신기술</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/">
+                        <span class="tag">SW개발표준</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/">
-                        <span class="tag">SW생명주기모델</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
+                        <span class="tag">SW관련신기술</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1589,6 +1611,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/">
+                        <span class="tag">소프트웨어개발프레임워크</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">
                         <span class="tag">암호알고리즘</span>
                         <span class="tag is-grey">1</span>
@@ -1633,7 +1662,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">38</span>
+                        <span class="tag is-grey">42</span>
                     </a>
                 </div>
                 
@@ -1659,6 +1688,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/">
+                        <span class="tag">테일러링기준</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
                         <span class="tag is-grey">11</span>
@@ -1668,7 +1704,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
@@ -1696,7 +1732,83 @@
         
         <article class="media">
             
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:44:31.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 소프트웨어 개발 프레임워크">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:32:21.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 소프트웨어 개발 프레임워크</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 테일러링 기준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:22:00.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 테일러링 기준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 개발 표준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T06:52:04.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 개발 표준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
                 </p>
@@ -1705,85 +1817,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:50:17.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 비용 산정 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:11:56.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 비용 산정 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 요구공학 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:54.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 요구공학 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW개발 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:50.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW개발 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 생명주기 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T06:44:24.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 생명주기 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">SW개발방법론선정</a>
                     </p>
                 </div>
             </div>
@@ -1806,7 +1842,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1924,6 +1960,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">
+                        <span class="tag">SW개발방법론선정</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/">
                         <span class="tag">SW개발보안정책</span>
                         <span class="tag is-grey">1</span>
@@ -1931,15 +1974,15 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
-                        <span class="tag">SW관련신기술</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/">
+                        <span class="tag">SW개발표준</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/">
-                        <span class="tag">SW생명주기모델</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
+                        <span class="tag">SW관련신기술</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2120,6 +2163,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/">
+                        <span class="tag">소프트웨어개발프레임워크</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">
                         <span class="tag">암호알고리즘</span>
                         <span class="tag is-grey">1</span>
@@ -2164,7 +2214,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">38</span>
+                        <span class="tag is-grey">42</span>
                     </a>
                 </div>
                 
@@ -2190,6 +2240,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/">
+                        <span class="tag">테일러링기준</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
                         <span class="tag is-grey">11</span>
@@ -2199,7 +2256,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
@@ -2227,8 +2284,7 @@
                 &copy; 2020 Hyeonukdev&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
-                
-                <br>
+
                  <!--만약 busuanzi 가 활성화됐으면-->
                     <br>
                     <span id="busuanzi_container_site_pv"> 
@@ -2237,7 +2293,6 @@
                     <span id="busuanzi_container_site_uv">
                         총 방문자 <span id="busuanzi_value_site_uv"></span> 명
                     </span>
-                    
                 
                 </p>
             </div>

@@ -140,6 +140,670 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/25/NLP-BASIC/VectorforNLP/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Vector for NLP">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T07:04:38.000Z">2020-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 688 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/25/NLP-BASIC/VectorforNLP/">Vector for NLP</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="라이브러리-소개"><a class="markdownIt-Anchor" href="#라이브러리-소개"></a> 라이브러리 소개</h2>
+<h3 id="representation-vector"><a class="markdownIt-Anchor" href="#representation-vector"></a> Representation Vector</h3>
+<h3 id="background"><a class="markdownIt-Anchor" href="#background"></a> Background</h3>
+<p>원-핫 인코딩을 표현한 벡터, 트레인 데이터 셋 안에 전체 문장들의 합을 코퍼스라고 했을 때, 코퍼스 안에서 어떤 토크나이저를 거쳐서 딕셔너리를 만든다 -&gt; v가 된다</p>
+<ul>
+<li>
+<p>Make several tokens from sentences</p>
+</li>
+<li>
+<p>Build a Dictionary of words by indexing each token</p>
+</li>
+<li>
+<p>Make a Vector(Dimension : Number of Words)</p>
+</li>
+<li>
+<p>1 for the corresponding index with the remaining 0</p>
+</li>
+<li>
+<p>Orthogonal Vector -&gt; Lose of Context Information<br />
+Rome Paris는 역할이 비슷하지만 표현할 수 없다</p>
+</li>
+<li>
+<p>Sparse Vector -&gt; Curse of Dimensionality<br />
+벡터를 내적했을 때 값이 크면 유사도가 높지만 원-핫 인코딩 벡터는 1개 빼고 0 이 된다</p>
+</li>
+</ul>
+<p>두 가지 이유로 적합하지 않음 -&gt; 토크나이저를 쓰자</p>
+<h3 id="tokenizer"><a class="markdownIt-Anchor" href="#tokenizer"></a> Tokenizer</h3>
+<p>English -&gt; SPACY, NLTK<br />
+한국어는 형태소라는 것이 있기 때문에 띄어쓰기로는 애매할 수 있다.<br />
+이러한 것을 보완해서 한국어토큰이 별도 있다.<br />
+Korean -&gt; KoNLPy(Hannanum, Kkma, Komoran, Twitter), MECAB, KHAIII</p>
+<p>한국어의 사전에 따라 모델의 성능이 다르기 때문에 중요하다.</p>
+<p>넘버링이 되어 있는 단어를 어떻게 표현할 것인지 알아보자</p>
+<h3 id="word2vec"><a class="markdownIt-Anchor" href="#word2vec"></a> Word2Vec</h3>
+<ul>
+<li>Efficient Estimation of Word Representations in Vector Space(Tomas Mikolov et al, 2013)</li>
+</ul>
+<ol>
+<li>
+<p>CBOW 방식<br />
+w(t-2) ~ w(t+2)바탕으로 w(t)를 유추할 수 있도록 한다.<br />
+주변 단어들을 이용해서 중심단어를 학습한다.<br />
+w(t-2) : The<br />
+w(t-1) : quick<br />
+w(t) : brown  -&gt; output<br />
+w(t+1) : fox<br />
+w(t+2) : jumps<br />
+w(t-2)가 들어갔을 때 brown이 나올 수 있도록 학습하는 것.<br />
+중심단어를 이용해서 주변 단어를 학습한다.</p>
+<p>네모를 window라고 하고 중심단어로부터 주변단어까지의 사이즈를 window size라고한다</p>
+</li>
+<li>
+<p>Skip-gram 방식<br />
+w(t)를 바탕으로 w(t-2) ~ w(t+2)를 유추할 수 있도록 한다.</p>
+</li>
+</ol>
+<ul>
+<li>Objective Function : Learn to reflect similarity between two vectors</li>
+</ul>
+<p>The의 경우 빈도수가 높아서 과적합이 일어날 수 있다.<br />
+-&gt; Subsampling to get : Regularize</p>
+<p>전체 단어에 대한 대상으로 softmax를 계산하는 것이 아닌 window size 안에 있는 단어와 밖에 있는 단어는 샘플링하여 해당되는 내용을 바탕으로 softmax 계산을 한다.<br />
+-&gt; Negative Sampling to get Speed Up</p>
+<h3 id="glove"><a class="markdownIt-Anchor" href="#glove"></a> Glove</h3>
+<ul>
+<li>Global Vectors for Word Representation (Jeffrey Pennington et al, 2014)<br />
+co-occurrence 개념을 제시<br />
+window 밖에 있는 단어는 학습이 진행되지  않는 단점을 지적했다.</li>
+<li>Objective Function : Learn to reflect co-occurrence between two vectors<br />
+가정 : 한 문장안에 동시 출연된 단어는 연관성이 있을 것이다.</li>
+</ul>
+<p>연관성이 높으면 값이 높을 것이다</p>
+<h3 id="fasttext"><a class="markdownIt-Anchor" href="#fasttext"></a> FastText</h3>
+<ul>
+<li>Bag of Tricks for Efficient Text Classification (Armand Joulin et al, 2016)</li>
+<li>Objective Function : Learn to  reflect  similarity between two vectors<br />
+코퍼스를 형성하는 단어를 적게두자.<br />
+Unigrams<br />
+Bigrams<br />
+Trigrams<br />
+4-grams</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/25/NLP-BASIC/BackgroundofNLP/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Background of NLP">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T06:35:05.000Z">2020-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7분 읽기 (대략 1018 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/25/NLP-BASIC/BackgroundofNLP/">Background of NLP</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="basic-concept-of-machine-learning"><a class="markdownIt-Anchor" href="#basic-concept-of-machine-learning"></a> Basic Concept of Machine Learning</h3>
+<ul>
+<li>
+<p>예를 들어 호랑이와 고양이를 예측하는 인공지능을 만들고 싶다라고 한다면 모델입장에서는 두가지가 필요하다</p>
+<ul>
+<li>호랑이이미지 = 호랑이레이블</li>
+<li>고양이이미지 = 고양이레이블</li>
+</ul>
+</li>
+<li>
+<p>이렇게 레이블 정보(With Labels)를 활용해서 학습하는 것을 <strong>Supervised Learning</strong> <code>지도학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>반면, 레이블 정보 없이(No Labels) 이미지만을 활용해서 하는 것을 <strong>Unsupervised Learning</strong> <code>비지도학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>레이블정보가 아니라 입력이미지에 대해서 잘 분류하였으면 +1점, 잘 분류하지 못했으면 -1점 처럼 리워드를 주는 방식(With Rewards)을 <strong>Reinforcement Learning</strong> <code>강화학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>Machine Learning</p>
+<ul>
+<li>Supervised Learning
+<ul>
+<li>Regression : 수치형, <code>회기</code>, 아파트가격/주가예측</li>
+<li>Classification : 카테고리컬 variable, 클래스로 예측하는 것, <code>분류</code>, 남성/여성, 양성/음성</li>
+</ul>
+</li>
+<li>Unsupervise Learning
+<ul>
+<li>Clustering : 레이블이 없는 입력이미지를 바탕으로 학습할 때 유사하다고 계산이 되는 것을 <code>군집화</code> 하는 것</li>
+<li>Dimensionality Reduction : 데이터가 엄청나게 큰 벡터로 표현될 때 적은차원의 벡터로 표현 하는 것, 차원축소의 기법</li>
+</ul>
+</li>
+<li>Reinforcement Learning
+<ul>
+<li>Decision Process : 의사결정</li>
+<li>Game Ai : 게임 ai</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="process-of-machine-learning"><a class="markdownIt-Anchor" href="#process-of-machine-learning"></a> Process of Machine Learning</h3>
+<p>데이터 수집 -&gt; 해당 데이터를 전처리(해당 모델에 대해서 잘 이용할 수 있게 작업) -&gt; 모델링 -&gt; 학습한 모델의 성능을 평가</p>
+<ul>
+<li>
+<p>Data Collection</p>
+<ul>
+<li>Database</li>
+<li>Server</li>
+<li>API</li>
+</ul>
+</li>
+<li>
+<p>Preprocessing</p>
+<ul>
+<li>Not Available : 정형데이터의 경우 변수에 없는 값이 발생할 수 있다</li>
+<li>Scaling : 변수 간의 정보 반영이 단위 값에 따라 다를 수 있다
+<ul>
+<li>ex) 사람의 키는 cm 몸무게는 kg 인데 남자/여자 판별할 때 영향력이 1cm와 1kg은 다르다</li>
+</ul>
+</li>
+<li>Derived Variables : 파생변수(각 변수를 조합)를 만든다</li>
+</ul>
+</li>
+<li>
+<p>Modeling</p>
+<ul>
+<li>ML Model</li>
+<li>DL Model</li>
+<li>RL Model</li>
+</ul>
+</li>
+<li>
+<p>Performance Measure</p>
+<ul>
+<li>Accuracy : 얼마나 잘 분류했는지</li>
+<li>Mean Squared Error : 얼마나 잘 예측했는지 오차 계산</li>
+<li>Similarity : 얼마나 유사한지</li>
+</ul>
+</li>
+</ul>
+<h3 id="role-of-train-valid-test-dataset"><a class="markdownIt-Anchor" href="#role-of-train-valid-test-dataset"></a> Role of Train, Valid, Test Dataset</h3>
+<p>잘 활용하기 위해서는 3가지의 Dataset이 필요하다</p>
+<ul>
+<li>
+<p>Train</p>
+<ul>
+<li>학습을 하는데 이용한다</li>
+<li>학습이 완료되고 예측을 해본다</li>
+<li>Using for Training Model</li>
+</ul>
+</li>
+<li>
+<p>Valid</p>
+<ul>
+<li>학습을 하지 않고</li>
+<li>예측만 진행한다</li>
+<li>만약 예측시 valid보다 train이 좋지 않으면 다시 학습한다</li>
+<li>모니터링의 역할만 한다</li>
+<li>Using for Training Direction</li>
+</ul>
+</li>
+<li>
+<p>Test</p>
+<ul>
+<li>모델이 한 번도 보지 못한 것을 평가</li>
+<li>Using for Measure Performance</li>
+</ul>
+</li>
+<li>
+<p>10000의 dataset이 있을 경우 train : 6000, valid : 2000, test : 2000 으로 한다</p>
+</li>
+<li>
+<p>8 : 1 : 1 도 한다</p>
+</li>
+</ul>
+<h3 id="process-of-nlp-with-deep-learning"><a class="markdownIt-Anchor" href="#process-of-nlp-with-deep-learning"></a> Process of NLP with Deep Learning</h3>
+<p>자연어처리 딥러닝을 이해하자</p>
+<ul>
+<li>
+<p>Data Collection</p>
+<ul>
+<li>Crawling : html에서 데이터를 직접 가져오기</li>
+<li>ex) 영화평을 크롤링해서 분석</li>
+</ul>
+</li>
+<li>
+<p>Preprocessing</p>
+<ul>
+<li>Tokenizer</li>
+<li>Make Corpus</li>
+<li>Representation</li>
+</ul>
+</li>
+<li>
+<p>Modeling</p>
+<ul>
+<li>ML Model</li>
+<li>DL Model</li>
+<li>RL Model</li>
+</ul>
+</li>
+<li>
+<p>Performance Measure</p>
+<ul>
+<li>Accuracy</li>
+<li>Mean Squared Error</li>
+<li>Similarity</li>
+</ul>
+</li>
+</ul>
+<h3 id="make-corpus-with-train-dataset"><a class="markdownIt-Anchor" href="#make-corpus-with-train-dataset"></a> Make Corpus with Train Dataset</h3>
+<ul>
+<li>
+<p>Make Number to Input Natural Language into Computer<br />
+자연어를 숫자 값으로 변경하기</p>
+</li>
+<li>
+<p>Make Token to Make a Dictionary<br />
+토큰을 만들기</p>
+<ul>
+<li>‘I am a boy’ -&gt; ‘I’, ‘am’, ‘a’, ‘boy’ 띄어쓰기를 바탕으로 단어 분리</li>
+<li>‘I am a girl’ -&gt; ‘I’, ‘am’, ‘a’, girl’</li>
+<li>각 단어는 토큰을 의미</li>
+</ul>
+</li>
+<li>
+<p>Make a Dictionary out of the Tokens in the Train Dataset<br />
+트레인 데이터셋 안에 있는 토큰으로만 단어사전을 만든다</p>
+</li>
+<li>
+<p>Replace Words with Numbers using a Dictionary<br />
+숫자를 붙여주기</p>
+<ul>
+<li>‘I’ : 0, ‘am’ : 1, ‘a’ : 2, ‘boy’ : 3, ‘girl’ : 4</li>
+<li>‘I am a boy’ -&gt; [0,1,2,3]</li>
+<li>‘I am a girl’ -&gt; [0,1,2,4]</li>
+<li>겹치지 않는다</li>
+</ul>
+</li>
+</ul>
+<h3 id="representation-vector"><a class="markdownIt-Anchor" href="#representation-vector"></a> Representation Vector</h3>
+<ul>
+<li>‘boy’ : 3 , ‘girl’ : 4</li>
+<li>boy and girl have similar roles in sentence<br />
+남자와 여자는 문장에서 비슷한 역할을 수행할 것이다</li>
+<li>But 3,4 can’t represent their role enough<br />
+하지만 3,4만으로는 비슷하다는 것을 나타낼 수 없다</li>
+<li>Represent Natural Language with Vectors not scalars<br />
+원-핫벡터도 어떠한 인덱스만 1이기 때문에 스칼라로 보자<br />
+다양한 숫자로 채워진 벡터로 만들어보자
+<ul>
+<li>Word2Vec, Glove, FastTest(Word)</li>
+</ul>
+</li>
+<li>Sentence, Document, Sentence Piece<br />
+단어 뿐만아니라 문장, 문서 등으로 토큰을 만들 수 있다</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/21/DataScience/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%90%EB%A3%8C%ED%98%95/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="데이터 자료형">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-21T09:08:09.000Z">2020-04-21</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2분 읽기 (대략 246 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/21/DataScience/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%90%EB%A3%8C%ED%98%95/">데이터 자료형</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="python-자료형"><a class="markdownIt-Anchor" href="#python-자료형"></a> python 자료형</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>자료형</th>
+<th>저장 모델</th>
+<th>변경 가능성</th>
+<th>접근방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>수치형</td>
+<td>int, float, complex</td>
+<td>Literal</td>
+<td>Immutable</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>문자열</td>
+<td>str</td>
+<td>Container</td>
+<td>Immutable</td>
+<td>Sequence</td>
+</tr>
+<tr>
+<td>튜플</td>
+<td>tuple</td>
+<td>Container</td>
+<td>Immutable</td>
+<td>Sequence</td>
+</tr>
+<tr>
+<td>리스트</td>
+<td>list</td>
+<td>Container</td>
+<td>Mutable</td>
+<td>Sequence</td>
+</tr>
+<tr>
+<td>사전</td>
+<td>dict</td>
+<td>Container</td>
+<td>Mutable</td>
+<td>Mapping</td>
+</tr>
+<tr>
+<td>집합</td>
+<td>set</td>
+<td>Container</td>
+<td>Mutable</td>
+<td>set</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>저장 모델</p>
+<ul>
+<li>Literal : 단일 종류</li>
+<li>Container : 종류에 무관</li>
+</ul>
+</li>
+<li>
+<p>변경 가능성</p>
+<ul>
+<li>Immutable : 변경 불가</li>
+<li>Mutable : 변경 가능</li>
+</ul>
+</li>
+<li>
+<p>접근 방법</p>
+<ul>
+<li>Direct : 직접 할당</li>
+<li>Sequence : 순서 중시</li>
+<li>Mapping : 순서 무관</li>
+<li>Set : 중복 불가</li>
+</ul>
+</li>
+<li>
+<p>튜플은 최초에 입력한 데이터 변경이 불가</p>
+</li>
+<li>
+<p>리스트는 최초에 입력한 데이터 변경 가능</p>
+</li>
+<li>
+<p>사전은 순서에는 상관 없지만 중복 가능</p>
+</li>
+<li>
+<p>집합은 중복 불가능</p>
+</li>
+</ul>
+<h2 id="c자료형"><a class="markdownIt-Anchor" href="#c자료형"></a> C자료형</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>자료형</th>
+<th>메모리크기</th>
+<th>데이터 범위</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>정수형</td>
+<td>char</td>
+<td>1바이트</td>
+<td>-128 ~ +127</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td>short</td>
+<td>2바이트</td>
+<td>-32768 ~ +32767</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td>int</td>
+<td>4바이트</td>
+<td>-2147483648 ~ +2147483647</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td>long</td>
+<td>4바이트</td>
+<td>-2147483648 ~ + 2147483647</td>
+</tr>
+<tr>
+<td>실수형</td>
+<td>float</td>
+<td>4바이트</td>
+<td>3.4x10^-37 ~ +3.4x10^+38</td>
+</tr>
+<tr>
+<td>실수형</td>
+<td>double</td>
+<td>8바이트</td>
+<td>1.7x10^-307 ~ 1.7x10^+308</td>
+</tr>
+<tr>
+<td>실수형</td>
+<td>long double</td>
+<td>8바이트 이상</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/18/DataScience/%EC%88%9C%EC%97%B4%EC%A1%B0%ED%95%A9/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="순열과 조합">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-18T06:53:59.000Z">2020-04-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2분 읽기 (대략 230 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/18/DataScience/%EC%88%9C%EC%97%B4%EC%A1%B0%ED%95%A9/">순열과 조합</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="순열permutation"><a class="markdownIt-Anchor" href="#순열permutation"></a> 순열(Permutation)</h2>
+<p>-&gt; PERMUT(number, number_chosen)</p>
+<ul>
+<li>서로 다른 n개의 원소에서 r개를 중복없이 골라 순서에 상관 있게 나열하는 것으로 n개에서 r개를 택하는 순열이라고 함</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>P</mi><mi>r</mi><mo>=</mo><mi>n</mi><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo><mo>∗</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><mi>n</mi><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>r</mi><mo stretchy="false">)</mo><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">nPr = n * (n-1) * (n-2) * ... * (n - r + 1) =  n! / (n-r)! 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">!</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mclose">!</span></span></span></span></span></p>
+<ul>
+<li>순열의 종류</li>
+</ul>
+<ol>
+<li>순열</li>
+<li>중복순열 : n개에서 r개를 순서에 상관 있게 뽑는데 중복가능</li>
+<li>등차순열 : n에서 r개를 뽑는데, n개 중에서 똑같은 것이 섞인 경우</li>
+<li>원순열 : n개를 원형으로 나열하는 경우</li>
+</ol>
+<h2 id="조합combination"><a class="markdownIt-Anchor" href="#조합combination"></a> 조합(Combination)</h2>
+<p>-&gt; COMBIN(number, number_chosen)</p>
+<ul>
+<li>서로 다른 n개의 원소에서 순서에 상관없이 r개를 뽑을 때, 이때 n개에서 r개를 택하는 조합</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>C</mi><mi>r</mi><mo>=</mo><mi>n</mi><mi>P</mi><mi>r</mi><mi mathvariant="normal">/</mi><mi>r</mi><mo stretchy="false">!</mo><mo>=</mo><mi>n</mi><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>r</mi><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mi>r</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">nCr =  nPr / r! =  n!/ (n-r)!r! 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">!</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mclose">!</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">!</span></span></span></span></span></p>
+<ul>
+<li>조합의 종류</li>
+</ul>
+<ol>
+<li>조합</li>
+<li>중복조합 : n개에서 r개를 순서에 상관없이 뽑는데 중복을 허락하는 경우</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/16/books/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC_1/" class="image is-7by1">
             <img class="thumbnail" src="/images/bookcover/softskill.png" alt="소프트스킬(1)">
         </a>
@@ -172,13 +836,15 @@
             
         </h1>
         <div class="content">
-            <h3 id="다른-이들과-달리-멋지게-시작하기"><a href="#다른-이들과-달리-멋지게-시작하기" class="headerlink" title="다른 이들과 달리 멋지게 시작하기"></a>다른 이들과 달리 멋지게 시작하기</h3><ul>
+            <h3 id="다른-이들과-달리-멋지게-시작하기"><a class="markdownIt-Anchor" href="#다른-이들과-달리-멋지게-시작하기"></a> 다른 이들과 달리 멋지게 시작하기</h3>
+<ul>
 <li>사업가처럼 생각하기</li>
 <li>나는 어떤 제품이나 서비스를 팔 생각인가?</li>
 <li>서비스 개선 방법을 고민하기</li>
 <li>고정관념에서 벗어나 사업가처럼 사고하자</li>
 </ul>
-<h3 id="목표를-설정하고-미래에-대비하기"><a href="#목표를-설정하고-미래에-대비하기" class="headerlink" title="목표를 설정하고 미래에 대비하기"></a>목표를 설정하고 미래에 대비하기</h3><ul>
+<h3 id="목표를-설정하고-미래에-대비하기"><a class="markdownIt-Anchor" href="#목표를-설정하고-미래에-대비하기"></a> 목표를 설정하고 미래에 대비하기</h3>
+<ul>
 <li>성취할 목표를 설정하기</li>
 <li>목표를 정확히 이해하기</li>
 <li>크거나 구체적인것 보다 방향을 제시해야한다</li>
@@ -187,569 +853,48 @@
 <li>큰 목표를 월간, 주간, 일간으로 작은 목표로 나누기</li>
 <li>큰 목표를 매일 생각할 수 있도록 잘 보이는 장소에 두기</li>
 </ul>
-<h3 id="면접의-달인이-되기"><a href="#면접의-달인이-되기" class="headerlink" title="면접의 달인이 되기"></a>면접의 달인이 되기</h3><ul>
+<h3 id="면접의-달인이-되기"><a class="markdownIt-Anchor" href="#면접의-달인이-되기"></a> 면접의 달인이 되기</h3>
+<ul>
 <li>고정관념에서 벗어나 인맥 쌓기</li>
 <li>개발자들의 블로그를 찾아 친부 쌓기</li>
 <li>기술 수준을 꾸준히 발전시키기</li>
 </ul>
-<h3 id="전문성을-갖추기"><a href="#전문성을-갖추기" class="headerlink" title="전문성을 갖추기"></a>전문성을 갖추기</h3><ul>
+<h3 id="전문성을-갖추기"><a class="markdownIt-Anchor" href="#전문성을-갖추기"></a> 전문성을 갖추기</h3>
+<ul>
 <li>전문성으로 많은 기회의 문이 열린다</li>
 <li>전문성이 높아질수록 잠재적 기회가 줄어드는 반면 기회를 잡을 확률은 점점 높아진다</li>
 <li>전문분야는 다음과 같다 - 웹 개발 기술 - 임베디드 시스템 - 특정 운영체제 - 모바일 개발 - 프레임워크 - 소프트웨어 시스템</li>
 </ul>
-<h3 id="승진하기"><a href="#승진하기" class="headerlink" title="승진하기"></a>승진하기</h3><ul>
+<h3 id="승진하기"><a class="markdownIt-Anchor" href="#승진하기"></a> 승진하기</h3>
+<ul>
 <li>존재감 있게 일하기</li>
 <li>주간 보고서를 작성하기</li>
 <li>자신의 활동을 매일 기록하기</li>
 <li>어떤 문제든 해결책을 제시할 수 있는 사람이 되기</li>
 <li>해결책을 실행할 수 있는 사람이 되기</li>
 </ul>
-<h3 id="전문가되기"><a href="#전문가되기" class="headerlink" title="전문가되기"></a>전문가되기</h3><ul>
+<h3 id="전문가되기"><a class="markdownIt-Anchor" href="#전문가되기"></a> 전문가되기</h3>
+<ul>
 <li>사고방식 전환하기</li>
 <li>약속을 지키고 맡은 일을 완수하고 포기하지 않기</li>
 <li>맡은 일과 경력을 진지하게 생각하기</li>
 <li>좋은 습관 기르기 - 시간 관리 기술</li>
 <li>자기 계발하기</li>
 </ul>
-<h3 id="첫-제품-만들기"><a href="#첫-제품-만들기" class="headerlink" title="첫 제품 만들기"></a>첫 제품 만들기</h3><ul>
+<h3 id="첫-제품-만들기"><a class="markdownIt-Anchor" href="#첫-제품-만들기"></a> 첫 제품 만들기</h3>
+<ul>
 <li>문제 해결을 염두하고 제품을 제작하기</li>
 <li>How to Market Yourself as a Software Developer</li>
 <li>에릭리스 - 린스타트업</li>
 </ul>
-<h4 id="이루고-싶은게-있다면-이미-이룬-것처럼-연기하라"><a href="#이루고-싶은게-있다면-이미-이룬-것처럼-연기하라" class="headerlink" title="이루고 싶은게 있다면 이미 이룬 것처럼 연기하라"></a>이루고 싶은게 있다면 이미 이룬 것처럼 연기하라</h4><h3 id="이력서쓰기"><a href="#이력서쓰기" class="headerlink" title="이력서쓰기"></a>이력서쓰기</h3><ul>
+<h4 id="이루고-싶은게-있다면-이미-이룬-것처럼-연기하라"><a class="markdownIt-Anchor" href="#이루고-싶은게-있다면-이미-이룬-것처럼-연기하라"></a> 이루고 싶은게 있다면 이미 이룬 것처럼 연기하라</h4>
+<h3 id="이력서쓰기"><a class="markdownIt-Anchor" href="#이력서쓰기"></a> 이력서쓰기</h3>
+<ul>
 <li>온라인 이력서 만들기</li>
 <li>개성을 더하기</li>
 <li>행동과 결과를 연결하기</li>
 <li>교정하기</li>
 </ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-2%EA%B0%95%ED%95%A8%EC%88%98/" class="image is-7by1">
-            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="엑셀 수식 사용 - 2강. 함수 사용법">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-16T06:10:45.000Z">2020-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4분 읽기 (대략 599 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-2%EA%B0%95%ED%95%A8%EC%88%98/">엑셀 수식 사용 - 2강. 함수 사용법</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="2-함수-사용법"><a href="#2-함수-사용법" class="headerlink" title="2.함수 사용법"></a>2.함수 사용법</h2><ul>
-<li><p>함수</p>
-<ul>
-<li>함수의 형태<ul>
-<li>함수명()</li>
-<li>괄호 내부에는 변수(or 인자) 사용</li>
-</ul>
-</li>
-<li>변수<ul>
-<li>변수에는 상수, 주소, 범위, 이름, 함수 등 사용</li>
-<li>변수 없는 함수 존재</li>
-<li>ex) TODAY(), PI()</li>
-</ul>
-</li>
-<li>함수는 수식의 일부분<ul>
-<li>엑셀에는 400개 이상의 함수 존재</li>
-<li>직접만들기도 가능</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>함수 입력방법</p>
-</li>
-</ul>
-<ol>
-<li>수동 입력 방식<ul>
-<li>‘=’ 과 함수명 입력 후 괄호열기 입력</li>
-<li>함수명 입력 중 아래 리스트에서 선택 후 탭 키 입력</li>
-</ul>
-</li>
-<li>빠른 함수 입력<ul>
-<li>[수식] 리본메뉴 - ‘함수라이브러리’</li>
-<li>[홈] 리본메뉴 - [자동합계]</li>
-</ul>
-</li>
-<li>FX 메뉴 OR Shift-F3 입력<ul>
-<li>함수마법사</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>함수 구문 이해</p>
-<ol>
-<li>변수 구분<ul>
-<li>굵은 글씨 : 현재 입력 중인 변수 위치</li>
-<li>대괄호[] : 필수가 아닌 옵션</li>
-<li>“…” : 변수를 더 사용 가능</li>
-<li><img src="/images/datascience/0416_02.png" alt="변수구분"></li>
-</ul>
-</li>
-<li>자주 쓰는 변수 표기<ul>
-<li>number : 숫자</li>
-<li>range : 범위</li>
-<li>crieria : 조건문</li>
-<li>lookup_value : 찾을값</li>
-<li>lookup_array : 찾을 범위</li>
-<li>logical_test : 논리비교</li>
-<li>text : 문자열</li>
-<li>num_chars : 글자수</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>셀 참조(references)</p>
-<ul>
-<li>상대참조<ul>
-<li>기본 참조방식</li>
-<li>수식을 복사하면, 수식 내 셀 주소가 행과 열 방향으로 이동한 만큼 셀 주소가 변함</li>
-</ul>
-</li>
-<li>절대참조<ul>
-<li>행과 열 주소 앞에 “$” 문자 표시</li>
-<li>절대 참조는 수식에 복사되어도 참조 위치는 변화 없음</li>
-</ul>
-</li>
-<li>혼합참조<ul>
-<li>행과 열 주소 둘 중 한 군데 앞에 “$” 표시</li>
-<li>상대참조와 절대참조가 혼합</li>
-</ul>
-</li>
-<li>“F4” 상대참조 -&gt; 절대참조 -&gt; 혼합참조(행) -&gt; 혼합참조(열) -&gt; 상대참조</li>
-</ul>
-</li>
-<li><p>함수 에러 메시지</p>
-<ul>
-<li>DIV/0! 수식에 0으로 나누는 내용이 있음, 대게 분모 값에 빈셀이 지정됨</li>
-<li>NAME? : 수식 엑셀에 인식할 수 없는 이름이 사용됨, 대게 이름이 지워지거나 텍스트 입력시 큰따옴표 오류</li>
-<li>N/A : 수식에 사용할 수 없는 데이터가 지정된 경우, 일부함수에서 오류</li>
-<li>NULL! : 수식이 교집합이 없는 두 범위의 교집합을 설정함</li>
-<li>NUM! : 값 에러, 양이 되어야하는 값에 음의 값이 입력될 때</li>
-<li>REF! : 수식이 참조할수 없는 셀을 지정할 때, 워크시트 내에 삭제된 셀이 사용될 때</li>
-<li>VALUE! : 수식에 잘못된 형태의 변수나 숫자가 포함되어 있을 때</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-1%EA%B0%95%EC%88%98%EC%8B%9D%EA%B3%BC%ED%95%A8%EC%88%98/" class="image is-7by1">
-            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="엑셀 수식 사용 - 1강. 수식과 함수">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-16T05:32:13.000Z">2020-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1분 읽기 (대략 195 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-1%EA%B0%95%EC%88%98%EC%8B%9D%EA%B3%BC%ED%95%A8%EC%88%98/">엑셀 수식 사용 - 1강. 수식과 함수</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-수식의-이해"><a href="#1-수식의-이해" class="headerlink" title="1.수식의 이해"></a>1.수식의 이해</h2><ul>
-<li><p>Cell의 자료형식</p>
-<ol>
-<li>숫자형식 : 0 ~ 9<br> 숫자의 정밀도는 앞에서 15자리, -9.9E+307~9.9E+307 범위</li>
-<li>문자형식 : A ~ Z, a ~ z, 가나다라, 특수문자</li>
-<li>수학형식 : = 으로 시작</li>
-<li>날짜/시간 형식</li>
-</ol>
-</li>
-<li><p>수식 - 연산자(수식연산자, 논리연산자)</p>
-<ol>
-<li><p>수식연산자(Mathematical operators)</p>
-<table>
-<thead>
-<tr>
-<th>연산자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>+</td>
-<td>더하기</td>
-</tr>
-<tr>
-<td>-</td>
-<td>빼기</td>
-</tr>
-<tr>
-<td>*</td>
-<td>곱하기</td>
-</tr>
-<tr>
-<td>/</td>
-<td>나누기</td>
-</tr>
-<tr>
-<td>^</td>
-<td>지수</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>문자열조합</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>논리연산자(Logical operators)</p>
-<table>
-<thead>
-<tr>
-<th>연산자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>=</td>
-<td>같음</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>보다 큼</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>보다 작음</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>보다 크거나 같음</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>보다 작거나 같음</td>
-</tr>
-<tr>
-<td>&lt;&gt;</td>
-<td>같지 않음</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-</li>
-<li><p>연산자 우선 순위(Operator precedence)</p>
-<table>
-<thead>
-<tr>
-<th>기호</th>
-<th>연산자</th>
-<th>연산순위</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>^</td>
-<td>지수승</td>
-<td>1</td>
-</tr>
-<tr>
-<td>* , /</td>
-<td>곱하기,나누기</td>
-<td>2</td>
-</tr>
-<tr>
-<td>+ , -</td>
-<td>더하기,빼기</td>
-<td>3</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>문자열 결합</td>
-<td>4</td>
-</tr>
-<tr>
-<td>= , &lt;,&gt;</td>
-<td>같음,작음,큼</td>
-<td>5</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>예시<br><img src="/images/datascience/0416_01.png" alt="수식예"></p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/15/DataScience/%ED%86%B5%EA%B3%84%EC%9D%98%EB%AA%A9%EC%A0%81%EA%B3%BC%EC%97%91%EC%85%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EC%B4%88/" class="image is-7by1">
-            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 목적과 엑셀 데이터 기초">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-15T08:28:11.000Z">2020-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6분 읽기 (대략 973 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/15/DataScience/%ED%86%B5%EA%B3%84%EC%9D%98%EB%AA%A9%EC%A0%81%EA%B3%BC%EC%97%91%EC%85%80%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B8%B0%EC%B4%88/">통계의 목적과 엑셀 데이터 기초</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="통계학의-정의"><a href="#통계학의-정의" class="headerlink" title="통계학의 정의"></a>통계학의 정의</h3><p>통계학(statistics)은 수량적인 비교를 기초로 사실을 관찰하고 분석하는 방법을 연구하는 학문<br>일반적으로 수집되는 데이터가 조사자, 시기, 방법, 목적 등에 따라 다르게 나타나는 <em>불균형적인 데이터</em>이지만, 통계학은 이 안에서 <strong>의미를 찾아내고 실생활에서 적용가능한 유용성</strong>을 찾아내 이를 수치로 표현할 수 있다.</p>
-<ul>
-<li>기술통계(descriptive statistics):<br>표본에 대한 분석 결과의 각종 수치들을 활용하여 집단의 특성을 설명</li>
-<li>추론통계(inference statistics):<br>표본을 활용하여 모집단의 특성을 나타내는 것</li>
-</ul>
-<h3 id="통계학의-목적"><a href="#통계학의-목적" class="headerlink" title="통계학의 목적"></a>통계학의 목적</h3><ol>
-<li>의사결정<br>많은 정보를 지각하고 평가하여 하나를 선택<ul>
-<li>정보와 반응 사잉의 다대일 대응으로 나타남</li>
-<li>여러가지 대안 가운데 하나를 선택할 때 사용</li>
-</ul>
-</li>
-<li>불확실성의해소<br>의사결정을 하게 되면 그 결과가 정확한 것이라 할 수 있는가의 문제<ul>
-<li>빅데이터의 개념을 들여와 불확실성을 해소</li>
-<li>정보수집이 어려움</li>
-<li>시장의 변화와 대응의 어려움에대한 극복 필요</li>
-</ul>
-</li>
-<li>요약<br>다양한 데이터를 신속히 이해할 수 있도록 다양한 형태로 표현<ul>
-<li>불확실성의 감소를 위해 사용</li>
-<li>반복되어 생산되는 데이터를 정리된 보고서로 표현하여 불확실성이 낮은 상황의 의사결정이 가능하도록 함</li>
-</ul>
-</li>
-<li>연관성 파악<br>요약된 보고서에서 주요한 항목들 간의 연관성을 파악한 경쟁우위의 확보<ul>
-<li>의사결정권자에게 항목 간 연관성을 제시해 미래의 계획을 지원</li>
-<li>다양한 자료는 의사결정에 있어 세부적 판도에 기여</li>
-</ul>
-</li>
-<li>예측<br>인과관계 파악을 통해 패턴을 찾아내고 이러한 패턴을 통해 추세를 판단<ul>
-<li>다양한 변수의 대입과 삭제를 통해 예측 가능</li>
-</ul>
-</li>
-</ol>
-<h3 id="통계분석의-과정"><a href="#통계분석의-과정" class="headerlink" title="통계분석의 과정"></a>통계분석의 과정</h3><p>통계분석은 표본을 통해 의미 있는 자료를 추출하고, 이를 기반으로 의사결정, 불확실성의 해소요약, 연관성 파악, 예측 등의 결과로 이어지도록하는 일련의 과정이다<br>==수집 -&gt; 정제 -&gt; 추정 -&gt; 검정==</p>
-<ol>
-<li>수집</li>
-</ol>
-<ul>
-<li>조사과정에서 자연스럽게 수집</li>
-<li>조사자가 특정 목적에 맞는 자료를 얻기 위해 설계한 수집 도구를 이용<br><code>보통 자료가 많을 수록 통계분석에서 더 좋은 결과를 얻을 것이라고 생각하지만 조사의 목적에 맞는 적절한 자료를 수집해서 최적의 통계방법으로 분석한 결과가 가장 정확도가 높음</code></li>
-</ul>
-<ol start="2">
-<li>정제</li>
-</ol>
-<ul>
-<li>분석에 적합한 자료를 선별</li>
-<li>적합하지 않은 자료는 삭제</li>
-</ul>
-<ol start="3">
-<li>추정</li>
-</ol>
-<ul>
-<li>통계 분석을 진행하는 것 -&gt; <strong>모수</strong>를 추정하는 것</li>
-<li>표본의 특성을 설명하는 통계량을 통해 모집단의 모수를 추정하게 됨</li>
-</ul>
-<ol start="4">
-<li>검정</li>
-</ol>
-<ul>
-<li>통계조사의 목적 -&gt; 주장이 믿어지는 사실이 실제로 옳은지 아닌지를 확인</li>
-<li>수립된 가설이 유의미하고 타당성을 가지는지 통계적으로 확인하는 과정</li>
-<li>확인을 통해 가설의 기각와 채택여부를 판단</li>
-</ul>
-<h3 id="통계분석의-한계"><a href="#통계분석의-한계" class="headerlink" title="통계분석의 한계"></a>통계분석의 한계</h3><ul>
-<li><p>확률이 없으면 무의미 - 통계분석의 결과는 항상 확률과 연관되어 표현</p>
-</li>
-<li><p>항상 틀릴 가능성 내포 - 신뢰수준 100% -&gt; 신뢰구간에 해당하는 값 (-무한 ~ + 무한) - 결과의 범위가 줄수록 신뢰구간은 100%에서 멀어짐</p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/15/DataScience/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0(Big%20Data)%EC%9D%98%EC%9D%B4%ED%95%B4/" class="image is-7by1">
-            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="빅데이터(Big Data)의 이해">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-14T17:21:06.000Z">2020-04-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4분 읽기 (대략 642 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/15/DataScience/%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0(Big%20Data)%EC%9D%98%EC%9D%B4%ED%95%B4/">빅데이터(Big Data)의 이해</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="빅데이터-등장-배경"><a href="#빅데이터-등장-배경" class="headerlink" title="빅데이터 등장 배경"></a>빅데이터 등장 배경</h3><p><img src="/images/datascience/0415_3.png" alt="빅데이터등장배경"></p>
-<h4 id="디지털-기술-발전에-따른-대규모-데이터-생성"><a href="#디지털-기술-발전에-따른-대규모-데이터-생성" class="headerlink" title="디지털 기술 발전에 따른 대규모 데이터 생성"></a>디지털 기술 발전에 따른 대규모 데이터 생성</h4><ul>
-<li>데이터 생성 규모(Volume)확대</li>
-<li>생성주기(Velocity)가 짧아짐</li>
-<li>기존 수치 위주에서 문자, 이미지, 영상 등 다양한 형태(Variety)로 발생</li>
-</ul>
-<h3 id="빅데이터의-정의"><a href="#빅데이터의-정의" class="headerlink" title="빅데이터의 정의"></a>빅데이터의 정의</h3><ul>
-<li>명확히 합의된 정의가 없음 - 데이터 수집, 저장, 관리, 분석을 처리하는 통상의 용량을 넘어서는 Dataset 규모로, 그 정의는 주관적이며 앞으로도 기술발전에 따라 정의는 변화될 것이다. - 가장 많이 쓰이는 정의 3V + Value - 엑셀로 처리하기에 적합하지 않는 데이터 - SPSS, SAS와 같은 통계 패키지 등에 적합한 자료의 의미</li>
-</ul>
-<h3 id="3V-Value"><a href="#3V-Value" class="headerlink" title="3V + Value"></a>3V + Value</h3><p><img src="/images/datascience/0415_4.png" alt="3V+Value"></p>
-<h3 id="빅데이터의-분류-및-처리과정"><a href="#빅데이터의-분류-및-처리과정" class="headerlink" title="빅데이터의 분류 및 처리과정"></a>빅데이터의 분류 및 처리과정</h3><p><img src="/images/datascience/0415_5.png" alt="처리과정"></p>
-<h3 id="데이터-마이닝-Data-Mining"><a href="#데이터-마이닝-Data-Mining" class="headerlink" title="데이터 마이닝(Data Mining)"></a>데이터 마이닝(Data Mining)</h3><ul>
-<li>데이터베이스 내에서 어떠한 방법에 의해 관심 있는 지식을 찾아내는 과정 - 대용량의 데이터 속에서 유용한 정보를 발견하는 과정이며 이러한 기술을 의미 - 데이터 베이스 마케팅 분야 - 순차패턴, 유사성을 활용</li>
-<li>정의 - 복잡한 통계적인 분석이나 모형구축 기법을 통해 대용량의 데이터 내에 이전에는 알려지지 않았던 패턴이나 규칙 등을 탐색하고 모형화 하여 유용한 지식을 추출하는 일련의 과정 - 통계적 관점 : 대용량의 데이터에 대한 탐색적 데이터 분석(Exploratory Data Analysis)<br><img src="/images/datascience/0415_6.png" alt="데이터마이닝"></li>
-</ul>
-<h3 id="빅데이터-환경의-특징"><a href="#빅데이터-환경의-특징" class="headerlink" title="빅데이터 환경의 특징"></a>빅데이터 환경의 특징</h3><table>
-<thead>
-<tr>
-<th>구분</th>
-<th>기존</th>
-<th>빅데이터 환경</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>데이터</td>
-<td>정형화된 수치자료 중심</td>
-<td>-비정형의 다양한 데이터 <br/> - 문자 데이터 <br/> - 영상 데이터 <br/> - 위치 데이터</td>
-</tr>
-<tr>
-<td>하드웨어</td>
-<td>고가의 저장장치 <br/> 데이터베이스 <br/>데이터웨어하우스</td>
-<td>- 클라우드 컴퓨팅 등 비용 효율적인 장비 활용 가능</td>
-</tr>
-<tr>
-<td>소프트웨어/분석 방법</td>
-<td>관계형 데이터베이스 <br/> 통계패키지 <br/> 데이터마이닝 <br/>머신러닝</td>
-<td>- 오픈소스 형태의 무료 소프트웨어 <br/>- Hadoop, NoSQL <br/> - 오픈소스 통계솔루션(R) <br/> - 텍스트 마이닝 <br/> - 온라인 버즈 분석 <br/> -감성 분석</td>
-</tr>
-</tbody></table>
-<h3 id="일반데이터와-빅데이터의-차이"><a href="#일반데이터와-빅데이터의-차이" class="headerlink" title="일반데이터와 빅데이터의 차이"></a>일반데이터와 빅데이터의 차이</h3><p><img src="/images/datascience/0415_7.png" alt="차이"></p>
-<h3 id="빅데이터-IT-핵심-기술"><a href="#빅데이터-IT-핵심-기술" class="headerlink" title="빅데이터 IT 핵심 기술"></a>빅데이터 IT 핵심 기술</h3><p><img src="/images/datascience/0415_8.png" alt="기술"></p>
 
         </div>
         
@@ -787,9 +932,9 @@
             
             <li><a class="pagination-link has-text-black-ter" href="/page/11/">11</a></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/12/">12</a></li>
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/13/">13</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/14/">14</a></li>
             
         </ul>
     </nav>
@@ -840,7 +985,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            65
+                            69
                         </p>
                     </a>
                 </div>
@@ -852,7 +997,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            20
+                            21
                         </p>
                     </a>
                 </div>
@@ -864,7 +1009,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            51
+                            54
                         </p>
                     </a>
                 </div>
@@ -994,7 +1139,7 @@
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">38</span>
+                <span class="level-item tag">42</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -1013,12 +1158,20 @@
                 <span class="level-item tag">3</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">
+        <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">
             <span class="level-start">
-                <span class="level-item">SW개발방법론활용</span>
+                <span class="level-item">SW개발방법론선정</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">5</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">
+            <span class="level-start">
+                <span class="level-item">SW개발방법론테일러링</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -1095,7 +1248,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">SW생명주기모델</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.5px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 12.5px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 12.5px;">데이터사이언스개념</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 10px;">예외처리</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 12.5px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.5px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 15px;">핵심정리</a>
+        <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/" style="font-size: 10px;">SW개발방법론선정</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" style="font-size: 10px;">SW개발표준</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.5px;">embedding</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 12.5px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 12.5px;">데이터사이언스개념</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">소프트웨어개발프레임워크</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 10px;">예외처리</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 12.5px;">자연어처리</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" style="font-size: 10px;">테일러링기준</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.5px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 15px;">핵심정리</a>
     </div>
 </div>
     
@@ -1110,7 +1263,83 @@
         
         <article class="media">
             
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:44:31.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 소프트웨어 개발 프레임워크">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:32:21.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 소프트웨어 개발 프레임워크</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 테일러링 기준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:22:00.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 테일러링 기준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 개발 표준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T06:52:04.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 개발 표준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
                 </p>
@@ -1119,85 +1348,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:50:17.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 비용 산정 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:11:56.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 비용 산정 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 요구공학 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:54.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 요구공학 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW개발 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:50.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW개발 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 생명주기 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T06:44:24.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 생명주기 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">SW개발방법론선정</a>
                     </p>
                 </div>
             </div>
@@ -1220,7 +1373,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1338,6 +1491,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">
+                        <span class="tag">SW개발방법론선정</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/">
                         <span class="tag">SW개발보안정책</span>
                         <span class="tag is-grey">1</span>
@@ -1345,15 +1505,15 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
-                        <span class="tag">SW관련신기술</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/">
+                        <span class="tag">SW개발표준</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/">
-                        <span class="tag">SW생명주기모델</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
+                        <span class="tag">SW관련신기술</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1534,6 +1694,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/">
+                        <span class="tag">소프트웨어개발프레임워크</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">
                         <span class="tag">암호알고리즘</span>
                         <span class="tag is-grey">1</span>
@@ -1578,7 +1745,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">38</span>
+                        <span class="tag is-grey">42</span>
                     </a>
                 </div>
                 
@@ -1604,6 +1771,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/">
+                        <span class="tag">테일러링기준</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
                         <span class="tag is-grey">11</span>
@@ -1613,7 +1787,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
@@ -1641,7 +1815,83 @@
         
         <article class="media">
             
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:44:31.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 소프트웨어 개발 프레임워크">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:32:21.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 소프트웨어 개발 프레임워크</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 테일러링 기준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T07:22:00.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 테일러링 기준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 개발 표준">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-03T06:52:04.000Z">2020-05-03</time></div>
+                    <a href="/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 개발 표준</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/">SW개발방법론테일러링</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 핵심정리">
                 </p>
@@ -1650,85 +1900,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:50:17.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
+                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 핵심정리</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 비용 산정 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T08:11:56.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 비용 산정 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - 요구공학 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:54.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - 요구공학 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW개발 방법론">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T07:52:50.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW개발 방법론</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 생명주기 모델">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-02T06:44:24.000Z">2020-05-02</time></div>
-                    <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">SW개발 방법론 활용 - SW 생명주기 모델</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%99%9C%EC%9A%A9/">SW개발방법론활용</a>
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">SW개발방법론선정</a>
                     </p>
                 </div>
             </div>
@@ -1751,7 +1925,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">10</span>
+                    <span class="level-item tag">14</span>
                 </span>
             </a>
         </li>
@@ -1869,6 +2043,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">
+                        <span class="tag">SW개발방법론선정</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/">
                         <span class="tag">SW개발보안정책</span>
                         <span class="tag is-grey">1</span>
@@ -1876,15 +2057,15 @@
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
-                        <span class="tag">SW관련신기술</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/">
+                        <span class="tag">SW개발표준</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/">
-                        <span class="tag">SW생명주기모델</span>
+                    <a class="tags has-addons" href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/">
+                        <span class="tag">SW관련신기술</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -2065,6 +2246,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/">
+                        <span class="tag">소프트웨어개발프레임워크</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">
                         <span class="tag">암호알고리즘</span>
                         <span class="tag is-grey">1</span>
@@ -2109,7 +2297,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">38</span>
+                        <span class="tag is-grey">42</span>
                     </a>
                 </div>
                 
@@ -2135,6 +2323,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/">
+                        <span class="tag">테일러링기준</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/">
                         <span class="tag">한국어임베딩</span>
                         <span class="tag is-grey">11</span>
@@ -2144,7 +2339,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
@@ -2172,8 +2367,7 @@
                 &copy; 2020 Hyeonukdev&nbsp;
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
-                
-                <br>
+
                  <!--만약 busuanzi 가 활성화됐으면-->
                     <br>
                     <span id="busuanzi_container_site_pv"> 
@@ -2182,7 +2376,6 @@
                     <span id="busuanzi_container_site_uv">
                         총 방문자 <span id="busuanzi_value_site_uv"></span> 명
                     </span>
-                    
                 
                 </p>
             </div>
