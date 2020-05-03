@@ -140,8 +140,8 @@
 <div class="card">
     
     <div class="card-image">
-        <a href="/2020/03/29/KoreanEmbedding/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%B4%EB%9E%80/" class="image is-7by1">
-            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="한국어임베딩-임베딩이란">
+        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버접근통제">
         </a>
     </div>
     
@@ -149,17 +149,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-29T12:06:58.000Z">2020-03-29</time>
+                <time class="level-item has-text-grey" datetime="2020-04-25T18:07:29.000Z">2020-04-26</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2분 읽기 (대략 366 단어)
+                    4분 읽기 (대략 584 단어)
                 </span>
                 
                 
@@ -168,60 +168,255 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/29/KoreanEmbedding/%EC%9E%84%EB%B2%A0%EB%94%A9%EC%9D%B4%EB%9E%80/">한국어임베딩-임베딩이란</a>
+                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/">시스템보안설계 - 서버접근통제</a>
             
         </h1>
         <div class="content">
-            <p><a href="https://ratsgo.github.io/embedding/">한국어임베딩github</a><br />
-<code>한국어 임베딩</code> 서적을 공부하며 정리하는 글이 되겠습니다.</p>
-<hr />
-<h1 id="11-임베딩이란"><a class="markdownIt-Anchor" href="#11-임베딩이란"></a> 1.1 임베딩이란?</h1>
-<p>기계의 자연어 이해와 생성은 연산 <strong>Computation</strong> 과 처리 <strong>Processing</strong>의 영역이다</p>
-<h3 id="자연어처리분야에서의-임베딩이란"><a class="markdownIt-Anchor" href="#자연어처리분야에서의-임베딩이란"></a> 자연어처리분야에서의 임베딩이란</h3>
-<blockquote>
-<p>사람이 쓰는 자연어를 기계가 이해할 수 있는 숫자의 나열인 벡터 <strong>vector</strong>로 바꾼 결과 혹은 그 일련의 과정 전체를 의미한다. 단어나 문장 각각을 벡테로 변환해 벡터공간 <strong>vector space</strong>으로 '끼워 넣는다<strong>embed</strong> 는 의미에서 임베딩이라고 지었다.</p>
-</blockquote>
-<hr />
-<h6 id="단어-문서-행렬-term-document-matrix"><a class="markdownIt-Anchor" href="#단어-문서-행렬-term-document-matrix"></a> 단어-문서 행렬 <strong>Term-Document Matrix</strong></h6>
-<table>
-<thead>
-<tr>
-<th>구분</th>
-<th>메밀꽃 필 무렵</th>
-<th>운수좋은 날</th>
-<th>사랑 손님과 어머니</th>
-<th>삼포 가는길</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>기차</td>
-<td>0</td>
-<td>2</td>
-<td>10</td>
-<td>7</td>
-</tr>
-<tr>
-<td>막걸리</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<td>선술집</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-<p>위 와 같은 빈도표를 단어-문서 행렬이라고 부른다.<br />
-row는 단어, column은 문서(작품)에 대응한다.<br />
-운수좋은 날의 문서의 임베딩은 [2,1,1]이다. 막걸리라는 단어의 임베딩은 [0,1,0,0] 이다.<br />
-표를 보면 ‘사랑 손님과 어머니’, '삼포 가는 길’이 사용하는 단어 목록이 상대적으로 많이 겹침을 알 수 있다.<br />
-일르 바탕으로 '사랑 손님과 어머니’는 ''삼포 가는 길’과 '기차’라는 소재를 공유한다는 점에서 비슷한 작품임을 추정할 수 있다.</p>
+            <h2 id="시스템-보안-설계"><a class="markdownIt-Anchor" href="#시스템-보안-설계"></a> 시스템 보안 설계</h2>
+<h3 id="서버-접근통제"><a class="markdownIt-Anchor" href="#서버-접근통제"></a> 서버 접근통제</h3>
+<h3 id="access-control-접근-통제-개념"><a class="markdownIt-Anchor" href="#access-control-접근-통제-개념"></a> Access Control 접근 통제 개념</h3>
+<ul>
+<li>사용자 및 장비의 접근 필요성에 따라 정보자산에 대한 접근 권한을 부여함으로써 비인가자의 무단 접근을 제한</li>
+<li>통제 종류 - 비인가된 사용자의 접근 감시 - 접근 요구자의 사용자 식별 - 접근 요구의 정당성 확인 및 기록 - 보안 정책에 근거한 접근의 승인 및 거부 운동</li>
+<li>접근 통제의 3요소
+<ol>
+<li>정책</li>
+<li>매커니즘</li>
+<li>보안모델</li>
+</ol>
+</li>
+</ul>
+<h3 id="접근통제-정책-종류"><a class="markdownIt-Anchor" href="#접근통제-정책-종류"></a> 접근통제 정책 종류</h3>
+<h4 id="임의적-접근통제"><a class="markdownIt-Anchor" href="#임의적-접근통제"></a> 임의적 접근통제</h4>
+<ul>
+<li><u>객체에 접근하고자 하는 주체의 접근 권한에 따라 접근 통제</u>를 적용하는 방식</li>
+<li><u>사용자가 접근권한을 임의적으로 추가하거나 철회</u>하는 것이 가능</li>
+<li>데이터 소유자가 <u>사용자나 사용자 그룹</u>의 신분에 따라 접근을 제어 기능</li>
+<li><u>신원기반, 사용자 기반통제</u> 방식 사용</li>
+</ul>
+<h4 id="강제적-접근통제"><a class="markdownIt-Anchor" href="#강제적-접근통제"></a> 강제적 접근통제</h4>
+<ul>
+<li><u>주체와 객체의 등급을 비교하여 접근 권한</u>을 부여하는 방식</li>
+<li><u><b>제3자가 접근 통제 권한을 지정</b></u></li>
+<li>최상위보안등급을 가진 자도 모든 자료의 열람은 불가</li>
+<li><u>보안등급, 규칙기반, 관리기반</u> 접근통제 방식으로 모든 주체 및 객체에 대해 일정하며 <u>어느 하나의 주체, 객체 단위로 접근제한을 설정할 수 없음</u></li>
+</ul>
+<h4 id="역할기반-접근통제"><a class="markdownIt-Anchor" href="#역할기반-접근통제"></a> 역할기반 접근통제</h4>
+<ul>
+<li><u>임의적 접근통제의 단점을 보완한 기법</u></li>
+<li>비임의적 접근통제</li>
+<li>사용자에게 <u>최소한의 권한을 부여함</u>으로 남용을 방지</li>
+<li><u>직무에 따라 허가를 결정</u>하므로 직원변경이 자주되는 구조에서 유리</li>
+</ul>
+<h4 id="접근통제-행렬"><a class="markdownIt-Anchor" href="#접근통제-행렬"></a> 접근통제 행렬</h4>
+<ul>
+<li>주체는 열에, 객체는 행에 표시하여 각각에 권한을 부여하는 방법</li>
+<li>R : Read, W : Write</li>
+</ul>
+<h4 id="접근제어ac"><a class="markdownIt-Anchor" href="#접근제어ac"></a> 접근제어(AC)</h4>
+<ul>
+<li>사용자에 따라 <u>공유데이터에 접근할 수 있는 권한을 제한</u>하는 방법으로 접근의 허용을 결정하는 인증, 사용자의 행위에 대해 강제적으로 제약하는 인가가 있음</li>
+</ul>
+<h3 id="서버보안의-접근통제-3요소"><a class="markdownIt-Anchor" href="#서버보안의-접근통제-3요소"></a> 서버보안의 접근통제 3요소</h3>
+<ol>
+<li>인증</li>
+<li>인가</li>
+<li>감사</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서버인증">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T17:53:07.000Z">2020-04-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4분 읽기 (대략 558 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/">시스템보안설계 - 서버인증</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="시스템-보안-설계"><a class="markdownIt-Anchor" href="#시스템-보안-설계"></a> 시스템 보안 설계</h2>
+<h3 id="서버-인증"><a class="markdownIt-Anchor" href="#서버-인증"></a> 서버 인증</h3>
+<h3 id="보안서버-개념"><a class="markdownIt-Anchor" href="#보안서버-개념"></a> 보안서버 개념</h3>
+<ul>
+<li>보안서버는 <u>인터넷을 통한 개인정보를 암호화하여 송/수신할 수 잇는 기능을 갖춘 서버</u></li>
+<li>Sniffing(스니핑)을 이용한 정보유출, Phishing(피싱)을 이용한 위조 사이트 등에 대비하기 위해 <u>보안 서버 구축 필요</u></li>
+<li>개인정보의 기술적/관리적 보호조치 기준에 따르면 다음을 갖추어야함 - 서버에 <u>SSL(Secure Socket Laver) 인증서를 설치</u>하여 정송 정볼르 암호화하여 송/수신 하는 기능 - 서버에 암호화 응용 프로그램을 설치하고 전송 정볼르 암호화하여 송/수신하는 기능</li>
+</ul>
+<h3 id="authentication인증의-개념"><a class="markdownIt-Anchor" href="#authentication인증의-개념"></a> Authentication(인증)의 개념</h3>
+<ul>
+<li>인증은 다중 사용자 컴퓨터 시스템이나 네트워크 시스템에서 로그인을 요청한 <u>사용자의 정보를 확인하고 접근 권한을 검증</u>하는 보안절차</li>
+<li>인증의 종류 - 지식기반인증 Something You Know - 소유기반인증 Something You Have - 생체기반인증 Something You Are - 행위기반인증 Something You Do</li>
+</ul>
+<h4 id="지식기반인증"><a class="markdownIt-Anchor" href="#지식기반인증"></a> 지식기반인증</h4>
+<ul>
+<li>사용자가 <u>기억하고 있는 정보를 기반</u>으로 인증을 수행하는 것</li>
+<li>사용자의 기억을 기반으로 하므로 <u>관리비용 저렴</u></li>
+<li>인증기법 중 <u>가장 보안에 취약함</u></li>
+<li>예 - 아이디/비밀번호 - 아이핀</li>
+</ul>
+<h4 id="소유기반인증"><a class="markdownIt-Anchor" href="#소유기반인증"></a> 소유기반인증</h4>
+<ul>
+<li>사용자가 <u>소유하고 있는 것을 기반</u>으로 인증하는 것</li>
+<li>소유물이 쉽게 도용될 수 있기 대문에 지식기반이나 생체기반 인증방식과 함께 사용</li>
+<li><u>분실 및 도용의 위험이 존재</u></li>
+<li>예 - 신분증 - 스마트 카드 - OTP</li>
+</ul>
+<h4 id="생체기반인증"><a class="markdownIt-Anchor" href="#생체기반인증"></a> 생체기반인증</h4>
+<ul>
+<li>사용자의 <u>고유한 생체 정보를 기반</u>으로 인증을 수행하는 것</li>
+<li>사용이 쉽고 도난 위험도 적으며 <u>위조가 어려움</u></li>
+<li>예 - 지문 - 홍채/망막 - 얼굴 - 음성 - 정맥</li>
+</ul>
+<h4 id="행위기반인증"><a class="markdownIt-Anchor" href="#행위기반인증"></a> 행위기반인증</h4>
+<ul>
+<li>사용자의 <u>행동 정보</u>를 이용해 인증 수행</li>
+<li>예 - 서명</li>
+</ul>
+<h4 id="위치기반인증"><a class="markdownIt-Anchor" href="#위치기반인증"></a> 위치기반인증</h4>
+<ul>
+<li>인증을 시도하는 <u>위치</u>의 적절성 확인</li>
+<li>예 - GPS - IP</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서비스공격유형(2)">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T17:35:36.000Z">2020-04-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 686 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9502/">시스템보안설계 - 서비스공격유형(2)</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="시스템-보안-설계"><a class="markdownIt-Anchor" href="#시스템-보안-설계"></a> 시스템 보안 설계</h2>
+<h3 id="네트워크-침해-공격-용어"><a class="markdownIt-Anchor" href="#네트워크-침해-공격-용어"></a> 네트워크 침해 공격 용어</h3>
+<h4 id="smishing-스미싱"><a class="markdownIt-Anchor" href="#smishing-스미싱"></a> Smishing 스미싱</h4>
+<ul>
+<li><u>문자메시지</u>를 보낸 후 메시지에 있는 인터넷 주소를 클릭하면 <u>악성코드를 설치하여 금융정보 빼냄</u></li>
+</ul>
+<h4 id="aptadvanced-persistent-threats-지능형-지속-위협"><a class="markdownIt-Anchor" href="#aptadvanced-persistent-threats-지능형-지속-위협"></a> APT(Advanced Persistent Threats, 지능형 지속 위협)</h4>
+<ul>
+<li>특정기업이나 <u>조직 네트워크에 침투</u>해 활동 거점을 마련한 뒤 때를 기다리면서 <u>보안을 무력화하고 정보를 수집한 다음 외부로 빼돌리는 형태</u>의 공격</li>
+<li>내부자에게 악성코드가 포함된 이메일을 오랜 기간 동안 꾸준히 발송해 클릭하기를 기다림</li>
+<li>스턱스넷과 같이 악성코드가 담긴 USB로 전파</li>
+</ul>
+<h4 id="spear-phishing-스피어-피싱"><a class="markdownIt-Anchor" href="#spear-phishing-스피어-피싱"></a> Spear Phishing 스피어 피싱</h4>
+<ul>
+<li><u>사회 공학</u>의 한 기법 - Social Engineering : <u>인간 상호 작용</u>의 깊은 신뢰를 바탕으로 사람들을 속여 정상 보안절차를 깨뜨리기 위한 비기술적 시스템 침입 수단</li>
+<li>특정 대상을 선정 후 <u>일반적인 메일로 위장</u> 후 지속적으로 발송하여 <u>발송 메일의 링크나 첨부 파일을 클릭하도록 유도</u>해 사용자의 개인 정보를 탈취</li>
+</ul>
+<h4 id="qshing-큐싱"><a class="markdownIt-Anchor" href="#qshing-큐싱"></a> Qshing 큐싱</h4>
+<ul>
+<li><u>QR(Quick Rsponse Code)를 통해 악성 앱의 다운로드 유도</u></li>
+</ul>
+<h3 id="정보-보안-침해-공격-용어"><a class="markdownIt-Anchor" href="#정보-보안-침해-공격-용어"></a> 정보 보안 침해 공격 용어</h3>
+<h4 id="botnet-봇넷"><a class="markdownIt-Anchor" href="#botnet-봇넷"></a> Botnet 봇넷</h4>
+<ul>
+<li><u>악성 프로그램에 감염</u>되어 악의적인 의도로 사용될 수 있는 <u>다수의 컴퓨터들이 네트워크로 연결</u>된 형태</li>
+</ul>
+<h4 id="worm-웜"><a class="markdownIt-Anchor" href="#worm-웜"></a> Worm 웜</h4>
+<ul>
+<li>네트워크를 통해 <u>연속적으로 자신을 복제</u>하여 <u>시스템의 부하를 높임</u>으로써 결국 시스템을 다운시키는 바이러스</li>
+</ul>
+<h4 id="zero-day-attack-제로데이공격"><a class="markdownIt-Anchor" href="#zero-day-attack-제로데이공격"></a> Zero Day Attack 제로데이공격</h4>
+<ul>
+<li><u>보안 취약점이 발견</u>되었을 때 발견된 취약점의 존재 자체가 널리 공표되기 전에 해당 취약점을 통하여 이루어지는 보안 공격으로 <code>공격의 신속성</code> 의미</li>
+</ul>
+<h4 id="ransomware-랜섬웨어"><a class="markdownIt-Anchor" href="#ransomware-랜섬웨어"></a> Ransomware 랜섬웨어</h4>
+<ul>
+<li>인터넷 사용자의 컴퓨터에 잠입해 <u>내부 문서나 파일 등을 암호화</u>해 사용자가 열지 못하게 하는 프로그램</li>
+<li>암호 해독용 프로그램의 전달을 조건으로 돈을 요구</li>
+</ul>
+<h4 id="trojan-horse-트로이-목마"><a class="markdownIt-Anchor" href="#trojan-horse-트로이-목마"></a> Trojan Horse 트로이 목마</h4>
+<ul>
+<li>정상적인 기능을 하는 프로그램으로 위장</li>
+<li>프로그램 내에 <u>숨어 있다가 해당 프로그램이 동작할 때 활성화</u> 되어 부작용을 일으킴</li>
+<li><u>자기 복제 능력은 없음</u></li>
+</ul>
+<h4 id="key-logger-attack-키로거-공격"><a class="markdownIt-Anchor" href="#key-logger-attack-키로거-공격"></a> Key Logger Attack 키로거 공격</h4>
+<ul>
+<li>컴퓨터 <u>사용자의 키보드 움직임을 탐지해</u> id, pw, 계좌번호 등 같은 개인의 중요한 정보를 몰래 빼가는 해킹</li>
+</ul>
 
         </div>
         
@@ -244,7 +439,7 @@ row는 단어, column은 문서(작품)에 대응한다.<br />
         <div class="pagination-previous">
             <a class="is-flex-grow has-text-black-ter" href="/page/14/">이전</a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
+        <div class="pagination-next">
             <a class="is-flex-grow has-text-black-ter" href="/page/16/">다음</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
@@ -256,6 +451,12 @@ row는 단어, column은 문서(작품)에 대응한다.<br />
             <li><a class="pagination-link has-text-black-ter" href="/page/14/">14</a></li>
             
             <li><a class="pagination-link is-current" href="/page/15/">15</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/16/">16</a></li>
+            
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/24/">24</a></li>
             
         </ul>
     </nav>
@@ -1827,7 +2028,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

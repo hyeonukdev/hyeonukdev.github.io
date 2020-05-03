@@ -843,25 +843,463 @@ tanh는 -1 ~ 1 까지임 -&gt; 현재 위치에서 어느정도 정보를 반영
 
 
 
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/25/NLP-BASIC/VectorforNLP/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Vector for NLP">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T07:04:38.000Z">2020-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 688 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/25/NLP-BASIC/VectorforNLP/">Vector for NLP</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="라이브러리-소개"><a class="markdownIt-Anchor" href="#라이브러리-소개"></a> 라이브러리 소개</h2>
+<h3 id="representation-vector"><a class="markdownIt-Anchor" href="#representation-vector"></a> Representation Vector</h3>
+<h3 id="background"><a class="markdownIt-Anchor" href="#background"></a> Background</h3>
+<p>원-핫 인코딩을 표현한 벡터, 트레인 데이터 셋 안에 전체 문장들의 합을 코퍼스라고 했을 때, 코퍼스 안에서 어떤 토크나이저를 거쳐서 딕셔너리를 만든다 -&gt; v가 된다</p>
+<ul>
+<li>
+<p>Make several tokens from sentences</p>
+</li>
+<li>
+<p>Build a Dictionary of words by indexing each token</p>
+</li>
+<li>
+<p>Make a Vector(Dimension : Number of Words)</p>
+</li>
+<li>
+<p>1 for the corresponding index with the remaining 0</p>
+</li>
+<li>
+<p>Orthogonal Vector -&gt; Lose of Context Information<br />
+Rome Paris는 역할이 비슷하지만 표현할 수 없다</p>
+</li>
+<li>
+<p>Sparse Vector -&gt; Curse of Dimensionality<br />
+벡터를 내적했을 때 값이 크면 유사도가 높지만 원-핫 인코딩 벡터는 1개 빼고 0 이 된다</p>
+</li>
+</ul>
+<p>두 가지 이유로 적합하지 않음 -&gt; 토크나이저를 쓰자</p>
+<h3 id="tokenizer"><a class="markdownIt-Anchor" href="#tokenizer"></a> Tokenizer</h3>
+<p>English -&gt; SPACY, NLTK<br />
+한국어는 형태소라는 것이 있기 때문에 띄어쓰기로는 애매할 수 있다.<br />
+이러한 것을 보완해서 한국어토큰이 별도 있다.<br />
+Korean -&gt; KoNLPy(Hannanum, Kkma, Komoran, Twitter), MECAB, KHAIII</p>
+<p>한국어의 사전에 따라 모델의 성능이 다르기 때문에 중요하다.</p>
+<p>넘버링이 되어 있는 단어를 어떻게 표현할 것인지 알아보자</p>
+<h3 id="word2vec"><a class="markdownIt-Anchor" href="#word2vec"></a> Word2Vec</h3>
+<ul>
+<li>Efficient Estimation of Word Representations in Vector Space(Tomas Mikolov et al, 2013)</li>
+</ul>
+<ol>
+<li>
+<p>CBOW 방식<br />
+w(t-2) ~ w(t+2)바탕으로 w(t)를 유추할 수 있도록 한다.<br />
+주변 단어들을 이용해서 중심단어를 학습한다.<br />
+w(t-2) : The<br />
+w(t-1) : quick<br />
+w(t) : brown  -&gt; output<br />
+w(t+1) : fox<br />
+w(t+2) : jumps<br />
+w(t-2)가 들어갔을 때 brown이 나올 수 있도록 학습하는 것.<br />
+중심단어를 이용해서 주변 단어를 학습한다.</p>
+<p>네모를 window라고 하고 중심단어로부터 주변단어까지의 사이즈를 window size라고한다</p>
+</li>
+<li>
+<p>Skip-gram 방식<br />
+w(t)를 바탕으로 w(t-2) ~ w(t+2)를 유추할 수 있도록 한다.</p>
+</li>
+</ol>
+<ul>
+<li>Objective Function : Learn to reflect similarity between two vectors</li>
+</ul>
+<p>The의 경우 빈도수가 높아서 과적합이 일어날 수 있다.<br />
+-&gt; Subsampling to get : Regularize</p>
+<p>전체 단어에 대한 대상으로 softmax를 계산하는 것이 아닌 window size 안에 있는 단어와 밖에 있는 단어는 샘플링하여 해당되는 내용을 바탕으로 softmax 계산을 한다.<br />
+-&gt; Negative Sampling to get Speed Up</p>
+<h3 id="glove"><a class="markdownIt-Anchor" href="#glove"></a> Glove</h3>
+<ul>
+<li>Global Vectors for Word Representation (Jeffrey Pennington et al, 2014)<br />
+co-occurrence 개념을 제시<br />
+window 밖에 있는 단어는 학습이 진행되지  않는 단점을 지적했다.</li>
+<li>Objective Function : Learn to reflect co-occurrence between two vectors<br />
+가정 : 한 문장안에 동시 출연된 단어는 연관성이 있을 것이다.</li>
+</ul>
+<p>연관성이 높으면 값이 높을 것이다</p>
+<h3 id="fasttext"><a class="markdownIt-Anchor" href="#fasttext"></a> FastText</h3>
+<ul>
+<li>Bag of Tricks for Efficient Text Classification (Armand Joulin et al, 2016)</li>
+<li>Objective Function : Learn to  reflect  similarity between two vectors<br />
+코퍼스를 형성하는 단어를 적게두자.<br />
+Unigrams<br />
+Bigrams<br />
+Trigrams<br />
+4-grams</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
 
     
-<div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/0/">이전</a>
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/25/NLP-BASIC/BackgroundofNLP/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Background of NLP">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T06:35:05.000Z">2020-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7분 읽기 (대략 1018 단어)
+                </span>
+                
+                
+            </div>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/2/">다음</a>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/25/NLP-BASIC/BackgroundofNLP/">Background of NLP</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="basic-concept-of-machine-learning"><a class="markdownIt-Anchor" href="#basic-concept-of-machine-learning"></a> Basic Concept of Machine Learning</h3>
+<ul>
+<li>
+<p>예를 들어 호랑이와 고양이를 예측하는 인공지능을 만들고 싶다라고 한다면 모델입장에서는 두가지가 필요하다</p>
+<ul>
+<li>호랑이이미지 = 호랑이레이블</li>
+<li>고양이이미지 = 고양이레이블</li>
+</ul>
+</li>
+<li>
+<p>이렇게 레이블 정보(With Labels)를 활용해서 학습하는 것을 <strong>Supervised Learning</strong> <code>지도학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>반면, 레이블 정보 없이(No Labels) 이미지만을 활용해서 하는 것을 <strong>Unsupervised Learning</strong> <code>비지도학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>레이블정보가 아니라 입력이미지에 대해서 잘 분류하였으면 +1점, 잘 분류하지 못했으면 -1점 처럼 리워드를 주는 방식(With Rewards)을 <strong>Reinforcement Learning</strong> <code>강화학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>Machine Learning</p>
+<ul>
+<li>Supervised Learning
+<ul>
+<li>Regression : 수치형, <code>회기</code>, 아파트가격/주가예측</li>
+<li>Classification : 카테고리컬 variable, 클래스로 예측하는 것, <code>분류</code>, 남성/여성, 양성/음성</li>
+</ul>
+</li>
+<li>Unsupervise Learning
+<ul>
+<li>Clustering : 레이블이 없는 입력이미지를 바탕으로 학습할 때 유사하다고 계산이 되는 것을 <code>군집화</code> 하는 것</li>
+<li>Dimensionality Reduction : 데이터가 엄청나게 큰 벡터로 표현될 때 적은차원의 벡터로 표현 하는 것, 차원축소의 기법</li>
+</ul>
+</li>
+<li>Reinforcement Learning
+<ul>
+<li>Decision Process : 의사결정</li>
+<li>Game Ai : 게임 ai</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="process-of-machine-learning"><a class="markdownIt-Anchor" href="#process-of-machine-learning"></a> Process of Machine Learning</h3>
+<p>데이터 수집 -&gt; 해당 데이터를 전처리(해당 모델에 대해서 잘 이용할 수 있게 작업) -&gt; 모델링 -&gt; 학습한 모델의 성능을 평가</p>
+<ul>
+<li>
+<p>Data Collection</p>
+<ul>
+<li>Database</li>
+<li>Server</li>
+<li>API</li>
+</ul>
+</li>
+<li>
+<p>Preprocessing</p>
+<ul>
+<li>Not Available : 정형데이터의 경우 변수에 없는 값이 발생할 수 있다</li>
+<li>Scaling : 변수 간의 정보 반영이 단위 값에 따라 다를 수 있다
+<ul>
+<li>ex) 사람의 키는 cm 몸무게는 kg 인데 남자/여자 판별할 때 영향력이 1cm와 1kg은 다르다</li>
+</ul>
+</li>
+<li>Derived Variables : 파생변수(각 변수를 조합)를 만든다</li>
+</ul>
+</li>
+<li>
+<p>Modeling</p>
+<ul>
+<li>ML Model</li>
+<li>DL Model</li>
+<li>RL Model</li>
+</ul>
+</li>
+<li>
+<p>Performance Measure</p>
+<ul>
+<li>Accuracy : 얼마나 잘 분류했는지</li>
+<li>Mean Squared Error : 얼마나 잘 예측했는지 오차 계산</li>
+<li>Similarity : 얼마나 유사한지</li>
+</ul>
+</li>
+</ul>
+<h3 id="role-of-train-valid-test-dataset"><a class="markdownIt-Anchor" href="#role-of-train-valid-test-dataset"></a> Role of Train, Valid, Test Dataset</h3>
+<p>잘 활용하기 위해서는 3가지의 Dataset이 필요하다</p>
+<ul>
+<li>
+<p>Train</p>
+<ul>
+<li>학습을 하는데 이용한다</li>
+<li>학습이 완료되고 예측을 해본다</li>
+<li>Using for Training Model</li>
+</ul>
+</li>
+<li>
+<p>Valid</p>
+<ul>
+<li>학습을 하지 않고</li>
+<li>예측만 진행한다</li>
+<li>만약 예측시 valid보다 train이 좋지 않으면 다시 학습한다</li>
+<li>모니터링의 역할만 한다</li>
+<li>Using for Training Direction</li>
+</ul>
+</li>
+<li>
+<p>Test</p>
+<ul>
+<li>모델이 한 번도 보지 못한 것을 평가</li>
+<li>Using for Measure Performance</li>
+</ul>
+</li>
+<li>
+<p>10000의 dataset이 있을 경우 train : 6000, valid : 2000, test : 2000 으로 한다</p>
+</li>
+<li>
+<p>8 : 1 : 1 도 한다</p>
+</li>
+</ul>
+<h3 id="process-of-nlp-with-deep-learning"><a class="markdownIt-Anchor" href="#process-of-nlp-with-deep-learning"></a> Process of NLP with Deep Learning</h3>
+<p>자연어처리 딥러닝을 이해하자</p>
+<ul>
+<li>
+<p>Data Collection</p>
+<ul>
+<li>Crawling : html에서 데이터를 직접 가져오기</li>
+<li>ex) 영화평을 크롤링해서 분석</li>
+</ul>
+</li>
+<li>
+<p>Preprocessing</p>
+<ul>
+<li>Tokenizer</li>
+<li>Make Corpus</li>
+<li>Representation</li>
+</ul>
+</li>
+<li>
+<p>Modeling</p>
+<ul>
+<li>ML Model</li>
+<li>DL Model</li>
+<li>RL Model</li>
+</ul>
+</li>
+<li>
+<p>Performance Measure</p>
+<ul>
+<li>Accuracy</li>
+<li>Mean Squared Error</li>
+<li>Similarity</li>
+</ul>
+</li>
+</ul>
+<h3 id="make-corpus-with-train-dataset"><a class="markdownIt-Anchor" href="#make-corpus-with-train-dataset"></a> Make Corpus with Train Dataset</h3>
+<ul>
+<li>
+<p>Make Number to Input Natural Language into Computer<br />
+자연어를 숫자 값으로 변경하기</p>
+</li>
+<li>
+<p>Make Token to Make a Dictionary<br />
+토큰을 만들기</p>
+<ul>
+<li>‘I am a boy’ -&gt; ‘I’, ‘am’, ‘a’, ‘boy’ 띄어쓰기를 바탕으로 단어 분리</li>
+<li>‘I am a girl’ -&gt; ‘I’, ‘am’, ‘a’, girl’</li>
+<li>각 단어는 토큰을 의미</li>
+</ul>
+</li>
+<li>
+<p>Make a Dictionary out of the Tokens in the Train Dataset<br />
+트레인 데이터셋 안에 있는 토큰으로만 단어사전을 만든다</p>
+</li>
+<li>
+<p>Replace Words with Numbers using a Dictionary<br />
+숫자를 붙여주기</p>
+<ul>
+<li>‘I’ : 0, ‘am’ : 1, ‘a’ : 2, ‘boy’ : 3, ‘girl’ : 4</li>
+<li>‘I am a boy’ -&gt; [0,1,2,3]</li>
+<li>‘I am a girl’ -&gt; [0,1,2,4]</li>
+<li>겹치지 않는다</li>
+</ul>
+</li>
+</ul>
+<h3 id="representation-vector"><a class="markdownIt-Anchor" href="#representation-vector"></a> Representation Vector</h3>
+<ul>
+<li>‘boy’ : 3 , ‘girl’ : 4</li>
+<li>boy and girl have similar roles in sentence<br />
+남자와 여자는 문장에서 비슷한 역할을 수행할 것이다</li>
+<li>But 3,4 can’t represent their role enough<br />
+하지만 3,4만으로는 비슷하다는 것을 나타낼 수 없다</li>
+<li>Represent Natural Language with Vectors not scalars<br />
+원-핫벡터도 어떠한 인덱스만 1이기 때문에 스칼라로 보자<br />
+다양한 숫자로 채워진 벡터로 만들어보자
+<ul>
+<li>Word2Vec, Glove, FastTest(Word)</li>
+</ul>
+</li>
+<li>Sentence, Document, Sentence Piece<br />
+단어 뿐만아니라 문장, 문서 등으로 토큰을 만들 수 있다</li>
+</ul>
+
         </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/2/">2</a></li>
-            
-        </ul>
-    </nav>
+        
+        
+        
+    </div>
 </div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/01/NLG-anaconda/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4%EC%84%A4%EC%B9%98/" class="image is-7by1">
+            <img class="thumbnail" src="https://wikibook.co.kr/images/cover/m/9791158391379.png" alt="아나콘다설치">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-31T15:32:50.000Z">2020-04-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/Anaconda/">Anaconda</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 384 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/01/NLG-anaconda/%EC%95%84%EB%82%98%EC%BD%98%EB%8B%A4%EC%84%A4%EC%B9%98/">아나콘다설치</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="아나콘다-가상-환경-구성"><a class="markdownIt-Anchor" href="#아나콘다-가상-환경-구성"></a> 아나콘다 가상 환경 구성</h1>
+<p>아나콘다가 설치 되었다는 가정하에 진행하겠다<br />
+파이썬 프로젝트는 파이썬 실행 환경을 독립적으로 가능하게 해주므로 가상 환경을 만들어 보자.<br />
+conda 명령어를 통해 가상 환경을 생성하자.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda create --name pr_tensorflow python&#x3D;3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>conda crate는 가상환경을 생성하는 것을 의미<br />
+–naeme 옵션에 pr_tensorflow입력하고 3버전을 입력</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda activate pr_tensorflow</span><br><span class="line">(pr_tensorflow</span><br></pre></td></tr></table></figure>
+<p>윈도우 환경에서는 activate로 가상환경을 실행해주면 (pr_tensorflow)가 만들어진다</p>
+<p>가상환경이름을 잊어버렸다면</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ conda env list</span><br><span class="line"># conda environments:</span><br><span class="line">#</span><br><span class="line">base                     C:\Users\lego7\Anaconda3</span><br><span class="line">pr_tensorflow         *  C:\Users\lego7\Anaconda3\envs\pr_tensorflow</span><br></pre></td></tr></table></figure>
+<hr />
+<h2 id="실습-환경-구성"><a class="markdownIt-Anchor" href="#실습-환경-구성"></a> 실습 환경 구성</h2>
+<p><a href="https://github.com/NLP-kr/tensorflow-ml-nlp.git">github링크</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;NLP-kr&#x2F;tensorflow-ml-nlp.git</span><br><span class="line">Cloning into &#39;tensorflow-ml-nlp&#39;...</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ ls</span><br><span class="line">tensorflow-ml-nlp&#x2F;</span><br><span class="line">(pr_tensorflow)</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG</span><br><span class="line">$ cd tensorflow-ml-nlp</span><br><span class="line">(pr_tensorflow)</span><br><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ ls</span><br><span class="line">1.Intro&#x2F;     3.NLP_INTRO&#x2F;            5.TEXT_SIM&#x2F;  main.png   requirements.txt</span><br><span class="line">2.NLP_PREP&#x2F;  4.TEXT_CLASSIFICATION&#x2F;  6.CHATBOT&#x2F;   README.md</span><br><span class="line">(pr_tensorflow)</span><br></pre></td></tr></table></figure>
+<p>python 3.6 버전을 설치해주자</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ conda install python&#x3D;3.6</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ pip install -r requirements.txt</span><br><span class="line">Collecting tensorflow</span><br></pre></td></tr></table></figure>
+<p>주피터노트북 실행</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lego7@DESKTOP-UHCO554 MINGW64 ~&#x2F;Desktop&#x2F;NaverCloud&#x2F;hyeonukdev&#x2F;NLG&#x2F;tensorflow-ml-nlp (master)</span><br><span class="line">$ jupyter notebook</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
 </div>
                 
 
@@ -2429,7 +2867,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

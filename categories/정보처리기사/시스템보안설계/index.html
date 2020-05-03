@@ -686,25 +686,139 @@
 
 
 
-
     
-<div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/page/0/">이전</a>
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9501/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="시스템보안설계 - 서비스공격유형(1)">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T17:01:55.000Z">2020-04-26</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">시스템보안설계</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9분 읽기 (대략 1325 단어)
+                </span>
+                
+                
+            </div>
         </div>
-        <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/page/2/">다음</a>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/26/Engineer_Information_Processing/ch21_%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%9501/">시스템보안설계 - 서비스공격유형(1)</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="시스템-보안-설계"><a class="markdownIt-Anchor" href="#시스템-보안-설계"></a> 시스템 보안 설계</h2>
+<h3 id="서비스-공격-유형"><a class="markdownIt-Anchor" href="#서비스-공격-유형"></a> 서비스 공격 유형</h3>
+<ul>
+<li>서비스 거부 공격의 개념과 <strong>서비스 거부 공격의 종류별 특징</strong>을 이해</li>
+<li><strong>서버 인증과 서버 접근 통제</strong>의 개념을 이해하고 인증의 종류와 접근 통제 정책의 종류를 이해</li>
+<li><strong>보안아키텍처와 보안 Framewor</strong>k의 개념 및 보안 통제 항목의 종류를 이해</li>
+</ul>
+<blockquote>
+<p>서비스 거부 공격<br />
+- 서비스 공격은 일반적으로 서비스 거부(Dos) 공격을 뜻함<br />
+- 서버는 서비스 요청에 대해 서비스를 제공하는 의무가 있음<br />
+- 서버가 서비스 능력을 초과하는 요청을 도시다발적으로 받게 되면 서비스 불능상태로 마비됨</p>
+</blockquote>
+<h4 id="ping-flood"><a class="markdownIt-Anchor" href="#ping-flood"></a> Ping Flood</h4>
+<ul>
+<li>하나의 사이트로 <u>많은 양의 ICMP echo request를 요청</u>할 때 이 사이트에서 존재하는 시스템 자원은 개별 메시지들에 각각 <u>응답하기 위해 시스템 자원(resource)를 모두 사용</u>해 버리는 점을 이용</li>
+<li>ICMP : Internet Control Message Protocol</li>
+<li>TCP/IP 기반의 인터넷 통신 <code>서비스에서 인터넷 프로토콜에 결합</code>되어 전송되는 프로토콜로, IP에 대해 통신 중 발생하는 오류 처리와 전송 경로 변경, <code>에코 요청, 에코 응답</code> 등을 제어하기 위한 메시지를 취급</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping [주소]</span><br></pre></td></tr></table></figure>
+<h4 id="ping-of-death"><a class="markdownIt-Anchor" href="#ping-of-death"></a> Ping of Death</h4>
+<ul>
+<li><u>Ping 명령</u>을 전송할 때 <u>패킷의 크기</u>를 인터넷 프로토콜 <u>허용 범위(65,536 byte)이상으로 전송하여 공격 대상의 네트워크를 마비</u>시키는 서비스 거부 공격</li>
+<li>Ping 기본 크기 : 32byte</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -I 100 -n 5 [주소]</span><br></pre></td></tr></table></figure>
+<h4 id="smurfing"><a class="markdownIt-Anchor" href="#smurfing"></a> SMURFING</h4>
+<ul>
+<li><u>엄청난 양의 데이터를 한 사이트에 집중적으로 보냄</u>으로써 네트워크를 불능 상태로 만듬</li>
+<li>공격자는 <u>패킷의 송신 주소를 공격 대상의 IP주소로 위장</u>하고 해당 네트워크 라우터의 <u>브로드캐스트 주소를 수신지</u>로 하여 패킷을 전송하면 라우터의 브로드캐스트 주소로 <u>수신된 패킷</u>은 해당 네트워크 내의 모든 컴퓨터로 전송함 - Broadcast : 네트워크에 연결된 전체 컴퓨터에 패킷을 전송할 때 사용하는 주소</li>
+<li>해당 네트워크 내의 모든 컴퓨터는 <u>수신된 패킷에 대한 응답 메시지를 송신 주소인 공격 대상</u> 컴퓨터로 <u>집중적으로 전송</u>하게 되어 공격 대상지는 <u>네트워크 과부하</u>로 정상적인 서비스 수행이 불가능해짐</li>
+</ul>
+<h4 id="syn-floodingsynchronize-sequence-number"><a class="markdownIt-Anchor" href="#syn-floodingsynchronize-sequence-number"></a> SYN Flooding(Synchronize sequence number)</h4>
+<ul>
+<li>
+<p>TCP는 신뢰성 있는 전송을 위해 3-way-handshake를 거친 후에 데이터를 전송</p>
+<ol>
+<li>Client &gt; Server<br />
+SYN 패킷 전송<br />
+대상 서버에 접속한다고 손을 내밈</li>
+<li>Server &gt; Client<br />
+SYN + ACK 패킷 전송<br />
+서버에는 접속해도 된다고 응답함</li>
+<li>Client &gt; Server<br />
+ACK(Acknowledgment) 패킷 전송<br />
+응답메시지를 받으면 데이터를 보냄</li>
+</ol>
+</li>
+<li>
+<p>공격자가 <u>가상의 클라이언트로 위장</u>한 후 공격 대상지인 서버로 <u>‘SYN’ 신호를 보냄</u></p>
+</li>
+<li>
+<p>서버는 <u>'SYN+ACK’신호를 가상의 클라이언트</u>로 보내면서 클라이언트의 <u>접속을 받아들이기 위한 메모리의 일정 공간</u>을 확보함</p>
+</li>
+<li>
+<p>공격자가 사용할 수 없는 IP 주소를 이용하여 공격 대상지 서버로 반복적인 3-way-handshake 과정을 요청하면 <u>공격 대상지 서버는 메모리 공간을 점점 더 많이 확보한 상태에서 대기</u>하게 됨</p>
+</li>
+<li>
+<p>대비<br />
+<code>SYN 수신 대기 시간을 줄이거</code>나 <code>침입 차단 시스템을 활용</code></p>
+</li>
+</ul>
+<h4 id="teardrop"><a class="markdownIt-Anchor" href="#teardrop"></a> TearDrop</h4>
+<ul>
+<li>데이터의 송수신과정에서 <u>패킷</u>의 크기가 커서 여러 개로 분할되어 전송될 때 <u>분할 순서</u>를 알 수 있도록 <u>Fragment Offset 값</u>을 함께 전송</li>
+<li>이때 <u>Offset 값을 변경시켜 수신 측에서 패킷을 재조립할 때 오류로 인한 과부하</u> 발생시켜 시스템 다운 유도 - 일반적으로 128kb로 토막낸다. 8개 - 다시 받을 때 합친다.</li>
+<li>대비 - Fragment Offset 잘못된 경우 <code>해당 패킷을 폐기</code></li>
+</ul>
+<h4 id="land"><a class="markdownIt-Anchor" href="#land"></a> Land</h4>
+<ul>
+<li>패킷을 전송할 때 <u>송신 IP주소와 수신 IP주소를 모두 공격 대상의 IP주소로 설정한 후 공격 대상에게 전송</u>하는 것</li>
+<li>이 패킷을 받은 공격 대상은 송신 IP주소가 자신이므로 자신에게 응답을 수행하는데 이러한 패킷이 계속해서 전송될 경우 자신에 대해 <u>무한 응답</u>하게 함</li>
+<li>대비</li>
+<li>송신 IP주소와 수신 IP 주소를 <code>검사</code></li>
+</ul>
+<h4 id="ddosdistributed-denial-of-service-분산-서비스-거부-공격"><a class="markdownIt-Anchor" href="#ddosdistributed-denial-of-service-분산-서비스-거부-공격"></a> DDoS(Distributed Denial of Service, 분산 서비스 거부) 공격</h4>
+<ul>
+<li>여러 곳에 <u>분산된 공격 지점에서 한 곳에 서버에 대해 서비스 거부 공격</u>을 수행</li>
+<li>일부 호스트에 다수의 에이전트를 관리할 수 있는 핸들러 프로그램을 설치하여 마스터로 지정후 공격</li>
+<li>취약점이 있는 호스트들을 탐색한 후 이들에 분산 서비스 공격용 툴을 설치하여 좀비PC로 만듬</li>
+<li>분산 서비스 공격용 툴 - Trin00 - TFN - TFN2K - Stacheldraht</li>
+</ul>
+
         </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link is-current" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/page/2/">2</a></li>
-            
-        </ul>
-    </nav>
+        
+        
+        
+    </div>
 </div>
+
+
+
+
+
+
+
+
 </div>
                 
 
@@ -2272,7 +2386,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

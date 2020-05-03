@@ -844,6 +844,643 @@ tanh는 -1 ~ 1 까지임 -&gt; 현재 위치에서 어느정도 정보를 반영
 
 
 
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/25/NLP-BASIC/VectorforNLP/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Vector for NLP">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T07:04:38.000Z">2020-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 688 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/25/NLP-BASIC/VectorforNLP/">Vector for NLP</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="라이브러리-소개"><a class="markdownIt-Anchor" href="#라이브러리-소개"></a> 라이브러리 소개</h2>
+<h3 id="representation-vector"><a class="markdownIt-Anchor" href="#representation-vector"></a> Representation Vector</h3>
+<h3 id="background"><a class="markdownIt-Anchor" href="#background"></a> Background</h3>
+<p>원-핫 인코딩을 표현한 벡터, 트레인 데이터 셋 안에 전체 문장들의 합을 코퍼스라고 했을 때, 코퍼스 안에서 어떤 토크나이저를 거쳐서 딕셔너리를 만든다 -&gt; v가 된다</p>
+<ul>
+<li>
+<p>Make several tokens from sentences</p>
+</li>
+<li>
+<p>Build a Dictionary of words by indexing each token</p>
+</li>
+<li>
+<p>Make a Vector(Dimension : Number of Words)</p>
+</li>
+<li>
+<p>1 for the corresponding index with the remaining 0</p>
+</li>
+<li>
+<p>Orthogonal Vector -&gt; Lose of Context Information<br />
+Rome Paris는 역할이 비슷하지만 표현할 수 없다</p>
+</li>
+<li>
+<p>Sparse Vector -&gt; Curse of Dimensionality<br />
+벡터를 내적했을 때 값이 크면 유사도가 높지만 원-핫 인코딩 벡터는 1개 빼고 0 이 된다</p>
+</li>
+</ul>
+<p>두 가지 이유로 적합하지 않음 -&gt; 토크나이저를 쓰자</p>
+<h3 id="tokenizer"><a class="markdownIt-Anchor" href="#tokenizer"></a> Tokenizer</h3>
+<p>English -&gt; SPACY, NLTK<br />
+한국어는 형태소라는 것이 있기 때문에 띄어쓰기로는 애매할 수 있다.<br />
+이러한 것을 보완해서 한국어토큰이 별도 있다.<br />
+Korean -&gt; KoNLPy(Hannanum, Kkma, Komoran, Twitter), MECAB, KHAIII</p>
+<p>한국어의 사전에 따라 모델의 성능이 다르기 때문에 중요하다.</p>
+<p>넘버링이 되어 있는 단어를 어떻게 표현할 것인지 알아보자</p>
+<h3 id="word2vec"><a class="markdownIt-Anchor" href="#word2vec"></a> Word2Vec</h3>
+<ul>
+<li>Efficient Estimation of Word Representations in Vector Space(Tomas Mikolov et al, 2013)</li>
+</ul>
+<ol>
+<li>
+<p>CBOW 방식<br />
+w(t-2) ~ w(t+2)바탕으로 w(t)를 유추할 수 있도록 한다.<br />
+주변 단어들을 이용해서 중심단어를 학습한다.<br />
+w(t-2) : The<br />
+w(t-1) : quick<br />
+w(t) : brown  -&gt; output<br />
+w(t+1) : fox<br />
+w(t+2) : jumps<br />
+w(t-2)가 들어갔을 때 brown이 나올 수 있도록 학습하는 것.<br />
+중심단어를 이용해서 주변 단어를 학습한다.</p>
+<p>네모를 window라고 하고 중심단어로부터 주변단어까지의 사이즈를 window size라고한다</p>
+</li>
+<li>
+<p>Skip-gram 방식<br />
+w(t)를 바탕으로 w(t-2) ~ w(t+2)를 유추할 수 있도록 한다.</p>
+</li>
+</ol>
+<ul>
+<li>Objective Function : Learn to reflect similarity between two vectors</li>
+</ul>
+<p>The의 경우 빈도수가 높아서 과적합이 일어날 수 있다.<br />
+-&gt; Subsampling to get : Regularize</p>
+<p>전체 단어에 대한 대상으로 softmax를 계산하는 것이 아닌 window size 안에 있는 단어와 밖에 있는 단어는 샘플링하여 해당되는 내용을 바탕으로 softmax 계산을 한다.<br />
+-&gt; Negative Sampling to get Speed Up</p>
+<h3 id="glove"><a class="markdownIt-Anchor" href="#glove"></a> Glove</h3>
+<ul>
+<li>Global Vectors for Word Representation (Jeffrey Pennington et al, 2014)<br />
+co-occurrence 개념을 제시<br />
+window 밖에 있는 단어는 학습이 진행되지  않는 단점을 지적했다.</li>
+<li>Objective Function : Learn to reflect co-occurrence between two vectors<br />
+가정 : 한 문장안에 동시 출연된 단어는 연관성이 있을 것이다.</li>
+</ul>
+<p>연관성이 높으면 값이 높을 것이다</p>
+<h3 id="fasttext"><a class="markdownIt-Anchor" href="#fasttext"></a> FastText</h3>
+<ul>
+<li>Bag of Tricks for Efficient Text Classification (Armand Joulin et al, 2016)</li>
+<li>Objective Function : Learn to  reflect  similarity between two vectors<br />
+코퍼스를 형성하는 단어를 적게두자.<br />
+Unigrams<br />
+Bigrams<br />
+Trigrams<br />
+4-grams</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/25/NLP-BASIC/BackgroundofNLP/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Background of NLP">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-25T06:35:05.000Z">2020-04-25</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7분 읽기 (대략 1018 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/25/NLP-BASIC/BackgroundofNLP/">Background of NLP</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="basic-concept-of-machine-learning"><a class="markdownIt-Anchor" href="#basic-concept-of-machine-learning"></a> Basic Concept of Machine Learning</h3>
+<ul>
+<li>
+<p>예를 들어 호랑이와 고양이를 예측하는 인공지능을 만들고 싶다라고 한다면 모델입장에서는 두가지가 필요하다</p>
+<ul>
+<li>호랑이이미지 = 호랑이레이블</li>
+<li>고양이이미지 = 고양이레이블</li>
+</ul>
+</li>
+<li>
+<p>이렇게 레이블 정보(With Labels)를 활용해서 학습하는 것을 <strong>Supervised Learning</strong> <code>지도학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>반면, 레이블 정보 없이(No Labels) 이미지만을 활용해서 하는 것을 <strong>Unsupervised Learning</strong> <code>비지도학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>레이블정보가 아니라 입력이미지에 대해서 잘 분류하였으면 +1점, 잘 분류하지 못했으면 -1점 처럼 리워드를 주는 방식(With Rewards)을 <strong>Reinforcement Learning</strong> <code>강화학습</code> 이라고 한다</p>
+</li>
+<li>
+<p>Machine Learning</p>
+<ul>
+<li>Supervised Learning
+<ul>
+<li>Regression : 수치형, <code>회기</code>, 아파트가격/주가예측</li>
+<li>Classification : 카테고리컬 variable, 클래스로 예측하는 것, <code>분류</code>, 남성/여성, 양성/음성</li>
+</ul>
+</li>
+<li>Unsupervise Learning
+<ul>
+<li>Clustering : 레이블이 없는 입력이미지를 바탕으로 학습할 때 유사하다고 계산이 되는 것을 <code>군집화</code> 하는 것</li>
+<li>Dimensionality Reduction : 데이터가 엄청나게 큰 벡터로 표현될 때 적은차원의 벡터로 표현 하는 것, 차원축소의 기법</li>
+</ul>
+</li>
+<li>Reinforcement Learning
+<ul>
+<li>Decision Process : 의사결정</li>
+<li>Game Ai : 게임 ai</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="process-of-machine-learning"><a class="markdownIt-Anchor" href="#process-of-machine-learning"></a> Process of Machine Learning</h3>
+<p>데이터 수집 -&gt; 해당 데이터를 전처리(해당 모델에 대해서 잘 이용할 수 있게 작업) -&gt; 모델링 -&gt; 학습한 모델의 성능을 평가</p>
+<ul>
+<li>
+<p>Data Collection</p>
+<ul>
+<li>Database</li>
+<li>Server</li>
+<li>API</li>
+</ul>
+</li>
+<li>
+<p>Preprocessing</p>
+<ul>
+<li>Not Available : 정형데이터의 경우 변수에 없는 값이 발생할 수 있다</li>
+<li>Scaling : 변수 간의 정보 반영이 단위 값에 따라 다를 수 있다
+<ul>
+<li>ex) 사람의 키는 cm 몸무게는 kg 인데 남자/여자 판별할 때 영향력이 1cm와 1kg은 다르다</li>
+</ul>
+</li>
+<li>Derived Variables : 파생변수(각 변수를 조합)를 만든다</li>
+</ul>
+</li>
+<li>
+<p>Modeling</p>
+<ul>
+<li>ML Model</li>
+<li>DL Model</li>
+<li>RL Model</li>
+</ul>
+</li>
+<li>
+<p>Performance Measure</p>
+<ul>
+<li>Accuracy : 얼마나 잘 분류했는지</li>
+<li>Mean Squared Error : 얼마나 잘 예측했는지 오차 계산</li>
+<li>Similarity : 얼마나 유사한지</li>
+</ul>
+</li>
+</ul>
+<h3 id="role-of-train-valid-test-dataset"><a class="markdownIt-Anchor" href="#role-of-train-valid-test-dataset"></a> Role of Train, Valid, Test Dataset</h3>
+<p>잘 활용하기 위해서는 3가지의 Dataset이 필요하다</p>
+<ul>
+<li>
+<p>Train</p>
+<ul>
+<li>학습을 하는데 이용한다</li>
+<li>학습이 완료되고 예측을 해본다</li>
+<li>Using for Training Model</li>
+</ul>
+</li>
+<li>
+<p>Valid</p>
+<ul>
+<li>학습을 하지 않고</li>
+<li>예측만 진행한다</li>
+<li>만약 예측시 valid보다 train이 좋지 않으면 다시 학습한다</li>
+<li>모니터링의 역할만 한다</li>
+<li>Using for Training Direction</li>
+</ul>
+</li>
+<li>
+<p>Test</p>
+<ul>
+<li>모델이 한 번도 보지 못한 것을 평가</li>
+<li>Using for Measure Performance</li>
+</ul>
+</li>
+<li>
+<p>10000의 dataset이 있을 경우 train : 6000, valid : 2000, test : 2000 으로 한다</p>
+</li>
+<li>
+<p>8 : 1 : 1 도 한다</p>
+</li>
+</ul>
+<h3 id="process-of-nlp-with-deep-learning"><a class="markdownIt-Anchor" href="#process-of-nlp-with-deep-learning"></a> Process of NLP with Deep Learning</h3>
+<p>자연어처리 딥러닝을 이해하자</p>
+<ul>
+<li>
+<p>Data Collection</p>
+<ul>
+<li>Crawling : html에서 데이터를 직접 가져오기</li>
+<li>ex) 영화평을 크롤링해서 분석</li>
+</ul>
+</li>
+<li>
+<p>Preprocessing</p>
+<ul>
+<li>Tokenizer</li>
+<li>Make Corpus</li>
+<li>Representation</li>
+</ul>
+</li>
+<li>
+<p>Modeling</p>
+<ul>
+<li>ML Model</li>
+<li>DL Model</li>
+<li>RL Model</li>
+</ul>
+</li>
+<li>
+<p>Performance Measure</p>
+<ul>
+<li>Accuracy</li>
+<li>Mean Squared Error</li>
+<li>Similarity</li>
+</ul>
+</li>
+</ul>
+<h3 id="make-corpus-with-train-dataset"><a class="markdownIt-Anchor" href="#make-corpus-with-train-dataset"></a> Make Corpus with Train Dataset</h3>
+<ul>
+<li>
+<p>Make Number to Input Natural Language into Computer<br />
+자연어를 숫자 값으로 변경하기</p>
+</li>
+<li>
+<p>Make Token to Make a Dictionary<br />
+토큰을 만들기</p>
+<ul>
+<li>‘I am a boy’ -&gt; ‘I’, ‘am’, ‘a’, ‘boy’ 띄어쓰기를 바탕으로 단어 분리</li>
+<li>‘I am a girl’ -&gt; ‘I’, ‘am’, ‘a’, girl’</li>
+<li>각 단어는 토큰을 의미</li>
+</ul>
+</li>
+<li>
+<p>Make a Dictionary out of the Tokens in the Train Dataset<br />
+트레인 데이터셋 안에 있는 토큰으로만 단어사전을 만든다</p>
+</li>
+<li>
+<p>Replace Words with Numbers using a Dictionary<br />
+숫자를 붙여주기</p>
+<ul>
+<li>‘I’ : 0, ‘am’ : 1, ‘a’ : 2, ‘boy’ : 3, ‘girl’ : 4</li>
+<li>‘I am a boy’ -&gt; [0,1,2,3]</li>
+<li>‘I am a girl’ -&gt; [0,1,2,4]</li>
+<li>겹치지 않는다</li>
+</ul>
+</li>
+</ul>
+<h3 id="representation-vector"><a class="markdownIt-Anchor" href="#representation-vector"></a> Representation Vector</h3>
+<ul>
+<li>‘boy’ : 3 , ‘girl’ : 4</li>
+<li>boy and girl have similar roles in sentence<br />
+남자와 여자는 문장에서 비슷한 역할을 수행할 것이다</li>
+<li>But 3,4 can’t represent their role enough<br />
+하지만 3,4만으로는 비슷하다는 것을 나타낼 수 없다</li>
+<li>Represent Natural Language with Vectors not scalars<br />
+원-핫벡터도 어떠한 인덱스만 1이기 때문에 스칼라로 보자<br />
+다양한 숫자로 채워진 벡터로 만들어보자
+<ul>
+<li>Word2Vec, Glove, FastTest(Word)</li>
+</ul>
+</li>
+<li>Sentence, Document, Sentence Piece<br />
+단어 뿐만아니라 문장, 문서 등으로 토큰을 만들 수 있다</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/02/KoreanEmbedding/2%EC%9E%A5%EC%9A%94%EC%95%BD/" class="image is-7by1">
+            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="2장요약">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-01T17:32:57.000Z">2020-04-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (대략 203 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/02/KoreanEmbedding/2%EC%9E%A5%EC%9A%94%EC%95%BD/">2장요약</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="25-2장-요약"><a class="markdownIt-Anchor" href="#25-2장-요약"></a> 2.5 2장 요약</h1>
+<blockquote>
+<p>벡터가 어떻게 의미를 가지게 되는가</p>
+</blockquote>
+<ul>
+<li>임베딩에 자연어의 통계적 패턴 정보를 주면 자연어의 의미를 함축할 수 있다.</li>
+<li>백오브워즈 가정에서는 어떤 단어의 등장 여부 혹은 그 빈도 정보를 중시한다.</li>
+<li>백오브워즈 가정의 대척점에는 언어 모델이 있다. 언어 모델은 단어의 등장 순서를 학습해 주어진 단어 스퀀스가 얼마나 자연스러운지 확률을 부여한다.</li>
+<li>분포 가정에서는 문장에서 어떤 단어가 같이 쓰였는지를 중요하게 따진다.</li>
+<li>말뭉치의 통계적 패턴을 서로 다른 각도에서 분석하는 것이며 상호 보완적이다.</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/02/KoreanEmbedding/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EA%B0%99%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="image is-7by1">
+            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="어떤단어가같이쓰였는가">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-01T17:31:45.000Z">2020-04-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9분 읽기 (대략 1326 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/02/KoreanEmbedding/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EA%B0%99%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/">어떤단어가같이쓰였는가</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="24-어떤-단어가-같이-쓰였느가"><a class="markdownIt-Anchor" href="#24-어떤-단어가-같이-쓰였느가"></a> 2.4 어떤 단어가 같이 쓰였느가</h1>
+<h2 id="241-분포-가정"><a class="markdownIt-Anchor" href="#241-분포-가정"></a> 2.4.1 분포 가정</h2>
+<p>자연어 처리에서 분포 <strong>distribution</strong>란 특정 범위, 즉 <ins>윈도우</ins> 내에 동시에 등장하는 <ins>이웃 단어</ins> 또는 <ins>문맥의 집합</ins>을 가리킨다. 개별 단어의 분포는 그 단어가 문장 내에서 주로 어느 위치에 나타나는지, 이웃한 위치에 어떤 단어가 자주 나타나는지에 따라 달라진다. 어떤 쌍이 비슷한 문맥 환경에서 자주 등장한다면 그 의미 도한 유사할 것이라는 게 분포 가정 ** distributional hypothesis**의 전제다.</p>
+<p>예컨데 한국어의 <code>빨래</code>, <code>세탁</code>이라는 단어의 의미를 전혀 모른다고 하자. 두 단어의 의미를 파악하기 위해서는 이들 단어가 실제 어떻게 쓰이고 있는지 관찰을 해야한다. 두 단어는 타깃 단어 ** target word**이고 <code>청소</code>, <code>물</code> 등은 그 주위에 등장한 문맥 단어가 된다</p>
+<blockquote>
+<p>특기는 자칭 청소와 빨래지만 요리는 절망적<br />
+재를 우려낸 물로 빨래 할 때 나<br />
+찬 물로 옷을 세탁한다.<br />
+세탁, 청소, 요리와 기사는</p>
+</blockquote>
+<p>이웃한 단어들이 서로 비슷하기 때문이다. <code>빨래</code>가 <code>청소</code> <code>물</code> 과 같이 등장하는 경향을 미루어 짐작해볼 때 이들끼리도 직간접적으로 관계를 지닐 가능성이 낮아보이지는 않는다. 그럼에도 개별 단어의 분포 정보와 그 의미 사이에는 논리적으로 직접적인 연관성은 사실 낮다. 다시 말해 분포 정보가 곧 의미라는 분포 가정에 의문접이 발생한다.</p>
+<h2 id="242-분포와-의미1-형태소"><a class="markdownIt-Anchor" href="#242-분포와-의미1-형태소"></a> 2.4.2 분포와 의미(1) : 형태소</h2>
+<p>형태소** morpheme<strong>란 의미를 가지는 최소 단위를 말한다. 더 쪼개면 의미를 잃어버리는 것이다.<br />
+예를 들어 <code>철수가 밥을 먹었다</code> 라고 한다면 형태소 후보는 <code>철수</code>, <code>밥</code>, 이다.<br />
+조금 더 깊게 분석해보자. 계열관계 ** paradigmatic relation</strong>가 있다.</p>
+<p>계열 관계는 해당 형태소 자리에 다른 형태소가 '대치’되어 쓰일 수 있는 가를 따지는 것이다. 예컨데 <code>철수</code> 대신에 <code>영희</code>가 올 수 있고 <code>밥</code>대신 <code>빵</code>을 쓸 수 있다. 이를 근거로 형태소 자격을 부여한다.</p>
+<p>특정 타깃 단어 주변의 문맥 정보를 바탕으로 형태소를 확인한다는 이야기와 일맥상통한다.</p>
+<blockquote>
+<p>말뭉치의 분포 정보와 형태소가 밀접한 관계를 이루고 있다.</p>
+</blockquote>
+<h2 id="243-분포와-의미2-품사"><a class="markdownIt-Anchor" href="#243-분포와-의미2-품사"></a> 2.4.3 분포와 의미(2) : 품사</h2>
+<p>품사란 단어를 문법적 성질의 공통성에 따라 언어학자들이 몇 갈래로 묶어 놓은 것이다.</p>
+<ul>
+<li>기능</li>
+<li>의미</li>
+<li>형식<br />
+위 세가지를 기준으로 분류한다.</li>
+</ul>
+<ol>
+<li>기능<br />
+한 단어가 문장 가운데서 다른 단어와 맺는 관계를 가르킨다.<br />
+<code>깊이</code> <code>높이</code>는 문장에서 주어로 쓰이고 <code>깊다</code> <code>높다</code>는 서술어로 사용되고 있다.</li>
+<li>의미<br />
+단어의 형식적 의미를 나타낸다. ``깊이<code></code>높이<code>를 하나로 묶고</code>깊다<code></code>높다`를 같은 군집으로 넣을 수 있다. 품사에서는 어휘적 의미보다 형식적 의미가 중요하다. 다시말해 어떤 단어가 사물의 이름을 나타내는가, 그렇지 않으면 움직임이나 성실, 상태를 나타내느냐 하는 것이다.</li>
+<li>형식<br />
+단어의 형태적 특징을 의미한다. <code>깊이</code> <code>높이</code>는 변화하지 않는다. <code>깊었다</code> <code>높았다</code> <code>깊겠다</code> <code>높겠따</code> 따위와 같이 어미가 붙어 여러 가지 모습으로 변화를 일으킬 수 있다.<br />
+그러나 예외가 있다. <code>공부</code> <code>공부하다</code> 두 개를 분류하려면 <code>공부</code>는 명사이지만 우리는 동작이라는 여지를 알고 있다.</li>
+</ol>
+<p>품사 분류에서 가장 중요한 기준은 <mark>기능</mark>이다. 해당 단어가 문장 내에서 점하는 역할에 초점을 맞춰 품사를 분류한다는 것이다.<br />
+형태소의 경계를 정하거나 품사를 나누는 것과 같은 다양한 언어학적 문제는 말뭉치의 분포 정보와 깊은 관계를 갖고 있다. 이로인하여 분포 정보를 함축한다면 해당 벡터에 해당 단어의 의미를 자연스레 내재시킬 수 있는 것이다.</p>
+<h2 id="244-점별-상호-정보량"><a class="markdownIt-Anchor" href="#244-점별-상호-정보량"></a> 2.4.4 점별 상호 정보량</h2>
+<p>점별 상호 정보량은 두 확률변수사이의 상관성을 계량화하는 단위다. 두 확률변수가 완전히 독립인 경우 그 값이 0이 된다. 독립이라고 하면 A가 나타나는 것이 단어 B의 등장할 확률에 전혀 영향을 주지 않고, 단어 B등장이 단어 A에 영향을 주지 않는 경우를 가리킨다.<br />
+두 단어의 등장이 독립일 때 대비해 얼마나 자주 같이 등장하는지를 수치화한 것이다</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>M</mi><mi>I</mi><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo stretchy="false">)</mo><mo>=</mo><mi>l</mi><mi>o</mi><mi>g</mi><mfrac><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo stretchy="false">)</mo></mrow><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>A</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mi>B</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">PMI(A,B) = log{P(A,B) \over P(A)*P(B)}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
+<p>PMI 행렬의 행 벡터 자체를 해당 단어의 임베딩으로 사용할 수도 있다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/04/02/KoreanEmbedding/%EB%8B%A8%EC%96%B4%EA%B0%80%EC%96%B4%EB%96%A4%EC%88%9C%EC%84%9C%EB%A1%9C%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="image is-7by1">
+            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="단어가어떤순서로쓰였는가">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-01T15:42:07.000Z">2020-04-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10분 읽기 (대략 1533 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/02/KoreanEmbedding/%EB%8B%A8%EC%96%B4%EA%B0%80%EC%96%B4%EB%96%A4%EC%88%9C%EC%84%9C%EB%A1%9C%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/">단어가어떤순서로쓰였는가</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="23-단어가-어떤-순서로-쓰였는가"><a class="markdownIt-Anchor" href="#23-단어가-어떤-순서로-쓰였는가"></a> 2.3 단어가 어떤 순서로 쓰였는가</h1>
+<h2 id="231-통계-기반-언어-모델"><a class="markdownIt-Anchor" href="#231-통계-기반-언어-모델"></a> 2.3.1 통계 기반 언어 모델</h2>
+<p>언어 모델 ** language model**이란 단어 시퀀스에 확률을 부여하는 모델이다.<br />
+단어의 등장 순서를 무시하는 백오브워즈와 달리 언어 모델은 시퀀스 정보를 명시적으로 학습한다.</p>
+<p>단어가 n개 주어진 상황이라면 언어 모델은 n개 단어가 동시에 나타날 확률, 즉 P라는 것을 반환한다. 통계 기반의 언어 모델은 말뭉치에서 해당 단어 시퀀스가 얼마나 자주 등장하는지 빈도를 세어 학습한다. 이렇게 되면 주어진 단어 시퀀스 다음 단어는 무엇이 오는게 자연스러운지 알 수 있다.</p>
+<p>n-gram이란 n개 단어를 뜻하는 용어이다. <code>난폭,운전</code> <code>눈, 뜨다</code> 등은 2-gram 또는 bigram이라는 말을 쓴다. <code>누명, 을, 쓰다</code> 는 3-gram 혹은 trigram이라고 쓴다. 경우에 따라서 n-gram은 n-gram에 기반한 언어 모델을 의미하기도 한다. 말뭉치 내 단어들을 n개씩 묶어서 그 빈도를 학습했다는 뜻이다.</p>
+<p>예컨데 <code>내</code>, <code>내 마음</code> 말뭉치는 빈도가 많지만 <code>내 마음 속에 영원히 기억될 최고의 명작이다</code> 라는 말뭉치가 한 번도 없을 수 있다. 이럴 때에는 말뭉치로 학습한 언어 모델은 해당 표현이 나타날 확률을 0으로 부여하게 된다.</p>
+<blockquote>
+<p>문법적으로나 의미적으로 결함이 없는 훌륭한 한국어 문장임에도 해당 표현을 말이 되지 않는 문장으로 취급할 수 있다는 것이다.</p>
+</blockquote>
+<p><code>내 마음 속에 영원히 기억될 최고의</code> 라는 표현 다음에 <code>명작이다</code>라는 단어가 나타날 확률은 조건부확률 ** conditional probability**의 정의를 활용해 <mark>최대우도추정법</mark> 으로 유도한다.</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">명</mi><mi mathvariant="normal">작</mi><mi mathvariant="normal">이</mi><mi mathvariant="normal">다</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">내</mi><mo separator="true">,</mo><mi mathvariant="normal">마</mi><mi mathvariant="normal">음</mi><mo separator="true">,</mo><mi mathvariant="normal">속</mi><mi mathvariant="normal">에</mi><mo separator="true">,</mo><mi mathvariant="normal">영</mi><mi mathvariant="normal">원</mi><mi mathvariant="normal">히</mi><mo separator="true">,</mo><mi mathvariant="normal">기</mi><mi mathvariant="normal">억</mi><mi mathvariant="normal">될</mi><mo separator="true">,</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>F</mi><mi>r</mi><mi>e</mi><mi>q</mi><mo stretchy="false">(</mo><mi mathvariant="normal">내</mi><mo separator="true">,</mo><mi mathvariant="normal">마</mi><mi mathvariant="normal">음</mi><mo separator="true">,</mo><mi mathvariant="normal">속</mi><mi mathvariant="normal">에</mi><mo separator="true">,</mo><mi mathvariant="normal">영</mi><mi mathvariant="normal">원</mi><mi mathvariant="normal">히</mi><mo separator="true">,</mo><mi mathvariant="normal">기</mi><mi mathvariant="normal">억</mi><mi mathvariant="normal">될</mi><mo separator="true">,</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo separator="true">,</mo><mi mathvariant="normal">명</mi><mi mathvariant="normal">작</mi><mi mathvariant="normal">이</mi><mi mathvariant="normal">다</mi><mo stretchy="false">)</mo></mrow><mrow><mi>F</mi><mi>r</mi><mi>e</mi><mi>q</mi><mo stretchy="false">(</mo><mi mathvariant="normal">내</mi><mo separator="true">,</mo><mi mathvariant="normal">마</mi><mi mathvariant="normal">음</mi><mo separator="true">,</mo><mi mathvariant="normal">속</mi><mi mathvariant="normal">에</mi><mo separator="true">,</mo><mi mathvariant="normal">영</mi><mi mathvariant="normal">원</mi><mi mathvariant="normal">히</mi><mo separator="true">,</mo><mi mathvariant="normal">기</mi><mi mathvariant="normal">억</mi><mi mathvariant="normal">될</mi><mo separator="true">,</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(명작이다|내, 마음, 속에, 영원히, 기억될, 최고의) = { Freq(내, 마음, 속에, 영원히, 기억될, 최고의, 명작이다) \over Freq(내, 마음, 속에, 영원히, 기억될, 최고의)}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">명</span><span class="mord hangul_fallback">작</span><span class="mord hangul_fallback">이</span><span class="mord hangul_fallback">다</span><span class="mord">∣</span><span class="mord hangul_fallback">내</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">마</span><span class="mord hangul_fallback">음</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">속</span><span class="mord hangul_fallback">에</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">영</span><span class="mord hangul_fallback">원</span><span class="mord hangul_fallback">히</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">기</span><span class="mord hangul_fallback">억</span><span class="mord hangul_fallback">될</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord hangul_fallback">내</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">마</span><span class="mord hangul_fallback">음</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">속</span><span class="mord hangul_fallback">에</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">영</span><span class="mord hangul_fallback">원</span><span class="mord hangul_fallback">히</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">기</span><span class="mord hangul_fallback">억</span><span class="mord hangul_fallback">될</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord hangul_fallback">내</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">마</span><span class="mord hangul_fallback">음</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">속</span><span class="mord hangul_fallback">에</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">영</span><span class="mord hangul_fallback">원</span><span class="mord hangul_fallback">히</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">기</span><span class="mord hangul_fallback">억</span><span class="mord hangul_fallback">될</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">명</span><span class="mord hangul_fallback">작</span><span class="mord hangul_fallback">이</span><span class="mord hangul_fallback">다</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
+<p>그러나 우변의 분자가 0이라서 전체 값은 0이된다.</p>
+<p>앞에서 배운 n-gram을 사용해보자. 직전 n-1개 단어의 등장 확률로 전체 단어 시퀀스 등장 확률을 근사하는 것이다. 이말을 다시 해석하면 한 상태** state**의 확률은 그 직전 상태에만 영향을 받는 것이다. 마코프 가정 <strong>Markov assumption</strong>에 기반한 것이다.</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">명</mi><mi mathvariant="normal">작</mi><mi mathvariant="normal">이</mi><mi mathvariant="normal">다</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">내</mi><mo separator="true">,</mo><mi mathvariant="normal">마</mi><mi mathvariant="normal">음</mi><mo separator="true">,</mo><mi mathvariant="normal">속</mi><mi mathvariant="normal">에</mi><mo separator="true">,</mo><mi mathvariant="normal">영</mi><mi mathvariant="normal">원</mi><mi mathvariant="normal">히</mi><mo separator="true">,</mo><mi mathvariant="normal">기</mi><mi mathvariant="normal">억</mi><mi mathvariant="normal">될</mi><mo separator="true">,</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">명</mi><mi mathvariant="normal">작</mi><mi mathvariant="normal">이</mi><mi mathvariant="normal">다</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>F</mi><mi>r</mi><mi>e</mi><mi>q</mi><mo stretchy="false">(</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo separator="true">,</mo><mi mathvariant="normal">명</mi><mi mathvariant="normal">작</mi><mi mathvariant="normal">이</mi><mi mathvariant="normal">다</mi><mo stretchy="false">)</mo></mrow><mrow><mi>F</mi><mi>r</mi><mi>e</mi><mi>q</mi><mo stretchy="false">(</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(명작이다|내, 마음, 속에, 영원히, 기억될, 최고의) ≈ P(명작이다|최고의)={ Freq(최고의, 명작이다) \over Freq(최고의)}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">명</span><span class="mord hangul_fallback">작</span><span class="mord hangul_fallback">이</span><span class="mord hangul_fallback">다</span><span class="mord">∣</span><span class="mord hangul_fallback">내</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">마</span><span class="mord hangul_fallback">음</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">속</span><span class="mord hangul_fallback">에</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">영</span><span class="mord hangul_fallback">원</span><span class="mord hangul_fallback">히</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">기</span><span class="mord hangul_fallback">억</span><span class="mord hangul_fallback">될</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">명</span><span class="mord hangul_fallback">작</span><span class="mord hangul_fallback">이</span><span class="mord hangul_fallback">다</span><span class="mord">∣</span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">명</span><span class="mord hangul_fallback">작</span><span class="mord hangul_fallback">이</span><span class="mord hangul_fallback">다</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
+<p>처럼 전 상황에 대해서만 영향을 주는 것이다. 다시말해 <code>명작이다</code> 라는 직전의 1개 단어만 보고 전체 단어 시퀀스 등장 확률을 근사한 것이다.</p>
+<p>좀 더 늘려서 끝까지 계산하게 되면 다음과 같다.</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">내</mi><mo separator="true">,</mo><mi mathvariant="normal">마</mi><mi mathvariant="normal">음</mi><mo separator="true">,</mo><mi mathvariant="normal">속</mi><mi mathvariant="normal">에</mi><mo separator="true">,</mo><mi mathvariant="normal">영</mi><mi mathvariant="normal">원</mi><mi mathvariant="normal">히</mi><mo separator="true">,</mo><mi mathvariant="normal">기</mi><mi mathvariant="normal">억</mi><mi mathvariant="normal">될</mi><mo separator="true">,</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo separator="true">,</mo><mi mathvariant="normal">명</mi><mi mathvariant="normal">작</mi><mi mathvariant="normal">이</mi><mi mathvariant="normal">다</mi><mo stretchy="false">)</mo><mo>≈</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">내</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">마</mi><mi mathvariant="normal">음</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">내</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">속</mi><mi mathvariant="normal">에</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">마</mi><mi mathvariant="normal">음</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">영</mi><mi mathvariant="normal">원</mi><mi mathvariant="normal">히</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">속</mi><mi mathvariant="normal">에</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">기</mi><mi mathvariant="normal">억</mi><mi mathvariant="normal">될</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">영</mi><mi mathvariant="normal">원</mi><mi mathvariant="normal">히</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">기</mi><mi mathvariant="normal">억</mi><mi mathvariant="normal">될</mi><mo stretchy="false">)</mo><mo>∗</mo><mi>P</mi><mo stretchy="false">(</mo><mi mathvariant="normal">명</mi><mi mathvariant="normal">작</mi><mi mathvariant="normal">이</mi><mi mathvariant="normal">다</mi><mi mathvariant="normal">∣</mi><mi mathvariant="normal">최</mi><mi mathvariant="normal">고</mi><mi mathvariant="normal">의</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P(내, 마음, 속에, 영원히, 기억될, 최고의, 명작이다) ≈ P(내)*P(마음|내)*P(속에|마음)*P(영원히|속에)*P(기억될|영원히)*P(최고의|기억될)*P(명작이다|최고의)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">내</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">마</span><span class="mord hangul_fallback">음</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">속</span><span class="mord hangul_fallback">에</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">영</span><span class="mord hangul_fallback">원</span><span class="mord hangul_fallback">히</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">기</span><span class="mord hangul_fallback">억</span><span class="mord hangul_fallback">될</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord hangul_fallback">명</span><span class="mord hangul_fallback">작</span><span class="mord hangul_fallback">이</span><span class="mord hangul_fallback">다</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">내</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">마</span><span class="mord hangul_fallback">음</span><span class="mord">∣</span><span class="mord hangul_fallback">내</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">속</span><span class="mord hangul_fallback">에</span><span class="mord">∣</span><span class="mord hangul_fallback">마</span><span class="mord hangul_fallback">음</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">영</span><span class="mord hangul_fallback">원</span><span class="mord hangul_fallback">히</span><span class="mord">∣</span><span class="mord hangul_fallback">속</span><span class="mord hangul_fallback">에</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">기</span><span class="mord hangul_fallback">억</span><span class="mord hangul_fallback">될</span><span class="mord">∣</span><span class="mord hangul_fallback">영</span><span class="mord hangul_fallback">원</span><span class="mord hangul_fallback">히</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mord">∣</span><span class="mord hangul_fallback">기</span><span class="mord hangul_fallback">억</span><span class="mord hangul_fallback">될</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord hangul_fallback">명</span><span class="mord hangul_fallback">작</span><span class="mord hangul_fallback">이</span><span class="mord hangul_fallback">다</span><span class="mord">∣</span><span class="mord hangul_fallback">최</span><span class="mord hangul_fallback">고</span><span class="mord hangul_fallback">의</span><span class="mclose">)</span></span></span></span></span></p>
+<p>일반화를 시킨다면 다음과 같다. 바이그램모델에서는 1개만 참고하지만 일반화를 시키면 전체 단어 시퀀스 등장 확률 계산시 직전 n-1개 단어의 히스토리를 본다</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>W</mi><mi>n</mi><mi mathvariant="normal">∣</mi><mi>W</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mi>F</mi><mi>r</mi><mi>e</mi><mi>q</mi><mo stretchy="false">(</mo><mi>W</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mi>W</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><mrow><mi>F</mi><mi>r</mi><mi>e</mi><mi>q</mi><mo stretchy="false">(</mo><mi>W</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(Wn|W(n-1) = { Freq(W(n-1,W(n)) \over Freq(W(n-1))}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">n</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></span></p>
+<p>그러나 데이터에 한 번도 등장하지 않는 n-gram이 존재할 때 예측 문제가 발생할 수 있다. 처음 보는 단어를 본다면 그 확률은 0으로 보기 때문이다.</p>
+<p>이를 위해서 백오프** back-off**, 스무딩 ** smoothing**등의 방식이 제안된다.<br />
+백오프란 n-gram등장 빈도를 n보다 작은 범위의 단어 시퀀스 빈도로 근사하는 방식인데, n을 크게 하면 할 수록 등장하지 않은 케이스가 많아질 가능성이 높기 때문이다.<br />
+<code>내 마음 속에 영원히 기억될 최고의 명작이다</code>는 7-gram에서는 0이지만 N을 4로 내린다면 달라진다.<br />
+스무딩이란 등장 빈도 표에 모두 K만큼 더하는 것이다. 높은 빈도를 가진 문자열 등장 확률을 일부 깎고 학습 데이터에 전혀 등장하지 않은 케이스들에는 일부 확률을 부여하게 된다.</p>
+<hr />
+<h2 id="232-뉴럴-네트워크-기반-언어-모델"><a class="markdownIt-Anchor" href="#232-뉴럴-네트워크-기반-언어-모델"></a> 2.3.2 뉴럴 네트워크 기반 언어 모델</h2>
+<p>뉴럴 네트워크는 입력과 출력 사이의 관계를 유연하게 포착해낼 수 있고, 그 자체로 확률 모델로 기능이 가능하기 때문에 뉴럴 네트워크로 사용한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">발 없는 말이 -&gt; [언어모델] -&gt; 천리</span><br></pre></td></tr></table></figure>
+<p>뉴럴 네트워크 기반 언어 모델은 위 그림처럼 단어 시퀀스를 가지고 다음 단어를 맞추는 과정에서 학습된다. 학습이 완료되면 이들 모델의 중간 혹은 말단 계산 결과물을 단어나 문장의 임베딩으로 활용한다. 대표적인 모델은 다음과 같다.</p>
+<ul>
+<li>ELMo</li>
+<li>GPT</li>
+</ul>
+<p>마스크 언어 모델 ** masked language model**은 언어 모델 기반 기법과 큰 틀에서 유사하지만 디테일에서 차이가 잇다. 문장 중간에 '마스크’를 씌워 놓고 해당 위치에 어떤 단어가 올지 예측하는 과정을 학습한다.</p>
+<p>대게 언어 모델 기반 기법은 단어를 순차적으로 입력받아 다음 단어를 맞춰야하기 때문에 태생적으로 일방향 ** uni-directional<strong>이다. 하지만 마스크 언어 모델 기반 기법은 문장 전체를 보고 중간을 예측하기 때문에 양방향 ** bi-directional</strong>학습이 가능하다. 대표적인 모델은 다음과 같다.</p>
+<ul>
+<li>BERT</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
 
     
 <div class="card card-transparent">
@@ -859,10 +1496,6 @@ tanh는 -1 ~ 1 까지임 -&gt; 현재 위치에서 어느정도 정보를 반영
             <li><a class="pagination-link is-current" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">1</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/3/">3</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/page/4/">4</a></li>
             
         </ul>
     </nav>
@@ -2434,7 +3067,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
