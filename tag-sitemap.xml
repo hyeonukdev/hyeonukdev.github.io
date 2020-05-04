@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://hyeonukdev.github.io/tags/WordCloud/</loc>
+        <lastmod>2020-05-04T06:35:25.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://hyeonukdev.github.io/tags/ChatBot/</loc>
         <lastmod>2020-05-04T06:00:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
