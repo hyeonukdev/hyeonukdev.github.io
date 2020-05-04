@@ -9,14 +9,21 @@
 
     <url>
         <loc>https://hyeonukdev.github.io/categories/%25EC%259E%2590%25EC%2597%25B0%25EC%2596%25B4%25EC%25B2%2598%25EB%25A6%25AC/ChatBot/</loc>
-        <lastmod>2020-05-03T13:57:30.000Z</lastmod>
+        <lastmod>2020-05-04T06:00:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeonukdev.github.io/categories/%25EC%259E%2590%25EC%2597%25B0%25EC%2596%25B4%25EC%25B2%2598%25EB%25A6%25AC/</loc>
-        <lastmod>2020-05-03T13:57:30.000Z</lastmod>
+        <lastmod>2020-05-04T06:00:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/categories/Error%25ED%2595%25B4%25EA%25B2%25B0/</loc>
+        <lastmod>2020-05-03T14:29:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

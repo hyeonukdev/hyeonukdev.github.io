@@ -8,7 +8,23 @@
     </url>
 
     <url>
-        <loc>https://hyeonukdev.github.io/2020/05/03/NLG-anaconda/%EC%B1%97%EB%B4%87%EB%A7%8C%EB%93%A4%EA%B8%B0_2_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/</loc>
+        <loc>https://hyeonukdev.github.io/2020/05/04/NLG-anaconda/%EC%B1%97%EB%B4%87%EB%A7%8C%EB%93%A4%EA%B8%B0_3_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_2/</loc>
+        <lastmod>2020-05-04T06:00:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/03/Error/konlpy/</loc>
+        <lastmod>2020-05-03T14:29:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/05/03/NLG-anaconda/%EC%B1%97%EB%B4%87%EB%A7%8C%EB%93%A4%EA%B8%B0_2_%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D_1/</loc>
         <lastmod>2020-05-03T13:57:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
