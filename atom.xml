@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-04T14:42:03.000Z</updated>
+  <updated>2020-05-04T16:10:53.574Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,99 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>응용SW기초기술활용 - 핵심정리</title>
+    <link href="https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
+    <id>https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</id>
+    <published>2020-05-04T16:10:53.574Z</published>
+    <updated>2020-05-04T16:10:53.574Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2><h3 id="1-운영체제-종류"><a class="markdownIt-Anchor" href="#1-운영체제-종류"></a> 1. 운영체제 종류</h3><ul><li><u>컴퓨터 시스템의 자원들(CPU, 주기억장치, 보조기억장치, 파일 등)을 효율적으로 관리</u>하며, 사용자가 컴퓨터를 편리하고 효과적으로 사용할 수 있도록 <u>인터페이스를 제공하는 시스템 소프트웨어</u></li><li>종류<ul><li>Windows</li><li>UNIX</li><li>LINUX</li><li>MacOS</li><li>MS-DOS</li></ul></li></ul><h3 id="2-메모리-관리"><a class="markdownIt-Anchor" href="#2-메모리-관리"></a> 2. 메모리 관리</h3><ul><li>기억장치의 계층 구조(산 형태 순서 정렬)<ul><li>레지스터</li><li>캐시 기억장치</li><li>주기억장치</li><li>보조기억장치</li></ul></li><li>기억장치 관리 전략<ul><li>Fetch</li><li>Placement</li><li>Replacement</li></ul></li><li>주기억장치 할당 기법<ul><li>연속 할당</li><li>분산 할당</li></ul></li><li>가상기억장치의 구현 기법<ul><li>페이징</li><li>세그먼테이션</li></ul></li><li>페이지 교체 알고리즘 종류<ul><li>FIFO</li><li>LRU</li><li>NUR</li><li>OPT</li><li>LFU</li><li>SCR</li></ul></li><li>가상기억장치의 기타 관리<ul><li>Locality</li><li>Working Set</li><li>Thrashing</li></ul></li></ul><h3 id="3-프로세스-스케줄링"><a class="markdownIt-Anchor" href="#3-프로세스-스케줄링"></a> 3. 프로세스 스케줄링</h3><ul><li>프로세스<ul><li>프로세서에 의해 처리되는 사용자 프로그램</li><li>프로세서<ul><li>CPU</li><li>처리기</li></ul></li></ul></li><li>스레드<ul><li>프로세스 내에서 작업 단위로서 시스템의 여러 자원을 할당 받아 실행하는 프로그램의 단위</li></ul></li><li>스케줄링<ul><li>프로세스가 생성되어 실행될 때 필요한 시스템의 여러 자원ㅇ르 해당 프로세스에 할당하는 작업</li></ul></li><li>비선점 스케줄링의 종류<ul><li>FIFO(FCFS)</li><li>SJF</li><li>HRN</li></ul></li><li>선점 스케줄링의 종류<ul><li>RR</li><li>SRT</li><li>MLQ</li><li>MFQ</li></ul></li></ul><h3 id="4-환경변수"><a class="markdownIt-Anchor" href="#4-환경변수"></a> 4. 환경변수</h3><ul><li>시스템 소프트웨어 동작에 영향을 미치는 동적인 값들의 모임</li><li>윈도우 환경변수<ul><li>%APPDATA%, %COMSPEC%, %HOMEPATH%, %PATH%, %PATHEXT%, %PROGRAMFILES%, %SYSTEMDRIVE%, %SYSTEMROOT% , %USERNAME%, %USERPROFILE%</li></ul></li><li>유닉스 환경변수<ul><li>$DISPLAY, $HOME, $LANG, $MAIL, $PATH, $PS1, $PWD, $TERM, $USER</li></ul></li></ul><h3 id="5-shell-script"><a class="markdownIt-Anchor" href="#5-shell-script"></a> 5. Shell Script</h3><ul><li>GUI<ul><li>Graphic User Interface</li><li>마우스로 아이콘이나 메뉴를 선택하여 작업</li></ul></li><li>CLI<ul><li>Command Line Interface</li><li>키보드로 명령어를 직접 입력하여 작업</li></ul></li></ul><h3 id="unix와-linux-기본-명령어"><a class="markdownIt-Anchor" href="#unix와-linux-기본-명령어"></a> UNIX와 LINUX 기본 명령어</h3><table><thead><tr><th>명령어</th><th>기능</th></tr></thead><tbody><tr><td>cat</td><td>파일 내용을 화면에 표시</td></tr><tr><td>chdir</td><td>디렉토리 위치 변경</td></tr><tr><td>chmod</td><td>파일의 사용 허가 지정</td></tr><tr><td>chown</td><td>소유자 변경</td></tr><tr><td>cp</td><td>파일 복사</td></tr><tr><td>getpid</td><td>자신의 프로세스 아이디를 얻음</td></tr><tr><td>ls</td><td>현재 디렉토리 내의 파일 목록을 표시</td></tr><tr><td>rm</td><td>파일 삭제</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;응용sw기초기술활용&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#응용sw기초기술활용&quot;&gt;&lt;/a&gt; 응용SW기초기술활용&lt;/h2&gt;
+&lt;h3 id=&quot;1-운영체제-종류&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; hre
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="응용SW기초기술활용" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="핵심정리" scheme="https://hyeonukdev.github.io/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>응용SW기초기술활용 - Shell Script</title>
+    <link href="https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/ShellScript/"/>
+    <id>https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/ShellScript/</id>
+    <published>2020-05-04T16:02:28.000Z</published>
+    <updated>2020-05-04T16:02:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2><h3 id="운영체제-기본-명령어-개요"><a class="markdownIt-Anchor" href="#운영체제-기본-명령어-개요"></a> 운영체제 기본 명령어 개요</h3><ul><li><p>Shell은 사용자의 명령어를 수행하는 명령어 해석기</p></li><li><p>운영체제를 제어하는 방법</p><ul><li>GUI<ul><li>Graphic User Interface</li><li>마우스로 아이콘이나 메뉴를 선택하여 작업</li></ul></li><li>CLI<ul><li>Command Line Interface</li><li>키보드로 명령어를 직접 입력하여 작업</li></ul></li></ul></li></ul><h3 id="윈도우-cli-기본-명령어"><a class="markdownIt-Anchor" href="#윈도우-cli-기본-명령어"></a> 윈도우 CLI 기본 명령어</h3><table><thead><tr><th>명령어</th><th>기능</th></tr></thead><tbody><tr><td>ATTRIP</td><td>파일의 속성을 변경</td></tr><tr><td>CD</td><td>디렉토리의 위치 변경</td></tr><tr><td>CHKDSK</td><td>디스크 상태 점검</td></tr><tr><td>CLS</td><td>화면의 내용을 지움</td></tr><tr><td>COPY</td><td>파일 복사</td></tr><tr><td>DEL</td><td>파일 삭제</td></tr><tr><td>DIR</td><td>파일의 목록 표시</td></tr><tr><td>FIND</td><td>파일 검색</td></tr><tr><td>FORMAT</td><td>디스크 표면을 트랙과 섹터로 초기화</td></tr><tr><td>MD</td><td>디렉토리 생성</td></tr><tr><td>MOVE</td><td>파일 이동</td></tr><tr><td>REN</td><td>파일 이름 변경</td></tr><tr><td>TYPE</td><td>파일의 내용 표시</td></tr></tbody></table><h3 id="unix와-linux-기본-명령어"><a class="markdownIt-Anchor" href="#unix와-linux-기본-명령어"></a> UNIX와 LINUX 기본 명령어</h3><table><thead><tr><th>명령어</th><th>기능</th></tr></thead><tbody><tr><td>cat</td><td>파일 내용을 화면에 표시</td></tr><tr><td>chdir</td><td>디렉토리 위치 변경</td></tr><tr><td>chmod</td><td>파일의 사용 허가 지정</td></tr><tr><td>chown</td><td>소유자 변경</td></tr><tr><td>cp</td><td>파일 복사</td></tr><tr><td>exec</td><td>새로운 프로세스 수행</td></tr><tr><td>find</td><td>파일 검색</td></tr><tr><td>fork</td><td>새로운 프로세스를 생성</td></tr><tr><td>fsck</td><td>파일시스템을 검사하고 보수</td></tr><tr><td>getpid</td><td>자신의 프로세스 아이디를 얻음</td></tr><tr><td>ls</td><td>현재 디렉토리 내의 파일 목록을 표시</td></tr><tr><td>rm</td><td>파일 삭제</td></tr><tr><td>wait</td><td>fork 후 exec에 의해 실행되는 프로세스의 상위 프로세스가 하위 프로세스 종료 등의 event를 기다림</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;응용sw기초기술활용&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#응용sw기초기술활용&quot;&gt;&lt;/a&gt; 응용SW기초기술활용&lt;/h2&gt;
+&lt;h3 id=&quot;운영체제-기본-명령어-개요&quot;&gt;&lt;a class=&quot;markdownIt-Anchor
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="응용SW기초기술활용" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="ShellScript" scheme="https://hyeonukdev.github.io/tags/ShellScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>응용SW기초기술활용 - 환경변수</title>
+    <link href="https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/"/>
+    <id>https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/</id>
+    <published>2020-05-04T15:53:21.000Z</published>
+    <updated>2020-05-04T15:53:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2><h3 id="환경변수의-개념"><a class="markdownIt-Anchor" href="#환경변수의-개념"></a> 환경변수의 개념</h3><ul><li><u>시스템 소프트웨어의 동작에 영향을 미치는 동적인 값들의 모임</u></li><li>변수명과 값으로 구성</li><li>시스템의 기본 정보를 저장</li><li>자식프로세스에 상속됨</li><li><b>부모 프로세스에서 상속받아 사용</b></li><li><u>시스템 전반에 걸쳐 적용되는 시스템 환경변수와 사용자 계정 내에만 적용되는 사용자 환경변수로 구분</u></li></ul><h3 id="환경변수-보기"><a class="markdownIt-Anchor" href="#환경변수-보기"></a> 환경변수 보기</h3><ul><li>Windows<ul><li>echo %PATH%</li></ul></li><li>UNIX<ul><li>echo $PATH</li></ul></li></ul><h3 id="환경변수-설정"><a class="markdownIt-Anchor" href="#환경변수-설정"></a> 환경변수 설정</h3><ul><li>Windows<ul><li>self 변수 = 값</li></ul></li><li>UNIX<ul><li>env 변수 = 값</li><li>set 변수 = 값</li></ul></li></ul><h3 id="윈도우-운영체제-환경변수"><a class="markdownIt-Anchor" href="#윈도우-운영체제-환경변수"></a> 윈도우 운영체제 환경변수</h3><table><thead><tr><th>환경변수</th><th>용도</th></tr></thead><tbody><tr><td>%APPDATA%</td><td>설치된 모든 프로그램의 필요 데이터가 저장된 폴더</td></tr><tr><td>%COMSPEC%</td><td>기본 명령 프롬프트로 사용할 프로그램</td></tr><tr><td>%HOMEPATH%</td><td>로그인한 계정의 기본 폴더</td></tr><tr><td>%PATH%</td><td>실행 파일을 찾는 경로</td></tr><tr><td>%PATHEXT%</td><td>CMD에서 실행할 수 있는 파일 확장자 목록</td></tr><tr><td>%PROGRAMFILES%</td><td>기본프로그램의 설치 폴더</td></tr><tr><td>%SYSTEMDRIVE%</td><td>윈도우가 부팅된 드라이브</td></tr><tr><td>%SYSTEMROOT%</td><td>부팅된 운영체제가 들어 있는 폴더</td></tr><tr><td>%USERNAME%</td><td>로그인한 계정 이름</td></tr><tr><td>%USERPROFILE%</td><td>로그인한 유저의 프로필이 저장된 폴더</td></tr></tbody></table><h3 id="unix와-linux-운영체제-환경변수"><a class="markdownIt-Anchor" href="#unix와-linux-운영체제-환경변수"></a> UNIX와 LINUX 운영체제 환경변수</h3><table><thead><tr><th>환경변수</th><th>용도</th></tr></thead><tbody><tr><td>$DISPLAY</td><td>현재 디스플레이 위치</td></tr><tr><td>$HOME</td><td>사용자의 홈 디렉토리</td></tr><tr><td>$LANG</td><td>프로그램 사용 시 기본적으로 지원되는 언어</td></tr><tr><td>$MAIL</td><td>이메일을 보관하는 경로</td></tr><tr><td>$PATH</td><td>실행파일을 찾는 경로</td></tr><tr><td>$PS1</td><td>Shell Prompt 정보</td></tr><tr><td>$PWD</td><td>현재 작업하는 디렉토리</td></tr><tr><td>$TERM</td><td>로그인 터미널 타입</td></tr><tr><td>$USER</td><td>사용자의 이름</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;응용sw기초기술활용&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#응용sw기초기술활용&quot;&gt;&lt;/a&gt; 응용SW기초기술활용&lt;/h2&gt;
+&lt;h3 id=&quot;환경변수의-개념&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="응용SW기초기술활용" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="환경변수" scheme="https://hyeonukdev.github.io/tags/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/"/>
+    
+  </entry>
   
   <entry>
     <title>응용SW기초기술활용 - 프로세스 스케줄링</title>
@@ -542,99 +635,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="SW개발방법론선정" scheme="https://hyeonukdev.github.io/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DB구축관리 - 핵심정리</title>
-    <link href="https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
-    <id>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</id>
-    <published>2020-05-01T13:20:18.000Z</published>
-    <updated>2020-05-01T13:20:18.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="it프로젝트정보시스템구축관리"><a class="markdownIt-Anchor" href="#it프로젝트정보시스템구축관리"></a> IT프로젝트정보시스템구축관리</h2><h2 id="db구축관리"><a class="markdownIt-Anchor" href="#db구축관리"></a> DB구축관리</h2><h3 id="1-it신기술-및-데이터베이스-기술-트렌드-정보"><a class="markdownIt-Anchor" href="#1-it신기술-및-데이터베이스-기술-트렌드-정보"></a> 1. IT신기술 및 데이터베이스 기술 트렌드 정보</h3><ul><li>빅데이터</li><li>브로드 데이터</li><li>디지털 아카이빙</li><li>메타 데이터</li><li>데이터 다이어트</li><li>하둡</li><li>타조</li></ul><h3 id="2-데이터베이스-관리기능"><a class="markdownIt-Anchor" href="#2-데이터베이스-관리기능"></a> 2. 데이터베이스 관리기능</h3><ul><li>회복<ul><li>트랜잭션들을 수행하는 도중에 <u>장애가 발생하여</u> 데이터베이스가 손상되었을 때 <u>손상되기 이전의 정상 상태로 복구</u>하는 작업</li></ul></li><li>병행제어<ul><li><u>동시에 여러 개의 트랜잭션을 병행 수행할 때, 동시에 실행되는 트랜잭션들이 데이터베이스의 일관성을 파괴하지 않도록 트랜잭션 간의 상호작용을 제어하는 것</u></li></ul></li></ul><h3 id="3-데이터베이스-표준화"><a class="markdownIt-Anchor" href="#3-데이터베이스-표준화"></a> 3. 데이터베이스 표준화</h3><ul><li>시스템을 구성하는 데이터 요소의 명칭, 정의, 형식, 규칙에 대한 원칙을 수립하고 적용하는 것</li><li>데이터베이스 표준화 구성요소<ul><li>데이터 표준</li><li>데이터 관리조직</li><li>데이터 표준화 절차</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;it프로젝트정보시스템구축관리&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#it프로젝트정보시스템구축관리&quot;&gt;&lt;/a&gt; IT프로젝트정보시스템구축관리&lt;/h2&gt;
-&lt;h2 id=&quot;db구축관리&quot;&gt;&lt;a class=&quot;markdownIt
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="DB구축관리" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="핵심정리" scheme="https://hyeonukdev.github.io/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DB구축관리 - DB 표준화</title>
-    <link href="https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%ED%91%9C%EC%A4%80%ED%99%94/"/>
-    <id>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%ED%91%9C%EC%A4%80%ED%99%94/</id>
-    <published>2020-05-01T13:04:38.000Z</published>
-    <updated>2020-05-01T13:04:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="it프로젝트정보시스템구축관리"><a class="markdownIt-Anchor" href="#it프로젝트정보시스템구축관리"></a> IT프로젝트정보시스템구축관리</h2><h2 id="db표준화"><a class="markdownIt-Anchor" href="#db표준화"></a> DB표준화</h2><h3 id="데이터-표준화의-개념"><a class="markdownIt-Anchor" href="#데이터-표준화의-개념"></a> 데이터 표준화의 개념</h3><ul><li>시스템을 구성하는 <u>데이터 요소의 명칭, 정의, 형식, 규칙에 대한 원칙을 수립하고 적용하는 것</u></li><li>데이터 표준화 작업은 데이터의 정확한 의미를 파악할 수 잇게 할 뿐 만아니라 데이터에 대한 상반된 시각을 조정하는 역할을 수행</li></ul><h3 id="데이터-표준화의-대상"><a class="markdownIt-Anchor" href="#데이터-표준화의-대상"></a> 데이터 표준화의 대상</h3><ul><li>데이터 명칭<ul><li>데이터를 유일하게 구분할 수 있는 유일성, 의미 전달의 충분성, ㄱ리고 업무적 보편성을 갖는 이름으로 정의</li></ul></li><li>데이터 정의<ul><li>데이터를 제3자의 입장에서도 쉽게 이해할 수 있도록 해당 데이터가 의미하는 범위 및 자격 요건을 규정</li></ul></li><li>데이터 형식<ul><li>업무 규칙 및 사용 목적과 유사한 데이터에 대해 일관되게 데이터 형식을 정의함으로써 데이터 입력 오류, 통제 위험 등을 최소화</li></ul></li><li>데이터 규칙<ul><li>기본 값, 허용 값, 허용 범위 등과 같이 발생할 수 있는 데이터 값을 사전에 지정함으로써 데이터의 정합성 및 완전성을 향상</li></ul></li></ul><h3 id="데이터-표준화의-기대효과"><a class="markdownIt-Anchor" href="#데이터-표준화의-기대효과"></a> 데이터 표준화의 기대효과</h3><ul><li>동일한 데이터에 대해 동일한 명칭을 지정하면서 <u>명확한 의사소통 가능</u></li><li>표준화된 데이터를 사용하면 필요한 데이터의 의미나 위치 등을 쉽게 파악 가능</li><li>데이터 표준에 따라 데이터 형식 및 규칙을 적용하면 <u>입력 오류를 방지하고 잘못된 데이터로 인한 의사 결정의 오류를 줄여 데이터 품질을 향상</u></li><li>데이터 표준에 따라 데이터를 전사적으로 관리하면 시스템 간 데이터 공유 시 데이터 변환이나 정제 작업을 수행하지 않아도 됨</li><li>향후 <u>데이터 유지보수 및 운영의 효율성, 관리 비용 절감 가능</u></li></ul><h3 id="데이터-표준"><a class="markdownIt-Anchor" href="#데이터-표준"></a> 데이터 표준</h3><ul><li>데이터 모델이나 데이터베이스에서 정의할 수 있는 모든 <u>오브젝트를 대상</u>으로 데이터 표준화를 수행하는 것이 <u>이상적이나 주로 관리해야될 필요성이 있는 오브젝트만</u>을 대상으로 데이터 표준화</li><li>데이터 표준의 종류<ul><li>표준 단어<ul><li>업무에서 사용하고 일정한 의미를 갖고 있는 최소 단위의 단어를 의미</li></ul></li><li>표준 도메인<ul><li>문자형, 숫자형, 날짜형, 시간형과 같이 칼럼을 성질에 따라 그룹핑한 개념</li></ul></li><li>표준 코드<ul><li>선택할 수 있는 값을 정형화하기 위해 기준에 맞게 이미 정의된 코드 값</li></ul></li><li>표준 용어<ul><li>단어, 도메인, 코드 표준이 정의되면 이를 바탕으로 표준 용어를 구성</li></ul></li></ul></li></ul><h3 id="데이터-관리-조직"><a class="markdownIt-Anchor" href="#데이터-관리-조직"></a> 데이터 관리 조직</h3><ul><li>전사적으로 수립된 데이터 표준 원칙, 데이터 표준, 데이터 표준 준수 여부 관리 등을 위해서 데이터관리자 역할이 요구됨</li></ul><h3 id="데이터-표준화-절차"><a class="markdownIt-Anchor" href="#데이터-표준화-절차"></a> 데이터 표준화 절차</h3><ol><li>데이터 표준화 요구사항 수집<ul><li>데이터표준화와 관련된 요구사항 수집</li><li>시스템별 데이터 표준 수집</li><li>표준화 현황 진단</li></ul></li><li>데이터 표준 정의<ul><li>표준화 원칙 정의</li><li>표준 용아, 표준 단어, 표준 도메인, 표준 코드 등을 데이터 표준 정의</li></ul></li><li>데이터 표준 확정<ul><li>데이터 표준 검토, 확정, 공표</li></ul></li><li>데이터 표준 관리<ul><li>데이터 표준 적용, 준수, 검사 등 데이터 표준 관리절차 수립</li><li>데이터 표준 이행</li></ul></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;it프로젝트정보시스템구축관리&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#it프로젝트정보시스템구축관리&quot;&gt;&lt;/a&gt; IT프로젝트정보시스템구축관리&lt;/h2&gt;
-&lt;h2 id=&quot;db표준화&quot;&gt;&lt;a class=&quot;markdownIt-
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="DB구축관리" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="DB표준화" scheme="https://hyeonukdev.github.io/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DB구축관리 - DB 관리 기능</title>
-    <link href="https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/"/>
-    <id>https://hyeonukdev.github.io/2020/05/01/Engineer_Information_Processing/ch19_IT%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%A0%95%EB%B3%B4%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/</id>
-    <published>2020-05-01T12:51:25.000Z</published>
-    <updated>2020-05-01T12:51:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="it프로젝트정보시스템구축관리"><a class="markdownIt-Anchor" href="#it프로젝트정보시스템구축관리"></a> IT프로젝트정보시스템구축관리</h2><h2 id="db구축관리"><a class="markdownIt-Anchor" href="#db구축관리"></a> DB구축관리</h2><h3 id="db관리기능"><a class="markdownIt-Anchor" href="#db관리기능"></a> DB관리기능</h3><h3 id="회복"><a class="markdownIt-Anchor" href="#회복"></a> 회복</h3><h4 id="1-recovery-회복의-개념"><a class="markdownIt-Anchor" href="#1-recovery-회복의-개념"></a> 1. Recovery 회복의 개념</h4><ul><li>트랜잭션들을 수행하는 도중에 <u>장애가 발생하여</u> 데이터베이스가 손상되었을 때 <u>손상되기 이전의 정상 상태로 복구</u>하는 작업<ul><li>트랜잭션<ul><li>데이터베이스의 상태를 변환시키는 하나의 논리적 기능을 수행하기 위한 작업의 단위 또는 한꺼번에 모두 수행되어야 할 일련의 연산</li></ul></li></ul></li></ul><h4 id="2-장애의-유형"><a class="markdownIt-Anchor" href="#2-장애의-유형"></a> 2. 장애의 유형</h4><ul><li>트랜잭션 장애<ul><li>입력 데이터 오류, 불명확한 데이터, 시스템 자원 요구의 과다등 트랜잭션 내부의 비정상적인 상황으로 인하여 프로그램 실행이 중지되는 현상</li></ul></li><li>시스템 장애<ul><li>데이터베이스에 손상을 입히지는 않으나 하드웨어 오동작, 소프트웨어의 손상, 교착 상태 등에 의해 모든 트랜잭션의 연속적인 수행에 장애를 주는 현상</li></ul></li><li>미디어 장애<ul><li>저장장치인 디스크 블록의 손상이나 디스크 헤드의 충돌 등에 의해 데이터베이스의 일부 또는 전부가 물리적으로 손상된 상태</li></ul></li></ul><h4 id="3-recovery-management-회복-관리기"><a class="markdownIt-Anchor" href="#3-recovery-management-회복-관리기"></a> 3. Recovery Management 회복 관리기</h4><ul><li>회복관리기는 DBMS의 구성요소</li><li><u>트랜잭션 실행이 성공적으로 완료되지 못하면</u> 트랜잭션이 데이터베이스에 생성했던 <u>모든 변화를 취소(Undo)</u>시키고 <u>트랜잭션 수행 이전의 원래 상태로 복구</u>하는 역할</li><li>메모리 덤프, 로그를 이용하여 회복을 수행</li></ul><h3 id="병행제어"><a class="markdownIt-Anchor" href="#병행제어"></a> 병행제어</h3><h4 id="1-concurrency-control-병행제어의-개념"><a class="markdownIt-Anchor" href="#1-concurrency-control-병행제어의-개념"></a> 1. Concurrency Control 병행제어의 개념</h4><ul><li><u>동시에 여러 개의 트랜잭션을 병행 수행할 때, 동시에 실행되는 트랜잭션들이 데이터베이스의 일관성을 파괴하지 않도록 트랜잭션 간의 상호작용을 제어하는 것</u></li></ul><h4 id="2-병행제어의-목적"><a class="markdownIt-Anchor" href="#2-병행제어의-목적"></a> 2. 병행제어의 목적</h4><ul><li>데이터베이스의 공유를 최대화</li><li>시스템의 활용도를 최대화</li><li>데이터베이스의 일관성을 <b>유지</b></li><li>사용자에 대한 응답 시간을 최소화</li></ul><h4 id="3-병행수행의-문제점"><a class="markdownIt-Anchor" href="#3-병행수행의-문제점"></a> 3. 병행수행의 문제점</h4><ul><li>병행제어 기법에 의한 제어없이 <u>트랜잭션들이 데이터베이스에 동시에 접근하도록 허용하는 경우 발생하는 문제점</u><table><thead><tr><th>문제점</th><th>설명</th></tr></thead><tbody><tr><td>갱신분실</td><td>두 개 이상의 트랜잭션이 같은 자료를 공유하여 갱신할 때 갱신 결과의 일부가 없어지는 현상</td></tr><tr><td>비완료 의존성</td><td>하나의 트랜잭션 수행이 실패한 후 회복되기 전에 다른 트랜잭션이 실패한 갱신 결과를 참조하는 현상</td></tr><tr><td>모순성</td><td>두 개의 트랜잭션이 병행수행 될 때 원치않는 자료를 이용함으로써 발생하는 문제</td></tr><tr><td>연쇄 복귀</td><td>병행수행되던 트랜잭션들 중 어느 하나에 문제가 생겨 Rollback하는 경우 다른 트랜잭션도 함께 Rollback되는 현상</td></tr></tbody></table></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;it프로젝트정보시스템구축관리&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#it프로젝트정보시스템구축관리&quot;&gt;&lt;/a&gt; IT프로젝트정보시스템구축관리&lt;/h2&gt;
-&lt;h2 id=&quot;db구축관리&quot;&gt;&lt;a class=&quot;markdownIt
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="DB구축관리" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="DB관리기능" scheme="https://hyeonukdev.github.io/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/"/>
     
   </entry>
   
