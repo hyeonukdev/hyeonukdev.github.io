@@ -8,6 +8,11 @@
     </sitemap>
 
     <sitemap>
+        <loc>https://hyeonukdev.github.io/page-sitemap.xml</loc>
+        <lastmod>2020-03-31T15:02:23.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
         <loc>https://hyeonukdev.github.io/category-sitemap.xml</loc>
         <lastmod>2020-05-04T16:10:53.574Z</lastmod>
     </sitemap>
