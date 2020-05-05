@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-04T16:10:53.574Z</updated>
+  <updated>2020-05-05T05:33:01.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,70 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>응용SW기초기술활용 - 네트워크 7계층</title>
+    <link href="https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC7%EA%B3%84%EC%B8%B5/"/>
+    <id>https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC7%EA%B3%84%EC%B8%B5/</id>
+    <published>2020-05-05T05:33:01.000Z</published>
+    <updated>2020-05-05T05:33:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2><h3 id="osi-open-system-interconnection-참조-모델-개요"><a class="markdownIt-Anchor" href="#osi-open-system-interconnection-참조-모델-개요"></a> OSI; Open System Interconnection 참조 모델 개요</h3><ul><li>국제 표준화 기구인 ISO에서 다른 시스템간 통신을 위해 <u>네트워크 구조를 제시한 기본 모델</u></li><li><u>데이터 통신 시 필요한 장비 및 처리 방법 등을 7단계로 표준화</u></li><li><img src="https://baekjungho.github.io/images/posts/201904/osi.jpg" alt="OSI 7 Layer" /></li><li><img src="https://lh3.googleusercontent.com/proxy/icCZleoAKcuSSkDhGQA1C-6Odmghiv2dVpVNg0WZZzdOgfSFuppsNMG0vtyNDHeGhqFPEw4TyHS74sx7-rIO3sSz2Gox6_t1Np7DRXY1rwoJPy6zpFTiNSCdymZkSbhRw9zzsX4CKgW6aOB5mpl7aPGEK-HWctvJGd08MJ911j4WbeKPVktE0s3drWn1h_9YOmjH-vYHDP5CY7orVuu1gmkUM58nU4XJXgLNa77_o2FFg_uTHdDRhEknJ-uZDw" alt="OSI 7 Layer" /></li></ul><h3 id="osi-참조-모델의-목적"><a class="markdownIt-Anchor" href="#osi-참조-모델의-목적"></a> OSI 참조 모델의 목적</h3><ul><li>서로 다른 시스템 간을 상호 접속하기 위한 개념 규정</li><li>OSI 규격을 개발하기 위한 범위 정립</li><li>관련 규정의 적합성을 조절하기 위한 공통적인 기반 제공</li></ul><h3 id="osi-참조-모델의-계층별-데이터-단위"><a class="markdownIt-Anchor" href="#osi-참조-모델의-계층별-데이터-단위"></a> OSI 참조 모델의 계층별 데이터 단위</h3><ul><li>프로토콜 데이터 단위 PDU; Protocol Data Unit<ul><li>7계층 응용 계층 : 메시지(Message)</li><li>6계층 표현 계층 : 메시지(Message)</li><li>5계층 세션 계층 : 메시지(Message)</li><li>4계층 전송 계층 : 세그먼트(Segment)</li><li>3계층 네트워크 계층 : 패킷(Packet)</li><li><u>2계층 데이터링크 계층 : 프레임(Frame)</u></li><li>1계층 물리 계층 : 비트(bit)</li></ul></li></ul><h3 id="osi-7-layer-계층별-기능"><a class="markdownIt-Anchor" href="#osi-7-layer-계층별-기능"></a> OSI 7 Layer 계층별 기능</h3><h4 id="1-physical-layer-물리-계층"><a class="markdownIt-Anchor" href="#1-physical-layer-물리-계층"></a> 1. Physical Layer 물리 계층</h4><ul><li>전송에 필요한 두 장치 간의 실제 접속과 절단 등 <u>기계적, 전기적, 기능적, 절차적 특성에 대한 규칙을 정의</u></li><li><u>물리적 전송매체와 전송 신호방식</u>을 정의</li><li>관련 장비<ul><li><u>허브</u></li><li><u>리피터</u></li></ul></li></ul><h4 id="2-data-link-layer-데이터링크-계층"><a class="markdownIt-Anchor" href="#2-data-link-layer-데이터링크-계층"></a> 2. Data Link Layer 데이터링크 계층</h4><ul><li>두 개의 개발 시스템들 간 <u>속도 차이</u>를 해결하기 위한 <u>흐름 제어</u></li><li>프레임의 시작과 끝을 구분하기 위한 <u>프레임의 동기화</u></li><li>오류의 검출과 회복을 위한 <u>오류 제어</u></li><li>프레임의 순서적 전송을 위한 <u>순서 제어</u></li><li>관련 장비<ul><li><u>랜카드</u></li><li><u>브리지</u></li><li><u>스위치</u></li></ul></li></ul><h4 id="3-network-layer-네트워크-계층"><a class="markdownIt-Anchor" href="#3-network-layer-네트워크-계층"></a> 3. Network Layer 네트워크 계층</h4><ul><li>개방 시스템들 간의 <u>네트워크 연결을 설정, 유지, 해제</u>하는 기능과 <u>경로 설정, 데이터 교화 및 중계, 트래픽 제어, 패킷 정보 전송</u></li><li>관련 장비<ul><li><u>라우터</u></li></ul></li></ul><h4 id="4-transport-layer-전송-계층"><a class="markdownIt-Anchor" href="#4-transport-layer-전송-계층"></a> 4. Transport Layer 전송 계층</h4><ul><li>논리적 안정과 균일한 데이터 전송 서비스를 제공함으로써 <u>종단시스템간에 투명한 데이터 전송을 가능하게 함</u></li><li>종단 시스템간 전송 연결설정, 데이터 전송, 연결해제 기능과 오류 제어, 흐름제어 수행</li><li>TCP, UDP의 표준</li><li>관련 장비<ul><li><u>게이트웨이</u></li></ul></li></ul><h4 id="5-session-layer-세션-계층"><a class="markdownIt-Anchor" href="#5-session-layer-세션-계층"></a> 5. Session Layer 세션 계층</h4><ul><li>송/수신 측 간의 관련성을 유지하고 대화 제어 담당</li></ul><h4 id="6-presentation-layer-표현-계층"><a class="markdownIt-Anchor" href="#6-presentation-layer-표현-계층"></a> 6. Presentation Layer 표현 계층</h4><ul><li>응용계층으로부터 받은 데이터를 세션 계층에 보내기 전에 통신에 적당한 형태로 변환하고, 세션 계층에서 받은 데이터는 응용 계층에 맞게 변환하는 기능</li><li>코드변환, 데이터 암호화, 데이터 압축, 구문 검색, <u>정보형식 변환</u></li></ul><h4 id="7-application-layer-응용-계층"><a class="markdownIt-Anchor" href="#7-application-layer-응용-계층"></a> 7. Application Layer 응용 계층</h4><ul><li>응용 프로세스와 직접 관계하여 <u>일반적인 응용 서비스를 수행</u></li><li>정보 교환, 파일 전송, 가상 터미널</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;응용sw기초기술활용&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#응용sw기초기술활용&quot;&gt;&lt;/a&gt; 응용SW기초기술활용&lt;/h2&gt;
+&lt;h3 id=&quot;osi-open-system-interconnection-참조-모델-개요&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="응용SW기초기술활용" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="네트워크7계층" scheme="https://hyeonukdev.github.io/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC7%EA%B3%84%EC%B8%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>응용SW기초기술활용 - 인터넷 구성의 개념</title>
+    <link href="https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%AC%EC%84%B1%EC%9D%98%EA%B0%9C%EB%85%90/"/>
+    <id>https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%AC%EC%84%B1%EC%9D%98%EA%B0%9C%EB%85%90/</id>
+    <published>2020-05-05T04:52:54.000Z</published>
+    <updated>2020-05-05T04:52:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2><ul><li><u>네트웤크 계층 구조</u>에서 각 층의 역할을 이해</li><li>응용의 특성에 따라 <u>TCP와 UDP를 구별</u>하여 적용</li><li>패킷 스위칭 시스템 이해하고, 다양한 라우팅 알고리즘과 <u>IP 프로토콜</u>을 설명</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li><p>OSI 7 Layer</p><ul><li>국제표준화 기구인 ISO(International Standard Organization)에서 다른 시스템간 통신을 위해 네트워크 구조를 제시한 기본 모델로 7계층 구조</li></ul></li><li><p>Protocol 프로토콜</p><ul><li>서로 다른 기기들 간의 데이터 교환을 원활하게 수행할 수 있도록 표준화시켜 놓은 통신 규약</li></ul></li></ul><h3 id="인터넷의-개념"><a class="markdownIt-Anchor" href="#인터넷의-개념"></a> 인터넷의 개념</h3><ul><li><u>TCP/IP 프로토콜을 기반으로 전세계</u> 수 많은 네트워크들이 연결된 광범위한 컴퓨터 통신망</li><li>1969년 미 국방성의 ARPANET에서 시작</li><li>유닉스 운영체제를 기반으로 함</li><li>인터넷에 연결된 모든 컴퓨터는 <u>고유한 IP주소를 가짐</u></li><li>동시에 여러 사람이 인터넷을 이용하여 데이터 송수신 할 수 있도록 패킷 단위로 데이터를 분할하여 전송하는 <u>패킷교환 방식을 사용</u></li><li>컴퓨터 또는 네트워크로 서로 연결하기 위해 <u>게이트 웨이, 라우터, 브리지, 허브 등 네트워크 장비가 필요</u></li><li><b>증폭기는 아날로그 신호 증폭을 위한 장비로 인터-네트워킹과는 무관</b></li></ul><h3 id="네트워크-관련-장비"><a class="markdownIt-Anchor" href="#네트워크-관련-장비"></a> 네트워크 관련 장비</h3><h4 id="1-gateway-게이트웨이"><a class="markdownIt-Anchor" href="#1-gateway-게이트웨이"></a> 1. Gateway 게이트웨이</h4><ul><li>LAN에서 <u>서로 다른 프로토콜의 네트워크</u>에 데이터를 보내거나 다른 네트워크로 부터 데이터를 받아들이는 <u>출입구 역할</u></li><li>수행 역할<ul><li>데이터 형식 변환</li><li>주소 변환</li><li>프로토콜 변환</li></ul></li></ul><h4 id="2-router-라우터"><a class="markdownIt-Anchor" href="#2-router-라우터"></a> 2. Router 라우터</h4><ul><li>서로 다른 프로토콜의 LAN이나 LAN과 WAN의 연결 기능에 <u>데이터 전송의 최적의 경로를 선택할</u> 수 있는 기능 추가</li></ul><h4 id="3-repeater-리피터"><a class="markdownIt-Anchor" href="#3-repeater-리피터"></a> 3. Repeater 리피터</h4><ul><li><u>전송되는 신호가</u> 전송 선로의 특성 및 외부 충격 등 요인으로 원래의 형태와 다르게 <u>왜곡되거나 약해질 경우 원래의 신호 형태로 재생하여 다시 전송</u>하는 역할 수행</li></ul><h4 id="4-hub-허브"><a class="markdownIt-Anchor" href="#4-hub-허브"></a> 4. Hub 허브</h4><ul><li>사무실이나 가까운 거리의 <u>컴퓨터들을 연결하는 장치</u>로 각 회선을 통합적으로 관리하며 신호 증폭 기능의 리피터 역할도 포함</li><li>종류<ul><li><u>더미 허브</u><ul><li>LAN이 보유한 대역폭을 연결된 컴퓨터 수 만큼 나누어 제공</li><li>100MB 대역폭 5대 연결시 20MB 대역폭으로 속도 낮아짐</li></ul></li><li><u>스위칭 허브</u><ul><li>네트워크 상에 흐르는 데이터의 유무 및 흐름을 제어하며, 연결된 컴퓨터 수에 상관없이 <u>LAN의 최대 대역폭을 사용할 수 있도록 신호 증폭 기능을 제공하는 허브</u></li></ul></li></ul></li></ul><h4 id="5-nic-network-interface-card-랜-카드"><a class="markdownIt-Anchor" href="#5-nic-network-interface-card-랜-카드"></a> 5. NIC; Network Interface Card 랜 카드</h4><ul><li>컴퓨터가 네트워크에 연결되도록 하는 접촉 점 역할 장치로, 이더넷 카드 혹은 네트워크 어댑터라고 함</li></ul><h4 id="6-bridge-브리지"><a class="markdownIt-Anchor" href="#6-bridge-브리지"></a> 6. Bridge 브리지</h4><ul><li><u>동일한 프로토콜을 사용하는 LAN과 LAN을 연결</u>하거나 LAN 안에서 컴퓨터 그룹을 연결하는 기능을 수행</li><li>네트워크를 분산적으로 구성하여 보안성을 높일 수 있음</li></ul><h4 id="7-switch-스위치"><a class="markdownIt-Anchor" href="#7-switch-스위치"></a> 7. Switch 스위치</h4><ul><li>브리지와 같이 LAN과 LAN을 연결하여 훨씬 더 큰 LAN을 만드는 장치</li><li>하드웨어를 기반으로 처리하므로 전송 속도가 빠름</li><li>포트마다 각기 다른 전송 속도를 지원하도록 제어할 수 있고 수십에서 수백 개의 포트 제공</li></ul><h3 id="네트워크-규모에-따른-분류"><a class="markdownIt-Anchor" href="#네트워크-규모에-따른-분류"></a> 네트워크 규모에 따른 분류</h3><ul><li>LAN; Local Area Network<ul><li>근거리 통신망</li></ul></li><li>MAN; Metropolitan Area Network<ul><li>대도시 통신망</li></ul></li><li>WAN; Wide Area Network<ul><li>광대역 통신망</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;응용sw기초기술활용&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#응용sw기초기술활용&quot;&gt;&lt;/a&gt; 응용SW기초기술활용&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;u&gt;네트웤크 계층 구조&lt;/u&gt;에서 각 층의 역할을 이해&lt;/li&gt;
+&lt;li&gt;응
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="응용SW기초기술활용" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="인터넷구성의개념" scheme="https://hyeonukdev.github.io/tags/%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%AC%EC%84%B1%EC%9D%98%EA%B0%9C%EB%85%90/"/>
+    
+  </entry>
   
   <entry>
     <title>응용SW기초기술활용 - 핵심정리</title>
@@ -573,68 +637,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="요구공학방법론" scheme="https://hyeonukdev.github.io/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SW개발 방법론 활용 - SW개발 방법론</title>
-    <link href="https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/"/>
-    <id>https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/</id>
-    <published>2020-05-02T07:52:50.000Z</published>
-    <updated>2020-05-02T07:52:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="sw개발방법론선정"><a class="markdownIt-Anchor" href="#sw개발방법론선정"></a> SW개발방법론선정</h2><h3 id="소프트웨어-개발-방법론의-개념"><a class="markdownIt-Anchor" href="#소프트웨어-개발-방법론의-개념"></a> 소프트웨어 개발 방법론의 개념</h3><ul><li><u>소프트웨어 개발, 유지보수</u> 등에 필요한 여러 가지 일들의 수행 방법과 이러한 일들을 효율적으로 수행하려는 과정에서 필요한 <u>각종 기법 및 도구를 체계적으로 정리하여 표준화</u>한 것</li><li>소프트웨어 개발 방법론의 목적은 <u>소프트웨어 생산성과 품질 향상</u></li><li>개발 방법론의 종류<ul><li>구조적 방법론</li><li>정보공학 방법론</li><li>객체지향 방법론</li><li>컴포넌트 기반 방법론</li><li>애자일 방법론</li><li>제품 계열 방법론</li></ul></li></ul><h4 id="1-구조적-방법론"><a class="markdownIt-Anchor" href="#1-구조적-방법론"></a> 1. 구조적 방법론</h4><ul><li>폭포수 모델과 같이 정형화된 분석 절차에 따라 사용자 요구사항을 파악하여 <u>문서화하는 체계적인 분석 이론</u></li><li>프로그램 <u>로직 중심의 방법론</u></li><li>쉬운 이해 및 검증 가능한 <u>프로그램 코드 생성이 목적</u></li></ul><h4 id="2-정보공학-방법론"><a class="markdownIt-Anchor" href="#2-정보공학-방법론"></a> 2. 정보공학 방법론</h4><ul><li>정보시스템 개발에 <u>필요한 관리절차와 작업기법을 체계화한 방법론</u></li><li><u>자료(Data) 중심의 방법론</u></li><li><u>대규모 정보시스템을 구축</u>하는데 적합</li></ul><h4 id="3-객체지향-방법론"><a class="markdownIt-Anchor" href="#3-객체지향-방법론"></a> 3. 객체지향 방법론</h4><ul><li>현실 세계의 개체를 기계의 부품처럼 하나의 객체로 만들어, <u>객체들을 조립해서 필요한 소프트웨어를 구현</u>하는 방법론</li><li>설계 시 <u>자료와 자료에 가해지는 프로세서를 묶어 정의</u>하고 관계를 규명</li><li>객체지향 방법론의 구성 요소에는 클래스, 객체, 메시지</li><li>특징<ul><li>캡슐화</li><li>정보은닉</li><li>추상화</li><li>상속성</li><li>다형성</li></ul></li></ul><h4 id="4-cbd-componet-based-development-컴포넌트-기반-방법"><a class="markdownIt-Anchor" href="#4-cbd-componet-based-development-컴포넌트-기반-방법"></a> 4. CBD; Componet Based Development 컴포넌트 기반 방법</h4><ul><li>기존의 시스템이나 소프트웨어를 구성하는 <u>컴포넌트를 조합하여 하나의 새로운 애플리케이션을 만드는 방법론</u></li><li>컴포넌트의 <b>재사용</b>이 가능하여 시간과 노력을 절감</li><li><u>유지 보수 비용을 최소화하고 생산성 및 품질을 향상</u></li></ul><h4 id="5-agile-애자일-방법론"><a class="markdownIt-Anchor" href="#5-agile-애자일-방법론"></a> 5. Agile 애자일 방법론</h4><ul><li><u>고객의 요구사항 변화에 유연하게 대응</u>할 수 있도록 일정한 주기를 반복하면서 개발 과정을 진행하는 방법론</li><li>소규모 프로젝트, 고도로 숙달된 개발자, 급변하는 요구사항에 적합</li></ul><h4 id="6-제품-계열-방법론"><a class="markdownIt-Anchor" href="#6-제품-계열-방법론"></a> 6. 제품 계열 방법론</h4><ul><li><u>특정한 제품에 적용하고 싶은 <b>공통된 기능</b>을 정의하여 개발</u>하는 방법론</li><li><u>임베디드 소프트웨어</u>를 만드는데 적합<ul><li>입베디드 SW</li><li>디지털TV, 냉장고 등 해당 제품의 특정기능에 맞게 특화되어 제품 자체에 포함된 SW</li></ul></li><li>영역공학<ul><li>영역 분석, 영역 설계, 핵심 자산을 구현하는 영역</li></ul></li><li>응용공학<ul><li>제품 요구 분석, 제품 설게, 제품을 구현하는 영역</li></ul></li><li>영역공학과 응용공학의 연계를 위해 제품의 요구사항, 아키텍처, 조립 생산이 필요</li></ul><h3 id="소프트웨어-개발-방법론-결정"><a class="markdownIt-Anchor" href="#소프트웨어-개발-방법론-결정"></a> 소프트웨어 개발 방법론 결정</h3><ul><li>프로젝트 관리와 재사용 현황을 소프트웨어 개발 방법론에 반영하고, 확정된 소프트웨어 생명 주기와 개발 방법론에 맞춰 소프트웨어 개발 단계, 활동, 작업, 절차 등을 정의하는 것</li></ul><h3 id="소프트웨어-개발-방법론-결정-절차"><a class="markdownIt-Anchor" href="#소프트웨어-개발-방법론-결정-절차"></a> 소프트웨어 개발 방법론 결정 절차</h3><ol><li><u>프로젝트 관리</u>와 <u>재사용 현황</u>을 소프트웨어 개발 방법론에 반영</li><li>개발 단계별 작업 및 절차를 소프트웨어 생명 주기에 맞춰 수립</li><li>결정된 소프트웨어 개발 방법론의 개발 단계별 활동 목적, 작업 내용, 산출물에 대한 매뉴얼 작성</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;sw개발방법론선정&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sw개발방법론선정&quot;&gt;&lt;/a&gt; SW개발방법론선정&lt;/h2&gt;
-&lt;h3 id=&quot;소프트웨어-개발-방법론의-개념&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="SW개발방법론선정" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="SW개발방법론" scheme="https://hyeonukdev.github.io/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SW개발 방법론 활용 - SW 생명주기 모델</title>
-    <link href="https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/"/>
-    <id>https://hyeonukdev.github.io/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/</id>
-    <published>2020-05-02T06:44:24.000Z</published>
-    <updated>2020-05-02T06:44:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="sw개발방법론활용"><a class="markdownIt-Anchor" href="#sw개발방법론활용"></a> SW개발방법론활용</h2><h2 id="sw개발방법론선정"><a class="markdownIt-Anchor" href="#sw개발방법론선정"></a> SW개발방법론선정</h2><ul><li><u>소프트웨어 개발 생명주기 모델</u>의 개념과 모델 종류별 특징을 이해</li><li>정형화된 <u>개발방법론의 특징</u>을 고려하여 응용 소프트웨어 특성에 맞는 개발방법론을 선정</li><li>소프트웨어 공학기술의 요구사항 분석 기법인 <u>요구 공학 방법론을 이해</u></li><li><u>소프트웨어 비용 산정 모델</u>의 종류와 특징을 이해</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>소프트웨어 개발 생명 주기<ul><li>타당성검토 -&gt; 분석 -&gt; 설계 -&gt; 개발 -&gt; 테스트 -&gt; 운영 -&gt; 유지보수 -&gt; 폐기단계의 생명주기를 가짐</li></ul></li><li>요구공학<ul><li>요구사항을 정의하고, 문서화, 관리하는 프로세스</li></ul></li></ul><h4 id="software-life-cycle-소프트웨어-개발-생명주기-개념"><a class="markdownIt-Anchor" href="#software-life-cycle-소프트웨어-개발-생명주기-개념"></a> Software Life Cycle 소프트웨어 개발 생명주기 개념</h4><ul><li>소프트웨어를 어떻게 <u>개발</u>할 것인가에 대한 추상적 표현으로 <u>순차적 또는 병렬적 단계</u>로 나눈 것</li><li>소프트웨어 생명주기를 표현하는 형태</li><li>소프트웨어 개발 생명주기<ul><li>타당성검토 -&gt; 분석 -&gt; 설계 -&gt; 개발 -&gt; 테스트 -&gt; 운영 -&gt; 유지보수 -&gt; 폐기</li></ul></li><li>개발자는 <u>문제의 유형이나 개발 방법 등에 따라 특정 모델을 선택</u></li><li>소프트웨어 생명주기 모델 종류<ul><li>폭포수 모델</li><li>프로토타입 모델</li><li>나선형 모델</li><li>애자일 모델</li></ul></li></ul><h4 id="1-waterfall-model-폭포수-모델"><a class="markdownIt-Anchor" href="#1-waterfall-model-폭포수-모델"></a> 1. Waterfall Model 폭포수 모델</h4><ul><li><u>각 단계를 확실히 완료</u>한 후 그 결과를 검토하고 <u>승인 과정</u>을 거친 후 다음 단계를 진행하는 개발 방법론</li><li><u>고전적 라이프 사이클 패러다임</u>이라고 하며, 개발 과정의 앞 단계가 완료되어야만 다음 단계로 넘어갈 수 있는 <u>선형 순차적 모형</u></li><li><img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99D62F3359ADDCFE28" alt="폭포수모델" /></li></ul><h4 id="2-prototype-model-프로토타입-모델"><a class="markdownIt-Anchor" href="#2-prototype-model-프로토타입-모델"></a> 2. Prototype Model 프로토타입 모델</h4><ul><li><u>사용자 요구사항을 정확히 파악</u>하기 위해 실제 개발될 <u>소프트웨어에 대한 프로토타입을 만들어 최종 결과물을 예측</u>하는 모형</li><li>시제품은 발주자나 개발자 모두에게 공동의 참조 모델을 제공</li><li>최종 결과물이 만들어지기 전에 의뢰자가 최종 결과물의 일부 또는 모형을 볼 수 있음</li><li><u>추후 구현 단계에성의 구현의 골격이 됨</u></li><li>소프트웨어 개발이 완료된 시점에서 오류가 발견되는 <u>폭포수 모형의 단점을 보완</u>하기 위한 모형</li><li><img src="https://lh3.googleusercontent.com/proxy/WJTb4WBSlrTj-hjGqXL9ezCJ8GnC4OzB0Cv9wEaTcJMHXXikKcHPng6yw6EOoUAcxIMtOqn50_5KUPMa1ptWSR_p36Z3rSnyn8wbq4YuYe7ERzsQBw" alt="프로토타입모델" /></li></ul><h4 id="3-spiral-model-나선형-모델"><a class="markdownIt-Anchor" href="#3-spiral-model-나선형-모델"></a> 3. Spiral Model 나선형 모델</h4><ul><li>보헴이 제안한 것으로, <u>폭포수 모형과 프로토타입 모형의 장점에 <b>위험 분석 기능</b>을 추가</u>한 모형</li><li>나선을 따라 돌 듯이 여러 번의 소프트웨어 개발 과정을 거쳐 점진적으로 완벽하게 소프트웨어를 개발하는 것으로 <u>점진적 모형</u>이라고도 함</li><li>개발 순서<ul><li>계획 및 정의 -&gt; 위험 분석 -&gt; 공학적 개발 -&gt; 고객평가</li></ul></li><li>소프트웨어를 개발하면서 발생할 수 있는 <u>위험을 관리하고 최소화하는 것이 목적</u></li><li>비용이 많이 들고 시간이 오래 걸리는 <b>대규모</b> <u>시스템 구축에 적합함</u></li></ul><h4 id="4-agile-model-애자일-모델"><a class="markdownIt-Anchor" href="#4-agile-model-애자일-모델"></a> 4. Agile Model 애자일 모델</h4><ul><li>애자일은 ‘민첩한’, '기민한’이라는 의미</li><li>스프린트 또는 이터레이션이라고 불리는 <u><b>짧은 개발 주기를 반복</b>하며 개발과정 진행</u></li><li><u>각 개발주기마다 만들어지는 결과물</u>에 대한 <b>고객의 평가와 요구를</b> 적극적으로 수용</li><li><u><b>소규모 프로젝트</b>, 고도로 숙달된 개발자, 급변하는 요구사항에 적합</u></li><li><img src="https://post-phinf.pstatic.net/MjAxODEwMDJfMTQg/MDAxNTM4NDQ5NzM1MTM5.BpLR3vJkFRD5OBMWcyXG1qlE0pMsRhafMIV8MssiY1gg.vuCWTel5XbZTtId_F-Lp3Rh_I2Ckw6DRsoX9shdGtDIg.PNG/%EC%95%A0%EC%9E%90%EC%9D%BC%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4.png?type=w1200" alt="애자일모델" /></li><li>애자일 개발 핵심 4가지<ol><li>프로세스와 도구보다 <u>개인과 그들의 협업</u>에 더 가치를 둔다.</li><li>포괄적인 문서화보다 <u>제대로 작동</u>하는 소프트웨어에 더 가치를 둔다.</li><li>계약 협상보다 <u>고객과의 협력</u>에 더 가치를 둔다.</li><li>계획에 따르기보다 <u>변화에 대응</u>하는 것에 더 가치를 둔다.</li></ol></li><li>개발 모형<ul><li>SCRUM<ul><li>매일 정해진 시간에 정해진 장소에서 짧은 시간의 개발을 하는 팀을 위한 프로젝트 관리 중심의 방법론</li><li>30일 마다 동작 가능한 제품을 제공하는 스프린트(Sprint)를 중심으로 한다.</li><li>Backlog : 제품과 프로젝트에 대한 요구사항</li><li>Sprint : 30일 단위 반복(Iteration)의 짧은 개발기간으로 분리하여 반복적 수행</li><li>스크럼미팅 : 매일15분 정도 미팅으로 오늘과 내일의 해야 할 일 계획 수립</li><li>스크럼마스터 : 프로젝트 리더, 스크럼 수행 시 문제 인식 및 해결하고자 노력</li></ul></li><li>XP : eXtreme Programming<ul><li>의사소통 개선과 즉각적인 피드백에 의한 단순한 코딩으로 SW품질을 높이기 위한 방법론</li><li>1~3주 반복(Iteration)</li><li>5가지 갗치<ul><li>용기</li><li>단순성</li><li>의사소통</li><li>피드백</li><li>존경</li></ul></li></ul></li><li>Kanban</li><li>Lean<ul><li>도요타 생산시스템을 재정립한 경영 방법론인 Lean 시스템의 품질기법을 소프트웨어 개발에 적용한 개발 방법론</li><li>낭비요소 제거를 통한 프로세스 향상이 목적</li><li>7가지 원칙<ul><li>낭비제거</li><li>품질 내재화</li><li>지식 창출</li><li>늦은 확정</li><li>빠른 인도</li><li>사람 존중</li><li>전체 최적화</li></ul></li></ul></li><li>Crystal</li><li>ASD : Adaptive Software Development</li><li>FDD : Feature Driven Development</li><li>DSDM : Dynamic System Development Method</li><li>DAD : Disciplined Agile Delivery</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;sw개발방법론활용&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sw개발방법론활용&quot;&gt;&lt;/a&gt; SW개발방법론활용&lt;/h2&gt;
-&lt;h2 id=&quot;sw개발방법론선정&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="SW개발방법론선정" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="SW개발방법론선정" scheme="https://hyeonukdev.github.io/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/"/>
     
   </entry>
   
