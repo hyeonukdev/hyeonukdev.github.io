@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-06T15:45:50.000Z</updated>
+  <updated>2020-05-06T16:03:43.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>기본개발환경구축 - DB서버</title>
+    <link href="https://hyeonukdev.github.io/2020/05/07/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/DB%EC%84%9C%EB%B2%84/"/>
+    <id>https://hyeonukdev.github.io/2020/05/07/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/DB%EC%84%9C%EB%B2%84/</id>
+    <published>2020-05-06T16:03:43.000Z</published>
+    <updated>2020-05-06T16:03:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="기본개발환경구축"><a class="markdownIt-Anchor" href="#기본개발환경구축"></a> 기본개발환경구축</h2><h3 id="db서버-정의"><a class="markdownIt-Anchor" href="#db서버-정의"></a> DB서버 정의</h3><ul><li>사용자, 다른 어플리케이션, 데이터베이스와 <u>상호작용</u>하여 데이터를 <u>저장하고 분석</u>하기 위한 컴퓨터 소프트웨어</li><li>주요기능<ul><li>데이터베이스 생성</li><li>조회</li><li>변경</li></ul></li></ul><h3 id="db서버-종류-및-특징"><a class="markdownIt-Anchor" href="#db서버-종류-및-특징"></a> DB서버 종류 및 특징</h3><ul><li>대규모 데이터의 안정적 처리<ul><li>Oracle<ul><li>저작자 : Oracle</li><li>상용</li></ul></li><li>DB2<ul><li>저작자 : IBM</li><li>상용</li></ul></li></ul></li><li>중소 규모 데이터의 안정적 처리<ul><li>Microsoft SQL Server<ul><li>저작자 : Microsoft</li><li>상용</li></ul></li></ul></li><li>오픈소스<ul><li>MySQL<ul><li>저작자 : MySQLAB</li><li>상용 또는 GPL</li><li>오픈소스 RDBMS</li></ul></li><li>Mongo DB<ul><li>저작자 : MongoDB Inc</li><li>GNU AGPL v3.0</li><li>NoSQL 데이터베이스</li></ul></li><li>Redis<ul><li>저작자 : Salvatore Sanfilippo</li><li>BSD</li><li>메모리</li><li>키-값 데이터베이스</li></ul></li></ul></li><li>임베디드 데이터베이스<ul><li>SQLite<ul><li>저작자 : D.Richard Hipp</li><li>Public Domain</li></ul></li></ul></li></ul><h3 id="db서버-고려사항"><a class="markdownIt-Anchor" href="#db서버-고려사항"></a> DB서버 고려사항</h3><ul><li>가용성<ul><li>장기간 시스템을 운영할 때 장애 발생 가능성</li><li>DBMS의 버그 등으로 인한 패치 설치를 위한 재가동</li><li>백업 및 복구 편의성</li><li>DBMS 이중화 및 복제 지원</li></ul></li><li>성능<ul><li>대규모 데이터 처리 기능</li><li>대량 거래 처리 기능</li><li>다양한 튜닝 옵션 지원</li><li>비용 기반 최적화 지원 및 설정의 최소화</li></ul></li><li>기술 지원<ul><li>공급 벤더들의 안정적인 기술 지원</li><li>다수의 사용자들 간의 정보 공유</li><li>오픈 소스 여부</li></ul></li><li>상호 호환성<ul><li>설치 가능한 운영체제 종류</li><li>다양한 운영체제에 지원되는 JDBC, ODBC</li></ul></li><li>구축 비용<ul><li>라이선스 정책 및 비용</li><li>유지 및 관리 비용</li><li>총 소유 비용 : TCO</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;기본개발환경구축&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#기본개발환경구축&quot;&gt;&lt;/a&gt; 기본개발환경구축&lt;/h2&gt;
+&lt;h3 id=&quot;db서버-정의&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#db서버
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="기본개발환경구축" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="DB서버" scheme="https://hyeonukdev.github.io/tags/DB%EC%84%9C%EB%B2%84/"/>
+    
+  </entry>
   
   <entry>
     <title>기본개발환경구축 - 웹서버</title>
@@ -606,37 +637,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="소프트웨어개발프레임워크" scheme="https://hyeonukdev.github.io/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SW개발 방법론 활용 - 테일러링 기준</title>
-    <link href="https://hyeonukdev.github.io/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/"/>
-    <id>https://hyeonukdev.github.io/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/</id>
-    <published>2020-05-03T07:22:00.000Z</published>
-    <updated>2020-05-03T07:22:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="sw개발방법론-테일러링"><a class="markdownIt-Anchor" href="#sw개발방법론-테일러링"></a> SW개발방법론 테일러링</h2><h2 id="테일러링-기준"><a class="markdownIt-Anchor" href="#테일러링-기준"></a> 테일러링 기준</h2><h3 id="소프트웨어-개발-방법론-테일러링의-개념"><a class="markdownIt-Anchor" href="#소프트웨어-개발-방법론-테일러링의-개념"></a> 소프트웨어 개발 방법론 테일러링의 개념</h3><ul><li>소프트웨어 개발 방법론 테일러링은 <u>프로젝트 상황 및 특성에 맞도록 개발 방법론의 절차, 사용기법 등을 수정 및 보완</u>하는 작업</li></ul><h3 id="소프트웨어-개발-방법론-테일러링-수행절차"><a class="markdownIt-Anchor" href="#소프트웨어-개발-방법론-테일러링-수행절차"></a> 소프트웨어 개발 방법론 테일러링 수행절차</h3><ol><li>프로젝트 특징 정의</li><li>표준프로세스 선정 및 검증</li><li>상위 수준의 커스터마이징</li><li>세부 커스터마이징</li><li>테일러링 문서화</li></ol><h3 id="소프트웨어-개발-방법론-테일러링-고려사항"><a class="markdownIt-Anchor" href="#소프트웨어-개발-방법론-테일러링-고려사항"></a> 소프트웨어 개발 방법론 테일러링 고려사항</h3><ul><li>내부적 기준<ul><li>목표환경<ul><li>시스템의 개발 환경과 유형이 서로 다른 경우 테일러링 필요</li></ul></li><li>요구사항<ul><li>프로젝트의 생명 주기 활동에서 개발, 운영, 유지보수 등 프로젝트에서 우선적으로 고려할 요구사항이 서로 다른 경우 필요</li></ul></li><li>프로젝트 규모<ul><li>비용, 인력, 개발 기간 등 프로젝트 규모가 서로 다른 경우</li></ul></li><li>보유 기술<ul><li>프로세스, 개발 방법론, 산출물, 인력의 숙련도 등이 다른 경우</li></ul></li></ul></li><li>외부적 기준<ul><li>법적 제약사항<ul><li>프로젝트별로 적용될 IT Compliance가 서로 다른 경우<ul><li>IT Compliance<ul><li>IT분야에서 내/외 부적으로 반드시 지켜야 하는 법칙 규제사항이나 지침</li></ul></li></ul></li></ul></li><li>표준 품질기준<ul><li>금융, 제도, 의료 등 업종별 표준 품질 기준이 서로 다른 경우 테일러링이 필요</li></ul></li></ul></li></ul><h3 id="소프트웨어-개발-방법론-테일러링-기번"><a class="markdownIt-Anchor" href="#소프트웨어-개발-방법론-테일러링-기번"></a> 소프트웨어 개발 방법론 테일러링 기번</h3><ul><li>프로젝트 규모와 복잡도에 따른 테일러링<ul><li>프로젝트 규모를 프로젝트 기간, 작업범위, 참여 인원 등에 따라 대/중/소로 구분하고, 프로젝트 업무 난이도에 따라 복잡도를 상/중/하로 구분하는 기법</li></ul></li><li>프로젝트 구성원에 따른 테일러링<ul><li>프로젝트에 참여하는 구성원들의 기술적 숙련도와 방법론의 이해 정도를 확인하여 테일러링 수준을 결정하는 기법</li></ul></li><li>팀내 방법론 지원에 따른 테일러링<ul><li>프로젝트 수행 시 각 팀 별로 방법론 담당 인력을 배정하여 팀의 방법론 교육과 프로젝트 전체의 방법론 운영을 위한 의사소통을 담당하도록 인력을 구성하는 기법</li></ul></li><li>자동화에 따른 테일러링<ul><li>프로젝트 수행 시 작업 부하를 줄이기 위해 중간 단계에서의 산출물을 자동화 도구를 사용하여 산출할 수 있도록 지원하는 기법</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;sw개발방법론-테일러링&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sw개발방법론-테일러링&quot;&gt;&lt;/a&gt; SW개발방법론 테일러링&lt;/h2&gt;
-&lt;h2 id=&quot;테일러링-기준&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="SW개발방법론테일러링" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="테일러링기준" scheme="https://hyeonukdev.github.io/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/"/>
     
   </entry>
   
