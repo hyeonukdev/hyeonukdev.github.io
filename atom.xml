@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-05T07:51:21.000Z</updated>
+  <updated>2020-05-06T15:45:50.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -17,13 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>기본개발환경구축 - 웹서버</title>
+    <link href="https://hyeonukdev.github.io/2020/05/07/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/%EC%9B%B9%EC%84%9C%EB%B2%84/"/>
+    <id>https://hyeonukdev.github.io/2020/05/07/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/%EC%9B%B9%EC%84%9C%EB%B2%84/</id>
+    <published>2020-05-06T15:45:50.000Z</published>
+    <updated>2020-05-06T15:45:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="기본개발환경구축"><a class="markdownIt-Anchor" href="#기본개발환경구축"></a> 기본개발환경구축</h2><ul><li><u>웹 서버, DB 서버</u>등 응용개발에 필요한 기반 서버를 설치하고 운용</li><li><u>패키지</u> 개발 방식의 개념과 장단점을 이해하고 구축 및 운영 절차를 이해</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>Package 패키지 개발<ul><li>여러 성공사례의 노하우를 기반으로 개발된 제품을 이용하여 시스템을 구축하는 방식</li></ul></li></ul><h2 id="웹서버"><a class="markdownIt-Anchor" href="#웹서버"></a> 웹서버</h2><h3 id="정적static과-동적dynamic-웹-페이지"><a class="markdownIt-Anchor" href="#정적static과-동적dynamic-웹-페이지"></a> 정적(Static)과 동적(Dynamic) 웹 페이지</h3><ul><li>Static Pages<ul><li>Web Server는 파일 경로 이름을 받아 경로와 일치하는 File Contents를 반환하며 항상 동일한 페이지를 반환</li><li>image, html, css, javascript 파일 등 웹서버 저장 파일</li></ul></li><li>Dynamic Pages<ul><li>인자의 내용에 맞게 동적인 Contents를 반환</li><li>Client의 request를 해석, 데이터를 가공한 페이지 response</li></ul></li><li><img src="https://gmlwjd9405.github.io/images/web/static-vs-dynamic.png" alt="정적과 동적 웹 방식" /></li></ul><h3 id="web-server-웹-서버"><a class="markdownIt-Anchor" href="#web-server-웹-서버"></a> Web Server 웹 서버</h3><ul><li>개념<ul><li>하드웨어 : Web Server가 설치되어 있는 컴퓨터</li><li>소프트웨어 : 웹 브라우저 클라이언트로부터 HTTP request를 받아 정적인 contents를 제공하는 프로그램</li></ul></li><li>기능<ul><li>HTTP 프로토콜을 기반으로 하여 클라이언트의 요청을 서비스</li><li><u>WAS를 거치지 않음 -&gt; 저장되어 있는 정적 contents를 제공</u></li><li><u>WAS를 거침 -&gt; 동적인 contents를 제공</u>을 위해 <u>ASP, JSP, PHP등 서버 사이트 스크립트 언어</u>가 request를 WAS에 전달하고, 처리한 결과를 Client에게 Response</li></ul></li><li>주요 제품<ul><li>Apache</li><li>Nginx</li><li>MS-IIS</li><li>Google-GWS</li></ul></li></ul><h3 id="was-web-application-server-서버"><a class="markdownIt-Anchor" href="#was-web-application-server-서버"></a> WAS; Web Application Server 서버</h3><ul><li>개념<ul><li><u>DB 조회나 다양한 로직 처리를 요구하는 동적인 contents를 제공</u>하기 위한 Application Server</li><li>HTTP를 통해 어플리케이션을 수행해주는 <u>미들웨어</u></li><li>WAS = Web Server + Web Container</li></ul></li><li>기능<ul><li>ASP, JSP, PHP, Python 등 서버 사이드 스크립트 언어 활용</li><li>프로그램 실행 환경과 <u>DB 접속 기능</u></li><li>다수의 트랜잭션 관리 기능</li><li>다양한 로직 수행</li></ul></li><li>주요 제품<ul><li>Tomcat</li><li>Undertow</li><li>JEUS</li><li>Weblogic</li><li>Websphere</li></ul></li></ul><h3 id="스크립트-언어-종류"><a class="markdownIt-Anchor" href="#스크립트-언어-종류"></a> 스크립트 언어 종류</h3><ul><li>ASP; Active Server Page<ul><li>IIS 서버 측에서 동적으로 수행하는 페이지를 만들기 위해 마이크로소프트에서 개발</li><li>Window 운영체제에서만 실행 가능한 프로래밍 언어</li></ul></li><li>JSP; Java Server Page<ul><li>JAVA로 만들어진 서버용 스크립트 언어</li><li>Window, Linux 등 다양한 운영체제에서 사용 가능</li></ul></li><li>PHP; Professinal Hypertext Preprocessor<ul><li>서버용 스크립트 언어</li><li>Window, Linux, Unix 운영체제에서 사용 가능</li><li>배우기 쉬움</li></ul></li><li>Python<ul><li>객체지향 기능을 지원하는 대화형 인터프리터 언어로 플랫폼이 독립적이고 문법이 간단</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;기본개발환경구축&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#기본개발환경구축&quot;&gt;&lt;/a&gt; 기본개발환경구축&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;u&gt;웹 서버, DB 서버&lt;/u&gt;등 응용개발에 필요한 기반 서버를 설치하고 운용&lt;/li
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="기본개발환경구축" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="웹서버" scheme="https://hyeonukdev.github.io/tags/%EC%9B%B9%EC%84%9C%EB%B2%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>응용SW기초기술활용 - 핵심정리</title>
     <link href="https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
     <id>https://hyeonukdev.github.io/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</id>
     <published>2020-05-05T07:51:21.000Z</published>
     <updated>2020-05-05T07:51:21.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2><h3 id="1-인터넷-구성의-개념"><a class="markdownIt-Anchor" href="#1-인터넷-구성의-개념"></a> 1. 인터넷 구성의 개념</h3><ul><li><u>TCP/IP 프로토콜을 기반으로 전세계</u> 수 많은 네트워크들이 연결된 광범위한 컴퓨터 통신망</li><li>장비 종류<ul><li>게이트웨이</li><li>라우터</li><li>리피터</li><li>허브</li><li>랜 카드</li><li>브리지</li><li>스위치</li></ul></li></ul><h3 id="2-네트워크-7계층"><a class="markdownIt-Anchor" href="#2-네트워크-7계층"></a> 2. 네트워크 7계층</h3><ul><li>국제 표준화 기구인 ISO에서 다른 시스템간 통신을 위해 <u>네트워크 구조를 제시한 기본 모델</u></li><li><img src="https://baekjungho.github.io/images/posts/201904/osi.jpg" alt="OSI 7 Layer" /></li></ul><h3 id="3-네트워크-프로토콜"><a class="markdownIt-Anchor" href="#3-네트워크-프로토콜"></a> 3. 네트워크 프로토콜</h3><ul><li>프로토콜은 서로 다른 기기들 간의 데이터 교환을 원활하게 수행할 수 있도록 표준화 시켜 놓은 통신 규약</li><li>TCP/IP 4계층<ul><li>네트워크 액세스</li><li>인터넷</li><li>전송</li><li>응용</li></ul></li><li>프로토콜의 기본 요소<ul><li>구문</li><li>의미</li><li>시간</li></ul></li><li>라우팅 프로토콜<ul><li>RIP</li><li>IGRP</li><li>OSPF</li><li>BGP</li></ul></li><li><img src="https://lh3.googleusercontent.com/proxy/icCZleoAKcuSSkDhGQA1C-6Odmghiv2dVpVNg0WZZzdOgfSFuppsNMG0vtyNDHeGhqFPEw4TyHS74sx7-rIO3sSz2Gox6_t1Np7DRXY1rwoJPy6zpFTiNSCdymZkSbhRw9zzsX4CKgW6aOB5mpl7aPGEK-HWctvJGd08MJ911j4WbeKPVktE0s3drWn1h_9YOmjH-vYHDP5CY7orVuu1gmkUM58nU4XJXgLNa77_o2FFg_uTHdDRhEknJ-uZDw" alt="OSI 7 Layer" /></li></ul><h3 id="4-ip"><a class="markdownIt-Anchor" href="#4-ip"></a> 4. IP</h3><ul><li>OSI 7 계층의 네트워크 계층에서 <u>호소트의 주소지정과 패킷분할 및 조립기능 담당</u></li><li><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0505_02.png" alt="IPv4 와 IPv6 주소 비교" /></li></ul><h3 id="5-tcpudp"><a class="markdownIt-Anchor" href="#5-tcpudp"></a> 5. TCP/UDP</h3><ul><li>OSI 7계층의 <u>전송계층</u>에서 CRC체크와 재전송 기능을 통해 <u><b>신뢰성</b>있는 연결형 서비스 제공</u></li><li>TCP 대표 서비스<ul><li>FTP</li><li>Telnet</li><li>Http</li><li>SMTP</li><li>POP</li><li>IMAP</li></ul></li><li>UDP는 비연결성이고 신뢰성 없는 데이터 전송</li><li>UDP는 대표 서비스<ul><li>SNMP</li><li>DNS</li><li>TFTP</li><li>NFS</li><li>NETBIOS</li><li>인터넷 게임</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2><h3 id="1-인터넷-구성의-개념"><a class="markdownIt-Anchor" href="#1-인터넷-구성의-개념"></a> 1. 인터넷 구성의 개념</h3><ul><li><u>TCP/IP 프로토콜을 기반으로 전세계</u> 수 많은 네트워크들이 연결된 광범위한 컴퓨터 통신망</li><li>장비 종류<ul><li>게이트웨이</li><li>라우터</li><li>리피터</li><li>허브</li><li>랜 카드</li><li>브리지</li><li>스위치</li></ul></li></ul><h3 id="2-네트워크-7계층"><a class="markdownIt-Anchor" href="#2-네트워크-7계층"></a> 2. 네트워크 7계층</h3><ul><li>국제 표준화 기구인 ISO에서 다른 시스템간 통신을 위해 <u>네트워크 구조를 제시한 기본 모델</u></li><li><img src="https://baekjungho.github.io/images/posts/201904/osi.jpg" alt="OSI 7 Layer" /></li></ul><h3 id="3-네트워크-프로토콜"><a class="markdownIt-Anchor" href="#3-네트워크-프로토콜"></a> 3. 네트워크 프로토콜</h3><ul><li>프로토콜은 서로 다른 기기들 간의 데이터 교환을 원활하게 수행할 수 있도록 표준화 시켜 놓은 통신 규약</li><li>TCP/IP 4계층<ul><li>네트워크 액세스</li><li>인터넷</li><li>전송</li><li>응용</li></ul></li><li>프로토콜의 기본 요소<ul><li>구문</li><li>의미</li><li>시간</li></ul></li><li>라우팅 프로토콜<ul><li>RIP</li><li>IGRP</li><li>OSPF</li><li>BGP</li></ul></li><li><img src="https://lh3.googleusercontent.com/proxy/qnU4O0x68NqJJyY112t2ihbFPIivUIA2UwRHRQ1xIFbfXsWmTtK3UnIlsnaze9a_msgiKEHJS8-wQOlF1_u57v_NXuNRTfvDD55_UjDCtucm5OKLLrsWnGM4mVlpDE6sY9UjWAQGQOFcr4wUa94lDgtNnJrUVCw" alt="OSI 7 Layer" /></li></ul><h3 id="4-ip"><a class="markdownIt-Anchor" href="#4-ip"></a> 4. IP</h3><ul><li>OSI 7 계층의 네트워크 계층에서 <u>호소트의 주소지정과 패킷분할 및 조립기능 담당</u></li><li><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0505_02.png" alt="IPv4 와 IPv6 주소 비교" /></li></ul><h3 id="5-tcpudp"><a class="markdownIt-Anchor" href="#5-tcpudp"></a> 5. TCP/UDP</h3><ul><li>OSI 7계층의 <u>전송계층</u>에서 CRC체크와 재전송 기능을 통해 <u><b>신뢰성</b>있는 연결형 서비스 제공</u></li><li>TCP 대표 서비스<ul><li>FTP</li><li>Telnet</li><li>Http</li><li>SMTP</li><li>POP</li><li>IMAP</li></ul></li><li>UDP는 비연결성이고 신뢰성 없는 데이터 전송</li><li>UDP는 대표 서비스<ul><li>SNMP</li><li>DNS</li><li>TFTP</li><li>NFS</li><li>NETBIOS</li><li>인터넷 게임</li></ul></li></ul>]]></content>
     
     <summary type="html">
     
@@ -605,38 +637,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="테일러링기준" scheme="https://hyeonukdev.github.io/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SW개발 방법론 활용 - SW 개발 표준</title>
-    <link href="https://hyeonukdev.github.io/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/"/>
-    <id>https://hyeonukdev.github.io/2020/05/03/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/</id>
-    <published>2020-05-03T06:52:04.000Z</published>
-    <updated>2020-05-03T06:52:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="sw개발방법론-테일러링"><a class="markdownIt-Anchor" href="#sw개발방법론-테일러링"></a> SW개발방법론 테일러링</h2><ul><li><u>응용 소프트웨어 개발</u>에 사용할 <b>표준</b>으로 활동 및 절차 수행에 필요한 기법과 표준, 산출물 표준 양식 및 작성 기법, 적용 도구를 정립</li><li><u>테일러링</u>된 적용 개발 방법론에 따른 작성 산출물 유형 확정</li><li><u>소프트웨어 개발 프레임워크</u>의 개념과 종류별 특징을 이해</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>Tailoring 테일러링<ul><li>‘재단, 양복업’ 으로 표준을 기반으로 실제 업무에서 여건에 맞게 수정/보완 하는 것</li></ul></li></ul><h3 id="sw-개발-표준의-개념"><a class="markdownIt-Anchor" href="#sw-개발-표준의-개념"></a> SW 개발 표준의 개념</h3><ul><li><u>소프트웨어 개발 단계의 품질 관리</u>에 사용되는 국제 표준</li><li>대표적인 국제표준<ul><li>ISO/IEC 12207</li><li>CMMI</li><li>SPICE</li></ul></li></ul><h3 id="종류"><a class="markdownIt-Anchor" href="#종류"></a> 종류</h3><h4 id="1-isoiec-12207"><a class="markdownIt-Anchor" href="#1-isoiec-12207"></a> 1. ISO/IEC 12207</h4><ul><li><u>ISO</u>; International Organization for Standardiztaion, <u>국제표준화기구</u>에서 소프트웨어 개발, 운영, 유지보수 등을 체계적으로 관리하기 위한 <u>소프트웨어 생명주기 프로세스 표준을 제공</u></li><li><u>소프트웨어와 관련된 조직과 사람</u>, 소프트웨어 획득자, 공급자, 개발자, 운영자, 유지보수자, 품질보증관리자, 사용자 등의 이해관계자들이 <u>각자의 입장에서 수행해야 할 일을 정의하고 지속적으로 개선시키기 위한 활동</u></li><li><b>기본 생명 주기 프로세스</b><ul><li>획득 프로세스</li><li>공급 프로세스</li><li>개발 프로세스</li><li>운영 프로세스</li><li>유지보수 프로세스</li></ul></li><li><b>지원 생명 주기 프로세스</b><ul><li>문서화 프로세스</li><li>품질보증 프로세스</li><li>형상관리 프로세스</li><li>검증 프로세스</li><li>확인 프로세스</li><li>문제해결 프로세스</li><li>활동 검토 프로세스</li><li>유지보수 프로세스</li></ul></li><li><b>조직 생명 주기 프로세스</b><ul><li>기반구조 프로세스</li><li>관리 프로세스</li><li>개선 프로세스</li><li>훈련 프로세스</li></ul></li></ul><h4 id="2-cmmi-capability-maturity-model-integration"><a class="markdownIt-Anchor" href="#2-cmmi-capability-maturity-model-integration"></a> 2. CMMI; Capability Maturity Model Integration</h4><ul><li>능력 성숙도 모델 통합</li><li><u>소프트웨어 개발 조직의 업무 능력 및 조직의 성숙도 평가 모델</u></li><li>CMMI 성숙도 5단계<table><thead><tr><th>단계</th><th>프로세스</th><th>특징</th></tr></thead><tbody><tr><td>초기</td><td>-</td><td>작업자 능력에 따라 성공 여부 결정</td></tr><tr><td>관리</td><td>규칙화된 프로세스</td><td>특정한 프로젝트 내의 프로세스 정의 및 수행</td></tr><tr><td>정의</td><td>표준화된 프로세스</td><td>조직의 표준 프로세스를 활용하여 업무 수행</td></tr><tr><td>정량적 관리</td><td>예측 가능한 프로세스</td><td>프로젝트를 정량적으로 관리 및 통제</td></tr><tr><td>최적화</td><td>지속적 개선 프로세스</td><td>프로세스 역량 향상을 위해 지속적인 프로세스 개선</td></tr></tbody></table></li></ul><h4 id="3-spice-software-process-improvement-and-capability-determination"><a class="markdownIt-Anchor" href="#3-spice-software-process-improvement-and-capability-determination"></a> 3. SPICE; Software Process Improvement and Capability dEtermination</h4><ul><li>소프트웨어 처리 개선 및 능력 평가 기준</li><li><u>소프트웨어 프로세스를 평가 및 개선하는 국제표준</u></li><li>ISO/IEC 15504</li><li>목적<ul><li>프로세스 개선을 위해 <u>개발 기관이 스스로 평가</u>하는 것</li><li>요구조건의 만족여부를 개발 조직이 스스로 평가하는 것</li><li>계약 체결을 위해 <u>수탁 기관의 프로세스를 평가</u>하는 것</li></ul></li><li>5개의 프로세스 범주와 40개의 세부 프로세스로 구성<ul><li>고객- 공급자 프로세스<ul><li>소프트웨어를 개발하여 고객에게 전달하는 것을 지원</li><li>소프트웨어의 정확한 운용 및 사용을 위한 프로세스로 구성</li><li>인수, 공급, 요구 도출, 운영</li><li>프로세스 수 : 10개</li></ul></li><li>공학 프로세스<ul><li>시스템과 소프트웨어 제품의 명세화, 구현, 유지보수하는 프로세스로 구성</li><li>개발, 소프트웨어 유지보수</li><li>프로세스 수 : 9개</li></ul></li><li>지원 프로세스<ul><li>소프트웨어 생명 주기에 다른 프로세스에 의해 이용되는 프로세스로 구성</li><li>문서화, 형상, 품질 보증, 검증, 확인, 리뷰, 감사, 품질문제해결</li><li>프로세스 수 : 8개</li></ul></li><li>관리 프로세스<ul><li>소프트웨어 생명 주기에서 프로젝트 관리자에 의해 사용되는 프로세스로 구성</li><li>관리, 프로젝트 관리, 품질 및 위험 관리</li><li>프로세스 수 : 4개</li></ul></li><li>조직 프로세스<ul><li>조직의 업무 목적 수립과 조직의 업무 목표 달성을 위한 프로세스로 구성</li><li>조직배치, 개선 활동 프로세스, 인력 관리, 기반 관리, 측정도구, 재사용</li><li>프로세스 수 : 9개</li></ul></li></ul></li><li>프로세스 수행 능력 6개<ul><li>불완전 Incomplete<ul><li>프로세스가 구현되지 않았거나 목적을 달성핮지 못한 단계</li></ul></li><li>수행 Performed<ul><li>프로세스가 수행되고 목적이 달성된 단계</li></ul></li><li>관리 Managed<ul><li>정의된 자원의 한도 내에서 그 프로세스가 작업 산출물을 인도하는 단계</li></ul></li><li>확립 Established<ul><li>소프트웨어 공학 원칙에 기반하여 정의된 프로세스가 수행되는 단계</li></ul></li><li>예측 Predictable<ul><li>프로세스가 목적 달성을 위해 통제되고, 양적인 측정을 통해 일관되게 수행되는 단계</li></ul></li><li>최적화 Optimizing<ul><li>프로세스 수행을 최적화하고, 지속적인 개선을 통해 업무 목적을 만족시키는 단계</li></ul></li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;sw개발방법론-테일러링&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#sw개발방법론-테일러링&quot;&gt;&lt;/a&gt; SW개발방법론 테일러링&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;u&gt;응용 소프트웨어 개발&lt;/u&gt;에 사용할 &lt;b&gt;표준&lt;/b&gt;으로 
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="SW개발방법론테일러링" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="SW개발표준" scheme="https://hyeonukdev.github.io/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/"/>
     
   </entry>
   
