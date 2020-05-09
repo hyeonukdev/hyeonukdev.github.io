@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-08T10:04:31.000Z</updated>
+  <updated>2020-05-09T13:13:28.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>서버프로그램구현 - 재사용</title>
+    <link href="https://hyeonukdev.github.io/2020/05/09/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B3%B5%ED%86%B5%EB%AA%A8%EB%93%88%EA%B5%AC%ED%98%84/%EC%9E%AC%EC%82%AC%EC%9A%A9/"/>
+    <id>https://hyeonukdev.github.io/2020/05/09/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B3%B5%ED%86%B5%EB%AA%A8%EB%93%88%EA%B5%AC%ED%98%84/%EC%9E%AC%EC%82%AC%EC%9A%A9/</id>
+    <published>2020-05-09T13:13:28.000Z</published>
+    <updated>2020-05-09T13:13:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="서버프로그램구현"><a class="markdownIt-Anchor" href="#서버프로그램구현"></a> 서버프로그램구현</h2><ul><li>공통 모듈의 상세 설계를 기반으로 <u>프로그래밍 언어와 도구를 활용</u>하여 업무 프로세스 및 서비스의 구현에 필요한 <u>공통 모듈을 작성</u></li><li>소프트웨어 측정 지표 중 <u>모듈 간의 <b>결합도는 줄이고</b> 개별 모듈들의 내부 <b>응집도를 높인</b> 공통 모듈을 구현</u></li><li>공통 개발된 공통 모듈의 내부 기능과 제공하는 인터페이스에 대해 테스트할 수 있는 <u>테스트 케이스를 작성</u>하고 단위 테스트를 수행하기 위한 테스트 조건을 명세화</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>Cohesion 응집도<ul><li>모듈 내부에 존재하는 구성 요소들 사이의 밀접한 정도로, 응집도가 높을수록 구성 요소들이 꼭 필요한 것으로만 모여 있음</li></ul></li><li>Coupling 결합도<ul><li>모듈과 모듈 사이의 관계에서 관련 정도를 나타내며 모듈 간에는 관련이 적을수록 상호 의존성이 줄어 모듈의 독립성이 높아지고 독립성이 높으면 모듈 간에 영향이 적어 좋은 설계가 됨</li></ul></li></ul><h3 id="공통-모듈-reuse-재사용의-개념"><a class="markdownIt-Anchor" href="#공통-모듈-reuse-재사용의-개념"></a> 공통 모듈 Reuse 재사용의 개념</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;서버프로그램구현&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#서버프로그램구현&quot;&gt;&lt;/a&gt; 서버프로그램구현&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;공통 모듈의 상세 설계를 기반으로 &lt;u&gt;프로그래밍 언어와 도구를 활용&lt;/u&gt;하여 업무 
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="서버프로그램구현" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="재사용" scheme="https://hyeonukdev.github.io/tags/%EC%9E%AC%EC%82%AC%EC%9A%A9/"/>
+    
+  </entry>
   
   <entry>
     <title>서버프로그램구현 - 핵심정리</title>
@@ -610,37 +642,6 @@
       <category term="패키지" scheme="https://hyeonukdev.github.io/tags/%ED%8C%A8%ED%82%A4%EC%A7%80/"/>
     
       <category term="Package" scheme="https://hyeonukdev.github.io/tags/Package/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>기본개발환경구축 - DB서버</title>
-    <link href="https://hyeonukdev.github.io/2020/05/07/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/DB%EC%84%9C%EB%B2%84/"/>
-    <id>https://hyeonukdev.github.io/2020/05/07/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/DB%EC%84%9C%EB%B2%84/</id>
-    <published>2020-05-06T16:03:43.000Z</published>
-    <updated>2020-05-06T16:03:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="기본개발환경구축"><a class="markdownIt-Anchor" href="#기본개발환경구축"></a> 기본개발환경구축</h2><h3 id="db서버-정의"><a class="markdownIt-Anchor" href="#db서버-정의"></a> DB서버 정의</h3><ul><li>사용자, 다른 어플리케이션, 데이터베이스와 <u>상호작용</u>하여 데이터를 <u>저장하고 분석</u>하기 위한 컴퓨터 소프트웨어</li><li>주요기능<ul><li>데이터베이스 생성</li><li>조회</li><li>변경</li></ul></li></ul><h3 id="db서버-종류-및-특징"><a class="markdownIt-Anchor" href="#db서버-종류-및-특징"></a> DB서버 종류 및 특징</h3><ul><li>대규모 데이터의 안정적 처리<ul><li>Oracle<ul><li>저작자 : Oracle</li><li>상용</li></ul></li><li>DB2<ul><li>저작자 : IBM</li><li>상용</li></ul></li></ul></li><li>중소 규모 데이터의 안정적 처리<ul><li>Microsoft SQL Server<ul><li>저작자 : Microsoft</li><li>상용</li></ul></li></ul></li><li>오픈소스<ul><li>MySQL<ul><li>저작자 : MySQLAB</li><li>상용 또는 GPL</li><li>오픈소스 RDBMS</li></ul></li><li>Mongo DB<ul><li>저작자 : MongoDB Inc</li><li>GNU AGPL v3.0</li><li>NoSQL 데이터베이스</li></ul></li><li>Redis<ul><li>저작자 : Salvatore Sanfilippo</li><li>BSD</li><li>메모리</li><li>키-값 데이터베이스</li></ul></li></ul></li><li>임베디드 데이터베이스<ul><li>SQLite<ul><li>저작자 : D.Richard Hipp</li><li>Public Domain</li></ul></li></ul></li><li>Query Caching 기능</li></ul><h3 id="db서버-고려사항"><a class="markdownIt-Anchor" href="#db서버-고려사항"></a> DB서버 고려사항</h3><ul><li>가용성<ul><li>장기간 시스템을 운영할 때 장애 발생 가능성</li><li>DBMS의 버그 등으로 인한 패치 설치를 위한 재가동</li><li>백업 및 복구 편의성</li><li>DBMS 이중화 및 복제 지원</li></ul></li><li>성능<ul><li>대규모 데이터 처리 기능</li><li>대량 거래 처리 기능</li><li>다양한 튜닝 옵션 지원</li><li>비용 기반 최적화 지원 및 설정의 최소화</li></ul></li><li>기술 지원<ul><li>공급 벤더들의 안정적인 기술 지원</li><li>다수의 사용자들 간의 정보 공유</li><li>오픈 소스 여부</li></ul></li><li>상호 호환성<ul><li>설치 가능한 운영체제 종류</li><li>다양한 운영체제에 지원되는 JDBC, ODBC</li></ul></li><li>구축 비용<ul><li>라이선스 정책 및 비용</li><li>유지 및 관리 비용</li><li>총 소유 비용 : TCO</li></ul></li></ul><h4 id="db구성의-장점"><a class="markdownIt-Anchor" href="#db구성의-장점"></a> DB구성의 장점</h4><ol><li>데이터 중복의 최소화</li><li>여러 사용자에 의한 데이터 공유</li><li>데이터 내용의 일관성 유지</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;기본개발환경구축&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#기본개발환경구축&quot;&gt;&lt;/a&gt; 기본개발환경구축&lt;/h2&gt;
-&lt;h3 id=&quot;db서버-정의&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#db서버
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="기본개발환경구축" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EA%B8%B0%EB%B3%B8%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="DB서버" scheme="https://hyeonukdev.github.io/tags/DB%EC%84%9C%EB%B2%84/"/>
     
   </entry>
   
