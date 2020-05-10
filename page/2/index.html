@@ -166,8 +166,8 @@
 <div class="card">
     
     <div class="card-image">
-        <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터전환수행계획">
+        <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터검증">
         </a>
     </div>
     
@@ -185,7 +185,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6분 읽기 (대략 895 단어)
+                    3분 읽기 (대략 385 단어)
                 </span>
                 
                 
@@ -194,130 +194,51 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/">데이터전환 - 데이터전환수행계획</a>
+                <a class="has-link-black-ter" href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/">데이터전환 - 데이터검증</a>
             
         </h1>
         <div class="content">
             <h2 id="데이터전환"><a class="markdownIt-Anchor" href="#데이터전환"></a> 데이터전환</h2>
+<h3 id="데이터-검증-개념"><a class="markdownIt-Anchor" href="#데이터-검증-개념"></a> 데이터 검증 개념</h3>
 <ul>
-<li>데이터 전환 수행 계획서의 모의 전환 일정에 따라 <u>모의 데이터 전환 차수별 데이터 전환 계획서와 본 데이터 전환 계획서를 작성</u></li>
-<li>데이터 전환 수행자가 수행할 작업 항목, 작업 내용, 예정 시작/종료 시각, 작업 담당자를 포함하는 <u>상세 체크리스트를 작성</u></li>
-<li>작성된 데이터 전환 계획서와 체크리스트에 따라 <u>데이터 변환 프로그램들을 실행하고 정상 동작 여부 모니터링 및 전환 결과 검증</u></li>
-<li>데이터 전환 관정과 데이터 검증 결과를 분석하여 <u>데이터 전환 결과 보고서를 작성</u></li>
+<li><u>원천 시스템의 데이터를 목적 시스템의 데이터로 전환하는 과정이 정상적으로 수행되었는지 여부를 확인하는 과정</u></li>
+<li>데이터 전환 검증은 검증 방법과 검증 단계에 따라 분류됨</li>
 </ul>
-<h3 id="데이터-전환-절차"><a class="markdownIt-Anchor" href="#데이터-전환-절차"></a> 데이터 전환 절차</h3>
+<h3 id="데이터-검증-분류"><a class="markdownIt-Anchor" href="#데이터-검증-분류"></a> 데이터 검증 분류</h3>
+<h4 id="1-데이터-검증-방법에-따른-분류"><a class="markdownIt-Anchor" href="#1-데이터-검증-방법에-따른-분류"></a> 1. 데이터 검증 방법에 따른 분류</h4>
 <ul>
-<li>요구사항 분석 단계(전환 계획 및 요건정의)</li>
-<li>설계 단계(전환 설계)</li>
-<li>구현 단계(전환 개발)</li>
-<li>테스트 단계(전환 테스트 및 검증)</li>
-<li>세부적으로 22가지 상세 단계<br />
-<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0510_01.png" alt="데이터전환절차" /></li>
-</ul>
-<h3 id="데이터-전환-수행-계획"><a class="markdownIt-Anchor" href="#데이터-전환-수행-계획"></a> 데이터 전환 수행 계획</h3>
-<h4 id="1-데이터-전환-범위-선정"><a class="markdownIt-Anchor" href="#1-데이터-전환-범위-선정"></a> 1. 데이터 전환 범위 선정</h4>
+<li>검증 방법에 따라 로그 검증, 기본항목 검증, 응용 프로그램 검증, 응용 데이터 검증, 값 검증으로 분류</li>
+<li>로그 검증
 <ul>
-<li>전환 대상의 상세 내용, 데이터 형식, 대상 건수 파악</li>
-<li>필요에 따라서는 전환 제외 대상 기록</li>
-</ul>
-<h4 id="2-데이터-전환-일정-선정"><a class="markdownIt-Anchor" href="#2-데이터-전환-일정-선정"></a> 2. 데이터 전환 일정 선정</h4>
-<ul>
-<li>팀별 업무를 분장하여 팀별 역할과 납기를 기록</li>
-<li>전환 차수의 결정은 통합 계획 및 테스트 계획에 의해 결정</li>
-</ul>
-<h4 id="3-데이터-전환-절차"><a class="markdownIt-Anchor" href="#3-데이터-전환-절차"></a> 3. 데이터 전환 절차</h4>
-<ul>
-<li><u>현행(As-Is) 시스템에서 목표(To-Be)시스템으로 데이터 전환</u>을 위한 단계를 구분하고 각 단계별 작업 내용과 사용되는 도구를 별도로 기록</li>
-<li>원천 데이터베이스의 데이터는 백업하여 <u>스테이징 데이터베이스로 복구 한 후 정비 및 변환 작업을 수행</u>하며 이는 원천 데이터베이스의 손상과 변형을 막기 위한 방법</li>
-<li>데이터 전환이 완료된 후 <u>검증단계</u>에서는 스테이징 데이터베이스가 아닌 <u>원천 데이터베이스와 비교하여 데이터 오류를 확인</u></li>
-</ul>
-<h4 id="4-데이터-전환-계획서-작성"><a class="markdownIt-Anchor" href="#4-데이터-전환-계획서-작성"></a> 4. 데이터 전환 계획서 작성</h4>
-<ul>
-<li>
-<p><b>계획 -&gt; 수행 &gt; 결과</b></p>
-</li>
-<li>
-<p>데이터 전환 개요</p>
-<ul>
-<li>데이터 전환 목표
-<ul>
-<li>간결하고 명확하게</li>
+<li>데이터 전환 과정에서 작성하는 추출, 전환, 적재 로그를 검증</li>
 </ul>
 </li>
-<li>주요 성공 요인</li>
-<li>전체 조건 및 제약사항</li>
-</ul>
-</li>
-<li>
-<p>데이터 전환 대상 및 범위</p>
+<li>기본 항목 검증
 <ul>
-<li>데이터 전환 대상</li>
-<li>데이터 전환 범위</li>
+<li>로그 검증 외에 별도로 요청된 검증 항목에 대해 검증</li>
 </ul>
 </li>
-<li>
-<p>데이터 전환 환경 구성</p>
+<li>응용 프로그램 검증
 <ul>
-<li>원천시스템 구성도</li>
-<li>목적 시스템 구성도</li>
-<li>전환 단계별 DISK 사용량</li>
+<li>응용 프로그램을 통한 데이터 전환의 정합성을 검증</li>
 </ul>
 </li>
-<li>
-<p>데이터 전환 조직 및 역할</p>
+<li>응용 데이터 검증
 <ul>
-<li>데이터 전환 조직도</li>
-<li>조직별 역할</li>
-<li>업무 분담 계획
+<li>사전에 정의된 업무 규칙을 기준으로 데이터 전환의 정합성을 검증</li>
+</ul>
+</li>
+<li>값 검증
 <ul>
-<li>검증할 작업자와 작업자별 역할은 최대한 상세히 정리</li>
+<li>숫자 항목의 합계 검증, 코드 데이터의 범위 검증, 속성 변에 따른 값 검증을 수행</li>
 </ul>
 </li>
+<li><b>정합성은 아님</b></li>
 </ul>
-</li>
-<li>
-<p>데이터 전환 일정</p>
+<h4 id="2-데이터-단계에-따른-분류"><a class="markdownIt-Anchor" href="#2-데이터-단계에-따른-분류"></a> 2. 데이터 단계에 따른 분류</h4>
 <ul>
-<li>데이터 전환 및 검증 작업별 상세한 일정</li>
-</ul>
-</li>
-<li>
-<p>데이터 전환 방안</p>
-<ul>
-<li>사전 준비</li>
-<li>데이터 전환 설계</li>
-<li>프로그램 개발 및 테스트</li>
-<li>데이터 전환 리허설</li>
-<li>데이터 전환</li>
-</ul>
-</li>
-<li>
-<p>데이터 정비 방안</p>
-<ul>
-<li>데이터 정비 대상 및 방법</li>
-<li>데이터 정비 일정 및 조직</li>
-</ul>
-</li>
-<li>
-<p>비상계획</p>
-<ul>
-<li>데이터 전환 당일 구성될 종합상황실 및 의사소통 체계</li>
-</ul>
-</li>
-<li>
-<p>데이터 복구 계획</p>
-<ul>
-<li>데이터 전환 과정 오류 발생 또는 실패 시 백업 및 복구 방안 수립</li>
-</ul>
-</li>
-<li>
-<p>데이터 전환 개발단계</p>
-<ul>
-<li>전환 개발환경 구축</li>
-<li>전환 프로그램 개발</li>
-<li>검증 프로그램 개발</li>
-</ul>
-</li>
+<li>원천 데이터를 추출하는 시점부터 전환 시점, DB 적재 시점, DB 적재 후 시점, 전환 완료 후 시점별로 목적과 검증 방법을 달리하여 데이터 전화의 정합성을 검증<br />
+<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0510_03.png" alt="데이터 검증 분류" /></li>
 </ul>
 
         </div>
@@ -991,25 +912,6 @@
         
         <article class="media">
             
-            <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터검증">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-10T06:39:30.000Z">2020-05-10</time></div>
-                    <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터전환 - 데이터검증</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">데이터전환</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터전환수행계획">
@@ -1020,6 +922,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-10T06:39:30.000Z">2020-05-10</time></div>
                     <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터전환 - 데이터전환수행계획</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">데이터전환</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터검증">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-10T06:39:30.000Z">2020-05-10</time></div>
+                    <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터전환 - 데이터검증</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">데이터전환</a>
                     </p>
@@ -1816,25 +1737,6 @@
         
         <article class="media">
             
-            <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터검증">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-10T06:39:30.000Z">2020-05-10</time></div>
-                    <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터전환 - 데이터검증</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">데이터전환</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터전환수행계획">
@@ -1845,6 +1747,25 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-10T06:39:30.000Z">2020-05-10</time></div>
                     <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터전환 - 데이터전환수행계획</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">데이터전환</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="데이터전환 - 데이터검증">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-10T06:39:30.000Z">2020-05-10</time></div>
+                    <a href="/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">데이터전환 - 데이터검증</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">데이터전환</a>
                     </p>
