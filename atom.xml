@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-10T08:34:41.000Z</updated>
+  <updated>2020-05-12T13:56:23.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>물리데이터베이스 - 물리요소 조사 분석</title>
+    <link href="https://hyeonukdev.github.io/2020/05/12/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/"/>
+    <id>https://hyeonukdev.github.io/2020/05/12/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/</id>
+    <published>2020-05-12T13:56:23.000Z</published>
+    <updated>2020-05-12T13:56:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="데이터전환"><a class="markdownIt-Anchor" href="#데이터전환"></a> 데이터전환</h2><ul><li><p>기존 시스템을 분석하여 업무 영역과 시스템 영역으로 구분하여 용어 사전 기반으로 명명 규칙을 파악할 수 있다.</p></li><li><p>서버, 네트워크, 스토리지 자원을 조사하고, 데이터베이스가 설치될 시스템의 운영체계와 데이터베이스 버전을 확인할 수 있다.</p></li><li><p>데이터베이스 운영과 관련된 관리 요소를 파악하고, <u>데이터베이스 구조, 이중화 구성, 분산 구조, 접근제어, DB 암호화</u>에 대한 시스템 조사 분석서를 작성할 수 있다.</p></li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li><p>분산 데이터베이스<br />논리적으로 같은 시스템에 속하지만, 컴퓨터 네트워크를 통해 물리적으로 분산되어 있는 데이터베이스</p></li><li><p>데이터베이스 이중화<br />시스템 오류로 인한 데이터베이스 서비스 중단이나 물리적 손상 발생 시 이를 복구하기 위해 동일한 데이터베이스를 복제하여 관리</p></li></ul><h3 id="스토리지-시스템의-정의"><a class="markdownIt-Anchor" href="#스토리지-시스템의-정의"></a> 스토리지 시스템의 정의</h3><ul><li><p>스토리지는 단일 디스크로 처리할 수 없는 대용량의 데이터를 저장하기 위해 <u>서버와 저장장치를 연결하는 기술</u></p></li><li><p>스토리지 종류</p><ul><li>DAS(Direct Attached Storage)</li><li>NAS(Network Attached Storage)</li><li>SAN(Storage Area Network)</li></ul></li></ul><h3 id="das-direct-attached-storage"><a class="markdownIt-Anchor" href="#das-direct-attached-storage"></a> DAS; Direct Attached Storage</h3><ul><li>DAS는 <u>서버와 저장장치</u>를 전용 케이블로 <u>직접 연결</u>하는 방식<ul><li>저장장치를 직접 연결하므로 <u>속도가 빠르고 설치 및 운영이 쉬움</u></li><li><u>초기 구축 비용 및 유지보수 비용이 저렴</u></li><li><u>다른 서버에서 접근할 수 없고 파일 공유 불가능</u></li><li><u>확장성 및 유연성이 상대적이 떨어짐</u></li></ul></li><li><img src="https://t1.daumcdn.net/cfile/tistory/21470F4656EF5FBE16" alt="DAS" /></li></ul><h3 id="nas-network-attached-storage"><a class="markdownIt-Anchor" href="#nas-network-attached-storage"></a> NAS; Network Attached Storage</h3><ul><li>NAS는 <u>서버와 저장장치</u>를 <u>네트워크</u>를 통해 <u>연결</u>하는 방식<ul><li>별도의 <u>파일 관리 기능이 있는 NAS Storage</u>가 내장된 저장장치를 관리하기 때문에 <u>서버간 스토리지, 파일 공유 용이함</u></li><li>DAS에 비해 <u>확장성 및 유연성이 우수함</u></li><li><u>네트워크 환경 상태에 영향을 많이 받음</u></li><li>접속 증가 시 성능이 저하될 수 있음</li></ul></li><li><img src="https://t1.daumcdn.net/cfile/tistory/230F864356EF5FBE36" alt="NAS" /></li></ul><h3 id="san-storage-area-network"><a class="markdownIt-Anchor" href="#san-storage-area-network"></a> SAN; Storage Area Network</h3><ul><li>SAN은 DAS의 빠른 처리와 NAS의 스토리지 공유 장점을 합친 방식<ul><li>광케이블(FC)과 광채널 스위치를 통해 근거리 네트워크 환경을 구성하여 <u>빠른 속도로 데이터 처리</u></li><li>저장 장치 연결로 <u>스토리지 공유가 가능</u></li><li>스토리지 시스템 중 <u>대용량 환경의 높은 트랜잭션 처리 효과적</u></li><li><u>기존 시스템의 경우 장비 업그레이드가 필요하고, 구축비용이 비쌈</u></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;데이터전환&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#데이터전환&quot;&gt;&lt;/a&gt; 데이터전환&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;기존 시스템을 분석하여 업무 영역과 시스템 영역으로 구분하여 용어 사전 기반으로 명명 규칙을 파
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="데이터전환" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="물리요소조사분석" scheme="https://hyeonukdev.github.io/tags/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/"/>
+    
+  </entry>
   
   <entry>
     <title>데이터전환 - 핵심정리</title>
@@ -608,38 +641,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="모델화" scheme="https://hyeonukdev.github.io/tags/%EB%AA%A8%EB%8D%B8%ED%99%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>서버프로그램구현 - 재사용</title>
-    <link href="https://hyeonukdev.github.io/2020/05/09/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B3%B5%ED%86%B5%EB%AA%A8%EB%93%88%EA%B5%AC%ED%98%84/%EC%9E%AC%EC%82%AC%EC%9A%A9/"/>
-    <id>https://hyeonukdev.github.io/2020/05/09/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B3%B5%ED%86%B5%EB%AA%A8%EB%93%88%EA%B5%AC%ED%98%84/%EC%9E%AC%EC%82%AC%EC%9A%A9/</id>
-    <published>2020-05-09T13:13:28.000Z</published>
-    <updated>2020-05-09T13:13:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="서버프로그램구현"><a class="markdownIt-Anchor" href="#서버프로그램구현"></a> 서버프로그램구현</h2><ul><li>공통 모듈의 상세 설계를 기반으로 <u>프로그래밍 언어와 도구를 활용</u>하여 업무 프로세스 및 서비스의 구현에 필요한 <u>공통 모듈을 작성</u></li><li>소프트웨어 측정 지표 중 <u>모듈 간의 <b>결합도는 줄이고</b> 개별 모듈들의 내부 <b>응집도를 높인</b> 공통 모듈을 구현</u></li><li>공통 개발된 공통 모듈의 내부 기능과 제공하는 인터페이스에 대해 테스트할 수 있는 <u>테스트 케이스를 작성</u>하고 단위 테스트를 수행하기 위한 테스트 조건을 명세화</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>Cohesion 응집도<ul><li>모듈 내부에 존재하는 구성 요소들 사이의 밀접한 정도로, 응집도가 높을수록 구성 요소들이 꼭 필요한 것으로만 모여 있음</li></ul></li><li>Coupling 결합도<ul><li>모듈과 모듈 사이의 관계에서 관련 정도를 나타내며 모듈 간에는 관련이 적을수록 상호 의존성이 줄어 모듈의 독립성이 높아지고 독립성이 높으면 모듈 간에 영향이 적어 좋은 설계가 됨</li></ul></li></ul><h3 id="공통-모듈-reuse-재사용의-개념"><a class="markdownIt-Anchor" href="#공통-모듈-reuse-재사용의-개념"></a> 공통 모듈 Reuse 재사용의 개념</h3><ul><li>공통모듈은 <u>정보시스템 구축 시 자주 사용하는 기능</u>들로서 재사용이 가능하게 <u>패키지(클래스, 라이브러리, 컴포넌트, 프레임워크)로 제공</u>하는 <u>독립된 모듈</u>을 의미</li><li>재사용은 <u>목표 시스템의 개발 시간 및 비용 절감을 위하여 검증된 기능을 파악하고 재구성하여 시스템에 응용</u>하기 위한 최적화 작업</li></ul><h3 id="재사용-범위에-따른-분류"><a class="markdownIt-Anchor" href="#재사용-범위에-따른-분류"></a> 재사용 범위에 따른 분류</h3><ul><li>함수와 객체 재사용<ul><li>함수나 클래스 단위로 구현한 소스코드를 재사용</li></ul></li><li>컴포넌트 재사용<ul><li>컴포넌트 단위로 재사용하며, 컴포넌트의 인터페이스를 통해 통신</li></ul></li><li>애플리케이션 사용<ul><li>공통된 기능을 제공하도록 구현된 애플리케이션과의 통신으로 기능을 공유하여 재사용</li></ul></li></ul><h3 id="재사용의-이점"><a class="markdownIt-Anchor" href="#재사용의-이점"></a> 재사용의 이점</h3><ul><li>생산성 증가</li><li>소프트웨어 품질 향상</li><li>프로젝트 문서 공유</li><li><u>새로운 개발 방법론 도입은 <b>어렵게 함</b></u></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;서버프로그램구현&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#서버프로그램구현&quot;&gt;&lt;/a&gt; 서버프로그램구현&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;공통 모듈의 상세 설계를 기반으로 &lt;u&gt;프로그래밍 언어와 도구를 활용&lt;/u&gt;하여 업무 
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="서버프로그램구현" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="재사용" scheme="https://hyeonukdev.github.io/tags/%EC%9E%AC%EC%82%AC%EC%9A%A9/"/>
     
   </entry>
   
