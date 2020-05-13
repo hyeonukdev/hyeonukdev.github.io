@@ -85,7 +85,7 @@
     <published>2020-05-13T12:58:24.000Z</published>
     <updated>2020-05-13T12:58:24.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2><ul><li><u>E-R 표기법</u>에 따라 주제 영역별로 <u>개체와 식별자를 포함한 속성</u>을 <u>도식화 및 개체 간 관계</u>의 기수성, 선택성, 식별/비식별 관계를 도식화</li><li>개체 내 속성 원자성과 함수 종속성을 분석하여 <u>데이터베이스 정규화 대상 개체를 도출하고 데이터베이스 정규화</u>를 수행</li><li><u>논리 데이터 모델에 대하여 <b>정확성, 완전성, 준거성, 최신성, 일관성, 활용성의 품질기준을 적용</b></u>하고 개체, 속성, 관계에 대하여 체크리스트를 작성한 후 검증 결과에 따라 <u>논리 데이터 모델 품질 검증 결과서</u>를 작성</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>데이터 모델<ul><li>현실 세계의 정보들을 컴퓨터에 표현하기 위해 단순화, 추상화하여 체계적으로 표현한 개념적 모형</li></ul></li><li>이상 현상<ul><li>불필요한 데이터 중복으로 인해 릴레이션에 대한 데이터 삽입/수정/삭제 연산을 수행할 때 발생할 수 있는 부작용</li></ul></li></ul><h3 id="데이터베이스-개발절차"><a class="markdownIt-Anchor" href="#데이터베이스-개발절차"></a> 데이터베이스 개발절차</h3><ul><li>요구분석<ul><li>비지니스 요구사항</li></ul></li><li>전략수립<ul><li>개념적데이터 모델링</li></ul></li><li>분석<ul><li>논리적데이터 모델링</li></ul></li><li>설계<ul><li>물리적데이터 모델링</li></ul></li><li>개발<ul><li>데이터베이스 구축</li></ul></li></ul><blockquote><p>운영시스템 안에 데이터베이스 존재</p></blockquote><h3 id="데이터-모델의-정의"><a class="markdownIt-Anchor" href="#데이터-모델의-정의"></a> 데이터 모델의 정의</h3><ul><li><u>현실 세계의 정보들을 컴퓨터에 표현</u>하기 위해서 <b>단순화, 추상화</b>하여 체계적으로 표현한 개념적 모형</li><li>종류<ul><li>개념적 데이터 모델</li><li>논리적 데이터 모델</li><li>물리적 데이터 모델</li></ul></li><li>구성 요소<ul><li>개체</li><li>속성</li><li>관계</li></ul></li><li>표시 요소<ul><li>구조</li><li>연산</li><li>제약 조건</li></ul></li></ul><h3 id="데이터-모델링-절차"><a class="markdownIt-Anchor" href="#데이터-모델링-절차"></a> 데이터 모델링 절차</h3><ol><li>개념적 데이터 모델링</li></ol><ul><li>중요 개념을 구분</li><li>핵심 개체 도출</li><li>ERD 작성</li></ul><ol start="2"><li>논리적 데이터 모델링</li></ol><ul><li>각 개념을 구체화</li><li>ERD-RDB 모델 사상</li><li>상세 속성 정의</li><li>정규화</li></ul><ol start="3"><li>물리적 데이터 모델링</li></ol><ul><li>개체, 인덱스 등 생성</li><li>DB 개체 정의</li><li>테이블 및 인덱스 등 설계</li></ul><h3 id="데이터-모델의-종류"><a class="markdownIt-Anchor" href="#데이터-모델의-종류"></a> 데이터 모델의 종류</h3><h4 id="1-개념적-데이터-모델"><a class="markdownIt-Anchor" href="#1-개념적-데이터-모델"></a> 1. 개념적 데이터 모델</h4><ul><li>현실 세계에 대한 인식을 <u>추상적 개념으로 표현하는 과정</u></li><li><u>속성들로 기술된 개체 타입과 이 개체 타입들 간의 관계를 이용하여 현실 세계를 표현</u></li><li>현실 세계에 존재하는 개체를 인간이 이해할 수 있는 <u>정보 구조</u>로 표현하기 때문에 <u>정보 모델</u>이라고 함</li><li>대표적인 개념적 데이터 모델에는 E-R 모델이 있음<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_09.png" alt="E-R모델" /></li></ul><h4 id="2-논리적-데이터-모델"><a class="markdownIt-Anchor" href="#2-논리적-데이터-모델"></a> 2. 논리적 데이터 모델</h4><ul><li>개념적 모델링 과정에서 얻은 개념적 구조를 <u>컴퓨터가 이해하고 처리할 수 있는</u> 컴퓨터 세계의 환경에 맞도록 <u>변환</u>하는 과정</li><li><u>필드로 기술된 데이터 타입과 이 데이터 타입들 간의 관계</u>를 이용한 현실 세계를 표현</li><li><u>단순히 데이터 모델이라고 하면 논리적 데이터 모델을 의미</u></li><li>특정 DBMS는 특정 논리적 데이터 모델 하나만 선정하여 사용</li><li>데이터 간의 관계를 어떻게 표현하느냐에 따라 <u>관계 모델, 계층 모델, 네트워크 모델로 구분</u></li></ul><h4 id="3-물리적-데이터-모델"><a class="markdownIt-Anchor" href="#3-물리적-데이터-모델"></a> 3. 물리적 데이터 모델</h4><ul><li>논리적 데이터 모델에서 레코드의 상세 스펙 등을 기술한 모델로 <u>실제 컴퓨터에 데이터가 저장되는 방법</u>을 정의</li><li>DB 개체 정의</li><li>테이블 및 인덱스 등 설계</li></ul><h3 id="데이터-모델의-구성-요소"><a class="markdownIt-Anchor" href="#데이터-모델의-구성-요소"></a> 데이터 모델의 구성 요소</h3><h4 id="1-entity-개체"><a class="markdownIt-Anchor" href="#1-entity-개체"></a> 1. Entity 개체</h4><ul><li><u>데이터베이스에 표현하려는 것</u>으로 사람이 생각하는 <u>개념이나 정보 단위 같은 현실 세계의 대상체</u></li><li>실세계에 독립적으로 존재하는 유형, 무형의 정보로서 <u>서로 연관된 몇 개의 속성으로 구성</u></li><li><u>파일 시스템의 레코드에 대응</u> 하는 것으로 어떤 정보를 제공하는 역할을 수행</li><li>독립적으로 존재하거나 그 자체로서도 구별 가능</li><li>유일한 <u>식별자</u>에 의해 식별되고 다른 개체와 하나 이상의 <u>관계가 있음</u></li></ul><h4 id="2-attribute-속성"><a class="markdownIt-Anchor" href="#2-attribute-속성"></a> 2. Attribute 속성</h4><ul><li><u>데이터베이스를 구성하는 가장 작은 논리적 단위</u></li><li><u>파일 구조상</u>의 데이터 항목 또는 데이터 <u>필드</u>에 해당</li><li>속성은 개체를 구성하는 항목</li><li>속성의 수는 Degree<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_10.png" alt="체계 예시" /></li></ul><h4 id="3-relationship-관계"><a class="markdownIt-Anchor" href="#3-relationship-관계"></a> 3. Relationship 관계</h4><ul><li>개체와 개체 사이의 논리적 연결을 의미</li><li>개체 간의 관계와 속성 간의 관계가 있음</li><li>형태<ul><li>일대일(1:1)</li><li>일대다(1:N)</li><li>다대다(N:M)</li></ul></li><li><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_11.png" alt="개체간 관계" /></li></ul><h3 id="데이터-모델에-표시할-요소"><a class="markdownIt-Anchor" href="#데이터-모델에-표시할-요소"></a> 데이터 모델에 표시할 요소</h3><ul><li>Structure 구조<ul><li>논리적으로 표현된 개체 타입들 간의 관계로서 데이터 구조 및 정적 성질을 표현</li></ul></li><li>Operation 연산<ul><li>데이터베이스에 저장된 실제 데이터를 처리하는 작업에 대한 명세로서 데이터베이스를 조작하는 기본도구</li></ul></li><li>Constraint 제약조건<ul><li>데이터베이스에 저장될 수 있는 실제 데이터베이스의 논리적인 제약 조건</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2><ul><li><u>E-R 표기법</u>에 따라 주제 영역별로 <u>개체와 식별자를 포함한 속성</u>을 <u>도식화 및 개체 간 관계</u>의 기수성, 선택성, 식별/비식별 관계를 도식화</li><li>개체 내 속성 원자성과 함수 종속성을 분석하여 <u>데이터베이스 정규화 대상 개체를 도출하고 데이터베이스 정규화</u>를 수행</li><li><u>논리 데이터 모델에 대하여 <b>정확성, 완전성, 준거성, 최신성, 일관성, 활용성의 품질기준을 적용</b></u>하고 개체, 속성, 관계에 대하여 체크리스트를 작성한 후 검증 결과에 따라 <u>논리 데이터 모델 품질 검증 결과서</u>를 작성</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>데이터 모델<ul><li>현실 세계의 정보들을 컴퓨터에 표현하기 위해 단순화, 추상화하여 체계적으로 표현한 개념적 모형</li></ul></li><li>이상 현상<ul><li>불필요한 데이터 중복으로 인해 릴레이션에 대한 데이터 삽입/수정/삭제 연산을 수행할 때 발생할 수 있는 부작용</li></ul></li></ul><h3 id="데이터베이스-개발절차"><a class="markdownIt-Anchor" href="#데이터베이스-개발절차"></a> 데이터베이스 개발절차</h3><ul><li>요구분석<ul><li>비지니스 요구사항</li></ul></li><li>전략수립<ul><li>개념적데이터 모델링</li></ul></li><li>분석<ul><li>논리적데이터 모델링</li></ul></li><li>설계<ul><li>물리적데이터 모델링</li></ul></li><li>개발<ul><li>데이터베이스 구축<blockquote><p>운영시스템 안에 데이터베이스 존재</p></blockquote></li></ul></li></ul><h3 id="데이터-모델의-정의"><a class="markdownIt-Anchor" href="#데이터-모델의-정의"></a> 데이터 모델의 정의</h3><ul><li><u>현실 세계의 정보들을 컴퓨터에 표현</u>하기 위해서 <b>단순화, 추상화</b>하여 체계적으로 표현한 개념적 모형</li><li>종류<ul><li>개념적 데이터 모델</li><li>논리적 데이터 모델</li><li>물리적 데이터 모델</li></ul></li><li>구성 요소<ul><li>개체</li><li>속성</li><li>관계</li></ul></li><li>표시 요소<ul><li>구조</li><li>연산</li><li>제약 조건</li></ul></li></ul><h3 id="데이터-모델링-절차"><a class="markdownIt-Anchor" href="#데이터-모델링-절차"></a> 데이터 모델링 절차</h3><ol><li>개념적 데이터 모델링</li></ol><ul><li>중요 개념을 구분</li><li>핵심 개체 도출</li><li>ERD 작성</li></ul><ol start="2"><li>논리적 데이터 모델링</li></ol><ul><li>각 개념을 구체화</li><li>ERD-RDB 모델 사상</li><li>상세 속성 정의</li><li>정규화</li></ul><ol start="3"><li>물리적 데이터 모델링</li></ol><ul><li>개체, 인덱스 등 생성</li><li>DB 개체 정의</li><li>테이블 및 인덱스 등 설계</li></ul><h3 id="데이터-모델의-종류"><a class="markdownIt-Anchor" href="#데이터-모델의-종류"></a> 데이터 모델의 종류</h3><h4 id="1-개념적-데이터-모델"><a class="markdownIt-Anchor" href="#1-개념적-데이터-모델"></a> 1. 개념적 데이터 모델</h4><ul><li>현실 세계에 대한 인식을 <u>추상적 개념으로 표현하는 과정</u></li><li><u>속성들로 기술된 개체 타입과 이 개체 타입들 간의 관계를 이용하여 현실 세계를 표현</u></li><li>현실 세계에 존재하는 개체를 인간이 이해할 수 있는 <u>정보 구조</u>로 표현하기 때문에 <u>정보 모델</u>이라고 함</li><li>대표적인 개념적 데이터 모델에는 E-R 모델이 있음<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_09.png" alt="E-R모델" /></li></ul><h4 id="2-논리적-데이터-모델"><a class="markdownIt-Anchor" href="#2-논리적-데이터-모델"></a> 2. 논리적 데이터 모델</h4><ul><li>개념적 모델링 과정에서 얻은 개념적 구조를 <u>컴퓨터가 이해하고 처리할 수 있는</u> 컴퓨터 세계의 환경에 맞도록 <u>변환</u>하는 과정</li><li><u>필드로 기술된 데이터 타입과 이 데이터 타입들 간의 관계</u>를 이용한 현실 세계를 표현</li><li><u>단순히 데이터 모델이라고 하면 논리적 데이터 모델을 의미</u></li><li>특정 DBMS는 특정 논리적 데이터 모델 하나만 선정하여 사용</li><li>데이터 간의 관계를 어떻게 표현하느냐에 따라 <u>관계 모델, 계층 모델, 네트워크 모델로 구분</u></li></ul><h4 id="3-물리적-데이터-모델"><a class="markdownIt-Anchor" href="#3-물리적-데이터-모델"></a> 3. 물리적 데이터 모델</h4><ul><li>논리적 데이터 모델에서 레코드의 상세 스펙 등을 기술한 모델로 <u>실제 컴퓨터에 데이터가 저장되는 방법</u>을 정의</li><li>DB 개체 정의</li><li>테이블 및 인덱스 등 설계</li></ul><h3 id="데이터-모델의-구성-요소"><a class="markdownIt-Anchor" href="#데이터-모델의-구성-요소"></a> 데이터 모델의 구성 요소</h3><h4 id="1-entity-개체"><a class="markdownIt-Anchor" href="#1-entity-개체"></a> 1. Entity 개체</h4><ul><li><u>데이터베이스에 표현하려는 것</u>으로 사람이 생각하는 <u>개념이나 정보 단위 같은 현실 세계의 대상체</u></li><li>실세계에 독립적으로 존재하는 유형, 무형의 정보로서 <u>서로 연관된 몇 개의 속성으로 구성</u></li><li><u>파일 시스템의 레코드에 대응</u> 하는 것으로 어떤 정보를 제공하는 역할을 수행</li><li>독립적으로 존재하거나 그 자체로서도 구별 가능</li><li>유일한 <u>식별자</u>에 의해 식별되고 다른 개체와 하나 이상의 <u>관계가 있음</u></li></ul><h4 id="2-attribute-속성"><a class="markdownIt-Anchor" href="#2-attribute-속성"></a> 2. Attribute 속성</h4><ul><li><u>데이터베이스를 구성하는 가장 작은 논리적 단위</u></li><li><u>파일 구조상</u>의 데이터 항목 또는 데이터 <u>필드</u>에 해당</li><li>속성은 개체를 구성하는 항목</li><li>속성의 수는 Degree<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_10.png" alt="체계 예시" /></li></ul><h4 id="3-relationship-관계"><a class="markdownIt-Anchor" href="#3-relationship-관계"></a> 3. Relationship 관계</h4><ul><li>개체와 개체 사이의 논리적 연결을 의미</li><li>개체 간의 관계와 속성 간의 관계가 있음</li><li>형태<ul><li>일대일(1:1)</li><li>일대다(1:N)</li><li>다대다(N:M)</li></ul></li><li><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_11.png" alt="개체간 관계" /></li></ul><h3 id="데이터-모델에-표시할-요소"><a class="markdownIt-Anchor" href="#데이터-모델에-표시할-요소"></a> 데이터 모델에 표시할 요소</h3><ul><li>Structure 구조<ul><li>논리적으로 표현된 개체 타입들 간의 관계로서 데이터 구조 및 정적 성질을 표현</li></ul></li><li>Operation 연산<ul><li>데이터베이스에 저장된 실제 데이터를 처리하는 작업에 대한 명세로서 데이터베이스를 조작하는 기본도구</li></ul></li><li>Constraint 제약조건<ul><li>데이터베이스에 저장될 수 있는 실제 데이터베이스의 논리적인 제약 조건</li></ul></li></ul>]]></content>
     
     <summary type="html">
     
@@ -487,6 +487,37 @@
   </entry>
   
   <entry>
+    <title>데이터전환 - 데이터검증</title>
+    <link href="https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/"/>
+    <id>https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/</id>
+    <published>2020-05-10T06:39:30.000Z</published>
+    <updated>2020-05-10T06:39:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="데이터전환"><a class="markdownIt-Anchor" href="#데이터전환"></a> 데이터전환</h2><h3 id="데이터-검증-개념"><a class="markdownIt-Anchor" href="#데이터-검증-개념"></a> 데이터 검증 개념</h3><ul><li><u>원천 시스템의 데이터를 목적 시스템의 데이터로 전환하는 과정이 정상적으로 수행되었는지 여부를 확인하는 과정</u></li><li>데이터 전환 검증은 검증 방법과 검증 단계에 따라 분류됨</li></ul><h3 id="데이터-검증-분류"><a class="markdownIt-Anchor" href="#데이터-검증-분류"></a> 데이터 검증 분류</h3><h4 id="1-데이터-검증-방법에-따른-분류"><a class="markdownIt-Anchor" href="#1-데이터-검증-방법에-따른-분류"></a> 1. 데이터 검증 방법에 따른 분류</h4><ul><li>검증 방법에 따라 로그 검증, 기본항목 검증, 응용 프로그램 검증, 응용 데이터 검증, 값 검증으로 분류</li><li>로그 검증<ul><li>데이터 전환 과정에서 작성하는 추출, 전환, 적재 로그를 검증</li></ul></li><li>기본 항목 검증<ul><li>로그 검증 외에 별도로 요청된 검증 항목에 대해 검증</li></ul></li><li>응용 프로그램 검증<ul><li>응용 프로그램을 통한 데이터 전환의 정합성을 검증</li></ul></li><li>응용 데이터 검증<ul><li>사전에 정의된 업무 규칙을 기준으로 데이터 전환의 정합성을 검증</li></ul></li><li>값 검증<ul><li>숫자 항목의 합계 검증, 코드 데이터의 범위 검증, 속성 변에 따른 값 검증을 수행</li></ul></li><li><b>정합성은 아님</b></li></ul><h4 id="2-데이터-단계에-따른-분류"><a class="markdownIt-Anchor" href="#2-데이터-단계에-따른-분류"></a> 2. 데이터 단계에 따른 분류</h4><ul><li>원천 데이터를 추출하는 시점부터 전환 시점, DB 적재 시점, DB 적재 후 시점, 전환 완료 후 시점별로 목적과 검증 방법을 달리하여 데이터 전화의 정합성을 검증<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0510_03.png" alt="데이터 검증 분류" /></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;데이터전환&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#데이터전환&quot;&gt;&lt;/a&gt; 데이터전환&lt;/h2&gt;
+&lt;h3 id=&quot;데이터-검증-개념&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#데이터-검증-개념&quot;&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="데이터전환" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="데이터검증" scheme="https://hyeonukdev.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/"/>
+    
+  </entry>
+  
+  <entry>
     <title>데이터전환 - 데이터전환수행계획</title>
     <link href="https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/"/>
     <id>https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/</id>
@@ -515,37 +546,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="데이터전환수행계획" scheme="https://hyeonukdev.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>데이터전환 - 데이터검증</title>
-    <link href="https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/"/>
-    <id>https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/</id>
-    <published>2020-05-10T06:39:30.000Z</published>
-    <updated>2020-05-10T06:39:30.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="데이터전환"><a class="markdownIt-Anchor" href="#데이터전환"></a> 데이터전환</h2><h3 id="데이터-검증-개념"><a class="markdownIt-Anchor" href="#데이터-검증-개념"></a> 데이터 검증 개념</h3><ul><li><u>원천 시스템의 데이터를 목적 시스템의 데이터로 전환하는 과정이 정상적으로 수행되었는지 여부를 확인하는 과정</u></li><li>데이터 전환 검증은 검증 방법과 검증 단계에 따라 분류됨</li></ul><h3 id="데이터-검증-분류"><a class="markdownIt-Anchor" href="#데이터-검증-분류"></a> 데이터 검증 분류</h3><h4 id="1-데이터-검증-방법에-따른-분류"><a class="markdownIt-Anchor" href="#1-데이터-검증-방법에-따른-분류"></a> 1. 데이터 검증 방법에 따른 분류</h4><ul><li>검증 방법에 따라 로그 검증, 기본항목 검증, 응용 프로그램 검증, 응용 데이터 검증, 값 검증으로 분류</li><li>로그 검증<ul><li>데이터 전환 과정에서 작성하는 추출, 전환, 적재 로그를 검증</li></ul></li><li>기본 항목 검증<ul><li>로그 검증 외에 별도로 요청된 검증 항목에 대해 검증</li></ul></li><li>응용 프로그램 검증<ul><li>응용 프로그램을 통한 데이터 전환의 정합성을 검증</li></ul></li><li>응용 데이터 검증<ul><li>사전에 정의된 업무 규칙을 기준으로 데이터 전환의 정합성을 검증</li></ul></li><li>값 검증<ul><li>숫자 항목의 합계 검증, 코드 데이터의 범위 검증, 속성 변에 따른 값 검증을 수행</li></ul></li><li><b>정합성은 아님</b></li></ul><h4 id="2-데이터-단계에-따른-분류"><a class="markdownIt-Anchor" href="#2-데이터-단계에-따른-분류"></a> 2. 데이터 단계에 따른 분류</h4><ul><li>원천 데이터를 추출하는 시점부터 전환 시점, DB 적재 시점, DB 적재 후 시점, 전환 완료 후 시점별로 목적과 검증 방법을 달리하여 데이터 전화의 정합성을 검증<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0510_03.png" alt="데이터 검증 분류" /></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;데이터전환&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#데이터전환&quot;&gt;&lt;/a&gt; 데이터전환&lt;/h2&gt;
-&lt;h3 id=&quot;데이터-검증-개념&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#데이터-검증-개념&quot;&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="데이터전환" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="데이터검증" scheme="https://hyeonukdev.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/"/>
     
   </entry>
   
