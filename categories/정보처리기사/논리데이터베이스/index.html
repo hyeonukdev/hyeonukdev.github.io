@@ -179,6 +179,132 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-13T16:32:44.000Z">2020-05-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 432 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">논리데이터베이스 - 핵심정리</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2>
+<h3 id="1-데이터-모델-개념"><a class="markdownIt-Anchor" href="#1-데이터-모델-개념"></a> 1. 데이터 모델 개념</h3>
+<ul>
+<li><u>현실 세계의 정보들을 컴퓨터에 표현</u>하기 위해서 <b>단순화, 추상화</b>하여 체계적으로 표현한 개념적 모형</li>
+<li>종류
+<ul>
+<li>개념적 데이터 모델</li>
+<li>논리적 데이터 모델</li>
+<li>물리적 데이터 모델</li>
+</ul>
+</li>
+<li>구성 요소
+<ul>
+<li>개체</li>
+<li>속성</li>
+<li>관계</li>
+</ul>
+</li>
+<li>표시 요소
+<ul>
+<li>구조</li>
+<li>연산</li>
+<li>제약 조건</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-개체-관계e-r모델"><a class="markdownIt-Anchor" href="#2-개체-관계e-r모델"></a> 2. 개체-관계(E-R)모델</h3>
+<ul>
+<li><u>데이터를 개체, 관계, 속성으로 묘사</u></li>
+<li>E-R 다이어그램으로 표현하며, 1:1, 1:N, N:M 등의 관계 유형을 제한 없이 나타낼 수 있음<br />
+<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0514_01.png" alt="E-R다이어그램기호" /></li>
+</ul>
+<h3 id="3-논리적-데이터모델링"><a class="markdownIt-Anchor" href="#3-논리적-데이터모델링"></a> 3. 논리적 데이터모델링</h3>
+<ul>
+<li>E-R 다이어그램으로 표현된 개념적 구조를 데이터베이스에 저장할 형태로 표현한 논리적 구조로 정의하는 과정</li>
+<li>논리적 모델은 H/W나 S/W에 독립적</li>
+<li>종류
+<ul>
+<li>관계 데이터 모델</li>
+<li>계층 데이터 모델</li>
+<li>네트워크 데이터 모델</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-데이터베이스-정규화"><a class="markdownIt-Anchor" href="#4-데이터베이스-정규화"></a> 4. 데이터베이스 정규화</h3>
+<ul>
+<li>중복성을 최소화하고 정보의 일관성을 보장하기 위한 개념</li>
+<li>릴레이션을 관련 있는 속성들로만 구성되도록 릴레이션을 분해하는 과정<br />
+<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0514_06.png" alt="정규화과정" /></li>
+</ul>
+<h3 id="5-논리-데이터모델-품질검증"><a class="markdownIt-Anchor" href="#5-논리-데이터모델-품질검증"></a> 5. 논리 데이터모델 품질검증</h3>
+<ul>
+<li>좋은 데이터 모델의 조건
+<ul>
+<li>완전성</li>
+<li>중복배제</li>
+<li>비즈니스 룰</li>
+<li>데이터 재사용</li>
+<li>안정성 및 활용성</li>
+<li>간결성</li>
+<li>의사소통</li>
+<li>통합성</li>
+</ul>
+</li>
+<li>데이터 모델 품질 검증 기준
+<ul>
+<li>정확성</li>
+<li>완전성</li>
+<li>준거성</li>
+<li>최신성</li>
+<li>일관성</li>
+<li>활용성</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 논리 데이터모델 품질검증">
         </a>
@@ -1413,7 +1539,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            137
+                            138
                         </p>
                     </a>
                 </div>
@@ -1583,7 +1709,7 @@
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">105</span>
+                <span class="level-item tag">106</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -1647,7 +1773,7 @@
                 <span class="level-item">논리데이터베이스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">
@@ -1763,6 +1889,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T16:32:44.000Z">2020-05-14</time></div>
+                    <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 논리 데이터모델 품질검증">
@@ -1837,25 +1982,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 데이터모델개념">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T12:58:24.000Z">2020-05-13</time></div>
-                    <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 데이터모델개념</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1873,7 +1999,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">82</span>
+                    <span class="level-item tag">83</span>
                 </span>
             </a>
         </li>
@@ -2560,7 +2686,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">105</span>
+                        <span class="tag is-grey">106</span>
                     </a>
                 </div>
                 
@@ -2644,7 +2770,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">23</span>
+                        <span class="tag is-grey">24</span>
                     </a>
                 </div>
                 
@@ -2679,6 +2805,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T16:32:44.000Z">2020-05-14</time></div>
+                    <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 논리 데이터모델 품질검증">
@@ -2753,25 +2898,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 데이터모델개념">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T12:58:24.000Z">2020-05-13</time></div>
-                    <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 데이터모델개념</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2789,7 +2915,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">82</span>
+                    <span class="level-item tag">83</span>
                 </span>
             </a>
         </li>
@@ -3476,7 +3602,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">105</span>
+                        <span class="tag is-grey">106</span>
                     </a>
                 </div>
                 
@@ -3560,7 +3686,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">23</span>
+                        <span class="tag is-grey">24</span>
                     </a>
                 </div>
                 
@@ -3712,7 +3838,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

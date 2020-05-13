@@ -3,14 +3,21 @@
 
 
     <url>
-        <loc>https://hyeonukdev.github.io/tags/%25EB%2585%25BC%25EB%25A6%25AC%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EB%25AA%25A8%25EB%258D%25B8%25ED%2592%2588%25EC%25A7%2588%25EA%25B2%2580%25EC%25A6%259D/</loc>
-        <lastmod>2020-05-13T16:22:44.000Z</lastmod>
+        <loc>https://hyeonukdev.github.io/tags/%25ED%2595%25B5%25EC%258B%25AC%25EC%25A0%2595%25EB%25A6%25AC/</loc>
+        <lastmod>2020-05-13T16:32:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeonukdev.github.io/tags/%25EC%25A0%2595%25EB%25B3%25B4%25EC%25B2%2598%25EB%25A6%25AC%25EA%25B8%25B0%25EC%2582%25AC/</loc>
+        <lastmod>2020-05-13T16:32:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/%25EB%2585%25BC%25EB%25A6%25AC%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EB%25AA%25A8%25EB%258D%25B8%25ED%2592%2588%25EC%25A7%2588%25EA%25B2%2580%25EC%25A6%259D/</loc>
         <lastmod>2020-05-13T16:22:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -40,13 +47,6 @@
     <url>
         <loc>https://hyeonukdev.github.io/tags/%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EB%25AA%25A8%25EB%258D%25B8%25EA%25B0%259C%25EB%2585%2590/</loc>
         <lastmod>2020-05-13T12:58:24.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hyeonukdev.github.io/tags/%25ED%2595%25B5%25EC%258B%25AC%25EC%25A0%2595%25EB%25A6%25AC/</loc>
-        <lastmod>2020-05-12T17:26:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

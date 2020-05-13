@@ -166,6 +166,192 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="응용SW기초기술활용 - 환경변수">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-04T15:53:21.000Z">2020-05-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/">응용SW기초기술활용</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 429 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/05/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/">응용SW기초기술활용 - 환경변수</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2>
+<h3 id="환경변수의-개념"><a class="markdownIt-Anchor" href="#환경변수의-개념"></a> 환경변수의 개념</h3>
+<ul>
+<li><u>시스템 소프트웨어의 동작에 영향을 미치는 동적인 값들의 모임</u></li>
+<li>변수명과 값으로 구성</li>
+<li>시스템의 기본 정보를 저장</li>
+<li>자식프로세스에 상속됨</li>
+<li><b>부모 프로세스에서 상속받아 사용</b></li>
+<li><u>시스템 전반에 걸쳐 적용되는 시스템 환경변수와 사용자 계정 내에만 적용되는 사용자 환경변수로 구분</u></li>
+</ul>
+<h3 id="환경변수-보기"><a class="markdownIt-Anchor" href="#환경변수-보기"></a> 환경변수 보기</h3>
+<ul>
+<li>Windows
+<ul>
+<li>echo %PATH%</li>
+</ul>
+</li>
+<li>UNIX
+<ul>
+<li>echo $PATH</li>
+</ul>
+</li>
+</ul>
+<h3 id="환경변수-설정"><a class="markdownIt-Anchor" href="#환경변수-설정"></a> 환경변수 설정</h3>
+<ul>
+<li>Windows
+<ul>
+<li>self 변수 = 값</li>
+</ul>
+</li>
+<li>UNIX
+<ul>
+<li>env 변수 = 값</li>
+<li>set 변수 = 값</li>
+</ul>
+</li>
+</ul>
+<h3 id="윈도우-운영체제-환경변수"><a class="markdownIt-Anchor" href="#윈도우-운영체제-환경변수"></a> 윈도우 운영체제 환경변수</h3>
+<table>
+<thead>
+<tr>
+<th>환경변수</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%APPDATA%</td>
+<td>설치된 모든 프로그램의 필요 데이터가 저장된 폴더</td>
+</tr>
+<tr>
+<td>%COMSPEC%</td>
+<td>기본 명령 프롬프트로 사용할 프로그램</td>
+</tr>
+<tr>
+<td>%HOMEPATH%</td>
+<td>로그인한 계정의 기본 폴더</td>
+</tr>
+<tr>
+<td>%PATH%</td>
+<td>실행 파일을 찾는 경로</td>
+</tr>
+<tr>
+<td>%PATHEXT%</td>
+<td>CMD에서 실행할 수 있는 파일 확장자 목록</td>
+</tr>
+<tr>
+<td>%PROGRAMFILES%</td>
+<td>기본프로그램의 설치 폴더</td>
+</tr>
+<tr>
+<td>%SYSTEMDRIVE%</td>
+<td>윈도우가 부팅된 드라이브</td>
+</tr>
+<tr>
+<td>%SYSTEMROOT%</td>
+<td>부팅된 운영체제가 들어 있는 폴더</td>
+</tr>
+<tr>
+<td>%USERNAME%</td>
+<td>로그인한 계정 이름</td>
+</tr>
+<tr>
+<td>%USERPROFILE%</td>
+<td>로그인한 유저의 프로필이 저장된 폴더</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unix와-linux-운영체제-환경변수"><a class="markdownIt-Anchor" href="#unix와-linux-운영체제-환경변수"></a> UNIX와 LINUX 운영체제 환경변수</h3>
+<table>
+<thead>
+<tr>
+<th>환경변수</th>
+<th>용도</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$DISPLAY</td>
+<td>현재 디스플레이 위치</td>
+</tr>
+<tr>
+<td>$HOME</td>
+<td>사용자의 홈 디렉토리</td>
+</tr>
+<tr>
+<td>$LANG</td>
+<td>프로그램 사용 시 기본적으로 지원되는 언어</td>
+</tr>
+<tr>
+<td>$MAIL</td>
+<td>이메일을 보관하는 경로</td>
+</tr>
+<tr>
+<td>$PATH</td>
+<td>실행파일을 찾는 경로</td>
+</tr>
+<tr>
+<td>$PS1</td>
+<td>Shell Prompt 정보</td>
+</tr>
+<tr>
+<td>$PWD</td>
+<td>현재 작업하는 디렉토리</td>
+</tr>
+<tr>
+<td>$TERM</td>
+<td>로그인 터미널 타입</td>
+</tr>
+<tr>
+<td>$USER</td>
+<td>사용자의 이름</td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/05/04/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="응용SW기초기술활용 - 프로세스 스케줄링">
         </a>
@@ -676,204 +862,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/04/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="응용SW기초기술활용 - 운영체제">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-04T07:57:40.000Z">2020-05-04</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/">응용SW기초기술활용</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    8분 읽기 (대략 1173 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/04/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/">응용SW기초기술활용 - 운영체제</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2>
-<ul>
-<li>응용소프트웨어를 개발하기 위하여 <u>다양한 운영체제의 특징</u> 이해</li>
-<li>CLI 및 GUI 환경에서 <u>운영체제의 기본 명령어</u>를 활용</li>
-<li>운영체제에서 제공하는 <u>작업 우선순위 설정 방법</u>을 이용하여 애플리케이션의 작업 우선순위 조정</li>
-</ul>
-<h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3>
-<ul>
-<li>메모리 관리
-<ul>
-<li>프로그램의 실행이 종료될 때까지 메모리를 가용한 상태로 유지 및 관리하는 것</li>
-</ul>
-</li>
-<li>환경변수
-<ul>
-<li>시스템 소프트웨어의 동작에 영향을 미치는 동적인 값들의 모임</li>
-</ul>
-</li>
-</ul>
-<h3 id="운영체제의-개념"><a class="markdownIt-Anchor" href="#운영체제의-개념"></a> 운영체제의 개념</h3>
-<ul>
-<li><u>컴퓨터 시스템의 자원들(CPU, 주기억장치, 보조기억장치, 파일 등)을 효율적으로 관리</u>하며, 사용자가 컴퓨터를 편리하고 효과적으로 사용할 수 있도록 <u>인터페이스를 제공하는 시스템 소프트웨어</u></li>
-</ul>
-<h3 id="운영체제의-역할"><a class="markdownIt-Anchor" href="#운영체제의-역할"></a> 운영체제의 역할</h3>
-<ul>
-<li>사용자와 시스템 간의 편리한 <u>인터페이스 제공</u></li>
-<li>시스템의 각종 <u>하드웨어와 네트워크를 관리하고 제어</u></li>
-<li>자원을 효율적으로 관리하기 위해 <u>자원의 스케쥴링 기능 제공</u></li>
-<li><u>데이터를 관리하고 데이터 및 자원의 공유</u> 기능 제공</li>
-<li>입출력에 대한 보조 기능을 제공</li>
-<li><u>시스템의 오류를 검사하고 복구</u></li>
-<li><b>원시프로그램을 목적프로그램으로 변환하는 것은 번역 프로그램임</b></li>
-</ul>
-<h3 id="운영체제의-목적"><a class="markdownIt-Anchor" href="#운영체제의-목적"></a> 운영체제의 목적</h3>
-<ul>
-<li>목적
-<ul>
-<li>컴퓨터 시스템의 처리 능력 향상</li>
-<li>사용 가능도 향상</li>
-<li>반환 시간 단축</li>
-</ul>
-</li>
-<li>운영체제 성능 평가 기준
-<ul>
-<li><u>처리 능력</u></li>
-<li><u>반환 시간</u></li>
-<li><u>사용 가능도</u></li>
-<li><u>신뢰도</u></li>
-</ul>
-</li>
-</ul>
-<h3 id="운영체제의-종류"><a class="markdownIt-Anchor" href="#운영체제의-종류"></a> 운영체제의 종류</h3>
-<h4 id="1-windows"><a class="markdownIt-Anchor" href="#1-windows"></a> 1. Windows</h4>
-<ul>
-<li>마이크로소프트사가 개발한 운영체제</li>
-<li>특징
-<ul>
-<li>GUI
-<ul>
-<li>키보드로 명령어를 직접 수행하지 않고 마우스로 아이콘이나 메뉴를 선택하여 모든 작업을 수행</li>
-</ul>
-</li>
-<li>선점형 멀티태스킹
-<ul>
-<li>동시에 여러 개의 프로그램을 실행하는 멀티태스킹을 하면서 운영체제가 각 작업의 CPU 이용 시간을 제어하여 응용 프로그램 시행 중 문제가 발생하면 해당 프로그램을 강제 종료시키고 모든 시스템 자원을 반환하는 방식</li>
-</ul>
-</li>
-<li>PnP; Plug and Play
-<ul>
-<li>컴퓨터 시스템에 프린터나 사운드 카드 등의 하드웨어를 설치했을 때 해당 하드웨어를 사용하는 데 필요한 시스템 환경을 운영체제가 자동으로 구성해주는 기능</li>
-</ul>
-</li>
-<li>OLE; Object Linking Embedding
-<ul>
-<li>다른 응용 프로그램에서 작성된 문자나 그림 등의 개체를 현재 작성 중인 문서에 자유롭게 연결하거나 삽입하여 편집할 수 있게 하는 기능</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="2-unix"><a class="markdownIt-Anchor" href="#2-unix"></a> 2. UNIX</h4>
-<ul>
-<li>
-<p>AT&amp;T 벨 연구소, MIT, General Electric이 공동 개발한 운영체제</p>
-</li>
-<li>
-<p>특징</p>
-<ul>
-<li>C언어로 작성되어 <u>이식성</u> 높음</li>
-<li>장치와 프로세스 간의 <u>호환성</u> 높음</li>
-<li>시분할 시스템으로 설계된 <u>대화식 운영 체제</u></li>
-<li>소스가 공개된 개방형 시스템</li>
-<li><u>다중 사용자가 다중 작업</u>을 지원</li>
-<li>많은 네트워킹 기능을 제공하므로 <u>통신망 관리용 운영체제</u>로 적합</li>
-</ul>
-</li>
-<li>
-<p>구성</p>
-<ul>
-<li>
-<p>Kernel 커널</p>
-<ul>
-<li><u>프로세스 관리</u></li>
-<li><u>기억장치 관리</u></li>
-<li><u>입출력 관리</u></li>
-<li><u>파일 관리</u></li>
-<li>컴퓨터가 부팅될 때 주기억장치에 적재되어 상주하면서 실행</li>
-</ul>
-</li>
-<li>
-<p>Shell 쉘</p>
-<ul>
-<li><u>사용자의 명령을 인식하는 명령어 해석기</u></li>
-<li><u>시스템과 사용자 간의 인터페이스</u></li>
-<li>주기억장치에 상주하지 않고, 명령어가 포함된 파일 형태로 존재하며 보조 기억장치에서도 교체처리가 가능</li>
-<li>한 프로세스의 출력이 다른 프로세스의 입력으로 사용되는 <u>단방향 통신인 파이프 라인 기능을 지원</u></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="3-linux"><a class="markdownIt-Anchor" href="#3-linux"></a> 3. LINUX</h4>
-<ul>
-<li>리누스 토발즈가 개발한 운영체제</li>
-<li>특징
-<ul>
-<li>프로그램 <u>소스 코드가 무료로 공개</u>되어 프로그래머가 원하는 기능 추가</li>
-<li>다양한 플랫폼에 설치하여 사용 가능</li>
-<li>재배포가 가능</li>
-<li>UNIX와 완벽하게 호환</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-macos"><a class="markdownIt-Anchor" href="#4-macos"></a> 4. MacOS</h4>
-<ul>
-<li>Apple에서 UNIX 기반으로 개발한 운영체제</li>
-<li>특징
-<ul>
-<li>아이맥과 맥북 등 애플 사 제품에만 사용이 가능</li>
-<li>드라이버 설치 및 install 과정이 단순함</li>
-</ul>
-</li>
-</ul>
-<h4 id="5-ms-dos"><a class="markdownIt-Anchor" href="#5-ms-dos"></a> 5. MS-DOS</h4>
-<ul>
-<li>Windows 이전 운영체제, CLI</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -949,7 +937,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            137
+                            138
                         </p>
                     </a>
                 </div>
@@ -1119,7 +1107,7 @@
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">105</span>
+                <span class="level-item tag">106</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -1183,7 +1171,7 @@
                 <span class="level-item">논리데이터베이스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/">
@@ -1299,6 +1287,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T16:32:44.000Z">2020-05-14</time></div>
+                    <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 논리 데이터모델 품질검증">
@@ -1373,25 +1380,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 데이터모델개념">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T12:58:24.000Z">2020-05-13</time></div>
-                    <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 데이터모델개념</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1409,7 +1397,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">82</span>
+                    <span class="level-item tag">83</span>
                 </span>
             </a>
         </li>
@@ -2096,7 +2084,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">105</span>
+                        <span class="tag is-grey">106</span>
                     </a>
                 </div>
                 
@@ -2180,7 +2168,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">23</span>
+                        <span class="tag is-grey">24</span>
                     </a>
                 </div>
                 
@@ -2215,6 +2203,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T16:32:44.000Z">2020-05-14</time></div>
+                    <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 논리 데이터모델 품질검증">
@@ -2289,25 +2296,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 데이터모델개념">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T12:58:24.000Z">2020-05-13</time></div>
-                    <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 데이터모델개념</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2325,7 +2313,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">82</span>
+                    <span class="level-item tag">83</span>
                 </span>
             </a>
         </li>
@@ -3012,7 +3000,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">105</span>
+                        <span class="tag is-grey">106</span>
                     </a>
                 </div>
                 
@@ -3096,7 +3084,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">23</span>
+                        <span class="tag is-grey">24</span>
                     </a>
                 </div>
                 
@@ -3248,7 +3236,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
