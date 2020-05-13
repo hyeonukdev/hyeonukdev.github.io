@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-13T15:01:27.000Z</updated>
+  <updated>2020-05-13T15:11:07.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -17,9 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>논리데이터베이스 - 논리적 데이터 모델링</title>
+    <link href="https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/"/>
+    <id>https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/</id>
+    <published>2020-05-13T15:11:07.000Z</published>
+    <updated>2020-05-13T15:11:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2><h3 id="논리적-데이터-모델링-정의"><a class="markdownIt-Anchor" href="#논리적-데이터-모델링-정의"></a> 논리적 데이터 모델링 정의</h3><ul><li>E-R 다이어그램으로 표현된 개념적 구조를 데이터베이스에 저장할 형태로 표현한 논리적 구조로 정의하는 과정</li><li>정확한 업무 분석을 통한 자료의 흐름을 분석하여 현재 사용 중인 양식, 문서, 장표를 중심으로 자료항목을 추출하여 <u>엔티티와 속성들의 관계를 구조적으로 정의하는 단계</u></li></ul><h3 id="논리적-데이터-모델링-특성"><a class="markdownIt-Anchor" href="#논리적-데이터-모델링-특성"></a> 논리적 데이터 모델링 특성</h3><ul><li><u>요구사항을 충분히 수집하지 않으면 다음 단계의 요구사항 변경에 따른 많은 비용이 발생</u></li><li>모든 이해당사자들과 의사소통의 보조자료로서 E-R 모델을 활용</li><li>논리적 모델은 H/W나 S/W에 독립적<br /><u></li><li>DBMS에 맞는 논리적 스키마 설계</li><li>트랜잭션 인터페이스를 설계<ul><li><b>사용자의 요구에 대한 트랜잭션을 모델링하는 것은 개념적 설계단계</b></li></ul></li><li>관계형 데이터베이스에서는 테이블을 설계하는 단계<br /></u></li><li>종류<ul><li>관계 데이터 모델</li><li>계층 데이터 모델</li><li>네트워크 데이터 모델</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;논리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#논리데이터베이스&quot;&gt;&lt;/a&gt; 논리데이터베이스&lt;/h2&gt;
+&lt;h3 id=&quot;논리적-데이터-모델링-정의&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="논리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="논리적데이터모델링" scheme="https://hyeonukdev.github.io/tags/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>논리데이터베이스 - 개체-관계(E-R)모델</title>
-    <link href="https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/post/"/>
-    <id>https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/post/</id>
+    <link href="https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EA%B0%9C%EC%B2%B4%EA%B4%80%EA%B3%84%EB%AA%A8%EB%8D%B8/"/>
+    <id>https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EA%B0%9C%EC%B2%B4%EA%B4%80%EA%B3%84%EB%AA%A8%EB%8D%B8/</id>
     <published>2020-05-13T15:01:27.000Z</published>
     <updated>2020-05-13T15:01:27.000Z</updated>
     
@@ -608,38 +639,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="ETL" scheme="https://hyeonukdev.github.io/tags/ETL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>데이터전환 - 초기데이터구축</title>
-    <link href="https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EA%B8%B0%EC%88%A0/%EC%B4%88%EA%B8%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%B6%95/"/>
-    <id>https://hyeonukdev.github.io/2020/05/10/Engineer_Information_Processing/ch14_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EA%B8%B0%EC%88%A0/%EC%B4%88%EA%B8%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%B6%95/</id>
-    <published>2020-05-10T05:31:09.000Z</published>
-    <updated>2020-05-10T05:31:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="데이터전환"><a class="markdownIt-Anchor" href="#데이터전환"></a> 데이터전환</h2><ul><li>작성된 데이터 변환 설계서의 <u>데이터 변환 논리</u>를 실행 가능한 <u>변환 프로그램으로 구현</u></li><li>구현된 변환 프로그램을 데이터 전환 개발환경에서 테스트하여 프로그램의 정상동작을 확인하고 성능을 최적화</li></ul><h3 id="초기-데이터-구축-개념"><a class="markdownIt-Anchor" href="#초기-데이터-구축-개념"></a> 초기 데이터 구축 개념</h3><ul><li>기존 운영 시스템의 이해를 바탕으로 <u>구축 범위를 명확</u>하게 하여 구축</li><li>초기 데이터 구축 시 발생할 수 있는 <u>예상 문제점을 도출하여 사전 점검 사항과 해결방안을 마련</u></li></ul><h3 id="초기-데이터-구축-절차"><a class="markdownIt-Anchor" href="#초기-데이터-구축-절차"></a> 초기 데이터 구축 절차</h3><h4 id="1-구축-전략-수집"><a class="markdownIt-Anchor" href="#1-구축-전략-수집"></a> 1. 구축 전략 수집</h4><ul><li>단시일에 대량의 데이터를 전환함에 있어 신속하고 안정적인 데이터 전환을 위하여 <u>체계적인 초기 데이터 구축 전략</u>을 수집</li></ul><h4 id="2-초기-데이터-구축-대상-파악"><a class="markdownIt-Anchor" href="#2-초기-데이터-구축-대상-파악"></a> 2. 초기 데이터 구축 대상 파악</h4><ul><li>초기 데이터 구축에 필요한 대상을 파악</li></ul><h4 id="3-초기-데이터-구축-범위"><a class="markdownIt-Anchor" href="#3-초기-데이터-구축-범위"></a> 3. 초기 데이터 구축 범위</h4><ul><li>업무 협의를 통해 초기 데이터 구축 범위를 확정</li></ul><h4 id="4-초기-데이터-구축-시-세부-고려사항"><a class="markdownIt-Anchor" href="#4-초기-데이터-구축-시-세부-고려사항"></a> 4. 초기 데이터 구축 시 세부 고려사항</h4><ul><li>데이터 이관 업무 중단을 최소화하고 안정성을 확보할 수 있는 방안 마련</li><li>데이터 이관 정합성 검증을 통해 오류방지 방안을 제시하여야하며, 오류 데이터에 대한 정비방안 마련</li><li>데이터 이관 완료 후 데이터의 전후 비교를 실시한 품질과 결과 제시</li><li>개인정보에 해당되는 데이터는 개인정보보호법과 관련 기준에서 정하는 기준에 따라 암호화하여 적용</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;데이터전환&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#데이터전환&quot;&gt;&lt;/a&gt; 데이터전환&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;작성된 데이터 변환 설계서의 &lt;u&gt;데이터 변환 논리&lt;/u&gt;를 실행 가능한 &lt;u&gt;변환 프로그램으로 구현&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="데이터전환" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="초기데이터구축" scheme="https://hyeonukdev.github.io/tags/%EC%B4%88%EA%B8%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%B6%95/"/>
     
   </entry>
   
