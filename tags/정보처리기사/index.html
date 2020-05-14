@@ -289,6 +289,105 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 데이터베이스 이중화 구성">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-14T16:35:42.000Z">2020-05-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">물리데이터베이스</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4분 읽기 (대략 610 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/">물리데이터베이스 - 데이터베이스 이중화 구성</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2>
+<h3 id="데이터베이스-이중화-database-replication-정의"><a class="markdownIt-Anchor" href="#데이터베이스-이중화-database-replication-정의"></a> 데이터베이스 이중화 Database Replication 정의</h3>
+<ul>
+<li><u>시스템 오류로 인한 데이터베이스 서비스 중단이나 물리적 손상</u> 발생 시 이를 <u>복구하기 위해 동일한 데이터베이스를 복제하여 관리</u>
+<ul>
+<li>하나 이상의 데이터베이스가 항상 같은 상태를 유지하므로 <u>데이터베이스에 문제가 발생하면 복제된 데이터베이스를 이용</u>하여 즉시 문제 해결 가능</li>
+<li>여러 개의 데이터베이스를 동시에 관리하므로 사용자가 수행하는 작업이 데이터베이스 이중화 시스템에 연결된 다른 데이터베이스에도 동일하게 적용됨</li>
+<li>애플리케이션을 <u>여러 개의 데이터베이스로 분산시켜 처리</u>하므로 데이터베이스 부하를 줄일 수 있음</li>
+<li>데이터베이스 이중화를 이용하면 손쉽게 백업 서버 운영 가능</li>
+</ul>
+</li>
+</ul>
+<h3 id="데이터-이중화의-분류"><a class="markdownIt-Anchor" href="#데이터-이중화의-분류"></a> 데이터 이중화의 분류</h3>
+<ul>
+<li>변경 내용의 전달 방식에 따라 Eager 기법과 Lazy 기법으로 나뉨
+<ul>
+<li>Eager 기법
+<ul>
+<li>트랜잭션 수행 중 데이터 변경이 발생하면 이중화 된 모든 데이터베이스에 즉시 전달하여 변경 내용이 즉시 적용되도록 하는 기법</li>
+</ul>
+</li>
+<li>Lazy 기법
+<ul>
+<li>트랜잭션의 수행이 종료되면 변경 사실을 새로운 트랜잭션에 작성하여 각 데이터베이스에 전달되는 기법으로, 데이터베이스마다 새로운 트랜잭션이 수행되는 것으로 간주됨</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="데이터-이중화의-구성-방법"><a class="markdownIt-Anchor" href="#데이터-이중화의-구성-방법"></a> 데이터 이중화의 구성 방법</h3>
+<ul>
+<li>활동-대기(Active-Standby) 방법과 활동-활동(Active-Active) 방법이 있음
+<ul>
+<li>Active-Active
+<ul>
+<li>두 개의 DB가 서로 다른 서비스를 제공하다가 둘 중 한쪽 DB에 문제가 발생하면 나머지 다른 DB가 서비스를 제공</li>
+<li>두 개의 DB가 모두 처리하기 때문에 처리율이 높지만 구성 방법 및 설정이 복잡함</li>
+</ul>
+</li>
+<li>Active-Standby
+<ul>
+<li>한 DB가 활성 상태로 서비스하고 있으면 다른 DB는 대기하고 있다가 활성 DB에 장애 발생 시 대기 상태의 DB가 자동으로 모든 서비스를 대신 수행</li>
+<li>구성 방법과 관리가 쉬워 많은 기업에서 이용</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
         </a>
@@ -1263,157 +1362,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 관계데이터언어">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-12T16:08:48.000Z">2020-05-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5분 읽기 (대략 724 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/">논리데이터베이스 - 관계데이터언어</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2>
-<p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_01.png" alt="관계데이터개념" /></p>
-<h3 id="relation-data-operaton-관계-데이터-연산"><a class="markdownIt-Anchor" href="#relation-data-operaton-관계-데이터-연산"></a> Relation data operaton 관계 데이터 연산</h3>
-<ul>
-<li>관계 데이터 모델의 연산</li>
-<li>원하는 데이터를 얻기 위해 릴레이션에 필요한 처리 요구를 수행하는 것</li>
-<li><u>관계대수와 관계 해석</u>이 있음<br />
-<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_02.png" alt="관계데이터연산의 종류" /></li>
-</ul>
-<h3 id="relational-algebra-관계-대수의-개념"><a class="markdownIt-Anchor" href="#relational-algebra-관계-대수의-개념"></a> Relational algebra 관계 대수의 개념</h3>
-<ul>
-<li>원하는 결과를 얻기 위해 릴레이션의 처리 과정을 <u>순서대로 기술하는 언어</u>
-<ul>
-<li>절차 언어</li>
-</ul>
-</li>
-<li>릴레이션을 처리하는 연산자들의 모임
-<ul>
-<li>대표 연산자 8개</li>
-<li><u>일반 집합 연산자와 순수 관계 연산자로 분류</u></li>
-</ul>
-</li>
-<li>폐쇠 특성이 존재
-<ul>
-<li>피연산자도 릴레이션이고 연산의 결과도 릴레이션</li>
-</ul>
-</li>
-</ul>
-<h3 id="관계-대수-연산자의-종류"><a class="markdownIt-Anchor" href="#관계-대수-연산자의-종류"></a> 관계 대수 연산자의 종류</h3>
-<ul>
-<li><u>일반 집합 연산자와 순수 관계 연산자</u><br />
-<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_03.png" alt="관계 대수 연산의 종류" /></li>
-</ul>
-<h3 id="set-operation-일반-집합-연산자"><a class="markdownIt-Anchor" href="#set-operation-일반-집합-연산자"></a> Set operation 일반 집합 연산자</h3>
-<ul>
-<li>릴레이션이 튜플의 집합이라는 개념을 이용하는 연산자<br />
-<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_04.png" alt="일반집합연산자의 종류" /><br />
-<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_05.png" alt="일반집합연산자의 종류와 기능" /></li>
-</ul>
-<h3 id="일반-집합-연산자-특성"><a class="markdownIt-Anchor" href="#일반-집합-연산자-특성"></a> 일반 집합 연산자 특성</h3>
-<ul>
-<li>피연산자가 2개 필요함
-<ul>
-<li>2개의 릴레이션을 대상으로 연산을 수행</li>
-</ul>
-</li>
-<li>합집합, 교집합, 차집합은 피연산자인 두 릴레이션이 합병 가능해야 함</li>
-<li><b>합병가능 조건</b>
-<ul>
-<li>두 릴레이션의 차수가 같아야 함</li>
-<li>두 릴레이션에서 서로 대응되는 속성의 도메인이 같아야 함</li>
-</ul>
-</li>
-</ul>
-<h3 id="일반-집합-연산자-카티션-프로덕트-cartesian-product"><a class="markdownIt-Anchor" href="#일반-집합-연산자-카티션-프로덕트-cartesian-product"></a> 일반 집합 연산자 - 카티션 프로덕트 cartesian product</h3>
-<ul>
-<li>두 릴레이션 R과 S의 카티션 프로덕트 : R x S
-<ul>
-<li>릴레이션 R에 속한 각 튜플과 릴레이션 S에 속한 각 튜플을 모두 연결하여 새로운 튜플로 결과 릴레이션을 구성</li>
-</ul>
-</li>
-<li><b>결과 릴레이션의 특성</b>
-<ul>
-<li><u>차수는 릴레이션 R과 S의 차수를 더함</u></li>
-<li><u>카디널리티는 릴레이션 R과 S의 카디널리티를 곱함</u></li>
-</ul>
-</li>
-<li>교환적 특징
-<ul>
-<li>R x S = S x R</li>
-</ul>
-</li>
-<li>결합적 특징
-<ul>
-<li>(R x S) x T = R x (S x T)</li>
-</ul>
-</li>
-</ul>
-<h3 id="카디션-프로덕트-연산"><a class="markdownIt-Anchor" href="#카디션-프로덕트-연산"></a> 카디션 프로덕트 연산</h3>
-<p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_06.png" alt="카디션 프로덕트 연산" /></p>
-<h3 id="relational-operation-순수-관계-연산자"><a class="markdownIt-Anchor" href="#relational-operation-순수-관계-연산자"></a> Relational operation 순수 관계 연산자</h3>
-<ul>
-<li>릴레이션 구조와 특성을 이용하는 연산자<br />
-<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_07.png" alt="순수관계 연산자의 종류" /><br />
-<img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_08.png" alt="순수관계 연산자의 종류와 기능" /></li>
-</ul>
-<h3 id="relational-calculus-관계-해석-개념"><a class="markdownIt-Anchor" href="#relational-calculus-관계-해석-개념"></a> Relational calculus 관계 해석 개념</h3>
-<ul>
-<li>처리를 원하는 <u>데이터가 무엇</u>인지만 기술하는 언어
-<ul>
-<li>비절차 언어</li>
-</ul>
-</li>
-<li>분류
-<ul>
-<li>튜플 관계 해석</li>
-<li>도메인 관계 해석</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1852,6 +1800,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 데이터베이스 이중화 구성">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T16:35:42.000Z">2020-05-15</time></div>
+                    <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">물리데이터베이스 - 데이터베이스 이중화 구성</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">물리데이터베이스</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
@@ -1900,25 +1867,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T16:11:49.000Z">2020-05-14</time></div>
                     <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%A0%95%EA%B7%9C%ED%99%94/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 데이터베이스 정규화</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 논리적 데이터 모델링">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T15:11:07.000Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 논리적 데이터 모델링</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
                     </p>
@@ -2782,6 +2730,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 데이터베이스 이중화 구성">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T16:35:42.000Z">2020-05-15</time></div>
+                    <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">물리데이터베이스 - 데이터베이스 이중화 구성</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">물리데이터베이스</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 핵심정리">
@@ -2830,25 +2797,6 @@
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T16:11:49.000Z">2020-05-14</time></div>
                     <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%A0%95%EA%B7%9C%ED%99%94/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 데이터베이스 정규화</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="논리데이터베이스 - 논리적 데이터 모델링">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-13T15:11:07.000Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">논리데이터베이스 - 논리적 데이터 모델링</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">논리데이터베이스</a>
                     </p>
