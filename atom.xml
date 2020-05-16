@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-16T14:43:31.000Z</updated>
+  <updated>2020-05-16T16:37:45.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>물리데이터베이스 - 키 종류</title>
+    <link href="https://hyeonukdev.github.io/2020/05/17/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8%EB%A7%81/%ED%82%A4%EC%A2%85%EB%A5%98/"/>
+    <id>https://hyeonukdev.github.io/2020/05/17/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8%EB%A7%81/%ED%82%A4%EC%A2%85%EB%A5%98/</id>
+    <published>2020-05-16T16:37:45.000Z</published>
+    <updated>2020-05-16T16:37:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2><h3 id="키의-개념"><a class="markdownIt-Anchor" href="#키의-개념"></a> 키의 개념</h3><ul><li>데이터베이스에서 조건에 만족하는 튜플을 찾거나 순서대로 정렬할 때 <u>튜플들을 서로 구분할 수 있는 기준</u>이 되는 <u>애트리뷰트</u></li><li>종류<ul><li>슈퍼키</li><li>후보키</li><li>기본키</li><li>대체키</li></ul></li></ul><h3 id="키의-특징"><a class="markdownIt-Anchor" href="#키의-특징"></a> 키의 특징</h3><ul><li>Uniqueness 유일성<ul><li>하나의 키 값으로 하나의 튜플만을 유일하게 식별할 수 있어야 함</li></ul></li><li>Minimality 최소성<ul><li>릴레이션의 모든 튜플을 유일하게 식별하기 위해 꼭 필요한 속성만으로 구성</li></ul></li></ul><h3 id="키의-종류-개념도"><a class="markdownIt-Anchor" href="#키의-종류-개념도"></a> 키의 종류 개념도</h3><p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0517_01.png" alt="키의 종류" /></p><ul><li>슈퍼키 &gt; 후보키 &gt; 대체키 &gt; 기본키</li><li>후보키 = 기본키 + 대체키</li><li>기본키 = 후보키 - 대체키</li></ul><h3 id="키의-종류-상세"><a class="markdownIt-Anchor" href="#키의-종류-상세"></a> 키의 종류 상세</h3><ul><li>슈퍼키 Super Key<ul><li>한 릴레이션 내의 속성들의 집합으로 구성된 키</li><li>릴레이션을 구성하는 모든 튜플에 대해 유일성은 만족시키지만 최소성은 만족시키지 못함</li><li>ex) 학번+주민번호</li></ul></li><li>후보키 Candidate Key<ul><li>릴레이션을 구성하는 속성들 중에서 튜플을 유일하게 식별할 수 있는 하나 또는 몇 개의 속성의 집합</li><li>릴레이션의 모든 튜플에 대해 유일성과 최소성 모두 만족</li></ul></li><li>기본키 Primary Key<ul><li>릴레이션에서 튜플ㅇ르 구별할 수 있는 유일한 식별자</li><li>후보키 중에서 선정된 키로 유일성과 최소성 만족</li><li>기본키는 Null값을 가질 수 없고 중복값을 가질 수 없음</li></ul></li><li>대체키 Primary Key<ul><li>후보키가 둘 이상인 경우 기본키로 선택되지 못한 후보들키를 보조키라고도 함</li></ul></li><li>외래키 Foreign Key<ul><li>참조되는 릴레이션의 기본키와 대응되어 릴레이션 간에 참조관계 표현</li><li>참조 릴레이션의 기본키에 없는 값은 입력할 수 없음</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;물리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#물리데이터베이스&quot;&gt;&lt;/a&gt; 물리데이터베이스&lt;/h2&gt;
+&lt;h3 id=&quot;키의-개념&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#키의-개념&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="물리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="키종류" scheme="https://hyeonukdev.github.io/tags/%ED%82%A4%EC%A2%85%EB%A5%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>물리데이터베이스 - 칼럼 속성</title>
+    <link href="https://hyeonukdev.github.io/2020/05/17/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8%EB%A7%81/%EC%B9%BC%EB%9F%BC%EC%86%8D%EC%84%B1/"/>
+    <id>https://hyeonukdev.github.io/2020/05/17/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8%EB%A7%81/%EC%B9%BC%EB%9F%BC%EC%86%8D%EC%84%B1/</id>
+    <published>2020-05-16T16:31:58.000Z</published>
+    <updated>2020-05-16T16:31:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2><h3 id="칼럼-속성의-정의-및-특징"><a class="markdownIt-Anchor" href="#칼럼-속성의-정의-및-특징"></a> 칼럼 속성의 정의 및 특징</h3><ul><li>속성은 데이터베이스를 구성하는 가장 작은 논리적 단위</li><li>파일 구조상의 데이터 항목 또는 데이터 필드에 해당됨</li><li>속성은 개체의 구성 항목이며 특성을 기술</li><li>속성의 수는 Degree 또는 차수라고 함</li></ul><h3 id="속성의-특성에-따른-분류"><a class="markdownIt-Anchor" href="#속성의-특성에-따른-분류"></a> 속성의 특성에 따른 분류</h3><ul><li>기본 속성 Basic Attribute<ul><li>업무 분석을 통해 정의한 속성</li><li>개체 타입에 가장 일반적이고 많은 속성을 차지</li><li>업무로부터 분석한 속성이라도 이미 업무상 코드로 정의한 속성은 기본 속성에서 제외</li></ul></li><li>설계 속성 Designed Attribute<ul><li>원래 업무에는 존재하지 않지만 설계를 하면서 도출하는 속성</li><li>업무의 필요에 의해 새로 만들거나 변형하여 정의한 속성</li></ul></li><li>파생 속성 Derived Attribute<ul><li>다른 속성으로부터 계산이나 변형되어 생성되는 속성</li><li>다른 속성의 영향을 받기 때문에 정합성 유지를 위해 가급적 파생 속성을 적게 정의하는 것이 좋음</li></ul></li></ul><h3 id="개체-구성-방식에-따른-분류"><a class="markdownIt-Anchor" href="#개체-구성-방식에-따른-분류"></a> 개체 구성 방식에 따른 분류</h3><ul><li>기본키 속성<ul><li>개체를 식별할 수 있는 속성</li></ul></li><li>외래키 속성<ul><li>다른 개체와의 관계에서 포함된 속성</li></ul></li><li>일반 속성<ul><li>개체에 포함되어 있고 기본 키, 외래 키에 포함되지 않은 속성</li></ul></li></ul><h3 id="속성-후보-선정-원칙"><a class="markdownIt-Anchor" href="#속성-후보-선정-원칙"></a> 속성 후보 선정 원칙</h3><ul><li>원시 속성으로 보이는 후보는 버리지 않음</li><li>소그룹별로 후보군을 만들고 가장 근접한 개체에 할당</li></ul><h3 id="속성명-지정-원치"><a class="markdownIt-Anchor" href="#속성명-지정-원치"></a> 속성명 지정 원치</h3><ul><li>해당 업무에서 사용하는 이름을 부여</li><li>서술식 속성명은 사용하지 않음</li><li>약어 사용은 가급적 자제</li><li>개체 타입명은 속성명으로 사용해서는 안됨</li><li>개체타입에서 유일하게 식별 가능하도록 지정</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;물리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#물리데이터베이스&quot;&gt;&lt;/a&gt; 물리데이터베이스&lt;/h2&gt;
+&lt;h3 id=&quot;칼럼-속성의-정의-및-특징&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="물리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="칼럼속성" scheme="https://hyeonukdev.github.io/tags/%EC%B9%BC%EB%9F%BC%EC%86%8D%EC%84%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>물리데이터베이스 - 데이터베이스 무결성</title>
@@ -576,68 +638,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="핵심정리" scheme="https://hyeonukdev.github.io/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>논리데이터베이스 - 시스템 카탈로그와 뷰</title>
-    <link href="https://hyeonukdev.github.io/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8%EC%99%80%EB%B7%B0/"/>
-    <id>https://hyeonukdev.github.io/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8%EC%99%80%EB%B7%B0/</id>
-    <published>2020-05-12T16:36:56.000Z</published>
-    <updated>2020-05-12T16:36:56.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2><h3 id="시스템-카탈로그-개념"><a class="markdownIt-Anchor" href="#시스템-카탈로그-개념"></a> 시스템 카탈로그 개념</h3><ul><li>데이터베이스의 객체(사용자, 릴레이션 뷰, 인덱스, 권한)와 구조들에 관한 모든 데이터를 포함하는 <u>시스템 데이터베이스</u></li><li>카탈로그에 저장된 정보를 <u>메타데이터</u>라고 함</li><li>시스템 카탈로그는 사용자 및 질의 최적호 모듈 등 DBMS 자신의 구성요소에 의해서 사용</li><li>시스템 카탈로그는 관계DBMS마다 표준화되어 있지 않아서 관계 DBMS마다 서로 다른 형태로 시스템 카탈로그 기능을 제공</li><li>데이터 사전 또는 시스템 테이블이라고 함</li></ul><h3 id="시스템-카탈로그-특징"><a class="markdownIt-Anchor" href="#시스템-카탈로그-특징"></a> 시스템 카탈로그 특징</h3><ul><li>사용자가 SQL 문으로 내용 검색이 가능</li><li>데이터베이스 관리시스템에 의해 생성 및 유지</li><li>기본 테이블, 뷰, 인덱스 등이 변경되면 자동으로 시스템 카탈로그는 갱신</li><li><u>사용자가 SQL문으로 갱신은 불가능</u></li><li>위치 투명성 및 중복 투명성을 제공하기 위해 필요한 모든 제어 정보를 포함</li></ul><h3 id="시스템-카탈로그-내용"><a class="markdownIt-Anchor" href="#시스템-카탈로그-내용"></a> 시스템 카탈로그 내용</h3><ul><li>릴레이션의 정보<ul><li>릴레이션 이름</li><li>저장된 파일 이름과 파일 구조</li><li>속성들에 대한 속성 이름과 타입</li><li>정의된 각 인덱스의 이름</li><li>정의된 무결성 제약 조건</li></ul></li><li>인덱스 관련 정보<ul><li>인덱스 이름</li><li>인덱스의 구조</li><li>인덱스의 키에 대한 정보</li></ul></li><li>뷰 관련 정보<ul><li>뷰의 이름</li><li>뷰의 정의</li><li>뷰의 소유자</li></ul></li><li>사용자 관련 정보<ul><li>사용자 계정 정보</li><li>사용자 권한 정보</li></ul></li><li>통계 관련 정보<ul><li>릴레이션 카디널리티</li><li>인덱스 카디널리티</li><li>인덱스의 높이</li><li>인덱스의 범위</li></ul></li></ul><h3 id="view-뷰-개념"><a class="markdownIt-Anchor" href="#view-뷰-개념"></a> View 뷰 개념</h3><ul><li><u>가상 테이블을</u> 구성하는 데이터베이스 오브젝트로 <u>별도의 저장 공간은 없지만</u> 뷰를 통해 SELECT, DELETE, UPDATE를 할 수 있음</li></ul><h3 id="뷰의-장점과-단점"><a class="markdownIt-Anchor" href="#뷰의-장점과-단점"></a> 뷰의 장점과 단점</h3><ul><li>장점<ul><li>논리적 독립성 제공</li><li>사용자 데이터 관리 용이</li><li>데이터 보안 용이</li></ul></li><li>단점<ul><li>뷰 자체 인덱스 불가</li><li>뷰 정의 변경 불가</li><li>데이터 변경 제약 존재</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;논리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#논리데이터베이스&quot;&gt;&lt;/a&gt; 논리데이터베이스&lt;/h2&gt;
-&lt;h3 id=&quot;시스템-카탈로그-개념&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="논리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="시스템카탈로그와뷰" scheme="https://hyeonukdev.github.io/tags/%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8%EC%99%80%EB%B7%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>논리데이터베이스 - 관계데이터언어</title>
-    <link href="https://hyeonukdev.github.io/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/"/>
-    <id>https://hyeonukdev.github.io/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/</id>
-    <published>2020-05-12T16:08:48.000Z</published>
-    <updated>2020-05-12T16:08:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2><p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_01.png" alt="관계데이터개념" /></p><h3 id="relation-data-operaton-관계-데이터-연산"><a class="markdownIt-Anchor" href="#relation-data-operaton-관계-데이터-연산"></a> Relation data operaton 관계 데이터 연산</h3><ul><li>관계 데이터 모델의 연산</li><li>원하는 데이터를 얻기 위해 릴레이션에 필요한 처리 요구를 수행하는 것</li><li><u>관계대수와 관계 해석</u>이 있음<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_02.png" alt="관계데이터연산의 종류" /></li></ul><h3 id="relational-algebra-관계-대수의-개념"><a class="markdownIt-Anchor" href="#relational-algebra-관계-대수의-개념"></a> Relational algebra 관계 대수의 개념</h3><ul><li>원하는 결과를 얻기 위해 릴레이션의 처리 과정을 <u>순서대로 기술하는 언어</u><ul><li>절차 언어</li></ul></li><li>릴레이션을 처리하는 연산자들의 모임<ul><li>대표 연산자 8개</li><li><u>일반 집합 연산자와 순수 관계 연산자로 분류</u></li></ul></li><li>폐쇠 특성이 존재<ul><li>피연산자도 릴레이션이고 연산의 결과도 릴레이션</li></ul></li></ul><h3 id="관계-대수-연산자의-종류"><a class="markdownIt-Anchor" href="#관계-대수-연산자의-종류"></a> 관계 대수 연산자의 종류</h3><ul><li><u>일반 집합 연산자와 순수 관계 연산자</u><br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_03.png" alt="관계 대수 연산의 종류" /></li></ul><h3 id="set-operation-일반-집합-연산자"><a class="markdownIt-Anchor" href="#set-operation-일반-집합-연산자"></a> Set operation 일반 집합 연산자</h3><ul><li>릴레이션이 튜플의 집합이라는 개념을 이용하는 연산자<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_04.png" alt="일반집합연산자의 종류" /><br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_05.png" alt="일반집합연산자의 종류와 기능" /></li></ul><h3 id="일반-집합-연산자-특성"><a class="markdownIt-Anchor" href="#일반-집합-연산자-특성"></a> 일반 집합 연산자 특성</h3><ul><li>피연산자가 2개 필요함<ul><li>2개의 릴레이션을 대상으로 연산을 수행</li></ul></li><li>합집합, 교집합, 차집합은 피연산자인 두 릴레이션이 합병 가능해야 함</li><li><b>합병가능 조건</b><ul><li>두 릴레이션의 차수가 같아야 함</li><li>두 릴레이션에서 서로 대응되는 속성의 도메인이 같아야 함</li></ul></li></ul><h3 id="일반-집합-연산자-카티션-프로덕트-cartesian-product"><a class="markdownIt-Anchor" href="#일반-집합-연산자-카티션-프로덕트-cartesian-product"></a> 일반 집합 연산자 - 카티션 프로덕트 cartesian product</h3><ul><li>두 릴레이션 R과 S의 카티션 프로덕트 : R x S<ul><li>릴레이션 R에 속한 각 튜플과 릴레이션 S에 속한 각 튜플을 모두 연결하여 새로운 튜플로 결과 릴레이션을 구성</li></ul></li><li><b>결과 릴레이션의 특성</b><ul><li><u>차수는 릴레이션 R과 S의 차수를 더함</u></li><li><u>카디널리티는 릴레이션 R과 S의 카디널리티를 곱함</u></li></ul></li><li>교환적 특징<ul><li>R x S = S x R</li></ul></li><li>결합적 특징<ul><li>(R x S) x T = R x (S x T)</li></ul></li></ul><h3 id="카디션-프로덕트-연산"><a class="markdownIt-Anchor" href="#카디션-프로덕트-연산"></a> 카디션 프로덕트 연산</h3><p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_06.png" alt="카디션 프로덕트 연산" /></p><h3 id="relational-operation-순수-관계-연산자"><a class="markdownIt-Anchor" href="#relational-operation-순수-관계-연산자"></a> Relational operation 순수 관계 연산자</h3><ul><li>릴레이션 구조와 특성을 이용하는 연산자<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_07.png" alt="순수관계 연산자의 종류" /><br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0513_08.png" alt="순수관계 연산자의 종류와 기능" /></li></ul><h3 id="relational-calculus-관계-해석-개념"><a class="markdownIt-Anchor" href="#relational-calculus-관계-해석-개념"></a> Relational calculus 관계 해석 개념</h3><ul><li>처리를 원하는 <u>데이터가 무엇</u>인지만 기술하는 언어<ul><li>비절차 언어</li></ul></li><li>분류<ul><li>튜플 관계 해석</li><li>도메인 관계 해석</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;논리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#논리데이터베이스&quot;&gt;&lt;/a&gt; 논리데이터베이스&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="논리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="관계데이터언어" scheme="https://hyeonukdev.github.io/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/"/>
     
   </entry>
   
