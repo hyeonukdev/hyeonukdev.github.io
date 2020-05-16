@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-15T07:22:16.000Z</updated>
+  <updated>2020-05-16T14:43:31.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>물리데이터베이스 - 데이터베이스 무결성</title>
+    <link href="https://hyeonukdev.github.io/2020/05/16/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8%EB%A7%81/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%B4%EA%B2%B0%EC%84%B1/"/>
+    <id>https://hyeonukdev.github.io/2020/05/16/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8%EB%A7%81/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%B4%EA%B2%B0%EC%84%B1/</id>
+    <published>2020-05-16T14:43:31.000Z</published>
+    <updated>2020-05-16T14:43:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2><ul><li>데이터베이스 무결성과 칼럼 속성 및 키 종류에 대해 이해</li><li>테이블 간의 조인을 줄이기 위한 칼럼 반정규화, 정규화에서 나눈 테이블을 하나의 테이블로 통합, 하나의 테이블을 여러 개 테이블로 분리, 요약 테이블을 생성의 방법으로 반정규화를 수행</li><li>반정규화에 따른 영향도를 조사하여 적절한 조치를 하고, 반정규화가 적용된 물리 데이터베이스 설계설르 작성</li></ul><h3 id="데이터베이스-무결성-integrity-개념"><a class="markdownIt-Anchor" href="#데이터베이스-무결성-integrity-개념"></a> 데이터베이스 무결성 Integrity 개념</h3><ul><li>데이터의 <u>정확성, 일관성, 유효성, 신뢰성 등과 무효 갱신으로부터 데이터 보호</u> 등을 위해 필요</li><li>무결성 제약 조건은 데이터베이스에 들어 있는 데이터의 정확성을 보장하기 위해 <u>부정확한 자료가 데이터베이스 내에 저장</u>되는 것을 방지 하기 위한 제약 조건임</li><li>무결정의 종류<ul><li>개체 무결성</li><li>도메인 무결성</li><li>참조 무결성</li><li>사용자 정의 무결성</li></ul></li></ul><h3 id="무결성의-종류"><a class="markdownIt-Anchor" href="#무결성의-종류"></a> 무결성의 종류</h3><h4 id="1-entity-integrity-개체-무결성-실체-무결성"><a class="markdownIt-Anchor" href="#1-entity-integrity-개체-무결성-실체-무결성"></a> 1. Entity Integrity 개체 무결성, 실체 무결성</h4><ul><li><u>개체의 유일성</u>을 보장하기 위한 무결성</li><li>데이터베이스 테이블은 기본 키로 설정된 속성은 null 값이나 중복 값을 가질 수 없음</li></ul><h4 id="2-domain-integrity-도메인-무결성-영역-무결성"><a class="markdownIt-Anchor" href="#2-domain-integrity-도메인-무결성-영역-무결성"></a> 2. Domain Integrity 도메인 무결성, 영역 무결성</h4><ul><li><u>특정 속성 값이 미리 정의</u>된 도메인 범위에 속해야 함</li><li>도메인은 하나의 애트리뷰트가 취할 수 있는 같은 타입의 원자값의 집합</li></ul><h4 id="3-referential-integrity-참조-무결성"><a class="markdownIt-Anchor" href="#3-referential-integrity-참조-무결성"></a> 3. Referential Integrity 참조 무결성</h4><ul><li>릴레이션은 참조할 수 없는 외래키 값을 가질 수 없음</li><li><u>외래키 값은 Null이거나 참조하는 릴레이션의 기본 키 값이어야 함</u></li></ul><h4 id="4-user-defined-integrity-사용자-정의-무결성"><a class="markdownIt-Anchor" href="#4-user-defined-integrity-사용자-정의-무결성"></a> 4. User Defined Integrity 사용자 정의 무결성</h4><ul><li>모든 데이터는 사용자가 정의한 제약 조건인 업무 규칙 Business Rule을 준수해야 함</li></ul><h3 id="데이터-무결성-강화-개념"><a class="markdownIt-Anchor" href="#데이터-무결성-강화-개념"></a> 데이터 무결성 강화 개념</h3><ul><li><u>데이터 품질</u>에 직접적인 영향을 주며, 데이터의 품질을 확보하고 유지하기 위해서는 데이터베이싀 구축 과정에서 <u>적정한 무결성 방안을 확보 해야 함</u></li><li>프로그램이 완성되고 데이터가 축척된 상태에서 무결성을 정의할 경우 많은 비용 발생</li><li>데이터베이스에서 모두 이뤄질 수 없으므로 복잡한 규칙을 기반으로 데이터 상호 간 유지해야할 정합성은 어플리케이션 내에서 처리</li></ul><h3 id="데이터-무결성-강화-방법"><a class="markdownIt-Anchor" href="#데이터-무결성-강화-방법"></a> 데이터 무결성 강화 방법</h3><h4 id="1-애플리케이션"><a class="markdownIt-Anchor" href="#1-애플리케이션"></a> 1. 애플리케이션</h4><ul><li>데이터를 조작하는 프로그램 내에 데이터 생성, 수정, 삭제 시 무결성 조건을 <u>검증 하는 코드를 추가</u></li><li>장점<ul><li>사용자 정의 같은 <u>복잡한 무결성 조건을 구현</u></li></ul></li><li>단점<ul><li>소스코드에 분산되어 <u>관리의 어려움이 있음</u></li><li>개별적으로 시행되므로 <u>적정성 검토에 어려움</u></li></ul></li></ul><h4 id="2-데이터베이스-트리거"><a class="markdownIt-Anchor" href="#2-데이터베이스-트리거"></a> 2. 데이터베이스 트리거</h4><ul><li><u>트리거 이벤트</u>시 저장 SQL을 실행하여 무결성 조건을 실행</li><li>장점<ul><li>통합 관리가 가능함</li><li>복잡한 요건 구현 가능</li></ul></li></ul><h4 id="3-제약-조건"><a class="markdownIt-Anchor" href="#3-제약-조건"></a> 3. 제약 조건</h4><ul><li><u>데이터베이스 제약 조건 기능</u>을 선언하여 무결성을 유지</li><li>장점<ul><li>통합 관리가 가능함, 간단한 선언으로 구현 가능</li><li>변경이 용이하고, 유효/무효 상태 변경이 가능</li><li>원칙적으로 잘못된 데이터 발생을 막을 수 있음</li></ul></li><li>단점<ul><li>복잡한 제약 조건 구현이 불가능, 예외적인 처리가 불가능</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;물리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#물리데이터베이스&quot;&gt;&lt;/a&gt; 물리데이터베이스&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;데이터베이스 무결성과 칼럼 속성 및 키 종류에 대해 이해&lt;/li&gt;
+&lt;li&gt;테이블 간의 
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="물리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="데이터베이스무결성" scheme="https://hyeonukdev.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%B4%EA%B2%B0%EC%84%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>물리데이터베이스 - 핵심정리</title>
@@ -605,38 +638,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="관계데이터언어" scheme="https://hyeonukdev.github.io/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>논리데이터베이스 - 관계데이터베이스 모델</title>
-    <link href="https://hyeonukdev.github.io/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8/"/>
-    <id>https://hyeonukdev.github.io/2020/05/13/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8/</id>
-    <published>2020-05-12T15:40:54.000Z</published>
-    <updated>2020-05-12T15:40:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2><ul><li><u>관계 데이터 모델의 기본 용어를 익히고 릴레이션을 구성하는 요소와 특성을 이해</u></li><li>관계 데이터 언어의 종류인 관계 대수의 일반 집합 연산자와 순수 관계 연산자의 차이를 이해하고 <u>관계해석</u>의 개념을 정리</li><li><u>시스템 카탈로그와 뷰</u>에 대한 개념 및 특징 이해</li></ul><h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3><ul><li>관계 데이터 모델<ul><li>실 세계 데이터를 행과 열과 구성된 표 형태로 저장하고 한 테이블의 필드 값을 이용하여 다른 테이블에 관련된 데이터를 찾는 식으로 검색하는 데이터 모델</li></ul></li><li>시스템 카탈로그<ul><li>데이터베이스의 객체와 구조들에 관한 모든 데이터를 포함하는 시스템 데이터베이스</li></ul></li></ul><h3 id="관계-데이터-모델-개념"><a class="markdownIt-Anchor" href="#관계-데이터-모델-개념"></a> 관계 데이터 모델 개념</h3><ul><li>DBMS에서 지원하는 데이터 모델</li><li>실 세계 데이터를 행과 열과 구성된 표 형태로 저장하고 한 테이블의 필드 값을 이용하여 다른 테이블에 관련된 데이터를 찾는 식으로 검색하는 데이터 모델</li><li><img src="https://lh3.googleusercontent.com/proxy/6jet3UI9WT52UF8Wd9vEJNVkPWuKU5Uvz6xwg5xcEG77-0abamnbuM8BJH8QrLrpqcNENI6NzlDHAc8tvpH5PCCMwvFsbxy8bb8SKjRc5jqaEPmiYyAnkfPglp4ZSjtY39j2jbX2ebAC1TvbPY13pG33MDuvDfTiJXY8FIZroH1mC3PJIF4uyOcNYckzvbEbtl3gcQ" alt="릴레이션" /></li></ul><h3 id="관계-데이터-모델의-기본-용어"><a class="markdownIt-Anchor" href="#관계-데이터-모델의-기본-용어"></a> 관계 데이터 모델의 기본 용어</h3><ol><li>Relation 릴레이션<ul><li>하나의 개체에 관한 데이터를 <u>2차원 테이블 구조</u>로 저장한 것</li><li>파일 관리 시스템 관점에서 <i>파일에 대응</i></li></ul></li><li>Attribute 속성<ul><li>릴레이션의 <u>열</u></li><li>파일 관리 시스템 관점에서 <i>필드에 대응</i></li></ul></li><li>Tuple 튜플<ul><li>릴레이션의 행</li><li>파일 관리 시스템 관점에서 <i>레코드에 대응</i></li></ul></li><li>Domain 도메인<ul><li>하나의 속성이 가질 수 있는 모든 값의 집합</li><li>속성 값을 입력 및 수정 할 때 적합성 판단의 기준이 됨</li><li>일반적으로 속성의 특성을 고려한 <u>데이터 타입으로 정의</u></li></ul></li><li>Null 널<ul><li>속성 값을 아직 모르거나 해당되는 값이 없음을 표현</li></ul></li><li>Degree 차수<ul><li>하나의 릴레이션에서 <u>속성의 전체 개수</u></li></ul></li><li>Cardinality 카디널리티<ul><li>하나의 릴레이션에서 <u>튜플의 전체 개수</u></li></ul></li></ol><h3 id="릴레이션의-구성"><a class="markdownIt-Anchor" href="#릴레이션의-구성"></a> 릴레이션의 구성</h3><ol><li>Relation schema 릴레이션 스키마<ul><li>릴레이션의 <u>논리적 구조</u></li><li>릴레이션의 이름과 릴레이션에 포함된 모든 속성 이름으로 저으이</li><li>정적인 특성</li></ul></li><li>Relation instance 릴레이션 인스턴스<ul><li>어느 한 시점에 릴레이션에 존재하는 튜플들의 집합</li><li>동적인 특징</li></ul></li><li>릴레이션 구성</li></ol><ul><li><img src="https://2.bp.blogspot.com/-nKfZzzWZ_70/V0KVxKGgKGI/AAAAAAAAAB8/p-Uu3v96WzMI8BYgnmZION6x_58Hg6BvgCLcB/s400/123.PNG" alt="릴레이션 구성" /></li></ul><ol start="4"><li>릴레이션 특성<ol><li>튜플의 유일성<ul><li>하나의 릴레이션에는 동일한 튜플이 존재할 수 없음</li></ul></li><li>튜플의 무순서<ul><li>하나의 릴레이션에서 튜플 사이의 순서는 무의미함</li></ul></li><li>속성의 무순서<ul><li>하나의 릴레이션에서 속성 사이의 순서는 무의미함</li></ul></li><li>속성의 원자성<ul><li>속성 값으로 원자 값만 사용 가능</li></ul></li></ol></li></ol><h3 id="integrity-constraint-무결성-제약조건"><a class="markdownIt-Anchor" href="#integrity-constraint-무결성-제약조건"></a> Integrity constraint 무결성 제약조건</h3><ul><li>데이터의 <u>무결성</u>을 보장하고 <u>일관된 상태로 유지</u>하기 위한 규칙</li><li>무결성<ul><li>데이터의 결함이 없는 상태</li><li>정확하고 유효하게 유지</li></ul></li><li>무결성 제약 조건<ul><li>개체 무결성 제약조건<ul><li>기본키를 구성하는 모든 속성은 널 값을 가질 수 없다</li></ul></li><li>참조 무결성 제약조건<ul><li>외래키는 참조할 수 없는 값을 가질 수 없다</li></ul></li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;논리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#논리데이터베이스&quot;&gt;&lt;/a&gt; 논리데이터베이스&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;u&gt;관계 데이터 모델의 기본 용어를 익히고 릴레이션을 구성하는 요소와 특성을 이해&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="논리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="관계데이터베이스모델" scheme="https://hyeonukdev.github.io/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/"/>
     
   </entry>
   
