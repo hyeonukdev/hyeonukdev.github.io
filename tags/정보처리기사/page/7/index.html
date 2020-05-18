@@ -176,6 +176,308 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/05/09/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B3%B5%ED%86%B5%EB%AA%A8%EB%93%88%EA%B5%AC%ED%98%84/%EC%9E%AC%EC%82%AC%EC%9A%A9/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="서버프로그램구현 - 재사용">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-09T13:13:28.000Z">2020-05-09</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/">서버프로그램구현</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4분 읽기 (대략 592 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/09/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B3%B5%ED%86%B5%EB%AA%A8%EB%93%88%EA%B5%AC%ED%98%84/%EC%9E%AC%EC%82%AC%EC%9A%A9/">서버프로그램구현 - 재사용</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="서버프로그램구현"><a class="markdownIt-Anchor" href="#서버프로그램구현"></a> 서버프로그램구현</h2>
+<ul>
+<li>공통 모듈의 상세 설계를 기반으로 <u>프로그래밍 언어와 도구를 활용</u>하여 업무 프로세스 및 서비스의 구현에 필요한 <u>공통 모듈을 작성</u></li>
+<li>소프트웨어 측정 지표 중 <u>모듈 간의 <b>결합도는 줄이고</b> 개별 모듈들의 내부 <b>응집도를 높인</b> 공통 모듈을 구현</u></li>
+<li>공통 개발된 공통 모듈의 내부 기능과 제공하는 인터페이스에 대해 테스트할 수 있는 <u>테스트 케이스를 작성</u>하고 단위 테스트를 수행하기 위한 테스트 조건을 명세화</li>
+</ul>
+<h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3>
+<ul>
+<li>Cohesion 응집도
+<ul>
+<li>모듈 내부에 존재하는 구성 요소들 사이의 밀접한 정도로, 응집도가 높을수록 구성 요소들이 꼭 필요한 것으로만 모여 있음</li>
+</ul>
+</li>
+<li>Coupling 결합도
+<ul>
+<li>모듈과 모듈 사이의 관계에서 관련 정도를 나타내며 모듈 간에는 관련이 적을수록 상호 의존성이 줄어 모듈의 독립성이 높아지고 독립성이 높으면 모듈 간에 영향이 적어 좋은 설계가 됨</li>
+</ul>
+</li>
+</ul>
+<h3 id="공통-모듈-reuse-재사용의-개념"><a class="markdownIt-Anchor" href="#공통-모듈-reuse-재사용의-개념"></a> 공통 모듈 Reuse 재사용의 개념</h3>
+<ul>
+<li>공통모듈은 <u>정보시스템 구축 시 자주 사용하는 기능</u>들로서 재사용이 가능하게 <u>패키지(클래스, 라이브러리, 컴포넌트, 프레임워크)로 제공</u>하는 <u>독립된 모듈</u>을 의미</li>
+<li>재사용은 <u>목표 시스템의 개발 시간 및 비용 절감을 위하여 검증된 기능을 파악하고 재구성하여 시스템에 응용</u>하기 위한 최적화 작업</li>
+</ul>
+<h3 id="재사용-범위에-따른-분류"><a class="markdownIt-Anchor" href="#재사용-범위에-따른-분류"></a> 재사용 범위에 따른 분류</h3>
+<ul>
+<li>함수와 객체 재사용
+<ul>
+<li>함수나 클래스 단위로 구현한 소스코드를 재사용</li>
+</ul>
+</li>
+<li>컴포넌트 재사용
+<ul>
+<li>컴포넌트 단위로 재사용하며, 컴포넌트의 인터페이스를 통해 통신</li>
+</ul>
+</li>
+<li>애플리케이션 사용
+<ul>
+<li>공통된 기능을 제공하도록 구현된 애플리케이션과의 통신으로 기능을 공유하여 재사용</li>
+</ul>
+</li>
+</ul>
+<h3 id="재사용의-이점"><a class="markdownIt-Anchor" href="#재사용의-이점"></a> 재사용의 이점</h3>
+<ul>
+<li>생산성 증가</li>
+<li>소프트웨어 품질 향상</li>
+<li>프로젝트 문서 공유</li>
+<li><u>새로운 개발 방법론 도입은 <b>어렵게 함</b></u></li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/05/08/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="서버프로그램구현 - 핵심정리">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-08T10:04:31.000Z">2020-05-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/">서버프로그램구현</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (대략 220 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/08/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">서버프로그램구현 - 핵심정리</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="서버프로그램구현"><a class="markdownIt-Anchor" href="#서버프로그램구현"></a> 서버프로그램구현</h2>
+<h3 id="1-개발환경-구축"><a class="markdownIt-Anchor" href="#1-개발환경-구축"></a> 1. 개발환경 구축</h3>
+<ul>
+<li><u>응용소프트웨어 개발</u>에 필요한 하드웨어 및 소프트웨어의 필요 사항을 검토하고, 이에 따라 <u>개발환경에 필요한 준비를 수행</u></li>
+<li>개발 하드웨어 환경
+<ul>
+<li>클라이언트</li>
+<li>서버</li>
+</ul>
+</li>
+<li>개발 소프트웨어 환경
+<ul>
+<li>시스템소프트웨어</li>
+<li>개발 소프트웨어
+<ul>
+<li>요구사항 관리 도구</li>
+<li>설계/모델링 도구</li>
+<li>구현 도구</li>
+<li>빌드 도구</li>
+<li>테스트 도구</li>
+<li>형상 관리 도구</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-서버-개발-프레임워크"><a class="markdownIt-Anchor" href="#2-서버-개발-프레임워크"></a> 2. 서버 개발 프레임워크</h3>
+<ul>
+<li>
+<p><u>서버 프로그램 개발 시 </u> 다양한 <u>네트워크 설정, 요청 및 응답처리, 아키텍처 모델 구현등을 손쉽게 처리할 수 있도록 클래스나 인터페이스를 제공하는 소프트웨어</u></p>
+</li>
+<li>
+<p>종류</p>
+<ul>
+<li>Spring</li>
+<li>Node.js</li>
+<li>Django</li>
+<li>Codeigiter</li>
+<li>Ruby on Rails</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
+        <a href="/2020/05/08/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/%EC%84%9C%EB%B2%84%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="서버프로그램구현 - 서버개발프레임워크">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-08T09:51:11.000Z">2020-05-08</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/">서버프로그램구현</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 701 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/08/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/%EC%84%9C%EB%B2%84%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/">서버프로그램구현 - 서버개발프레임워크</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="서버프로그램구현"><a class="markdownIt-Anchor" href="#서버프로그램구현"></a> 서버프로그램구현</h2>
+<h3 id="framework-프레임워크의-개념"><a class="markdownIt-Anchor" href="#framework-프레임워크의-개념"></a> Framework 프레임워크의 개념</h3>
+<ul>
+<li>사전적으로 뼈대, 골조를 의미하며 소프트웨어에서는 특정 기능을 수행하기 위해 필요한 <u>클래스나 인터페이스 등을 모다운 집합체</u></li>
+</ul>
+<h3 id="프레임워크의-특징"><a class="markdownIt-Anchor" href="#프레임워크의-특징"></a> 프레임워크의 특징</h3>
+<ol>
+<li>Modularity 모듈화
+<ul>
+<li>캡슐화를 통해 모듈화를 강화하고 설계와 구현의 변경에 따른 영향을 최소화하여 소프트웨어의 품질을 향상시킴</li>
+</ul>
+</li>
+<li>Reusability 재사용성
+<ul>
+<li>재사용 가능한 모듈들을 제공함으로써 개발자의 생산성을 향상시킴</li>
+</ul>
+</li>
+<li>Extensibility 확장성
+<ul>
+<li>프레임워크는 다형성을 통해 인터페이스의 확장이 가능하여 다양한 형태와 기능을 가진 애플리케이션 개발이 가능함</li>
+</ul>
+</li>
+<li>Inversion of Control 제어의 흐름
+<ul>
+<li>프레임워크 코드가 전체 애플리케이션의 처리 흐름을 제어하여 특정한 이벤트가 발생할 때 다형성을 통해 애플리케이션의 확장한 메소드를 호출함으로써 제어가 프레임워크로부터 애플리케이션으로 거꾸로 흐르게 함</li>
+</ul>
+</li>
+</ol>
+<h3 id="서버-개발-프레임워크"><a class="markdownIt-Anchor" href="#서버-개발-프레임워크"></a> 서버 개발 프레임워크</h3>
+<h4 id="1-서버-개발-프레임워크의-개념"><a class="markdownIt-Anchor" href="#1-서버-개발-프레임워크의-개념"></a> 1. 서버 개발 프레임워크의 개념</h4>
+<ul>
+<li><u>서버 프로그램 개발 시 </u> 다양한 <u>네트워크 설정, 요청 및 응답처리, 아키텍처 모델 구현등을 손쉽게 처리할 수 있도록 클래스나 인터페이스를 제공하는 소프트웨어</u></li>
+<li>서버 개발 프레임워크에 따라 지원하는 <u>프로그래밍 언어</u>가 제한적이므로 선정할 수 있는 <u>프레임워크도 제한적</u></li>
+<li>서버 개발 프레임워크의 대부분은 <code>모델-뷰-컨트롤러</code><u>MVC패턴</u>을 기반으로 개발됨</li>
+</ul>
+<h4 id="2-서버-개발-프레임워크의-종류"><a class="markdownIt-Anchor" href="#2-서버-개발-프레임워크의-종류"></a> 2. 서버 개발 프레임워크의 종류</h4>
+<ul>
+<li>Spring
+<ul>
+<li>JAVA를 기반으로 만들어진 프레임워크로, 전자정부 표준 프레임워크의 기반 기술로 사용되고 있음</li>
+</ul>
+</li>
+<li>Node.js
+<ul>
+<li>JavaScript를 기반으로 만들어진 프레임워크로, 비동기 입,출력 처리와 이벤트 위주의 높은 성능을 갖고 있어 실시간으로 입/출력이 빈번한 애플리케이션</li>
+</ul>
+</li>
+<li>Django
+<ul>
+<li>Python을 기반으로 만들어진 프레임워크로, 컴포넌트의 재사용과 플러그인화를 강조하여 신속한 개발이 가능하도록 지원</li>
+</ul>
+</li>
+<li>Ruby on Rails
+<ul>
+<li>Ruby를 기반으로 만들어진 프레임워크로, 테스트를 위한 웹서버를 지원하며 데이터베이스 작업을 단순화, 자동화시켜 개발 코드의 길이가 짧아 신속한 개발이 가능</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/05/08/Engineer_Information_Processing/ch15_%EC%84%9C%EB%B2%84%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EA%B5%AC%ED%98%84/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="서버프로그램구현 - 개발환경구축">
         </a>
@@ -1251,405 +1553,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/07/Engineer_Information_Processing/ch16_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/%EC%96%B8%EC%96%B4%ED%8A%B9%EC%84%B1%ED%99%9C%EC%9A%A9/%EC%84%A0%EC%96%B8%ED%98%95%EC%96%B8%EC%96%B4/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="프로그래밍언어활용 - 선언형 언어">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-07T14:59:40.000Z">2020-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/">프로그래밍언어활용</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (대략 426 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/07/Engineer_Information_Processing/ch16_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/%EC%96%B8%EC%96%B4%ED%8A%B9%EC%84%B1%ED%99%9C%EC%9A%A9/%EC%84%A0%EC%96%B8%ED%98%95%EC%96%B8%EC%96%B4/">프로그래밍언어활용 - 선언형 언어</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="프로그래밍언어활용"><a class="markdownIt-Anchor" href="#프로그래밍언어활용"></a> 프로그래밍언어활용</h2>
-<h3 id="선언형-언어의-개념"><a class="markdownIt-Anchor" href="#선언형-언어의-개념"></a> 선언형 언어의 개념</h3>
-<ul>
-<li>명령어 언어와 반대</li>
-<li>프로그램이 수행해야 할 문제를 기술하는 언어</li>
-<li>목표를 명시하고 알고리즘을 명시하지 않음</li>
-<li>함수형 언어
-<ul>
-<li>수학적 함수를 조합하여 문제를 해결하는 언어</li>
-<li>적용형 언어라고 불림</li>
-<li>재귀호출이 자주 이용되고 병렬처리에 유리</li>
-</ul>
-</li>
-<li>논리형 언어
-<ul>
-<li>기호 논리학에 기반을 둔 언어</li>
-<li>선언적 언어라고 불림</li>
-<li>반복문이나 선택문을 사용하지 않으며 비절차적 언어</li>
-</ul>
-</li>
-</ul>
-<h3 id="선언형-언어의-특징"><a class="markdownIt-Anchor" href="#선언형-언어의-특징"></a> 선언형 언어의 특징</h3>
-<ul>
-<li>알고리즘에 집중하여 이미 만들어진 것을 <u>선언을 통해 사용</u></li>
-<li>구체적인 작동순서를 나열하지 않기 때문에 <u>오류가 적음</u></li>
-<li><u>가독성이나 재사용이 좋음</u></li>
-</ul>
-<h3 id="선언형-언어의-종류"><a class="markdownIt-Anchor" href="#선언형-언어의-종류"></a> 선언형 언어의 종류</h3>
-<ul>
-<li>LISP
-<ul>
-<li>인공지능 분야에 사용되는 언어</li>
-<li>기본 구조가 연결 리스트 구조</li>
-</ul>
-</li>
-<li>PROLOG
-<ul>
-<li>논리학을 기초로 한 고급 언어</li>
-<li>추론이나 리스트 처리등에 사용</li>
-</ul>
-</li>
-<li>Haskell
-<ul>
-<li>함수형 언어들을 통합 정리하며 만든 일반적인 순수 함수형 프로그램</li>
-<li>코드가 간결하고 에러 발생 가능성이 낮음</li>
-</ul>
-</li>
-<li>SQL
-<ul>
-<li>관계형 데이터베이스 관리 시스템의 데이터를 관리하기 위해 설계된 특수 목적의 프로그래밍언어</li>
-</ul>
-</li>
-<li>HTML
-<ul>
-<li>웹페이지 문서를 만들기 위해 사용되는 언어</li>
-</ul>
-</li>
-<li>XML
-<ul>
-<li>새로운 태그를 정의할 수 있으며, 문서의 내용과 이를 표현하는 방식이 독립적임</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/07/Engineer_Information_Processing/ch16_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/%EC%96%B8%EC%96%B4%ED%8A%B9%EC%84%B1%ED%99%9C%EC%9A%A9/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%96%B8%EC%96%B4/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="프로그래밍언어활용 - 스크립트 언어">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-07T14:51:40.000Z">2020-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/">프로그래밍언어활용</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (대략 515 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/07/Engineer_Information_Processing/ch16_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/%EC%96%B8%EC%96%B4%ED%8A%B9%EC%84%B1%ED%99%9C%EC%9A%A9/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%96%B8%EC%96%B4/">프로그래밍언어활용 - 스크립트 언어</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="프로그래밍언어활용"><a class="markdownIt-Anchor" href="#프로그래밍언어활용"></a> 프로그래밍언어활용</h2>
-<h3 id="script-language-스크립트-언어의-개념"><a class="markdownIt-Anchor" href="#script-language-스크립트-언어의-개념"></a> Script Language 스크립트 언어의 개념</h3>
-<ul>
-<li>HTML 문서 안에 직접 프로그래밍 언어를 삽입하여 사용되며, 기계어로 컴파일 되지 않고 별도의 번역기가 소스를 분석하여 동작하는 언어</li>
-<li>게시판, 상품 검색, 회원 가입 등과 같은 데이터베이스 처리 작업을 수행하기 위해 주로 사용</li>
-<li>스크립트 언어는 <u>웹브라우저에서 해석되어 실행하는 클라이언트용 스크립트 언어와 서버에서 해석되어 실행된 후 결과만 클라이언트로 보내는 서버용 스크립트 언어로 구분</u></li>
-<li>클라이언트용 스크립트 언어
-<ul>
-<li>JavaScript</li>
-</ul>
-</li>
-<li>서버용 스크립트 언어
-<ul>
-<li>ASP</li>
-<li>JSP</li>
-<li>PHP</li>
-<li>Python</li>
-</ul>
-</li>
-</ul>
-<h3 id="스크립트-언어의-장단점"><a class="markdownIt-Anchor" href="#스크립트-언어의-장단점"></a> 스크립트 언어의 장/단점</h3>
-<ul>
-<li>장점
-<ul>
-<li><u>컴파일 없이 바로 실행</u>하므로 결과를 바로 확인가능</li>
-<li>배우고 코딩하기 쉬움</li>
-<li>개발시간이 짧음</li>
-<li>소스코드를 쉽고 빠르게 수정할 수 있음</li>
-</ul>
-</li>
-<li>단점
-<ul>
-<li>코드를 읽고 해석해야 하므로 실행 속도가 느림</li>
-<li><u>런타임 오류가 많이 발생</u></li>
-</ul>
-</li>
-</ul>
-<h3 id="스크립트-언어의-종류"><a class="markdownIt-Anchor" href="#스크립트-언어의-종류"></a> 스크립트 언어의 종류</h3>
-<ul>
-<li>JavaScript
-<ul>
-<li>웹 브라우저에서 주로 사용되는 클라이언트용 스크립트 언어</li>
-<li>폼 양식에서 필수 입력사항을 체크하는 용도로 많이 사용</li>
-</ul>
-</li>
-<li>ASP; Active Server Page
-<ul>
-<li>IIS 서버 측에서 동적으로 수행하는 페이지를 만들기 위해 마이크로 소프트에서 개발</li>
-<li>Window 운영체제에서만 실행 가능한 프로그래밍 언어</li>
-</ul>
-</li>
-<li>JSP; Java Server Page
-<ul>
-<li>Java로 만들어진 서버용 스크립트 언어</li>
-<li>Window, Linux등 다양한 운영체제에서 사용 가능</li>
-</ul>
-</li>
-<li>PHP; Professional Hypertext Preprocessor
-<ul>
-<li>서버용 스크립트 언어</li>
-<li>배우기 쉬움</li>
-</ul>
-</li>
-<li>Python
-<ul>
-<li>객체지향 기능을 지원하는 대화형 인터프리터 언어로 플랫폼 독립적이고 문법이 간단하여 배우기 쉬움</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/07/Engineer_Information_Processing/ch16_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/%EC%96%B8%EC%96%B4%ED%8A%B9%EC%84%B1%ED%99%9C%EC%9A%A9/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="프로그래밍언어활용 - 객체지향 프로그래밍 언어">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-07T13:51:40.000Z">2020-05-07</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/">프로그래밍언어활용</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6분 읽기 (대략 868 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/07/Engineer_Information_Processing/ch16_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/%EC%96%B8%EC%96%B4%ED%8A%B9%EC%84%B1%ED%99%9C%EC%9A%A9/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/">프로그래밍언어활용 - 객체지향 프로그래밍 언어</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="프로그래밍언어활용"><a class="markdownIt-Anchor" href="#프로그래밍언어활용"></a> 프로그래밍언어활용</h2>
-<h3 id="object-oriented-객체지향-프로그래밍-언어의-개념"><a class="markdownIt-Anchor" href="#object-oriented-객체지향-프로그래밍-언어의-개념"></a> Object Oriented 객체지향 프로그래밍 언어의 개념</h3>
-<ul>
-<li>구조적 방식의 문제점을 극복하고 인간이 사고하는 방식대로 프로그램을 개발하려는 노력으로 탄생</li>
-<li>현실 세계의 개체 Entity 를 기계의 부품처럼 하나의 객체 Object 로 만들어 <u>객체들을 조립해서 프로그램을 작성</u>할 수 있도록 한 프로그래밍 기법</li>
-<li><u>프로시저보다는 명령과 데이터로 구성된 객체를 중심</u>으로 하는 프로그래밍 기법</li>
-</ul>
-<h3 id="객체지향-프로그래밍-언어의-장단점"><a class="markdownIt-Anchor" href="#객체지향-프로그래밍-언어의-장단점"></a> 객체지향 프로그래밍 언어의 장/단점</h3>
-<ul>
-<li>장점
-<ul>
-<li><u>상속을 통함 <b>재사용과 시스템 확장</b>이 용이</u></li>
-<li><u>코드의 재활용성</u>이 높음</li>
-<li>현실 세계를 모형화하여 <u>사용자와 개발자가 쉽게 이해</u></li>
-<li>대형 프로그램의 작성이 용이</li>
-<li>소프트웨어 <u>개발 및 유지보수가 용이</u></li>
-</ul>
-</li>
-<li>단점
-<ul>
-<li>프로그래밍 구현을 지원해 주는 정형화된 분석 및 설계방법이 없음</li>
-<li>구현 시 <u>처리 시간이 지연</u></li>
-</ul>
-</li>
-</ul>
-<h3 id="객체지향-프로그래밍의-특징"><a class="markdownIt-Anchor" href="#객체지향-프로그래밍의-특징"></a> 객체지향 프로그래밍의 특징</h3>
-<ul>
-<li>Encapsulation 캡슐화
-<ul>
-<li><u>데이터(속성)와 데이터를 처리하는 함수를 하나로 묶는 것</u></li>
-<li>캡슐화된 객체의 세부 내용이 외부에 은폐되어 변경이 발생할 때 오류의 파급 효과가 적음</li>
-<li>캡슐화된 객체들은 <u>재사용이 용이</u></li>
-</ul>
-</li>
-<li>Information Hiding 정보은닉
-<ul>
-<li>다른 객체에게 자신의 <u>정보를 숨기고 자신의 연산만을 통하여 접근</u>을 허용하는 것</li>
-</ul>
-</li>
-<li>Abstraction 추상화
-<ul>
-<li>불필요한 부분을 생략하고 객체의 속성 중 가장 중요한 것에만 중점을 두어 모델화하는 것</li>
-<li><u>공통 성질을 추출하여 슈퍼클래스를 설정하는 것</u></li>
-</ul>
-</li>
-<li>Inheritance 상속성
-<ul>
-<li><u>상위 클래스의 모든 속성과 메소드를 하위 클래스가 물려 받는 것</u></li>
-</ul>
-</li>
-<li>Polymorphism 다형성
-<ul>
-<li>동일한 이름의 메소드가 각 클래스마다 다른 사양으로 정의될 수 있음</li>
-<li>다형성의 종류는 메소드 오버라이딩과 오버로딩이 있음</li>
-</ul>
-</li>
-</ul>
-<h3 id="객체지향-프로그래밍의-구성요소"><a class="markdownIt-Anchor" href="#객체지향-프로그래밍의-구성요소"></a> 객체지향 프로그래밍의 구성요소</h3>
-<ul>
-<li>Class 클래스
-<ul>
-<li>객체의 타입을 정의하고 객체를 생성하는 틀</li>
-</ul>
-</li>
-<li>Object 객체
-<ul>
-<li>개체, 속성, 메소드로 구성된 클래스이 인스턴스</li>
-</ul>
-</li>
-<li>Message 메시지
-<ul>
-<li>객체간의 통신</li>
-</ul>
-</li>
-</ul>
-<h3 id="객체의-구성요소"><a class="markdownIt-Anchor" href="#객체의-구성요소"></a> 객체의 구성요소</h3>
-<ul>
-<li>Entity 개체
-<ul>
-<li>현실 세계에 보이는 본질을 의미</li>
-</ul>
-</li>
-<li>Attribute 속성
-<ul>
-<li>자료 저장소 역할을 하며, 절차 지향 프로그래밍의 변수와 대응</li>
-</ul>
-</li>
-<li>Method 메소드
-<ul>
-<li>호출 단위를 의미하며, 절차지향 프로그래밍의 함수와 대응</li>
-</ul>
-</li>
-</ul>
-<h3 id="객체지향-프로그래밍-언어의-종류"><a class="markdownIt-Anchor" href="#객체지향-프로그래밍-언어의-종류"></a> 객체지향 프로그래밍 언어의 종류</h3>
-<ul>
-<li>C#
-<ul>
-<li>마이크로소프트에서 개발한 객체지향 프로그래밍 언어로, 닷넷 프레임워크의 한 부분으로 만들어짐</li>
-</ul>
-</li>
-<li>JAVA
-<ul>
-<li>분산 네트워크 환경에서 적용이 가능하며, 멀티스레드 기능을 제공하여 여러 작업 동시 처리 가능</li>
-<li>운영체제 및 하드웨어 독립적이며 이식성이 강함</li>
-<li>캡슐화가 가능하고 재사용성이 높음</li>
-</ul>
-</li>
-<li>C++
-<ul>
-<li>C언어에 객체지향 개념을 적용한 언어</li>
-<li>모든 문제를 객체로 모델링하여 표현</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1725,7 +1628,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            164
+                            167
                         </p>
                     </a>
                 </div>
@@ -1749,7 +1652,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            123
+                            125
                         </p>
                     </a>
                 </div>
@@ -1895,7 +1798,7 @@
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">132</span>
+                <span class="level-item tag">135</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -2031,7 +1934,7 @@
                 <span class="level-item">절차형SQL</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/">
@@ -2068,7 +1971,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/CRUD%EB%B6%84%EC%84%9D/" style="font-size: 10px;">CRUD분석</a> <a href="/tags/ChatBot/" style="font-size: 12.86px;">ChatBot</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%EC%84%9C%EB%B2%84/" style="font-size: 10px;">DB서버</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">ER다이어그램</a> <a href="/tags/ER%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">ER모델</a> <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Package/" style="font-size: 10px;">Package</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/" style="font-size: 10px;">SW개발방법론선정</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" style="font-size: 10px;">SW개발표준</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/ShellScript/" style="font-size: 10px;">ShellScript</a> <a href="/tags/TCP-UDP/" style="font-size: 10px;">TCP_UDP</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/WordCloud/" style="font-size: 10px;">WordCloud</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.14px;">embedding</a> <a href="/tags/konlpy/" style="font-size: 10px;">konlpy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">개발환경구축</a> <a href="/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">객체지향프로그래밍언어</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">관계데이터베이스모델</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/" style="font-size: 10px;">관계데이터언어</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC7%EA%B3%84%EC%B8%B5/" style="font-size: 10px;">네트워크7계층</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">논리데이터모델품질검증</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" style="font-size: 10px;">논리적데이터모델링</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">데이터검증</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" style="font-size: 10px;">데이터모델개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%B4%EA%B2%B0%EC%84%B1/" style="font-size: 10px;">데이터베이스무결성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%B0%B1%EC%97%85/" style="font-size: 10px;">데이터베이스백업</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%95%94%ED%98%B8%ED%99%94/" style="font-size: 10px;">데이터베이스암호화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9A%A9%EB%9F%89%EC%84%A4%EA%B3%84/" style="font-size: 10px;">데이터베이스용량설계</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" style="font-size: 11.43px;">데이터베이스이중화구성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">데이터베이스정규화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 14.29px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 14.29px;">데이터사이언스개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%85%EC%B6%9C%EB%A0%A5/" style="font-size: 10px;">데이터입출력</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" style="font-size: 10px;">데이터전환수행계획</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%95%EC%A0%9C/" style="font-size: 10px;">데이터정제</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A7%80%EC%97%AD%ED%99%94/" style="font-size: 10px;">데이터지역화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/" style="font-size: 10px;">데이터타입</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%92%88%EC%A7%88%EB%B6%84%EC%84%9D/" style="font-size: 10px;">데이터품질분석</a> <a href="/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/" style="font-size: 10px;">라이브러리</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC/" style="font-size: 10px;">메모리관리</a> <a href="/tags/%EB%AA%A8%EB%8D%B8%ED%99%94/" style="font-size: 10px;">모델화</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B8%B0%EC%A4%80/" style="font-size: 11.43px;">물리데이터모델품질기준</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/" style="font-size: 10px;">물리요소조사분석</a> <a href="/tags/%EB%B0%98%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">반정규화</a> <a href="/tags/%EB%B0%B0%EC%B9%98%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">배치프로그램</a> <a href="/tags/%EB%B3%80%EC%88%98/" style="font-size: 10px;">변수</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%B7%A8%EC%95%BD%EC%84%B1%EC%8B%9D%EB%B3%84/" style="font-size: 10px;">보안취약성식별</a> <a href="/tags/%EB%B6%84%EC%82%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/" style="font-size: 10px;">분산데이터베이스</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%A0%95%EC%9D%98%ED%95%A8%EC%88%98/" style="font-size: 12.86px;">사용자정의함수</a> <a href="/tags/%EC%84%9C%EB%B2%84%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">서버개발프레임워크</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%A0%EC%96%B8%ED%98%95%EC%96%B8%EC%96%B4/" style="font-size: 10px;">선언형언어</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">소프트웨어개발프레임워크</a> <a href="/tags/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%96%B8%EC%96%B4/" style="font-size: 10px;">스크립트언어</a> <a href="/tags/%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8%EC%99%80%EB%B7%B0/" style="font-size: 10px;">시스템카탈로그와뷰</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%97%B0%EC%82%B0%EC%9E%90/" style="font-size: 10px;">연산자</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 11.43px;">예외처리</a> <a href="/tags/%EC%98%A4%EB%A5%98%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%B8%A1%EC%A0%95/" style="font-size: 10px;">오류데이터측정</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" style="font-size: 10px;">운영체제</a> <a href="/tags/%EC%9B%B9%EC%84%9C%EB%B2%84/" style="font-size: 10px;">웹서버</a> <a href="/tags/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" style="font-size: 10px;">이벤트</a> <a href="/tags/%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%AC%EC%84%B1%EC%9D%98%EA%B0%9C%EB%85%90/" style="font-size: 10px;">인터넷구성의개념</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 15.71px;">자연어처리</a> <a href="/tags/%EC%9E%AC%EC%82%AC%EC%9A%A9/" style="font-size: 10px;">재사용</a> <a href="/tags/%EC%A0%88%EC%B0%A8%EC%A0%81%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">절차적프로그래밍언어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">체크리스트</a> <a href="/tags/%EC%B4%88%EA%B8%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">초기데이터구축</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%B9%BC%EB%9F%BC%EC%86%8D%EC%84%B1/" style="font-size: 10px;">칼럼속성</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/" style="font-size: 10px;">클러스터링</a> <a href="/tags/%ED%82%A4%EC%A2%85%EB%A5%98/" style="font-size: 10px;">키종류</a> <a href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" style="font-size: 10px;">테일러링기준</a> <a href="/tags/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" style="font-size: 10px;">트리거</a> <a href="/tags/%ED%8C%8C%EC%9D%BC%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">파일처리기술</a> <a href="/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/" style="font-size: 10px;">파티셔닝</a> <a href="/tags/%ED%8C%A8%ED%82%A4%EC%A7%80/" style="font-size: 10px;">패키지</a> <a href="/tags/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/" style="font-size: 10px;">프로세스스케줄링</a> <a href="/tags/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" style="font-size: 10px;">프로토타입</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.14px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 18.57px;">핵심정리</a> <a href="/tags/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/" style="font-size: 10px;">환경변수</a>
+        <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/CRUD%EB%B6%84%EC%84%9D/" style="font-size: 10px;">CRUD분석</a> <a href="/tags/ChatBot/" style="font-size: 12.86px;">ChatBot</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%EC%84%9C%EB%B2%84/" style="font-size: 10px;">DB서버</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">ER다이어그램</a> <a href="/tags/ER%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">ER모델</a> <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Package/" style="font-size: 10px;">Package</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/" style="font-size: 10px;">SW개발방법론선정</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" style="font-size: 10px;">SW개발표준</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/ShellScript/" style="font-size: 10px;">ShellScript</a> <a href="/tags/TCP-UDP/" style="font-size: 10px;">TCP_UDP</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/WordCloud/" style="font-size: 10px;">WordCloud</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.14px;">embedding</a> <a href="/tags/konlpy/" style="font-size: 10px;">konlpy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">개발환경구축</a> <a href="/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">객체지향프로그래밍언어</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">관계데이터베이스모델</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/" style="font-size: 10px;">관계데이터언어</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC7%EA%B3%84%EC%B8%B5/" style="font-size: 10px;">네트워크7계층</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">논리데이터모델품질검증</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" style="font-size: 10px;">논리적데이터모델링</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">데이터검증</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" style="font-size: 10px;">데이터모델개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%B4%EA%B2%B0%EC%84%B1/" style="font-size: 10px;">데이터베이스무결성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%B0%B1%EC%97%85/" style="font-size: 10px;">데이터베이스백업</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%95%94%ED%98%B8%ED%99%94/" style="font-size: 10px;">데이터베이스암호화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9A%A9%EB%9F%89%EC%84%A4%EA%B3%84/" style="font-size: 10px;">데이터베이스용량설계</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" style="font-size: 11.43px;">데이터베이스이중화구성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">데이터베이스정규화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 14.29px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 14.29px;">데이터사이언스개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%85%EC%B6%9C%EB%A0%A5/" style="font-size: 10px;">데이터입출력</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" style="font-size: 10px;">데이터전환수행계획</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%95%EC%A0%9C/" style="font-size: 10px;">데이터정제</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A7%80%EC%97%AD%ED%99%94/" style="font-size: 10px;">데이터지역화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/" style="font-size: 10px;">데이터타입</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%92%88%EC%A7%88%EB%B6%84%EC%84%9D/" style="font-size: 10px;">데이터품질분석</a> <a href="/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/" style="font-size: 10px;">라이브러리</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC/" style="font-size: 10px;">메모리관리</a> <a href="/tags/%EB%AA%A8%EB%8D%B8%ED%99%94/" style="font-size: 10px;">모델화</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B8%B0%EC%A4%80/" style="font-size: 11.43px;">물리데이터모델품질기준</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/" style="font-size: 10px;">물리요소조사분석</a> <a href="/tags/%EB%B0%98%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">반정규화</a> <a href="/tags/%EB%B0%B0%EC%B9%98%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">배치프로그램</a> <a href="/tags/%EB%B3%80%EC%88%98/" style="font-size: 10px;">변수</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%B7%A8%EC%95%BD%EC%84%B1%EC%8B%9D%EB%B3%84/" style="font-size: 10px;">보안취약성식별</a> <a href="/tags/%EB%B6%84%EC%82%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/" style="font-size: 10px;">분산데이터베이스</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%A0%95%EC%9D%98%ED%95%A8%EC%88%98/" style="font-size: 12.86px;">사용자정의함수</a> <a href="/tags/%EC%84%9C%EB%B2%84%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">서버개발프레임워크</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%A0%EC%96%B8%ED%98%95%EC%96%B8%EC%96%B4/" style="font-size: 10px;">선언형언어</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">소프트웨어개발프레임워크</a> <a href="/tags/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%96%B8%EC%96%B4/" style="font-size: 10px;">스크립트언어</a> <a href="/tags/%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8%EC%99%80%EB%B7%B0/" style="font-size: 10px;">시스템카탈로그와뷰</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%97%B0%EC%82%B0%EC%9E%90/" style="font-size: 10px;">연산자</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 11.43px;">예외처리</a> <a href="/tags/%EC%98%A4%EB%A5%98%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%B8%A1%EC%A0%95/" style="font-size: 10px;">오류데이터측정</a> <a href="/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/" style="font-size: 10px;">오류처리</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" style="font-size: 10px;">운영체제</a> <a href="/tags/%EC%9B%B9%EC%84%9C%EB%B2%84/" style="font-size: 10px;">웹서버</a> <a href="/tags/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" style="font-size: 10px;">이벤트</a> <a href="/tags/%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%AC%EC%84%B1%EC%9D%98%EA%B0%9C%EB%85%90/" style="font-size: 10px;">인터넷구성의개념</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 15.71px;">자연어처리</a> <a href="/tags/%EC%9E%AC%EC%82%AC%EC%9A%A9/" style="font-size: 10px;">재사용</a> <a href="/tags/%EC%A0%88%EC%B0%A8%EC%A0%81%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">절차적프로그래밍언어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%A7%91%EA%B3%84%EC%84%B1DCL%EC%9E%91%EC%84%B1/" style="font-size: 10px;">집계성DCL작성</a> <a href="/tags/%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">체크리스트</a> <a href="/tags/%EC%B4%88%EA%B8%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">초기데이터구축</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%B9%BC%EB%9F%BC%EC%86%8D%EC%84%B1/" style="font-size: 10px;">칼럼속성</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/" style="font-size: 10px;">클러스터링</a> <a href="/tags/%ED%82%A4%EC%A2%85%EB%A5%98/" style="font-size: 10px;">키종류</a> <a href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" style="font-size: 10px;">테일러링기준</a> <a href="/tags/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" style="font-size: 10px;">트리거</a> <a href="/tags/%ED%8C%8C%EC%9D%BC%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">파일처리기술</a> <a href="/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/" style="font-size: 10px;">파티셔닝</a> <a href="/tags/%ED%8C%A8%ED%82%A4%EC%A7%80/" style="font-size: 10px;">패키지</a> <a href="/tags/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/" style="font-size: 10px;">프로세스스케줄링</a> <a href="/tags/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" style="font-size: 10px;">프로토타입</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.14px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 18.57px;">핵심정리</a> <a href="/tags/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/" style="font-size: 10px;">환경변수</a>
     </div>
 </div>
     
@@ -2080,6 +1983,63 @@
         <h3 class="menu-label">
             최근 글
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T14:59:39.000Z">2020-05-18</time></div>
+                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 오류처리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T14:57:35.000Z">2020-05-18</time></div>
+                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 오류처리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%A7%91%EA%B3%84%EC%84%B1SQL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 집계성DCL작성">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T14:41:34.000Z">2020-05-18</time></div>
+                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%A7%91%EA%B3%84%EC%84%B1SQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 집계성DCL작성</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2119,63 +2079,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 핵심정리">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T13:50:19.000Z">2020-05-18</time></div>
-                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 핵심정리</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 이벤트">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T13:48:16.000Z">2020-05-18</time></div>
-                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 이벤트</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 트리거">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T13:43:41.000Z">2020-05-18</time></div>
-                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 트리거</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -2193,7 +2096,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">109</span>
+                    <span class="level-item tag">112</span>
                 </span>
             </a>
         </li>
@@ -2892,6 +2795,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/">
+                        <span class="tag">오류처리</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/">
                         <span class="tag">요구공학방법론</span>
                         <span class="tag is-grey">1</span>
@@ -2964,7 +2874,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">132</span>
+                        <span class="tag is-grey">135</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%A7%91%EA%B3%84%EC%84%B1DCL%EC%9E%91%EC%84%B1/">
+                        <span class="tag">집계성DCL작성</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -3083,7 +3000,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">29</span>
+                        <span class="tag is-grey">30</span>
                     </a>
                 </div>
                 
@@ -3118,6 +3035,63 @@
         
         <article class="media">
             
+            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T14:59:39.000Z">2020-05-18</time></div>
+                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 오류처리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T14:57:35.000Z">2020-05-18</time></div>
+                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 오류처리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%A7%91%EA%B3%84%EC%84%B1SQL/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 집계성DCL작성">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T14:41:34.000Z">2020-05-18</time></div>
+                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/%EC%A7%91%EA%B3%84%EC%84%B1SQL/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 집계성DCL작성</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%9D%91%EC%9A%A9SQL/DCL/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - DCL">
@@ -3154,63 +3128,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 핵심정리">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T13:50:19.000Z">2020-05-18</time></div>
-                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 핵심정리</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 이벤트">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T13:48:16.000Z">2020-05-18</time></div>
-                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 이벤트</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="절차형SQL - 트리거">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-18T13:43:41.000Z">2020-05-18</time></div>
-                    <a href="/2020/05/18/Engineer_Information_Processing/ch10_SQL%EC%9D%91%EC%9A%A9/%EC%A0%88%EC%B0%A8%ED%98%95SQL/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" class="title has-link-black-ter is-size-6 has-text-weight-normal">절차형SQL - 트리거</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%88%EC%B0%A8%ED%98%95SQL/">절차형SQL</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -3228,7 +3145,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">109</span>
+                    <span class="level-item tag">112</span>
                 </span>
             </a>
         </li>
@@ -3927,6 +3844,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/">
+                        <span class="tag">오류처리</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/">
                         <span class="tag">요구공학방법론</span>
                         <span class="tag is-grey">1</span>
@@ -3999,7 +3923,14 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">132</span>
+                        <span class="tag is-grey">135</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%A7%91%EA%B3%84%EC%84%B1DCL%EC%9E%91%EC%84%B1/">
+                        <span class="tag">집계성DCL작성</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
@@ -4118,7 +4049,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">29</span>
+                        <span class="tag is-grey">30</span>
                     </a>
                 </div>
                 
@@ -4270,7 +4201,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
