@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-18T01:05:02.000Z</updated>
+  <updated>2020-05-18T02:45:23.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>물리데이터베이스 - E-R 다이어그램</title>
+    <link href="https://hyeonukdev.github.io/2020/05/18/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%ED%86%A0/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/"/>
+    <id>https://hyeonukdev.github.io/2020/05/18/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%ED%86%A0/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/</id>
+    <published>2020-05-18T02:45:23.000Z</published>
+    <updated>2020-05-18T02:45:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2><h3 id="논리-데이터-모델의-물리-데이터-모델-변환"><a class="markdownIt-Anchor" href="#논리-데이터-모델의-물리-데이터-모델-변환"></a> 논리 데이터 모델의 물리 데이터 모델 변환</h3><ul><li>엔티티는 테이블, 속성은 칼럼 등으로 변환</li><li>규칙<table><thead><tr><th>논리적 설계</th><th>물리적 설계</th><th>데이터베이스</th></tr></thead><tbody><tr><td>엔티티 Entity</td><td>테이블 Table</td><td>테이블</td></tr><tr><td>속성 Attribute</td><td>칼럼 Column</td><td>칼럼</td></tr><tr><td>주 식별자 Primary Identifier</td><td>기본 키 Primary Key</td><td>기본 키</td></tr><tr><td>외래 식별자 Foreign Identifier</td><td>외래 키 Foreign Key</td><td>외래 키</td></tr><tr><td>관계 Relationship</td><td>관계 Relationship</td><td>-</td></tr></tbody></table></li></ul><h3 id="논리-데이터-모델-물리-데이터-모델-변환-순서"><a class="markdownIt-Anchor" href="#논리-데이터-모델-물리-데이터-모델-변환-순서"></a> 논리 데이터 모델 물리 데이터 모델 변환 순서</h3><h4 id="1-단위-엔티티를-테이블로-변환"><a class="markdownIt-Anchor" href="#1-단위-엔티티를-테이블로-변환"></a> 1. 단위 엔티티를 테이블로 변환</h4><ul><li>논리 모델에서 정의된 엔티티는 물리 모델에서 테이블로 변환</li><li>엔티티는 한글명, 테이블은 영문명으로 명칭을 동일하게 사용</li><li>메타데이터시스템과 같은 사전에 표준화된 용어가 있을 경우 메타에 등록되어 있는 단어 사용하여 명명<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0518_01.png" alt="테이블 구성 요소" /></li></ul><h5 id="11-슈퍼-타입-기준-테이블-변환"><a class="markdownIt-Anchor" href="#11-슈퍼-타입-기준-테이블-변환"></a> 1.1 슈퍼 타입 기준 테이블 변환</h5><ul><li>서브타입을 슈퍼 타입에 통합하여 하나의 테이블로 만드는 것</li><li>서브타입에 속성이나 관계가 적을 경우에 적용하는 방법</li><li>하나로 통합된 테이블에는 서브 타입의 모든 속성 포함<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0518_02.png" alt="슈퍼타입 기준테이블 변환" /></li></ul><h5 id="12-슈퍼-타입-변환-장단점"><a class="markdownIt-Anchor" href="#12-슈퍼-타입-변환-장단점"></a> 1.2 슈퍼 타입 변환 장/단점</h5><ul><li>장점<ul><li>데이터의 액세스가 상대적으로 용이</li><li>뷰를 이용하여 각각의 서브 타입 만을 액세스하거나 수정 가능</li><li>수행 속도 향상</li><li>서브 타입 구분이 없는 임의 집합에 대한 가공 용이</li><li>다수의 서브 타입을 통합하는 경우 조인 감소</li><li>복잡한 처리를 하나의 SQL로 통합 용이</li></ul></li><li>단점<ul><li>특정 서브 타입에 대한 NOT Null 제한이 어려움</li><li>테이블의 칼럼 증가로 디스크 저장 공간 증가</li><li>처리마다 서브 타입에 대한 구분이 필요할 경우가 많이 발생</li><li>인덱스의 크기 증가로 인덱스 효율이 낮아짐</li></ul></li></ul><h5 id="13-서브-타입-기준-테이블-변환"><a class="markdownIt-Anchor" href="#13-서브-타입-기준-테이블-변환"></a> 1.3 서브 타입 기준 테이블 변환</h5><ul><li>슈퍼타입 속성들을 각각의 서브 타입에 추가하여 서브타입들을 개별적인 테이블로 만드는 것</li><li>서브 타입에 속성이나 관계가 많을 경우에 적용<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0518_03.png" alt="서브타입 기준테이블 변환" /></li></ul><h5 id="14-서브-타입-변환-장단점"><a class="markdownIt-Anchor" href="#14-서브-타입-변환-장단점"></a> 1.4 서브 타입 변환 장/단점</h5><ul><li>장점<ul><li>각 서브 타입 속성들의 선택 사양이 명확한 경우에 유리</li><li>서브 타입 유형에 대한 구분을 처리 마다할 필요가 없음</li><li>여러 개의 테이블로 통합하므로 테이블 당 크기가 감소하여 전체 테이블을 스캔하는 경우 유리</li><li>단위 테이블의 크기 감소</li></ul></li><li>단점<ul><li>서브 타입 구분 없이 데이터를 처리하는 경우 UNION이 발생</li><li>처리 속도 감소가 발생할 가능성이 높아짐</li><li>트랜잭션을 처리하는 경우 다수 테이블을 처리하는 경우가 자주 발생</li><li>복잡한 처리를 하는 SQL의 통합이 어려움</li><li>부분 범위에 대한 처리가 곤란해짐</li><li>여러 테이블을 통합한 경우 뷰로 조회만 가능</li><li>UID의 유지관리가 어려움<ul><li>Unique Identifier, 식별자</li></ul></li></ul></li></ul><h5 id="15-개별-타입-기준-테이블-변환"><a class="markdownIt-Anchor" href="#15-개별-타입-기준-테이블-변환"></a> 1.5 개별 타입 기준 테이블 변환</h5><ul><li>슈퍼 타입과 서브 타입들을 각각의 개별적인 테이블로 변환</li><li>슈퍼 타입과 서브 타입 각각의 테이블 사이에는 1:1 관계 형성<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0518_04.png" alt="개별타입 기준테이블 변환" /></li></ul><h5 id="16-개별-타입-기준-테이블-변환을-사용하는-경우"><a class="markdownIt-Anchor" href="#16-개별-타입-기준-테이블-변환을-사용하는-경우"></a> 1.6 개별 타입 기준 테이블 변환을 사용하는 경우</h5><ul><li>전체 데이터에 대한 처리가 자주 발생하는 경우</li><li>서브 타입 처리가 대부분 독립적으로 발생하는 경우</li><li>통합하는 테이블의 칼럼 수가 지나치게 많은 경우</li><li>서브 타입 칼럼 수가 다수인 경우</li><li>트랜잭션이 주로 슈퍼 타입에서 발생하는 경우</li><li>슈퍼 타입에서 범위가 넓은 처리가 빈번하게 발생하여 단일 테이블 클러스터링이 필요한 경우</li></ul><h4 id="2-속성을-column-칼럼으로-변환"><a class="markdownIt-Anchor" href="#2-속성을-column-칼럼으로-변환"></a> 2. 속성을 Column 칼럼으로 변환</h4><ul><li>칼럼의 명칭은 속성의 명칭과 반드시 일치할 필요는 없으나, 개발자와 사용자간 의사소통을 위해 가능한 표준화된 약어를 사용</li><li>SQL 예약어 사용은 피해야 함</li><li>SQL 문장의 가독성을 위해 칼럼 명칭은 가능한 짧게</li><li>칼럼명에 복합 단어 사용할 경우 미리 정의된 표준에 의해 명명</li></ul><h4 id="3-uid를-기본키로-변환"><a class="markdownIt-Anchor" href="#3-uid를-기본키로-변환"></a> 3. UID를 기본키로 변환</h4><ul><li>엔티티의 UID는 기본키로 선언</li><li>Not NULL, Unique 등의 제약 조건을 추가적으로 정의</li></ul><h4 id="4-관계를-외래키로-변환"><a class="markdownIt-Anchor" href="#4-관계를-외래키로-변환"></a> 4. 관계를 외래키로 변환</h4><ul><li>1:n 관계에서 1영역에 있는 기본키를 n영역의 외래키로 선언</li><li>외래키명은 1영역의 기본키 이름을 사용하거나 다른 의미를 가질 경우 변경하여 명명</li><li>순환 관계에서 자신의 기본키는 외래키로 정의</li></ul><h4 id="5-관리-목적의-테이블칼럼-추가"><a class="markdownIt-Anchor" href="#5-관리-목적의-테이블칼럼-추가"></a> 5. 관리 목적의 테이블/칼럼 추가</h4><ul><li>논리 모델링에서는 필요가 없으나 관리 또는 데이터베이스를 이용하는 프로그래밍의 수행 속도를 향상을 위해 추가 되는 테이블이나 칼럼</li><li>관리상 필요한 데이터를 등록한 일자, 시스템 번호 등을 의미</li></ul><h4 id="6-칼럼-유형과-길이-정의"><a class="markdownIt-Anchor" href="#6-칼럼-유형과-길이-정의"></a> 6. 칼럼 유형과 길이 정의</h4><ul><li>정의된 각 컬럼에 대해, 적용 DBMS에서 제공하는 데이터 유형 중 적절한 유형 정의</li><li>해당 데이터의 최대 길이를 파악하여 길이 설정</li><li>자주 사용되는 데이터 유형</li></ul><h4 id="7-데이터-표준-적용"><a class="markdownIt-Anchor" href="#7-데이터-표준-적용"></a> 7. 데이터 표준 적용</h4><ul><li>명명 규칙 및 표준 용어 사전을 활용하여 각 객체의 데이터 표준 수행</li><li>표준화 적용대상<ul><li>데이터베이스</li><li>스토리지 그룹</li><li>테이블 스페이스</li><li>테이블</li><li>칼럼</li><li>인덱스</li><li>뷰</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;물리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#물리데이터베이스&quot;&gt;&lt;/a&gt; 물리데이터베이스&lt;/h2&gt;
+&lt;h3 id=&quot;논리-데이터-모델의-물리-데이터-모델-변환&quot;&gt;&lt;a class=&quot;markdownIt-Anc
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="물리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="ER다이어그램" scheme="https://hyeonukdev.github.io/tags/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>물리데이터베이스 - 물리데이터 모델 품질 기준</title>
@@ -607,37 +638,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="데이터베이스정규화" scheme="https://hyeonukdev.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%A0%95%EA%B7%9C%ED%99%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>논리데이터베이스 - 논리적 데이터 모델링</title>
-    <link href="https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/"/>
-    <id>https://hyeonukdev.github.io/2020/05/14/Engineer_Information_Processing/ch12_%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81%EB%B0%8F%EC%84%A4%EA%B3%84/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/</id>
-    <published>2020-05-13T15:11:07.000Z</published>
-    <updated>2020-05-13T15:11:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="논리데이터베이스"><a class="markdownIt-Anchor" href="#논리데이터베이스"></a> 논리데이터베이스</h2><h3 id="논리적-데이터-모델링-정의"><a class="markdownIt-Anchor" href="#논리적-데이터-모델링-정의"></a> 논리적 데이터 모델링 정의</h3><ul><li>E-R 다이어그램으로 표현된 개념적 구조를 데이터베이스에 저장할 형태로 표현한 논리적 구조로 정의하는 과정</li><li>정확한 업무 분석을 통한 자료의 흐름을 분석하여 현재 사용 중인 양식, 문서, 장표를 중심으로 자료항목을 추출하여 <u>엔티티와 속성들의 관계를 구조적으로 정의하는 단계</u></li></ul><h3 id="논리적-데이터-모델링-특성"><a class="markdownIt-Anchor" href="#논리적-데이터-모델링-특성"></a> 논리적 데이터 모델링 특성</h3><ul><li><u>요구사항을 충분히 수집하지 않으면 다음 단계의 요구사항 변경에 따른 많은 비용이 발생</u></li><li>모든 이해당사자들과 의사소통의 보조자료로서 E-R 모델을 활용</li><li>논리적 모델은 H/W나 S/W에 독립적<br /><u></li><li>DBMS에 맞는 논리적 스키마 설계</li><li>트랜잭션 인터페이스를 설계<ul><li><b>사용자의 요구에 대한 트랜잭션을 모델링하는 것은 개념적 설계단계</b></li></ul></li><li>관계형 데이터베이스에서는 테이블을 설계하는 단계<br /></u></li><li>종류<ul><li>관계 데이터 모델</li><li>계층 데이터 모델</li><li>네트워크 데이터 모델</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;논리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#논리데이터베이스&quot;&gt;&lt;/a&gt; 논리데이터베이스&lt;/h2&gt;
-&lt;h3 id=&quot;논리적-데이터-모델링-정의&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="논리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="논리적데이터모델링" scheme="https://hyeonukdev.github.io/tags/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/"/>
     
   </entry>
   
