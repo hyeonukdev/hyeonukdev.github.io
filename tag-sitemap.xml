@@ -3,14 +3,21 @@
 
 
     <url>
-        <loc>https://hyeonukdev.github.io/tags/ER%25EB%258B%25A4%25EC%259D%25B4%25EC%2596%25B4%25EA%25B7%25B8%25EB%259E%25A8/</loc>
-        <lastmod>2020-05-18T02:45:23.000Z</lastmod>
+        <loc>https://hyeonukdev.github.io/tags/CRUD%25EB%25B6%2584%25EC%2584%259D/</loc>
+        <lastmod>2020-05-18T09:40:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeonukdev.github.io/tags/%25EC%25A0%2595%25EB%25B3%25B4%25EC%25B2%2598%25EB%25A6%25AC%25EA%25B8%25B0%25EC%2582%25AC/</loc>
+        <lastmod>2020-05-18T09:40:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/ER%25EB%258B%25A4%25EC%259D%25B4%25EC%2596%25B4%25EA%25B7%25B8%25EB%259E%25A8/</loc>
         <lastmod>2020-05-18T02:45:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
