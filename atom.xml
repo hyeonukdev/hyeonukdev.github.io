@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-20T05:01:41.000Z</updated>
+  <updated>2020-05-20T05:12:51.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>인터페이스설계확인 - 인터페이스 구현 검증</title>
+    <link href="https://hyeonukdev.github.io/2020/05/20/Engineer_Information_Processing/ch09_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/"/>
+    <id>https://hyeonukdev.github.io/2020/05/20/Engineer_Information_Processing/ch09_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/</id>
+    <published>2020-05-20T05:12:51.000Z</published>
+    <updated>2020-05-20T05:12:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="인터페이스설계확인"><a class="markdownIt-Anchor" href="#인터페이스설계확인"></a> 인터페이스설계확인</h2><ul><li>구현된 인터페이스 명세서를 참조하여 <u>구현 검증에 필요한 검시 및 도구를 준비</u></li><li>인터페이스 구현 검증을 위한 외부 시스템과의 연계 모듈 상태 확인</li><li>인터페이스 오류처리 사항을 확인하고 보고서를 작성</li></ul><h3 id="인터페이스-구현-검증-도구"><a class="markdownIt-Anchor" href="#인터페이스-구현-검증-도구"></a> 인터페이스 구현 검증 도구</h3><ul><li>인터페이스 단위 기능 및 시나리오에 기반한 통합 테스트 필요</li><li>테스트 자동화 도구를 이용하여 단위 및 통합 테스트의 효율성 제고<ul><li>도구<ul><li>xUnit</li><li>STAF</li><li>FitNesse</li><li>NTAF</li><li>Selenium</li><li>watir</li></ul></li></ul></li></ul><h3 id="인터페이스-감시-도구"><a class="markdownIt-Anchor" href="#인터페이스-감시-도구"></a> 인터페이스 감시 도구</h3><ul><li>인터페이스의 동작이 잘 진행되는지 확인하기 위해서는 <u>애플리케이션 모니터링툴 APM; Application Performance Management</u>을 사용하여 <u>동작 상태를 감시</u></li><li>데이터베이스, 웹 애플리케이션의 <u>트랜잭션과 변수 값, 호출 함수, 로그, 시스템 부하등 종합적인 정보를 조회하고 분석</u></li></ul><h3 id="인터페이스-명세서"><a class="markdownIt-Anchor" href="#인터페이스-명세서"></a> 인터페이스 명세서</h3><ul><li>인터페이스 명세서에 정의된 데이터 전송주기, 전송량, 전송 포맷대로 수신 시스템에 데이터가 전송되었는지 확인</li></ul><h3 id="인터페이스-단위-및-통합-테스트-설계서"><a class="markdownIt-Anchor" href="#인터페이스-단위-및-통합-테스트-설계서"></a> 인터페이스 단위 및 통합 테스트 설계서</h3><ul><li>인터페이스 단위 및 통합 테스트 설계서를 활용하여 구현 검증 설계</li></ul><h3 id="인터페이스-명세서-기반-구현-검증-기법"><a class="markdownIt-Anchor" href="#인터페이스-명세서-기반-구현-검증-기법"></a> 인터페이스 명세서 기반 구현 검증 기법</h3><ul><li>구현된 인터페이스 명세서의 세부 기능을 참조하여 구현 검증 및 감시에 필요한 기능을 분석<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0520_07.png" alt="기능에 맞는 요건" /></li></ul><h3 id="인터페이스-테스트-설계서-기반-구현-검증-기법"><a class="markdownIt-Anchor" href="#인터페이스-테스트-설계서-기반-구현-검증-기법"></a> 인터페이스 테스트 설계서 기반 구현 검증 기법</h3><ul><li>인터페이스 구현 검증을 위하여 외부 시스템과 연계 모듈 상태 확인<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0520_08.png" alt="연계 모듈 상태" /></li></ul><h3 id="인터페이스-테스트-결과-검증-방법"><a class="markdownIt-Anchor" href="#인터페이스-테스트-결과-검증-방법"></a> 인터페이스 테스트 결과 검증 방법</h3><ul><li>운영DB테이블의 건수를 카운트 하는 방법</li><li>실제 테이블이나 파일을 열어서 데이터를 확인하는 방법</li><li>파일 생성 위치의 파일 생성 여부와 파일 크기를 확인하는 방법</li><li>연계서버에서 제공하는 모니터링 화면의 내용을 확인하는 방법</li><li>시스템에 기록하는 로그를 확인하는 방법</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;인터페이스설계확인&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#인터페이스설계확인&quot;&gt;&lt;/a&gt; 인터페이스설계확인&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;구현된 인터페이스 명세서를 참조하여 &lt;u&gt;구현 검증에 필요한 검시 및 도구를 준비
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="인터페이스설계확인" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84%ED%99%95%EC%9D%B8/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="인터페이스구현검증" scheme="https://hyeonukdev.github.io/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/"/>
+    
+  </entry>
   
   <entry>
     <title>인터페이스설계확인 - 핵심기능</title>
@@ -607,38 +639,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="ER다이어그램" scheme="https://hyeonukdev.github.io/tags/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>물리데이터베이스 - 물리데이터 모델 품질 기준</title>
-    <link href="https://hyeonukdev.github.io/2020/05/18/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%ED%86%A0/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B8%B0%EC%A4%80/"/>
-    <id>https://hyeonukdev.github.io/2020/05/18/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%ED%86%A0/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B8%B0%EC%A4%80/</id>
-    <published>2020-05-18T01:05:02.000Z</published>
-    <updated>2020-05-18T01:05:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2><ul><li>물리데이터 모델에 대하여 <u>정확성, 완전성, 준거성, 최신성, 일관성, 활용성</u>의 품질기준을 적용</li><li>논리 데이터 모델과 물리 데이터 모델을 비교하여 테이블, 칼럼, 키, 오브젝트 구성 요소의 누락 여부와 일치성을 확인</li><li>논리 데이터베이스 설계에서 <u>엔티티, 속성, 주식별자, 외래식별자를 각각 테이블, 칼럼, 기본 키, 외래 키로 변환하여 표현</u></li><li><u>CRUD 분석과 SQL 성능 튜닝의 개념과 절차</u>를 이해</li></ul><h3 id="물리-데이터-모델-품질-기준"><a class="markdownIt-Anchor" href="#물리-데이터-모델-품질-기준"></a> 물리 데이터 모델 품질 기준</h3><ul><li>물리 데이터 모델을 설계하고 데이터베이스 객체를 생성한 후 개발 단계로 넘어가기 전에 모델러와 이해관계자들이 모여 수행</li><li>시스템 성능에 직접적인 영향을 미치므로 향후 발생할 문제에 대해 면밀히 검토해야 함</li><li><u>데이터베이스 성능 향상과 오류 예방</u></li><li>검토시 모든 이해관계자가 동의하는 검토 기준이 필요</li></ul><h3 id="품질기준"><a class="markdownIt-Anchor" href="#품질기준"></a> 품질기준</h3><ul><li><p>정확성</p><ul><li>데이터 모델이 표기법에 따라 정확하게 표현되었고, 업무영역 또는 요구사항이 정확하게 반영되었음을 의미</li><li>예시<ul><li>사용된 표기법에 따라 데이터 모델이 정확하게 표현되었는가?</li><li>대상 업무 영역의 업무 개념과 내용이 정확하게 표현되었는가?</li><li>요구사항의 내용이 정확하게 반영되었는가?</li><li>업무 규칙이 정확하게 표현되었는가?</li></ul></li></ul></li><li><p>완정성</p><ul><li>데이터 모델의 구성 요소를 정의하는데 있어서 누락을 최소화하고, 요구 사항 및 업무 영역 반영에 있어서 누락이 없음을 의미</li><li>예시<ul><li>물리 데이터 모델 작성 항목의 충실도</li><li>필요한 설명 항목(테이블/칼럼 설명)들의 작성 상태</li><li>물리 모델링 단계에서 결정해야 할 항목들의 작성 성태(칼럼 데이터 타입 및 길이, Null 허용 여부, 서브타입 변환 등 필요에 따라서는 저장공간 지정, 테이블/인덱스 생성 관련 파라미터 결정 사항등까지도 포함)</li><li>요구 사항 반영 및 업무 영역 방녕의 완전성 : 목적하는 업무 영역을 기술한 논리 데이터 모델의 구성 요소(엔티티, 속성, 관계, 식별자)들이 누락없이 물리 데이터 모델로 변환되어 정의된 정도</li></ul></li></ul></li><li><p>준거성</p><ul><li>제반 준수 요건들이 누락 없이 정화하게 준수되었음을 의미</li><li>예시<ul><li>데이터 표준, 규칙 등을 준수하였는가?</li><li>법적 요건을 준수하였는가?</li><li>법적 요건을 준수하기에 충분하도록 도메인이 정의 되었는가?</li></ul></li></ul></li><li><p>최신성</p><ul><li>데이터 모델이 현행시스템의 최신 상태를 반영하고 있고, 이슈 사항들이 지체 없이 반영되고 있음을 의미</li><li>예시<ul><li>엄무상의 변경이나 결정 사항 등이 시의 적절하게 반영되고 있는가?</li><li>최근의 이슈 사항이 반영되었는가?</li><li>현행 데이터 모델의 현행 시스템과 일치하는가?</li></ul></li></ul></li><li><p>일관성</p><ul><li>여러 영역에서 공통 사용되는 데이터 요소가 전사 수준에서 한 번만 정의되고 이를 여러 다른 영역에서 참조/활용되면서, 모델 표현상의 일관성을 유지하고 있음을 의미</li><li>예씨<ul><li>여러 주제 영역에서 공통적으로 사용되는 개체는 일관성 있게 사용되는가?(전사 수준에서 한 번만 정의되고 이를 여러 다른 영역에서 참조/활용한다는 의미에서 통합성이라고하기도 함)</li><li>모델 표현상의 일관성을 유지하고 있는가?</li><li>동일/유사 목적/용도의 칼럼들은 일관성 있게 정의되었는가?</li><li>조인 대상 칼럼들은 일관성있게 정의되었는가?</li></ul></li></ul></li><li><p>활용성</p><ul><li>작성된 모델과 그 설명 내용이 이해관계자에게 의미를 충분하게 전달할 수 있으면서, 업무 변화 시에 설계 변경없이 최소화되도록 유연하게 설계되어 있음을 의미</li><li>예시<ul><li>작성된 설명 내용이나 모델 표기 등이 사용자나 모델을 보는 사람에게 충분히 이해가 될 수 있고, 모델의 작성 의도를 명확하게 이해할 수 있는가(의사소통의 충분성)</li><li>PK, UK 등의 칼럼 구성은 데이터 무결성을 보장하면서 데이터 액세스를 효율화 하기에 충분한가?</li><li>논리 데이터 모델의 유연성이 물리 데이터 모델에도 반영되었는가(오류가 적고 업무 변화에 유연하게 대응하여 데이터 구조의 변경이 최소화 될 수 있는 설계 결과)</li><li>코드화 대상 칼럼에 대한 코드 정의는 업무 지원 및 적용에 충분한가?</li></ul></li></ul></li></ul><h3 id="물리-데이터-모델의-품질-검토-순서"><a class="markdownIt-Anchor" href="#물리-데이터-모델의-품질-검토-순서"></a> 물리 데이터 모델의 품질 검토 순서</h3><ol><li>데이터 품질 <u>정책 및 기준 확인</u></li><li>물리 데이터 품질의 특성에 따라 <u>품질 기준 작성</u></li><li>데이터 품질 기준에 따라 <u>체크리스트 작성</u></li><li><u>논리 데이터 모델과 물리 데이터 모델 비교</u></li><li>각 모델링 단계의 모델러와 이해관계자가 <u>품질 검토 수행</u></li><li>모델러와 이해관계자가 작성한 체크리스트 내용을 종합하여 <u>물리 데이터베이스 모델의 품질 검토 보고서 작성</u></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;물리데이터베이스&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#물리데이터베이스&quot;&gt;&lt;/a&gt; 물리데이터베이스&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;물리데이터 모델에 대하여 &lt;u&gt;정확성, 완전성, 준거성, 최신성, 일관성, 활용성&lt;/u
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="물리데이터베이스" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="물리데이터모델품질기준" scheme="https://hyeonukdev.github.io/tags/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B8%B0%EC%A4%80/"/>
     
   </entry>
   
