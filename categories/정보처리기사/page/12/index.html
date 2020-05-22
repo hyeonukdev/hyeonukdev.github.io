@@ -177,6 +177,348 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/05/04/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="응용SW기초기술활용 - 메모리관리">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-04T08:23:36.000Z">2020-05-04</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/">응용SW기초기술활용</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    23분 읽기 (대략 3408 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/04/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC/">응용SW기초기술활용 - 메모리관리</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="응용sw기초기술활용"><a class="markdownIt-Anchor" href="#응용sw기초기술활용"></a> 응용SW기초기술활용</h2>
+<h3 id="메모리-관리-개념"><a class="markdownIt-Anchor" href="#메모리-관리-개념"></a> 메모리 관리 개념</h3>
+<ul>
+<li>프로그램의 실행이 종료될 때 까지 <u>메로리를 가용한 상태로 유지 및 관리</u>하는 것</li>
+<li>다수의 프로그램 실행 중 <u>메모리가 꽉 차게 되면 시스템의 속도가 느려지고 멈추는 현상이 발생</u></li>
+<li>CPU와 지속적으로 데이터를 송수신하는 상황에서 어떤 부분의 <u>메모리가 현재 사용되는지 어떤 순서로 메모리에 입출력되어야 하는지, 메모리 공간이 필요할 경우 어떻게 확보 및 제거 할지에</u> 대한 종합적인 관리</li>
+</ul>
+<h3 id="기억장치-계층-구조의-특징"><a class="markdownIt-Anchor" href="#기억장치-계층-구조의-특징"></a> 기억장치 계층 구조의 특징</h3>
+<p><img src="https://file.namu.moe/file/8bc9e381797334eb33da66e3ba501be120dc36664d178af61d5ee399c5cb03ee7783dbde40e1d5b55783255b1f81138cfb136c6f6afc442ea1a8c0efd067f90d" alt="기억장치계층구조의 특징" /></p>
+<ul>
+<li>기억장치 계층 구조의 <u>상위 장치일 수 록 접근속도와 접근 시간이 빠르지만</u> <b>기억용량이 적고 고가</b></li>
+<li>주기억장치는 각기 자신의 주소를 갖는 워드 또는 바이트들로 구성되어 있으며 <u>주소를 이용하여 액세스 가능</u></li>
+<li>보조기억장치의 데이터는 주기억장치에 적재된 후 <u>CPU에 의해 액세스 가능</u></li>
+</ul>
+<h3 id="기억장치-관리-전략"><a class="markdownIt-Anchor" href="#기억장치-관리-전략"></a> 기억장치 관리 전략</h3>
+<ul>
+<li><u>보조기억장치의 프로그램이나 데이터를 주기억장치에 적재시키는 시기, 적재 위치 등을 지정하여 한정도니 주기억장치의 공간을 효율적으로 사용</u>하기 위한 것</li>
+<li>종류
+<ul>
+<li>반입(Fetch) 전략 : 언제 적재?</li>
+<li>배치(Placement) 전략 : 어디에 위치?</li>
+<li>교체(Replacement) 전략 : 어느 영역 교체?</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-fetch-전략"><a class="markdownIt-Anchor" href="#1-fetch-전략"></a> 1. Fetch 전략</h4>
+<ul>
+<li><u>보조기억장치에 보관 중인 프로그램이나 데이터를 <b>언제</b> 주기억 장치로 적재</u>할 것인지를 결정</li>
+<li>Demand Fetch 요구 반입
+<ul>
+<li>실행 중인 프로그램이 특정 프로그램이나 데이터 등의 참조를 <u>요구</u>할 때 적재</li>
+</ul>
+</li>
+<li>Anticipatory Fetch 예상 반입
+<ul>
+<li>실행 중인 프로그램에 의해 참조될 프로그램이나 데이터를 <u>미리 예상하여 적재</u></li>
+</ul>
+</li>
+</ul>
+<h4 id="2-placement-전략"><a class="markdownIt-Anchor" href="#2-placement-전략"></a> 2. Placement 전략</h4>
+<ul>
+<li>새로 반입되는 프로그램이나 데이터를 주기억장치의 <b>어디에 위치</b>시킬 것인지를 결정</li>
+<li>First Fit 최초 적합
+<ul>
+<li>프로그램이나 데이터가 들어갈 수 있는 크기의 빈 영역 중에서 <u>첫번째 분할 영역에 배치</u></li>
+</ul>
+</li>
+<li>Best Fit 최적 적합
+<ul>
+<li>프로그램이나 데이터가 들어갈 수 있는 크기의 빈영역 중에서 <u>빈 기억공간을 가장 작게 남기는 분할 영역에 배치</u></li>
+</ul>
+</li>
+<li>Worst Fit 최악 적합
+<ul>
+<li>프로그램이나 데이터가 들어갈 수 있는 크기의 빈영역 중에서 <u>빈 기억공간을 가장 많게 남기는 분할 영역에 배치</u></li>
+</ul>
+</li>
+</ul>
+<h4 id="3-replacement-전략"><a class="markdownIt-Anchor" href="#3-replacement-전략"></a> 3. Replacement 전략</h4>
+<ul>
+<li>Swapping 스와핑 기법
+<ul>
+<li><u>주기억장치의 모든 영역이 이미 사용중인 상태에서 새로운 프로그램이나 데이터를 주기억장치에 배치하려고할 때 <b>사용중인 어느 영역을 교체하여 사용</b>할 것인지 결정</u></li>
+<li>Swap Out
+<ul>
+<li>주기억장치의 프로그램이 보조기억장치로 이동</li>
+</ul>
+</li>
+<li>Swap In
+<ul>
+<li>보조기억장치에서 주기억장치로 이동</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>스와핑 기법은 <u>가상 기억장치의 페이징 기법으로 발전</u>
+<ul>
+<li>FIFO; First In First Out, 선입선출</li>
+<li>OPT; OPTimeal replacement, 최적교체</li>
+<li>LRU; Least Recently Used, 최근 오래 사용 않은 페이지 교체</li>
+<li>LFU; Least Frequently Used, 사용 빈도가 가장 작은 페이지</li>
+<li>NUR; Not Used Recently, 최근 사용 않은 페이지 교체</li>
+<li>SCR; Second Chance Replacement, 2차 기회 교체</li>
+</ul>
+</li>
+</ul>
+<h3 id="주기억장치-할당-기법의-개념"><a class="markdownIt-Anchor" href="#주기억장치-할당-기법의-개념"></a> 주기억장치 할당 기법의 개념</h3>
+<ul>
+<li>프로그램이나 데이터를 실행시키기 위해 주기억장치에 어떻게 할당할 것인지에 대한 내용</li>
+</ul>
+<h3 id="주기억장치-할당-기법의-종류"><a class="markdownIt-Anchor" href="#주기억장치-할당-기법의-종류"></a> 주기억장치 할당 기법의 종류</h3>
+<ul>
+<li>연속 할당 기법
+<ul>
+<li>프로그램을 <u>주기억장치에 연속적으로 할당하는 기법</u></li>
+<li>단일 분할 할당 기법
+<ul>
+<li>운영체제영역과 단일 사용자 영역으로 분할</li>
+<li><b>오버레이</b>
+<ul>
+<li>주기억장치보다 큰 프로그램 실행 기법</li>
+</ul>
+</li>
+<li><b>스와핑</b>
+<ul>
+<li>주기억장치 프로그램을 보조기억장치 이동</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>다중 분할 할당 기법
+<ul>
+<li>사용자 영역을 여러 개의 고정된 크기로 분할</li>
+<li>고정 분할(정적) 할당
+<ul>
+<li>사용자 영역을 여러 개의 고정된 크기로 분할</li>
+</ul>
+</li>
+<li>가변 분할(동적) 할당
+<ul>
+<li>프로그램의 필요한 크기로 영역 분할, 고정 분할 할당 기법의 영역 내의 단편화 해결</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>분산 할당 기법
+<ul>
+<li><u>가상기억장치의 내용</u>을 특정 단위의 조각으로 나누어 <u>주기억장치 내에 분산하여 할당하는 기법</u></li>
+<li>페이징 기법</li>
+<li>세그먼트 기법</li>
+</ul>
+</li>
+</ul>
+<h3 id="가상기억장치의-개념"><a class="markdownIt-Anchor" href="#가상기억장치의-개념"></a> 가상기억장치의 개념</h3>
+<ul>
+<li>VMU; Virtual Memory Unit 보조기억장치의 일부를 주기억장치처럼 사용하는 것</li>
+<li>주기억장치의 용량 보다 큰 프로그램을 실행하기 위해 사용</li>
+<li>주기억장칭의 이용률과 다중 프로그래밍의 효율성 제고</li>
+<li>가상기억장치에 저장된 프로그램을 실행하려면 가상기억장치의 주소를 기억장치의 주소로 바꾸는 <u>주소 변환</u> 작업이 필요</li>
+<li>블록 단위로 나누어 사용하므로 연속 할당 방식에서 발생할 수 있는 단편화를 해결할 수 있음</li>
+<li>프로그램을 여러 개의 작은 블록 단위로 나누어서 가상기억장치에 보관해놓고, 프로그램 실행시 <u>요구되는 블록만 주기억장치에 불연속적으로 할당</u>하여 처리</li>
+</ul>
+<h4 id="1-paging-페이징-기법"><a class="markdownIt-Anchor" href="#1-paging-페이징-기법"></a> 1. Paging 페이징 기법</h4>
+<ul>
+<li>가상기억장치에 보관되어있는 프로그램과 주기억장치의 영역을 <u>동일한 크기로 나눈 후</u> 나눠진 가상기억장치의 프로그램을 주기억장치의 영역인 페이지 프레임에 적재시켜 실행하는 기법
+<ul>
+<li>페이지 크기
+<ul>
+<li>1 ~ 4KB</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>외부 단편화는 발생하지 않으나 <u>내부 단편화 발생</u>
+<ul>
+<li>내부 단편화
+<ul>
+<li>사용할 프로그램이 16KB일 때 페이지 크기를 4KB씩 나누면 2KB 단편화 발생</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>주소 변환을 위해서는 페이지의 위치 정보를 가지고 있는 <u>페이지 맵 테이블(Page Map Table)이 필요</u></li>
+<li>페이징에서 가상주소는 (p,d)로 표현하며, p는 참조하는 항목이 잇는 가상메모리의 페이지, d는 페이지 안에서 참조하는 항목이 위치한 변위</li>
+<li>실제 주소 변환은 페이지 프레임 크기가 ps일 때 p`*ps+d</li>
+</ul>
+<h4 id="2-segmentation-세그멘테이션-기법"><a class="markdownIt-Anchor" href="#2-segmentation-세그멘테이션-기법"></a> 2. Segmentation 세그멘테이션 기법</h4>
+<ul>
+<li>가상기억장치에 보관되어 있는 프로그램을 <u>다양한 크기의 논리적인 단위로 나눈 후</u> 주기억장치에 적재시켜 실행시키는 방법</li>
+<li>내부 단편화는 발생하지 않으나 <u>외부 단편화가 발생</u></li>
+<li>세그먼트가 주기억장치에 적재될 때 다른 세그먼트에게 할당된 영역을 침범할 수 없으며, 이를 위해 기억장치보호키가 필요</li>
+<li>주소 변환을 위해서는 세그먼트가 존재하는 위치 정보를 가지고 있는 <u>세그먼트 맵 테이블 이 필요</u></li>
+<li>세그먼테이션 가상주소는 (s,d)로 표현하며, s는 참조하는 항목이 있는 가상메모리의 세그먼트 번호, d느 세그먼트 s에서 참조하는 항목부터 있는 곳까지의 변위</li>
+<li>실제 주소 변환은 세그먼트 번호의 주기억장치 시작주소가 s`일 때 s` +d</li>
+</ul>
+<h3 id="페이지-교체-알고리즘-개념"><a class="markdownIt-Anchor" href="#페이지-교체-알고리즘-개념"></a> 페이지 교체 알고리즘 개념</h3>
+<ul>
+<li>CPU가 액세스한 가상 페이지가 주기억장치에 없는 <u>페이지 부재 Page Fault</u>가 발생했을 때, 가상기억장치의 필요한 페이지를 주기억장치에 적재해야 함</li>
+<li><u>주기억장치의 모든 페이지 프레임이 사용 중 이라면 어떤 페이지 프레임을 선택하여 교체</u>할 것인지 결정</li>
+</ul>
+<h3 id="페이지-교체-알고리즘-종류"><a class="markdownIt-Anchor" href="#페이지-교체-알고리즘-종류"></a> 페이지 교체 알고리즘 종류</h3>
+<h4 id="1-fifo-first-in-first-out-선입선출"><a class="markdownIt-Anchor" href="#1-fifo-first-in-first-out-선입선출"></a> 1. FIFO; First In First Out, 선입선출</h4>
+<ul>
+<li>각 페이지가 주기억장치에 적재될 때마다 그때의 시간을 기억시켜 <u>가장 먼저 들어와서 가장 오래 있었던 페이지</u>를 교체하는 기법</li>
+<li>ex) 2개의 프레임을 수용할 수 있는 주기억장치에서 FIFO 알고리즘을 사용할 경우 페이지 결함의 발생횟수는?<br />
+페이지 참조 순서 : 1, 2, 1, 3, 2, 4<br />
+답 : 4<br />
+해설<br />
+- 2개의 프레임에는 1, 2 가 들어가면서 결함 발생 합 2회 (1, 2)<br />
+- 1은 그대로 (1, 2, 1)<br />
+- 가장 오래된 것은 첫 번째 프레임이므로 여기에 3이 들어가면서 결함 발생 3회 (1, 2, 1, 3)<br />
+- 2는 그대로 (1, 2, 1, 3, 2)<br />
+- 2가 3보다 오래 있었으므로 여기에 4가 들어가면서 결함 발생 4회 (1, 2, 1, 3, 2, 4)<br />
+- <img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0504_09.png" alt="FIFO해설" /></li>
+</ul>
+<h4 id="2-lruleast-recently-used"><a class="markdownIt-Anchor" href="#2-lruleast-recently-used"></a> 2. LRU(Least Recently Used)</h4>
+<ul>
+<li><u>최근에 가장 오랫동안 사용하지 않은 페이지를 교체</u></li>
+<li>각 페이지마다 계수기 counter 나 스택 stack 을 두어 현 시점에서 가장 오랫동안 사용하지 않은 페이지를 교체</li>
+<li>ex) 2개의 프레임을 수용할 수 있는 주기억장치에서 LRU 알고리즘을 사용할 경우 페이지 결함의 발생횟수는?<br />
+페이지 참조 순서 : 1, 2, 1, 3, 2, 4<br />
+답 : 5<br />
+해설<br />
+- 2개의 프레임에 1, 2 가 들어가면서 결함 발생 합 2회 (1, 2)<br />
+- 1 그대로 (1, 2, 1)<br />
+- 1은 최근에 들어왔으므로 3은 두 번째 프레임에 들어가면서 결함 발생 3회 (1, 2, 1, 3)<br />
+- 3은 최근에 들어왔으므로 2는 첫 번째 프레임에 들어가면서 결함 발생 4회 (1, 2, 1, 3, 2)<br />
+- 2는 최근에 들어왔으므로 4는 두 번 째 프레임에 들어가면서 결함 발생 5회 (1, 2, 1, 3, 2, 4)<br />
+- <img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0504_10.png" alt="LRU해설" /></li>
+</ul>
+<h4 id="3-nurnot-used-recently"><a class="markdownIt-Anchor" href="#3-nurnot-used-recently"></a> 3. NUR(Not Used Recently)</h4>
+<ul>
+<li><u>최근에 사용하지 않은 페이지를 교체하는 기법</u></li>
+<li>최근에 사용 여부를 확인하기 위해서 각 페이지마다 <u>참조 비트와 변형 비트 2개의 비트를 사용</u>
+<ul>
+<li>Reference Bit : 페이지 호출될 때1, 호출되지 않을 때 0 지정</li>
+<li>Modified Bit : 페이지 내용 변경될 때1, 변경되지 않을 때 0 지정</li>
+</ul>
+</li>
+<li>참조비트와 변경비트의 값에 따른 교체될 페이지 순서가 결정됨</li>
+<li>![NUR]](/images/정보처리기사/0504_11.png)</li>
+</ul>
+<h4 id="4-opt-optimal-replacement-최적-교체"><a class="markdownIt-Anchor" href="#4-opt-optimal-replacement-최적-교체"></a> 4. OPT; OPTimal Replacement, 최적 교체</h4>
+<ul>
+<li>앞으로 가장 오랫동안 사용하지 않을 페이지를 교체하는 기법</li>
+<li>페이지 부재 횟수가 가장 적게 발생하는 가장 효율적인 알고리즘</li>
+</ul>
+<h4 id="5-lfu-least-frequently-used"><a class="markdownIt-Anchor" href="#5-lfu-least-frequently-used"></a> 5. LFU; Least Frequently Used</h4>
+<ul>
+<li>사용 빈도가 가장 적은 페이지를 교체하는 기법</li>
+<li>활발하게 사용되는 페이지는 사용 횟수가 많아 교체하지 않고 사용</li>
+</ul>
+<h4 id="6-scr-second-chance-replacement"><a class="markdownIt-Anchor" href="#6-scr-second-chance-replacement"></a> 6. SCR; Second Chance Replacement</h4>
+<ul>
+<li>가장 오랫동안 주기억장치에 있던 페이지 중 자주 사용되는 페이지의 교체를 방지하면 FIFO 기법의 단점을 보완하는 기법</li>
+</ul>
+<h3 id="가상기억장치의-기타-관리"><a class="markdownIt-Anchor" href="#가상기억장치의-기타-관리"></a> 가상기억장치의 기타 관리</h3>
+<h4 id="1-locality-지역성-구역성"><a class="markdownIt-Anchor" href="#1-locality-지역성-구역성"></a> 1. Locality 지역성, 구역성</h4>
+<ul>
+<li>프로세스가 실행되는 동안 주기억장치를 참조할 때 <u>일부페이지만 집중적으로 참조하는 성질</u></li>
+<li>Temporal Locality 시간 구역성
+<ul>
+<li>프로세스가 실행되면서 <u>하나의 페이지를 일정 시간 동안 집중적으로 액세스</u>하는 현상</li>
+<li>기억장소
+<ul>
+<li>Loop</li>
+<li>Stack</li>
+<li>Sub</li>
+<li>Routine</li>
+<li>Counting</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Spatial Locality 공간 구역성
+<ul>
+<li>프로세스 실행시 <u>일정 위치의 페이지를 집중적으로 액세스</u>하는 현상</li>
+<li>차몾한 페이지의 근처에 있는 페이지를 참조할 가능성이 높음</li>
+<li>기억장소
+<ul>
+<li>Array</li>
+<li>Traversal</li>
+<li>순차적 코드의 실행</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-working-set-워킹-셋"><a class="markdownIt-Anchor" href="#2-working-set-워킹-셋"></a> 2. Working Set 워킹 셋</h4>
+<ul>
+<li>프로세스가 일정 시간 동안 자주 참조하는 페이지들의 집합</li>
+<li>자주 참조되는 워킹 셋을 주기억장치에 상주시킴으로써 페이지 부재 및 페이지 교체 현상이 줄어듦</li>
+<li>시간이 지남에 따라 자주 참조하는 페이지의 집합이 변화하기 때문에 워킹 셋도 시간에 따라 변경됨</li>
+</ul>
+<h4 id="3-thrashing-스래싱"><a class="markdownIt-Anchor" href="#3-thrashing-스래싱"></a> 3. Thrashing 스래싱</h4>
+<ul>
+<li><u>프로세스의 처리 시간 보다 페이지 교체에 소요되는 시간이 더 많아 지는 현상</u></li>
+<li><b>프로세스들 간의 메모리 경쟁으로 지나치게 페이지 폴트가 발생하여 전체 시스템의 성능이 저하되는 현상</b></li>
+<li>다중 프로그래밍 시스템이나 가상기억장치를 사용하는 시스템에서 하나의 프로세스 수행 과정 중 자주 페이지 부재가 발생함으로써 나타나는 현상으로, 전체 시스템의 성능이 저하됨</li>
+<li>스래싱 현상 방지 방법
+<ul>
+<li>다중 프로그래밍 정도를 적정 수준으로 유지</li>
+<li>페이지 부재 빈도를 조절하여 사용</li>
+<li>워킹 셋을 유지</li>
+<li>부족한 자원을 증설하고, 일부 프로세스를 중단시킴</li>
+<li>CPU 성능에 대한 자료의 지속적인 관리 및 분석으로 임계치를 예상하여 운영</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/05/04/Engineer_Information_Processing/ch17_%EC%9D%91%EC%9A%A9SW%EA%B8%B0%EC%B4%88%EA%B8%B0%EC%88%A0%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%EA%B8%B0%EC%B4%88%ED%99%9C%EC%9A%A9/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="응용SW기초기술활용 - 운영체제">
         </a>
@@ -1576,192 +1918,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 방법론 활용 - SW 생명주기 모델">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-02T06:44:24.000Z">2020-05-02</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/">SW개발방법론선정</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    10분 읽기 (대략 1498 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/02/Engineer_Information_Processing/ch18_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/SW%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EB%AA%A8%EB%8D%B8/">SW개발 방법론 활용 - SW 생명주기 모델</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="sw개발방법론활용"><a class="markdownIt-Anchor" href="#sw개발방법론활용"></a> SW개발방법론활용</h2>
-<h2 id="sw개발방법론선정"><a class="markdownIt-Anchor" href="#sw개발방법론선정"></a> SW개발방법론선정</h2>
-<ul>
-<li><u>소프트웨어 개발 생명주기 모델</u>의 개념과 모델 종류별 특징을 이해</li>
-<li>정형화된 <u>개발방법론의 특징</u>을 고려하여 응용 소프트웨어 특성에 맞는 개발방법론을 선정</li>
-<li>소프트웨어 공학기술의 요구사항 분석 기법인 <u>요구 공학 방법론을 이해</u></li>
-<li><u>소프트웨어 비용 산정 모델</u>의 종류와 특징을 이해</li>
-</ul>
-<h3 id="용어사전"><a class="markdownIt-Anchor" href="#용어사전"></a> 용어사전</h3>
-<ul>
-<li>소프트웨어 개발 생명 주기
-<ul>
-<li>타당성검토 -&gt; 분석 -&gt; 설계 -&gt; 개발 -&gt; 테스트 -&gt; 운영 -&gt; 유지보수 -&gt; 폐기단계의 생명주기를 가짐</li>
-</ul>
-</li>
-<li>요구공학
-<ul>
-<li>요구사항을 정의하고, 문서화, 관리하는 프로세스</li>
-</ul>
-</li>
-</ul>
-<h4 id="software-life-cycle-소프트웨어-개발-생명주기-개념"><a class="markdownIt-Anchor" href="#software-life-cycle-소프트웨어-개발-생명주기-개념"></a> Software Life Cycle 소프트웨어 개발 생명주기 개념</h4>
-<ul>
-<li>소프트웨어를 어떻게 <u>개발</u>할 것인가에 대한 추상적 표현으로 <u>순차적 또는 병렬적 단계</u>로 나눈 것</li>
-<li>소프트웨어 생명주기를 표현하는 형태</li>
-<li>소프트웨어 개발 생명주기
-<ul>
-<li>타당성검토 -&gt; 분석 -&gt; 설계 -&gt; 개발 -&gt; 테스트 -&gt; 운영 -&gt; 유지보수 -&gt; 폐기</li>
-</ul>
-</li>
-<li>개발자는 <u>문제의 유형이나 개발 방법 등에 따라 특정 모델을 선택</u></li>
-<li>소프트웨어 생명주기 모델 종류
-<ul>
-<li>폭포수 모델</li>
-<li>프로토타입 모델</li>
-<li>나선형 모델</li>
-<li>애자일 모델</li>
-</ul>
-</li>
-</ul>
-<h4 id="1-waterfall-model-폭포수-모델"><a class="markdownIt-Anchor" href="#1-waterfall-model-폭포수-모델"></a> 1. Waterfall Model 폭포수 모델</h4>
-<ul>
-<li><u>각 단계를 확실히 완료</u>한 후 그 결과를 검토하고 <u>승인 과정</u>을 거친 후 다음 단계를 진행하는 개발 방법론</li>
-<li><u>고전적 라이프 사이클 패러다임</u>이라고 하며, 개발 과정의 앞 단계가 완료되어야만 다음 단계로 넘어갈 수 있는 <u>선형 순차적 모형</u></li>
-<li><img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99D62F3359ADDCFE28" alt="폭포수모델" /></li>
-</ul>
-<h4 id="2-prototype-model-프로토타입-모델"><a class="markdownIt-Anchor" href="#2-prototype-model-프로토타입-모델"></a> 2. Prototype Model 프로토타입 모델</h4>
-<ul>
-<li><u>사용자 요구사항을 정확히 파악</u>하기 위해 실제 개발될 <u>소프트웨어에 대한 프로토타입을 만들어 최종 결과물을 예측</u>하는 모형</li>
-<li>시제품은 발주자나 개발자 모두에게 공동의 참조 모델을 제공</li>
-<li>최종 결과물이 만들어지기 전에 의뢰자가 최종 결과물의 일부 또는 모형을 볼 수 있음</li>
-<li><u>추후 구현 단계에성의 구현의 골격이 됨</u></li>
-<li>소프트웨어 개발이 완료된 시점에서 오류가 발견되는 <u>폭포수 모형의 단점을 보완</u>하기 위한 모형</li>
-<li><img src="https://lh3.googleusercontent.com/proxy/WJTb4WBSlrTj-hjGqXL9ezCJ8GnC4OzB0Cv9wEaTcJMHXXikKcHPng6yw6EOoUAcxIMtOqn50_5KUPMa1ptWSR_p36Z3rSnyn8wbq4YuYe7ERzsQBw" alt="프로토타입모델" /></li>
-</ul>
-<h4 id="3-spiral-model-나선형-모델"><a class="markdownIt-Anchor" href="#3-spiral-model-나선형-모델"></a> 3. Spiral Model 나선형 모델</h4>
-<ul>
-<li>보헴이 제안한 것으로, <u>폭포수 모형과 프로토타입 모형의 장점에 <b>위험 분석 기능</b>을 추가</u>한 모형</li>
-<li>나선을 따라 돌 듯이 여러 번의 소프트웨어 개발 과정을 거쳐 점진적으로 완벽하게 소프트웨어를 개발하는 것으로 <u>점진적 모형</u>이라고도 함</li>
-<li>개발 순서
-<ul>
-<li>계획 및 정의 -&gt; 위험 분석 -&gt; 공학적 개발 -&gt; 고객평가</li>
-</ul>
-</li>
-<li>소프트웨어를 개발하면서 발생할 수 있는 <u>위험을 관리하고 최소화하는 것이 목적</u></li>
-<li>비용이 많이 들고 시간이 오래 걸리는 <b>대규모</b> <u>시스템 구축에 적합함</u></li>
-</ul>
-<h4 id="4-agile-model-애자일-모델"><a class="markdownIt-Anchor" href="#4-agile-model-애자일-모델"></a> 4. Agile Model 애자일 모델</h4>
-<ul>
-<li>애자일은 ‘민첩한’, '기민한’이라는 의미</li>
-<li>스프린트 또는 이터레이션이라고 불리는 <u><b>짧은 개발 주기를 반복</b>하며 개발과정 진행</u></li>
-<li><u>각 개발주기마다 만들어지는 결과물</u>에 대한 <b>고객의 평가와 요구를</b> 적극적으로 수용</li>
-<li><u><b>소규모 프로젝트</b>, 고도로 숙달된 개발자, 급변하는 요구사항에 적합</u></li>
-<li><img src="https://post-phinf.pstatic.net/MjAxODEwMDJfMTQg/MDAxNTM4NDQ5NzM1MTM5.BpLR3vJkFRD5OBMWcyXG1qlE0pMsRhafMIV8MssiY1gg.vuCWTel5XbZTtId_F-Lp3Rh_I2Ckw6DRsoX9shdGtDIg.PNG/%EC%95%A0%EC%9E%90%EC%9D%BC%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4.png?type=w1200" alt="애자일모델" /></li>
-<li>애자일 개발 핵심 4가지
-<ol>
-<li>프로세스와 도구보다 <u>개인과 그들의 협업</u>에 더 가치를 둔다.</li>
-<li>포괄적인 문서화보다 <u>제대로 작동</u>하는 소프트웨어에 더 가치를 둔다.</li>
-<li>계약 협상보다 <u>고객과의 협력</u>에 더 가치를 둔다.</li>
-<li>계획에 따르기보다 <u>변화에 대응</u>하는 것에 더 가치를 둔다.</li>
-</ol>
-</li>
-<li>개발 모형
-<ul>
-<li>SCRUM
-<ul>
-<li>매일 정해진 시간에 정해진 장소에서 짧은 시간의 개발을 하는 팀을 위한 프로젝트 관리 중심의 방법론</li>
-<li>30일 마다 동작 가능한 제품을 제공하는 스프린트(Sprint)를 중심으로 한다.</li>
-<li>Backlog : 제품과 프로젝트에 대한 요구사항</li>
-<li>Sprint : 30일 단위 반복(Iteration)의 짧은 개발기간으로 분리하여 반복적 수행</li>
-<li>스크럼미팅 : 매일15분 정도 미팅으로 오늘과 내일의 해야 할 일 계획 수립</li>
-<li>스크럼마스터 : 프로젝트 리더, 스크럼 수행 시 문제 인식 및 해결하고자 노력</li>
-</ul>
-</li>
-<li>XP : eXtreme Programming
-<ul>
-<li>의사소통 개선과 즉각적인 피드백에 의한 단순한 코딩으로 SW품질을 높이기 위한 방법론</li>
-<li>1~3주 반복(Iteration)</li>
-<li>5가지 갗치
-<ul>
-<li>용기</li>
-<li>단순성</li>
-<li>의사소통</li>
-<li>피드백</li>
-<li>존경</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Kanban</li>
-<li>Lean
-<ul>
-<li>도요타 생산시스템을 재정립한 경영 방법론인 Lean 시스템의 품질기법을 소프트웨어 개발에 적용한 개발 방법론</li>
-<li>낭비요소 제거를 통한 프로세스 향상이 목적</li>
-<li>7가지 원칙
-<ul>
-<li>낭비제거</li>
-<li>품질 내재화</li>
-<li>지식 창출</li>
-<li>늦은 확정</li>
-<li>빠른 인도</li>
-<li>사람 존중</li>
-<li>전체 최적화</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Crystal</li>
-<li>ASD : Adaptive Software Development</li>
-<li>FDD : Feature Driven Development</li>
-<li>DSDM : Dynamic System Development Method</li>
-<li>DAD : Disciplined Agile Delivery</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1837,7 +1993,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            185
+                            186
                         </p>
                     </a>
                 </div>
@@ -1849,7 +2005,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            33
+                            34
                         </p>
                     </a>
                 </div>
@@ -1861,7 +2017,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            136
+                            137
                         </p>
                     </a>
                 </div>
@@ -2007,7 +2163,7 @@
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">153</span>
+                <span class="level-item tag">154</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -2162,6 +2318,14 @@
                 <span class="level-item tag">9</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/">
+            <span class="level-start">
+                <span class="level-item">제품소프트웨어패키징</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/">
             <span class="level-start">
                 <span class="level-item">프로그래밍언어활용</span>
@@ -2196,7 +2360,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/CRUD%EB%B6%84%EC%84%9D/" style="font-size: 10px;">CRUD분석</a> <a href="/tags/ChatBot/" style="font-size: 12.86px;">ChatBot</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%EC%84%9C%EB%B2%84/" style="font-size: 10px;">DB서버</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">ER다이어그램</a> <a href="/tags/ER%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">ER모델</a> <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Package/" style="font-size: 10px;">Package</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/" style="font-size: 10px;">SW개발방법론선정</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" style="font-size: 10px;">SW개발표준</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/ShellScript/" style="font-size: 10px;">ShellScript</a> <a href="/tags/TCP-UDP/" style="font-size: 10px;">TCP_UDP</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/WordCloud/" style="font-size: 10px;">WordCloud</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.14px;">embedding</a> <a href="/tags/konlpy/" style="font-size: 10px;">konlpy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">개발환경구축</a> <a href="/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">객체지향프로그래밍언어</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">관계데이터베이스모델</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/" style="font-size: 10px;">관계데이터언어</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC7%EA%B3%84%EC%B8%B5/" style="font-size: 10px;">네트워크7계층</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">논리데이터모델품질검증</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" style="font-size: 10px;">논리적데이터모델링</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">데이터검증</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" style="font-size: 10px;">데이터모델개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%B4%EA%B2%B0%EC%84%B1/" style="font-size: 10px;">데이터베이스무결성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%B0%B1%EC%97%85/" style="font-size: 10px;">데이터베이스백업</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%95%94%ED%98%B8%ED%99%94/" style="font-size: 10px;">데이터베이스암호화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9A%A9%EB%9F%89%EC%84%A4%EA%B3%84/" style="font-size: 10px;">데이터베이스용량설계</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" style="font-size: 11.43px;">데이터베이스이중화구성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">데이터베이스정규화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 14.29px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 14.29px;">데이터사이언스개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%85%EC%B6%9C%EB%A0%A5/" style="font-size: 10px;">데이터입출력</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" style="font-size: 10px;">데이터전환수행계획</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%95%EC%A0%9C/" style="font-size: 10px;">데이터정제</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A7%80%EC%97%AD%ED%99%94/" style="font-size: 10px;">데이터지역화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/" style="font-size: 10px;">데이터타입</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%91%9C%EC%A4%80%ED%99%95%EC%9D%B8/" style="font-size: 10px;">데이터표준확인</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%92%88%EC%A7%88%EB%B6%84%EC%84%9D/" style="font-size: 10px;">데이터품질분석</a> <a href="/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/" style="font-size: 10px;">라이브러리</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC/" style="font-size: 10px;">메모리관리</a> <a href="/tags/%EB%AA%A8%EB%8D%B8%ED%99%94/" style="font-size: 10px;">모델화</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B8%B0%EC%A4%80/" style="font-size: 11.43px;">물리데이터모델품질기준</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/" style="font-size: 10px;">물리요소조사분석</a> <a href="/tags/%EB%B0%98%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">반정규화</a> <a href="/tags/%EB%B0%B0%EC%B9%98%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">배치프로그램</a> <a href="/tags/%EB%B3%80%EC%88%98/" style="font-size: 10px;">변수</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%B7%A8%EC%95%BD%EC%84%B1%EC%8B%9D%EB%B3%84/" style="font-size: 10px;">보안취약성식별</a> <a href="/tags/%EB%B6%84%EC%82%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/" style="font-size: 10px;">분산데이터베이스</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%A0%95%EC%9D%98%ED%95%A8%EC%88%98/" style="font-size: 12.86px;">사용자정의함수</a> <a href="/tags/%EC%84%9C%EB%B2%84%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">서버개발프레임워크</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%A0%EC%96%B8%ED%98%95%EC%96%B8%EC%96%B4/" style="font-size: 10px;">선언형언어</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">소프트웨어개발프레임워크</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EC%97%B0%EA%B3%84%ED%85%8C%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">소프트웨어연계테스트</a> <a href="/tags/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%96%B8%EC%96%B4/" style="font-size: 10px;">스크립트언어</a> <a href="/tags/%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8%EC%99%80%EB%B7%B0/" style="font-size: 10px;">시스템카탈로그와뷰</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0/" style="font-size: 10px;">애플리케이션성능개선</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B2%B0%EA%B3%BC%EB%B6%84%EC%84%9D/" style="font-size: 10px;">애플리케이션테스트결과분석</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%EC%9E%91%EC%84%B1/" style="font-size: 10px;">애플리케이션테스트시나리오작성</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BC%80%EC%9D%B4%EC%8A%A4%EC%9E%91%EC%84%B1/" style="font-size: 10px;">애플리케이션테스트케이스작성</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%86%B5%ED%95%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%88%98%ED%96%89/" style="font-size: 10px;">애플리케이션통합테스트수행</a> <a href="/tags/%EC%97%B0%EC%82%B0%EC%9E%90/" style="font-size: 10px;">연산자</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 11.43px;">예외처리</a> <a href="/tags/%EC%98%A4%EB%A5%98%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%B8%A1%EC%A0%95/" style="font-size: 10px;">오류데이터측정</a> <a href="/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/" style="font-size: 10px;">오류처리</a> <a href="/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC%ED%99%95%EC%9D%B8%EB%B0%8F%EB%B3%B4%EA%B3%A0%EC%84%9C%EC%9E%91%EC%84%B1/" style="font-size: 10px;">오류처리확인및보고서작성</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" style="font-size: 10px;">운영체제</a> <a href="/tags/%EC%9B%B9%EC%84%9C%EB%B2%84/" style="font-size: 10px;">웹서버</a> <a href="/tags/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" style="font-size: 10px;">이벤트</a> <a href="/tags/%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%AC%EC%84%B1%EC%9D%98%EA%B0%9C%EB%85%90/" style="font-size: 10px;">인터넷구성의개념</a> <a href="/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">인터페이스구현검증</a> <a href="/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B8%B0%EB%8A%A5%ED%99%95%EC%9D%B8/" style="font-size: 10px;">인터페이스기능확인</a> <a href="/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B3%B4%EC%95%88/" style="font-size: 10px;">인터페이스보안</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 15.71px;">자연어처리</a> <a href="/tags/%EC%9E%AC%EC%82%AC%EC%9A%A9/" style="font-size: 10px;">재사용</a> <a href="/tags/%EC%A0%88%EC%B0%A8%EC%A0%81%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">절차적프로그래밍언어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%A7%91%EA%B3%84%EC%84%B1DCL%EC%9E%91%EC%84%B1/" style="font-size: 10px;">집계성DCL작성</a> <a href="/tags/%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">체크리스트</a> <a href="/tags/%EC%B4%88%EA%B8%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">초기데이터구축</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%B9%BC%EB%9F%BC%EC%86%8D%EC%84%B1/" style="font-size: 10px;">칼럼속성</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/" style="font-size: 10px;">클러스터링</a> <a href="/tags/%ED%82%A4%EC%A2%85%EB%A5%98/" style="font-size: 10px;">키종류</a> <a href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" style="font-size: 10px;">테일러링기준</a> <a href="/tags/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" style="font-size: 10px;">트리거</a> <a href="/tags/%ED%8C%8C%EC%9D%BC%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">파일처리기술</a> <a href="/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/" style="font-size: 10px;">파티셔닝</a> <a href="/tags/%ED%8C%A8%ED%82%A4%EC%A7%80/" style="font-size: 10px;">패키지</a> <a href="/tags/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/" style="font-size: 10px;">프로세스스케줄링</a> <a href="/tags/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" style="font-size: 10px;">프로토타입</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.14px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 18.57px;">핵심정리</a> <a href="/tags/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/" style="font-size: 10px;">환경변수</a>
+        <a href="/tags/API/" style="font-size: 10px;">API</a> <a href="/tags/API%EC%98%A4%EC%9A%A9/" style="font-size: 10px;">API오용</a> <a href="/tags/Anaconda/" style="font-size: 10px;">Anaconda</a> <a href="/tags/CRUD%EB%B6%84%EC%84%9D/" style="font-size: 10px;">CRUD분석</a> <a href="/tags/ChatBot/" style="font-size: 12.86px;">ChatBot</a> <a href="/tags/DB%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">DB관련신기술</a> <a href="/tags/DB%EA%B4%80%EB%A6%AC%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">DB관리기능</a> <a href="/tags/DB%EC%84%9C%EB%B2%84/" style="font-size: 10px;">DB서버</a> <a href="/tags/DB%ED%91%9C%EC%A4%80%ED%99%94/" style="font-size: 10px;">DB표준화</a> <a href="/tags/ER%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">ER다이어그램</a> <a href="/tags/ER%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">ER모델</a> <a href="/tags/ETL/" style="font-size: 10px;">ETL</a> <a href="/tags/HW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">HW관련신기술</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/Machine-Translation/" style="font-size: 10px;">Machine_Translation</a> <a href="/tags/NLP%EB%B0%B0%EA%B2%BD/" style="font-size: 10px;">NLP배경</a> <a href="/tags/Package/" style="font-size: 10px;">Package</a> <a href="/tags/Recurrent-Neural-Network/" style="font-size: 10px;">Recurrent Neural Network</a> <a href="/tags/SDLC/" style="font-size: 10px;">SDLC</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">SW개발방법론</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B0%A9%EB%B2%95%EB%A1%A0%EC%84%A0%EC%A0%95/" style="font-size: 10px;">SW개발방법론선정</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%A0%95%EC%B1%85/" style="font-size: 10px;">SW개발보안정책</a> <a href="/tags/SW%EA%B0%9C%EB%B0%9C%ED%91%9C%EC%A4%80/" style="font-size: 10px;">SW개발표준</a> <a href="/tags/SW%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">SW관련신기술</a> <a href="/tags/Sequence-Tagging/" style="font-size: 10px;">Sequence_Tagging</a> <a href="/tags/ShellScript/" style="font-size: 10px;">ShellScript</a> <a href="/tags/TCP-UDP/" style="font-size: 10px;">TCP_UDP</a> <a href="/tags/Vector/" style="font-size: 10px;">Vector</a> <a href="/tags/WordCloud/" style="font-size: 10px;">WordCloud</a> <a href="/tags/c-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">c 자료형</a> <a href="/tags/class/" style="font-size: 10px;">class</a> <a href="/tags/embedding/" style="font-size: 17.14px;">embedding</a> <a href="/tags/konlpy/" style="font-size: 10px;">konlpy</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/python-%EC%9E%90%EB%A3%8C%ED%98%95/" style="font-size: 10px;">python 자료형</a> <a href="/tags/%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">개발환경구축</a> <a href="/tags/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">객체지향프로그래밍언어</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">관계데이터베이스모델</a> <a href="/tags/%EA%B4%80%EA%B3%84%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%96%B8%EC%96%B4/" style="font-size: 10px;">관계데이터언어</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC7%EA%B3%84%EC%B8%B5/" style="font-size: 10px;">네트워크7계층</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EA%B4%80%EB%A0%A8%EC%8B%A0%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">네트워크관련신기술</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%9E%A5%EB%B9%84/" style="font-size: 10px;">네트워크장비</a> <a href="/tags/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">네트워크침해공격용어</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">논리데이터모델품질검증</a> <a href="/tags/%EB%85%BC%EB%A6%AC%EC%A0%81%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EB%A7%81/" style="font-size: 10px;">논리적데이터모델링</a> <a href="/tags/%EB%85%BC%EB%AC%B8/" style="font-size: 10px;">논문</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">데이터검증</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EB%85%90/" style="font-size: 10px;">데이터모델개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%B4%EA%B2%B0%EC%84%B1/" style="font-size: 10px;">데이터베이스무결성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%B0%B1%EC%97%85/" style="font-size: 10px;">데이터베이스백업</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%95%94%ED%98%B8%ED%99%94/" style="font-size: 10px;">데이터베이스암호화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9A%A9%EB%9F%89%EC%84%A4%EA%B3%84/" style="font-size: 10px;">데이터베이스용량설계</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%9D%B4%EC%A4%91%ED%99%94%EA%B5%AC%EC%84%B1/" style="font-size: 11.43px;">데이터베이스이중화구성</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">데이터베이스정규화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 14.29px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%EC%88%9C%EC%97%B4-%EC%A1%B0%ED%95%A9/" style="font-size: 10px;">데이터분석 - 순열 - 조합</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 14.29px;">데이터사이언스개념</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%85%EC%B6%9C%EB%A0%A5/" style="font-size: 10px;">데이터입출력</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%84%ED%99%98%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D/" style="font-size: 10px;">데이터전환수행계획</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%95%EC%A0%9C/" style="font-size: 10px;">데이터정제</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A7%80%EC%97%AD%ED%99%94/" style="font-size: 10px;">데이터지역화</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85/" style="font-size: 10px;">데이터타입</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%91%9C%EC%A4%80%ED%99%95%EC%9D%B8/" style="font-size: 10px;">데이터표준확인</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%92%88%EC%A7%88%EB%B6%84%EC%84%9D/" style="font-size: 10px;">데이터품질분석</a> <a href="/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/" style="font-size: 10px;">라이브러리</a> <a href="/tags/%EB%A1%9C%EA%B7%B8%EB%B6%84%EC%84%9D/" style="font-size: 10px;">로그분석</a> <a href="/tags/%EB%A9%94%EB%AA%A8%EB%A6%AC%EA%B4%80%EB%A6%AC/" style="font-size: 10px;">메모리관리</a> <a href="/tags/%EB%AA%A8%EB%8D%B8%ED%99%94/" style="font-size: 10px;">모델화</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%ED%92%88%EC%A7%88%EA%B8%B0%EC%A4%80/" style="font-size: 11.43px;">물리데이터모델품질기준</a> <a href="/tags/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/" style="font-size: 10px;">물리요소조사분석</a> <a href="/tags/%EB%B0%98%EC%A0%95%EA%B7%9C%ED%99%94/" style="font-size: 10px;">반정규화</a> <a href="/tags/%EB%B0%B0%EC%B9%98%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8/" style="font-size: 10px;">배치프로그램</a> <a href="/tags/%EB%B3%80%EC%88%98/" style="font-size: 10px;">변수</a> <a href="/tags/%EB%B3%B4%EC%95%88%EA%B8%B0%EB%8A%A5/" style="font-size: 10px;">보안기능</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%86%94%EB%A3%A8%EC%85%98/" style="font-size: 10px;">보안솔루션</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98/" style="font-size: 10px;">보안아키텍처</a> <a href="/tags/%EB%B3%B4%EC%95%88%EC%B7%A8%EC%95%BD%EC%84%B1%EC%8B%9D%EB%B3%84/" style="font-size: 10px;">보안취약성식별</a> <a href="/tags/%EB%B6%84%EC%82%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/" style="font-size: 10px;">분산데이터베이스</a> <a href="/tags/%EB%B9%84%EC%9A%A9%EC%82%B0%EC%A0%95%EB%AA%A8%EB%8D%B8/" style="font-size: 10px;">비용산정모델</a> <a href="/tags/%EC%82%AC%EC%9A%A9%EC%9E%90%EC%A0%95%EC%9D%98%ED%95%A8%EC%88%98/" style="font-size: 12.86px;">사용자정의함수</a> <a href="/tags/%EC%84%9C%EB%B2%84%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">서버개발프레임워크</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9D%B8%EC%A6%9D/" style="font-size: 10px;">서버인증</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%9E%A5%EB%B9%84%EC%9A%B4%EC%98%81/" style="font-size: 10px;">서버장비운영</a> <a href="/tags/%EC%84%9C%EB%B2%84%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">서버접근통제</a> <a href="/tags/%EC%84%9C%EB%B9%84%EC%8A%A4%EA%B3%B5%EA%B2%A9%EC%9C%A0%ED%98%95/" style="font-size: 10px;">서비스공격유형</a> <a href="/tags/%EC%84%A0%EC%96%B8%ED%98%95%EC%96%B8%EC%96%B4/" style="font-size: 10px;">선언형언어</a> <a href="/tags/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" style="font-size: 10px;">세션통제</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC/" style="font-size: 10px;">소프트스킬</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/" style="font-size: 10px;">소프트웨어개발프레임워크</a> <a href="/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EC%97%B0%EA%B3%84%ED%85%8C%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">소프트웨어연계테스트</a> <a href="/tags/%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%96%B8%EC%96%B4/" style="font-size: 10px;">스크립트언어</a> <a href="/tags/%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%B9%B4%ED%83%88%EB%A1%9C%EA%B7%B8%EC%99%80%EB%B7%B0/" style="font-size: 10px;">시스템카탈로그와뷰</a> <a href="/tags/%EC%95%94%ED%98%B8%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/" style="font-size: 10px;">암호알고리즘</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0/" style="font-size: 10px;">애플리케이션성능개선</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B2%B0%EA%B3%BC%EB%B6%84%EC%84%9D/" style="font-size: 10px;">애플리케이션테스트결과분석</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%8B%9C%EB%82%98%EB%A6%AC%EC%98%A4%EC%9E%91%EC%84%B1/" style="font-size: 10px;">애플리케이션테스트시나리오작성</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BC%80%EC%9D%B4%EC%8A%A4%EC%9E%91%EC%84%B1/" style="font-size: 10px;">애플리케이션테스트케이스작성</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%86%B5%ED%95%A9%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%88%98%ED%96%89/" style="font-size: 10px;">애플리케이션통합테스트수행</a> <a href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%8C%A8%ED%82%A4%EC%A7%95/" style="font-size: 10px;">애플리케이션패키징</a> <a href="/tags/%EC%97%B0%EC%82%B0%EC%9E%90/" style="font-size: 10px;">연산자</a> <a href="/tags/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/" style="font-size: 11.43px;">예외처리</a> <a href="/tags/%EC%98%A4%EB%A5%98%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%B8%A1%EC%A0%95/" style="font-size: 10px;">오류데이터측정</a> <a href="/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC/" style="font-size: 10px;">오류처리</a> <a href="/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC%ED%99%95%EC%9D%B8%EB%B0%8F%EB%B3%B4%EA%B3%A0%EC%84%9C%EC%9E%91%EC%84%B1/" style="font-size: 10px;">오류처리확인및보고서작성</a> <a href="/tags/%EC%9A%94%EA%B5%AC%EA%B3%B5%ED%95%99%EB%B0%A9%EB%B2%95%EB%A1%A0/" style="font-size: 10px;">요구공학방법론</a> <a href="/tags/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/" style="font-size: 10px;">운영체제</a> <a href="/tags/%EC%9B%B9%EC%84%9C%EB%B2%84/" style="font-size: 10px;">웹서버</a> <a href="/tags/%EC%9D%B4%EB%B2%A4%ED%8A%B8/" style="font-size: 10px;">이벤트</a> <a href="/tags/%EC%9D%B8%ED%84%B0%EB%84%B7%EA%B5%AC%EC%84%B1%EC%9D%98%EA%B0%9C%EB%85%90/" style="font-size: 10px;">인터넷구성의개념</a> <a href="/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">인터페이스구현검증</a> <a href="/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B8%B0%EB%8A%A5%ED%99%95%EC%9D%B8/" style="font-size: 10px;">인터페이스기능확인</a> <a href="/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B3%B4%EC%95%88/" style="font-size: 10px;">인터페이스보안</a> <a href="/tags/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" style="font-size: 10px;">입력데이터검증및표현</a> <a href="/tags/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/" style="font-size: 15.71px;">자연어처리</a> <a href="/tags/%EC%9E%AC%EC%82%AC%EC%9A%A9/" style="font-size: 10px;">재사용</a> <a href="/tags/%EC%A0%88%EC%B0%A8%EC%A0%81%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4/" style="font-size: 10px;">절차적프로그래밍언어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%B9%A8%ED%95%B4%EA%B3%B5%EA%B2%A9%EC%9A%A9%EC%96%B4/" style="font-size: 10px;">정보보안침해공격용어</a> <a href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/" style="font-size: 20px;">정보처리기사</a> <a href="/tags/%EC%A7%91%EA%B3%84%EC%84%B1DCL%EC%9E%91%EC%84%B1/" style="font-size: 10px;">집계성DCL작성</a> <a href="/tags/%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8/" style="font-size: 10px;">체크리스트</a> <a href="/tags/%EC%B4%88%EA%B8%B0%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B5%AC%EC%B6%95/" style="font-size: 10px;">초기데이터구축</a> <a href="/tags/%EC%B7%A8%EC%95%BD%EC%A0%90%EB%B6%84%EC%84%9D/" style="font-size: 10px;">취약점분석</a> <a href="/tags/%EC%B9%BC%EB%9F%BC%EC%86%8D%EC%84%B1/" style="font-size: 10px;">칼럼속성</a> <a href="/tags/%EC%BA%A1%EC%8A%90%ED%99%94/" style="font-size: 10px;">캡슐화</a> <a href="/tags/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" style="font-size: 10px;">코드오류</a> <a href="/tags/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/" style="font-size: 10px;">클러스터링</a> <a href="/tags/%ED%82%A4%EC%A2%85%EB%A5%98/" style="font-size: 10px;">키종류</a> <a href="/tags/%ED%85%8C%EC%9D%BC%EB%9F%AC%EB%A7%81%EA%B8%B0%EC%A4%80/" style="font-size: 10px;">테일러링기준</a> <a href="/tags/%ED%8A%B8%EB%A6%AC%EA%B1%B0/" style="font-size: 10px;">트리거</a> <a href="/tags/%ED%8C%8C%EC%9D%BC%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%88%A0/" style="font-size: 10px;">파일처리기술</a> <a href="/tags/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/" style="font-size: 10px;">파티셔닝</a> <a href="/tags/%ED%8C%A8%ED%82%A4%EC%A7%80/" style="font-size: 10px;">패키지</a> <a href="/tags/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81/" style="font-size: 10px;">프로세스스케줄링</a> <a href="/tags/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85/" style="font-size: 10px;">프로토타입</a> <a href="/tags/%ED%95%9C%EA%B5%AD%EC%96%B4%EC%9E%84%EB%B2%A0%EB%94%A9/" style="font-size: 17.14px;">한국어임베딩</a> <a href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" style="font-size: 18.57px;">핵심정리</a> <a href="/tags/%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98/" style="font-size: 10px;">환경변수</a>
     </div>
 </div>
     
@@ -2208,6 +2372,25 @@
         <h3 class="menu-label">
             최근 글
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/05/22/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%8C%A8%ED%82%A4%EC%A7%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 애플리케이션 패키징">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T12:18:17.000Z">2020-05-22</time></div>
+                    <a href="/2020/05/22/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%8C%A8%ED%82%A4%EC%A7%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">제품소프트웨어 패키징 - 애플리케이션 패키징</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/">제품소프트웨어패키징</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -2285,25 +2468,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/21/Engineer_Information_Processing/ch08_%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B4%80%EB%A6%AC/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%86%B5%ED%95%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B2%B0%EA%B3%BC%EB%B6%84%EC%84%9D/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="애플리케이션테스트케이스설계 - 애플리케이션 테스트 결과 분석">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-21T08:06:45.000Z">2020-05-21</time></div>
-                    <a href="/2020/05/21/Engineer_Information_Processing/ch08_%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B4%80%EB%A6%AC/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%86%B5%ED%95%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B2%B0%EA%B3%BC%EB%B6%84%EC%84%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">애플리케이션테스트케이스설계 - 애플리케이션 테스트 결과 분석</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BC%80%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/">애플리케이션테스트케이스설계</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -2321,7 +2485,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">130</span>
+                    <span class="level-item tag">131</span>
                 </span>
             </a>
         </li>
@@ -3048,6 +3212,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%8C%A8%ED%82%A4%EC%A7%95/">
+                        <span class="tag">애플리케이션패키징</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%97%B0%EC%82%B0%EC%9E%90/">
                         <span class="tag">연산자</span>
                         <span class="tag is-grey">1</span>
@@ -3176,7 +3347,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">153</span>
+                        <span class="tag is-grey">154</span>
                     </a>
                 </div>
                 
@@ -3337,6 +3508,25 @@
         
         <article class="media">
             
+            <a href="/2020/05/22/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%8C%A8%ED%82%A4%EC%A7%95/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 애플리케이션 패키징">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-22T12:18:17.000Z">2020-05-22</time></div>
+                    <a href="/2020/05/22/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%8C%A8%ED%82%A4%EC%A7%95/" class="title has-link-black-ter is-size-6 has-text-weight-normal">제품소프트웨어 패키징 - 애플리케이션 패키징</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/">제품소프트웨어패키징</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/21/Engineer_Information_Processing/ch08_%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B4%80%EB%A6%AC/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%84%B1%EB%8A%A5%EA%B0%9C%EC%84%A0/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="애플리케이션테스트케이스설계 - 핵심정리">
@@ -3411,25 +3601,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/21/Engineer_Information_Processing/ch08_%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B4%80%EB%A6%AC/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%86%B5%ED%95%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B2%B0%EA%B3%BC%EB%B6%84%EC%84%9D/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="애플리케이션테스트케이스설계 - 애플리케이션 테스트 결과 분석">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-21T08:06:45.000Z">2020-05-21</time></div>
-                    <a href="/2020/05/21/Engineer_Information_Processing/ch08_%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B4%80%EB%A6%AC/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%86%B5%ED%95%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EA%B2%B0%EA%B3%BC%EB%B6%84%EC%84%9D/" class="title has-link-black-ter is-size-6 has-text-weight-normal">애플리케이션테스트케이스설계 - 애플리케이션 테스트 결과 분석</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%BC%80%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/">애플리케이션테스트케이스설계</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -3447,7 +3618,7 @@
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">130</span>
+                    <span class="level-item tag">131</span>
                 </span>
             </a>
         </li>
@@ -4174,6 +4345,13 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%ED%8C%A8%ED%82%A4%EC%A7%95/">
+                        <span class="tag">애플리케이션패키징</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%97%B0%EC%82%B0%EC%9E%90/">
                         <span class="tag">연산자</span>
                         <span class="tag is-grey">1</span>
@@ -4302,7 +4480,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">153</span>
+                        <span class="tag is-grey">154</span>
                     </a>
                 </div>
                 
@@ -4580,7 +4758,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
