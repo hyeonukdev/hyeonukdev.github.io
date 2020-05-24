@@ -166,6 +166,119 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 보안 설계 - 입력데이터 검증 및 표현">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-26T16:30:52.000Z">2020-04-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">소프트웨어개발보안구축</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (대략 679 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%9E%85%EB%A0%A5%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B2%80%EC%A6%9D%EB%B0%8F%ED%91%9C%ED%98%84/">SW개발 보안 설계 - 입력데이터 검증 및 표현</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="소프트웨어-개발-보안-구축"><a class="markdownIt-Anchor" href="#소프트웨어-개발-보안-구축"></a> 소프트웨어 개발 보안 구축</h2>
+<h2 id="sw개발-보안-설계"><a class="markdownIt-Anchor" href="#sw개발-보안-설계"></a> SW개발 보안 설계</h2>
+<h3 id="입력데이터-검증-및-표현의-개념"><a class="markdownIt-Anchor" href="#입력데이터-검증-및-표현의-개념"></a> 입력데이터 검증 및 표현의 개념</h3>
+<ul>
+<li>폼 양식의 입력란을 통해 <u>입력되는 데이터로 인해 발생하는 문제들을 예방</u>하기 위해 <u>구현 단계에서 검증해야 하는 보안 점검 항목들</u></li>
+<li>입력 데이터로 인해 발생하는 문제를 예방하기 위해서 소프트웨어개발의 구현 단계에서 <u>유효성 검증 체계</u>를 갖추고, 검증되지 않은 데이터가 입력되는 경우 이를 처리할 수 있도록 구현해야 함</li>
+<li>입력 데이터를 처리하는 객체에 지정된 <b>자료형이 올바른지 확인</b>하고 <u><b>일관된</b> 언어셋(Character Set)</u>을 사용하도록 코딩 함
+<ul>
+<li>Character Set
+<ul>
+<li>컴퓨터에서 처리하기 위해 사용하는 코드표를 의미</li>
+<li>ASCII</li>
+<li>Unicode</li>
+<li>UTF-8</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="입력데이터-검증-및-보안-약점-종류"><a class="markdownIt-Anchor" href="#입력데이터-검증-및-보안-약점-종류"></a> 입력데이터 검증 및 보안 약점 종류</h3>
+<ul>
+<li>SQL
+<ul>
+<li>입력란에 SQL을 삽입하며 무단으로 DB를 조회하거나 조작하는 보안 약점</li>
+<li>동적 쿼리에 사용되는 입력 데이터에 예약어 및 특수문자가 입력되지 않게 필터링 되도록 방지
+<ul>
+<li>동적쿼리
+<ul>
+<li>질의어 코드를 문자열 변수에 넣어 조건에 따라 질의를 동적으로 변경하여 처리하는 방식</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>XSS 크로스사이트 스크립트
+<ul>
+<li>웹페이지에 악의적인 스크립트를 삽입하여 방문자들의 정보를 탈취하거나 비정상적인 기능 수행을 유발하는 보안 약점</li>
+<li>HTML 태그의 사용을 제한하거나 스크립트에 삽입되지 않도록 ‘&lt;’, ‘&gt;’ 등의 문자를 다른 문자로 치환함으로써 방지</li>
+</ul>
+</li>
+<li>위험한 형식 파일 업로드
+<ul>
+<li>악의적인 명령어가 포함된 스크립트 파일을 업로드함으로써 시스템에 손상을 주거나 시스템을 제어할 수 있는 보안 약점</li>
+<li>업로드 되는 파일의 확장자 제한, 파일명의 암호화, 웹사이트와 파일 서버 경로 분리, 실행 속성을 제거하는 드으이 방법으로 방지</li>
+</ul>
+</li>
+<li>경로 조작 및 자원 삽입
+<ul>
+<li>데이터 입출력 경로를 조작하여 서버 자원을 수정/삭제할 수 있는 보안 약점</li>
+<li>사용자 입력값을 식별자로 사용하는 경우, 경로 순회 공격을 막는 필터를 사용하여 방지
+<ul>
+<li>경로 순회
+<ul>
+<li>경로를 탐색할때 사용하는 ‘/’, ‘’ 등의 기호를 악용하여 허가되지 않은 파일에 접근하는 방식</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/Secure_SDLC/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 보안 설계 - Secure SDLC">
         </a>
@@ -425,181 +538,6 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/26/NLP-BASIC/Sequence_Tagging/" class="image is-7by1">
-            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfile23.uf.tistory.com%2Fimage%2F99D5E6445BE2DFC70FE975" alt="Sequence_Tagging">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-26T10:59:00.000Z">2020-04-26</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/NLP/">NLP</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (대략 405 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/26/NLP-BASIC/Sequence_Tagging/">Sequence_Tagging</a>
-            
-        </h1>
-        <div class="content">
-            <h3 id="tagging"><a class="markdownIt-Anchor" href="#tagging"></a> Tagging</h3>
-<ul>
-<li>
-<p>Make Label about the sentences</p>
-</li>
-<li>
-<p>레이블을 붙이는 과정</p>
-<ul>
-<li>This moive is so nice -&gt; Positive</li>
-<li>This moive is so boring -&gt; Negative</li>
-</ul>
-</li>
-<li>
-<p>Pair of Sentence and Label</p>
-</li>
-<li>
-<p>문장과 레이블에 대해 쌍관계를 유지하는걸 태깅</p>
-<ul>
-<li>It can use other Machine Learning Model’s Input Data</li>
-<li>이것을 바탕으로 데이터를 input할 수 수 있음</li>
-</ul>
-</li>
-</ul>
-<h4 id="sentiment-analysis"><a class="markdownIt-Anchor" href="#sentiment-analysis"></a> Sentiment Analysis</h4>
-<ul>
-<li>감성분석데이터</li>
-<li>어떤 문장에 대해서 긍정/부정, 평점등으로 평가하는데 이걸 예측하는 것</li>
-<li>Benchmark Dataset 논문에서 많이 이용됨
-<ul>
-<li>IMDB (Internet Moive DataBase)</li>
-<li>Yelp (음식점평)</li>
-<li>Amazon Review (도서평)</li>
-</ul>
-</li>
-<li>Crawling
-<ul>
-<li>네이버 영화 평</li>
-<li>yes24 도서 평</li>
-</ul>
-</li>
-</ul>
-<h4 id="question-answering"><a class="markdownIt-Anchor" href="#question-answering"></a> Question Answering</h4>
-<p>특정한 문단과 질문을 넣었을 때 딥러닝 모델이 답변을 주는 것</p>
-<ul>
-<li>Benchmark Dataset
-<ul>
-<li>SQuAD.(1.1,2.0) 스탠퍼드 QnA</li>
-<li>WikiQA</li>
-<li>CoQA</li>
-</ul>
-</li>
-</ul>
-<h4 id="pos"><a class="markdownIt-Anchor" href="#pos"></a> POS</h4>
-<ul>
-<li>Part-of-Speech Tagging
-<ul>
-<li>문장에서 해당 단어들이 어떤 역할을 하는지</li>
-<li>주어, 목적어, 서술어 등</li>
-</ul>
-</li>
-<li>Benchmark Dataset
-<ul>
-<li>Penn Treebank</li>
-<li>UD</li>
-</ul>
-</li>
-</ul>
-<h3 id="process"><a class="markdownIt-Anchor" href="#process"></a> Process</h3>
-<blockquote>
-<p>빨간색 Input<br />
-파란색 Output<br />
-초록색 RNN, LSTM, GRU<br />
-숫자는 시점</p>
-</blockquote>
-<p>빨간색에 문장을 넣으면<br />
-파란색에는 Postive</p>
-<ul>
-<li>
-<p>RNN</p>
-</li>
-<li>
-<p>hideen state를 바탕으로 태깅</p>
-<ul>
-<li>기본 RNN<br />
-<img src="/images/NLP/0426_01.png" alt="RNN1" /></li>
-<li>Stack RNN
-<ul>
-<li>Hidden state 결과를 새로운 input으로 받음<br />
-<img src="/images/NLP/0426_02.png" alt="RNN2" /></li>
-</ul>
-</li>
-<li>Bidirectional RNN
-<ul>
-<li>forward</li>
-<li>backward</li>
-<li>같은 시점에는 Concat 진행<br />
-<img src="/images/NLP/0426_03.png" alt="RNN3" /></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>CNN</p>
-</li>
-<li>
-<p>Convolutional Neural Networks for Sentence Classification(Yoon Kim et al, 2014)</p>
-</li>
-<li>
-<p>문장에 대해서 filter size(2,3,4,5)에 대해 합성곱을 하여 진행</p>
-</li>
-<li>
-<p>스트라이딩을 돌면서 feature maps을 만듬</p>
-</li>
-<li>
-<p>같은 레벨의 feature map에 max pooling을 진행</p>
-</li>
-<li>
-<p>문장특징을 뽑음</p>
-</li>
-<li>
-<p>해당 결과값에 대해 Fully connected layer를 통해 최종 결과를 낸다<br />
-<img src="/images/NLP/0426_04.png" alt="CNN1" /></p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -675,7 +613,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            194
+                            195
                         </p>
                     </a>
                 </div>
@@ -845,7 +783,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                 <span class="level-item">정보처리기사</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">162</span>
+                <span class="level-item tag">163</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/DB%EA%B5%AC%EC%B6%95%EA%B4%80%EB%A6%AC/">
@@ -1005,7 +943,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                 <span class="level-item">제품소프트웨어패키징</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%96%B8%EC%96%B4%ED%99%9C%EC%9A%A9/">
@@ -1057,6 +995,25 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
         
         <article class="media">
             
+            <a href="/2020/05/25/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-24T15:22:42.000Z">2020-05-25</time></div>
+                    <a href="/2020/05/25/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">제품소프트웨어 패키징 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/">제품소프트웨어패키징</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 빌드 자동화 도구">
@@ -1131,25 +1088,6 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 제품소프트웨어매뉴얼작성">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-24T11:53:20.000Z">2020-05-24</time></div>
-                    <a href="/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">제품소프트웨어 패키징 - 제품소프트웨어매뉴얼작성</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/">제품소프트웨어패키징</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1167,7 +1105,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">139</span>
+                    <span class="level-item tag">140</span>
                 </span>
             </a>
         </li>
@@ -2064,7 +2002,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">162</span>
+                        <span class="tag is-grey">163</span>
                     </a>
                 </div>
                 
@@ -2197,7 +2135,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">39</span>
+                        <span class="tag is-grey">40</span>
                     </a>
                 </div>
                 
@@ -2232,6 +2170,25 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
         
         <article class="media">
             
+            <a href="/2020/05/25/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 핵심정리">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-24T15:22:42.000Z">2020-05-25</time></div>
+                    <a href="/2020/05/25/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="title has-link-black-ter is-size-6 has-text-weight-normal">제품소프트웨어 패키징 - 핵심정리</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/">제품소프트웨어패키징</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 빌드 자동화 도구">
@@ -2306,25 +2263,6 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="제품소프트웨어 패키징 - 제품소프트웨어매뉴얼작성">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-24T11:53:20.000Z">2020-05-24</time></div>
-                    <a href="/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%A7%A4%EB%89%B4%EC%96%BC%EC%9E%91%EC%84%B1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">제품소프트웨어 패키징 - 제품소프트웨어매뉴얼작성</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/">제품소프트웨어패키징</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2342,7 +2280,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                     <span class="level-item">5월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">139</span>
+                    <span class="level-item tag">140</span>
                 </span>
             </a>
         </li>
@@ -3239,7 +3177,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">
                         <span class="tag">정보처리기사</span>
-                        <span class="tag is-grey">162</span>
+                        <span class="tag is-grey">163</span>
                     </a>
                 </div>
                 
@@ -3372,7 +3310,7 @@ hidden state만으로 y2가 부족하다고 판단할 수 있다. Encoder의 hid
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/">
                         <span class="tag">핵심정리</span>
-                        <span class="tag is-grey">39</span>
+                        <span class="tag is-grey">40</span>
                     </a>
                 </div>
                 
