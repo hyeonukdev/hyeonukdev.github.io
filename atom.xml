@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-24T12:58:41.000Z</updated>
+  <updated>2020-05-24T13:23:32.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>제품소프트웨어 패키징 - 소프트웨어 버전 관리 도구</title>
+    <link href="https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EC%86%8C%ED%94%84%ED%89%A4%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/"/>
+    <id>https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EC%86%8C%ED%94%84%ED%89%A4%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/</id>
+    <published>2020-05-24T13:23:32.000Z</published>
+    <updated>2020-05-24T13:23:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="제품소프트웨어패키징"><a class="markdownIt-Anchor" href="#제품소프트웨어패키징"></a> 제품소프트웨어패키징</h2><ul><li>형상 관리 지침을 활용하여 <u>제품 소프트웨어의 신규 개발, 변경, 개선과 관련된 버전을 등록</u></li><li>형상 관리 지침을 활용하여 <u>제품 소프트웨어에 대한 버전 현황 관리와 소스, 관련 자료 백업</u>을 수행</li></ul><h3 id="소프트웨어-버전-관리-도구-개념"><a class="markdownIt-Anchor" href="#소프트웨어-버전-관리-도구-개념"></a> 소프트웨어 버전 관리 도구 개념</h3><ul><li>형상 관리 지침을 활용하여 제품 소프트웨어의 신규 개발, 변경, 개선과 관련된 수정 내역을 관리하는 도구</li></ul><h3 id="버전-관리-도구의-유형별-특징"><a class="markdownIt-Anchor" href="#버전-관리-도구의-유형별-특징"></a> 버전 관리 도구의 유형별 특징</h3><p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0524_06.png" alt="버전관리도구" /></p><h3 id="현업에서-쓰이는-버전-관리-도구별-특징"><a class="markdownIt-Anchor" href="#현업에서-쓰이는-버전-관리-도구별-특징"></a> 현업에서 쓰이는 버전 관리 도구별 특징</h3><p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0524_07.png" alt="버전관리도구특징" /><br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0524_08.png" alt="버전관리도구특징" /></p><h3 id="버전관리-도구-사용-순서"><a class="markdownIt-Anchor" href="#버전관리-도구-사용-순서"></a> 버전관리 도구 사용 순서</h3><ol><li>버전 관리 도구 유의 사항 확인</li><li>버전 관리 도구 동작 원리 학습</li><li>버전 관리 도구 실행</li><li>버전 관리 도구 기능별 동작</li><li>형상 관리 개념 공유</li></ol><h3 id="소프트웨어-버전-관리-도구-사용시-유의점"><a class="markdownIt-Anchor" href="#소프트웨어-버전-관리-도구-사용시-유의점"></a> 소프트웨어 버전 관리 도구 사용시 유의점</h3><ol><li>형상 관리 지침에 의거 버전에 대한 정보를 언제든지 접근 가능</li><li>개발자, 배포자 이외에 불필요한 사용자의 소스 수정은 불가능함</li><li>동일한 프로젝트 파일에 대해서 여러 개발자가 동시 개발할 수 있어야 함</li><li>에러 발생 시 최대한 빠른 시간 내에 복구함</li></ol><h3 id="제품-소프트웨어-버전-관리-도구-활용방향"><a class="markdownIt-Anchor" href="#제품-소프트웨어-버전-관리-도구-활용방향"></a> 제품 소프트웨어 버전 관리 도구 활용방향</h3><ul><li>제품 소프트웨어 개발 조직이나 배포된 제품이 있는 조직에서는 <u>기 보유 제품 버전과 새로 개발된 버전을 동시에 유지, 관리</u></li><li>활용성 중심으로 버전 관리 도구의 상세 기능을 활용하여 새 버전을 유지하면서 기존 버전의 관리도 함께 수행</li><li>이를 위해 <u>백업 및 장애 복구 등의 추가적인 사항도 Case 별로 고려</u></li></ul><h3 id="버전-관리-도구를-활용한-통합-버전-현황-관리"><a class="markdownIt-Anchor" href="#버전-관리-도구를-활용한-통합-버전-현황-관리"></a> 버전 관리 도구를 활용한 통합 버전 현황 관리</h3><ul><li><u>기존에 버전 관리의 버전별 공동 작업 이외에도 백업 및 복구 작업, 공동 솔루션 기반의 여러 가지 작업 등이 통합되어 현황 관리</u><br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0524_09.png" alt="버전관리도구현황관리" /></li></ul><h3 id="버전-관리-도구-활용시-자료-백업-정책-및-방법"><a class="markdownIt-Anchor" href="#버전-관리-도구-활용시-자료-백업-정책-및-방법"></a> 버전 관리 도구 활용시 자료 백업 정책 및 방법</h3><ul><li>버전 관리 도구를 활용, 제품 소프트웨어 백업은 내부의 정확한 백업 정책을 먼저 세워야 하고, 상세 백업 방법을 공유<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0524_10.png" alt="사례및방법" /></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;제품소프트웨어패키징&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#제품소프트웨어패키징&quot;&gt;&lt;/a&gt; 제품소프트웨어패키징&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;형상 관리 지침을 활용하여 &lt;u&gt;제품 소프트웨어의 신규 개발, 변경, 개선과
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="제품소프트웨어패키징" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="소프트웨어버전관리도구" scheme="https://hyeonukdev.github.io/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>제품소프트웨어 패키징 - 핵심정리</title>
@@ -611,37 +643,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="인터페이스구현검증" scheme="https://hyeonukdev.github.io/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>인터페이스설계확인 - 핵심정리</title>
-    <link href="https://hyeonukdev.github.io/2020/05/20/Engineer_Information_Processing/ch09_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
-    <id>https://hyeonukdev.github.io/2020/05/20/Engineer_Information_Processing/ch09_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B8%B0%EB%8A%A5%EA%B5%AC%ED%98%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</id>
-    <published>2020-05-20T05:01:41.000Z</published>
-    <updated>2020-05-20T05:01:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="인터페이스설계확인"><a class="markdownIt-Anchor" href="#인터페이스설계확인"></a> 인터페이스설계확인</h2><h3 id="1-인터페이스-보안"><a class="markdownIt-Anchor" href="#1-인터페이스-보안"></a> 1. 인터페이스 보안</h3><ul><li>인터페이스 보안 취약점에 대한 시큐어 코딩 항목</li><li>인터페이스 보안 기능 적용<ul><li>네트워크 구간</li><li>애플리케이션</li><li>데이터베이스</li></ul></li><li>데이터베이스 암호화 알고리즘<ul><li>대칭키</li><li>해시</li><li>비대칭키</li></ul></li></ul><h3 id="2-소프트웨어-연계-테스트"><a class="markdownIt-Anchor" href="#2-소프트웨어-연계-테스트"></a> 2. 소프트웨어 연계 테스트</h3><ul><li>내/외부 연계 모듈 구현에서 소프트웨어 연계 테스트는 송신 시스템과 수신 시스템 간에 연계 테스트를 의미</li><li>소프트웨어 연계 단위 테스트</li><li>소프트웨어 연계 단위 테스트 케이스 작성</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;인터페이스설계확인&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#인터페이스설계확인&quot;&gt;&lt;/a&gt; 인터페이스설계확인&lt;/h2&gt;
-&lt;h3 id=&quot;1-인터페이스-보안&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="인터페이스설계확인" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84%ED%99%95%EC%9D%B8/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="핵심정리" scheme="https://hyeonukdev.github.io/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
     
   </entry>
   
