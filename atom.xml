@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-24T13:23:32.000Z</updated>
+  <updated>2020-05-24T14:20:12.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -17,9 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>제품소프트웨어 패키징 - 빌드 자동화 도구</title>
+    <link href="https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/"/>
+    <id>https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/</id>
+    <published>2020-05-24T14:20:12.000Z</published>
+    <updated>2020-05-24T14:20:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="제품소프트웨어패키징"><a class="markdownIt-Anchor" href="#제품소프트웨어패키징"></a> 제품소프트웨어패키징</h2><h3 id="소프트웨어-빌드-자동화-도구-개념"><a class="markdownIt-Anchor" href="#소프트웨어-빌드-자동화-도구-개념"></a> 소프트웨어 빌드 자동화 도구 개념</h3><ul><li>제품 소프트웨어 <u>실행 파일 생성을 자동화</u>하기 위해서 저장소에 있는 소스를 자동으로 읽어서 빌드를 하여 실행 파일을 만드는 도구</li><li>빌드 자동화 도구는 <u>지속적인 통합</u>과 일맥상통함</li><li>수없이 반복해서 최종 결과물을 만들어내야 하는 소프트웨어 개발 업무에 빌드 자동화 도구는 반드시 갖추어야함</li></ul><h3 id="온라인-빌드-자동화-도구-젠킨스"><a class="markdownIt-Anchor" href="#온라인-빌드-자동화-도구-젠킨스"></a> 온라인 빌드 자동화 도구, 젠킨스</h3><ul><li>빌드 자동화 도구로서 가장 많이 활용</li><li>Java 기반으의 오픈 소스로 지속적 통합관리를 가능</li><li>Apache-tomcat과 같은 서블릿 컨테이너 서버 기반으로 구동되는 시스템</li><li>CVS, SVN, Git 등 다양한 버전 관리 도구를 지원</li><li>특징<ul><li>쉬운 설치</li><li>친숙한 GUI</li><li>저장소 부하 감소</li><li>실시간 피드백</li><li>분산 빌드</li><li>3rd Party 플러그인</li></ul></li></ul><h3 id="gradle-안드로이드-환경에-적합한-도구"><a class="markdownIt-Anchor" href="#gradle-안드로이드-환경에-적합한-도구"></a> Gradle 안드로이드 환경에 적합한 도구</h3><ul><li>여러가지 언어의 빌드 환경 구성이 가능</li><li>안드로이드 개발환경에서 빌드 자동화됨</li><li>모든 그래들 빌드는 하나 이상의 projects로 구성되고 각 project는 하나 이상의 task들로 구성되며 이 task는 어떤 클래스를 컴파일 하거나 jar를 생성하거나 javadoc를 만드는 작업들을 의미함</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;제품소프트웨어패키징&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#제품소프트웨어패키징&quot;&gt;&lt;/a&gt; 제품소프트웨어패키징&lt;/h2&gt;
+&lt;h3 id=&quot;소프트웨어-빌드-자동화-도구-개념&quot;&gt;&lt;a class=&quot;markdownIt-An
+      
+    
+    </summary>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="제품소프트웨어패키징" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/"/>
+    
+    
+      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
+    
+      <category term="빌드자동화도구" scheme="https://hyeonukdev.github.io/tags/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>제품소프트웨어 패키징 - 소프트웨어 버전 관리 도구</title>
-    <link href="https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EC%86%8C%ED%94%84%ED%89%A4%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/"/>
-    <id>https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EC%86%8C%ED%94%84%ED%89%A4%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/</id>
+    <link href="https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/"/>
+    <id>https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/</id>
     <published>2020-05-24T13:23:32.000Z</published>
     <updated>2020-05-24T13:23:32.000Z</updated>
     
@@ -611,38 +642,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="오류처리확인및보고서작성" scheme="https://hyeonukdev.github.io/tags/%EC%98%A4%EB%A5%98%EC%B2%98%EB%A6%AC%ED%99%95%EC%9D%B8%EB%B0%8F%EB%B3%B4%EA%B3%A0%EC%84%9C%EC%9E%91%EC%84%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>인터페이스설계확인 - 인터페이스 구현 검증</title>
-    <link href="https://hyeonukdev.github.io/2020/05/20/Engineer_Information_Processing/ch09_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/"/>
-    <id>https://hyeonukdev.github.io/2020/05/20/Engineer_Information_Processing/ch09_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/</id>
-    <published>2020-05-20T05:12:51.000Z</published>
-    <updated>2020-05-20T05:12:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="인터페이스설계확인"><a class="markdownIt-Anchor" href="#인터페이스설계확인"></a> 인터페이스설계확인</h2><ul><li>구현된 인터페이스 명세서를 참조하여 <u>구현 검증에 필요한 검시 및 도구를 준비</u></li><li>인터페이스 구현 검증을 위한 외부 시스템과의 연계 모듈 상태 확인</li><li>인터페이스 오류처리 사항을 확인하고 보고서를 작성</li></ul><h3 id="인터페이스-구현-검증-도구"><a class="markdownIt-Anchor" href="#인터페이스-구현-검증-도구"></a> 인터페이스 구현 검증 도구</h3><ul><li>인터페이스 단위 기능 및 시나리오에 기반한 통합 테스트 필요</li><li>테스트 자동화 도구를 이용하여 단위 및 통합 테스트의 효율성 제고<ul><li>도구<ul><li>xUnit</li><li>STAF</li><li>FitNesse</li><li>NTAF</li><li>Selenium</li><li>watir</li></ul></li></ul></li></ul><h3 id="인터페이스-감시-도구"><a class="markdownIt-Anchor" href="#인터페이스-감시-도구"></a> 인터페이스 감시 도구</h3><ul><li>인터페이스의 동작이 잘 진행되는지 확인하기 위해서는 <u>애플리케이션 모니터링툴 APM; Application Performance Management</u>을 사용하여 <u>동작 상태를 감시</u></li><li>데이터베이스, 웹 애플리케이션의 <u>트랜잭션과 변수 값, 호출 함수, 로그, 시스템 부하등 종합적인 정보를 조회하고 분석</u></li></ul><h3 id="인터페이스-명세서"><a class="markdownIt-Anchor" href="#인터페이스-명세서"></a> 인터페이스 명세서</h3><ul><li>인터페이스 명세서에 정의된 데이터 전송주기, 전송량, 전송 포맷대로 수신 시스템에 데이터가 전송되었는지 확인</li></ul><h3 id="인터페이스-단위-및-통합-테스트-설계서"><a class="markdownIt-Anchor" href="#인터페이스-단위-및-통합-테스트-설계서"></a> 인터페이스 단위 및 통합 테스트 설계서</h3><ul><li>인터페이스 단위 및 통합 테스트 설계서를 활용하여 구현 검증 설계</li></ul><h3 id="인터페이스-명세서-기반-구현-검증-기법"><a class="markdownIt-Anchor" href="#인터페이스-명세서-기반-구현-검증-기법"></a> 인터페이스 명세서 기반 구현 검증 기법</h3><ul><li>구현된 인터페이스 명세서의 세부 기능을 참조하여 구현 검증 및 감시에 필요한 기능을 분석<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0520_07.png" alt="기능에 맞는 요건" /></li></ul><h3 id="인터페이스-테스트-설계서-기반-구현-검증-기법"><a class="markdownIt-Anchor" href="#인터페이스-테스트-설계서-기반-구현-검증-기법"></a> 인터페이스 테스트 설계서 기반 구현 검증 기법</h3><ul><li>인터페이스 구현 검증을 위하여 외부 시스템과 연계 모듈 상태 확인<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0520_08.png" alt="연계 모듈 상태" /></li></ul><h3 id="인터페이스-테스트-결과-검증-방법"><a class="markdownIt-Anchor" href="#인터페이스-테스트-결과-검증-방법"></a> 인터페이스 테스트 결과 검증 방법</h3><ul><li>운영DB테이블의 건수를 카운트 하는 방법</li><li>실제 테이블이나 파일을 열어서 데이터를 확인하는 방법</li><li>파일 생성 위치의 파일 생성 여부와 파일 크기를 확인하는 방법</li><li>연계서버에서 제공하는 모니터링 화면의 내용을 확인하는 방법</li><li>시스템에 기록하는 로그를 확인하는 방법</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;인터페이스설계확인&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#인터페이스설계확인&quot;&gt;&lt;/a&gt; 인터페이스설계확인&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;구현된 인터페이스 명세서를 참조하여 &lt;u&gt;구현 검증에 필요한 검시 및 도구를 준비
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="인터페이스설계확인" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84%ED%99%95%EC%9D%B8/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="인터페이스구현검증" scheme="https://hyeonukdev.github.io/tags/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4%EA%B5%AC%ED%98%84%EA%B2%80%EC%A6%9D/"/>
     
   </entry>
   
