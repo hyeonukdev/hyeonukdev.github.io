@@ -4,14 +4,28 @@
 
     <url>
         <loc>https://hyeonukdev.github.io/tags/%25ED%2595%25B5%25EC%258B%25AC%25EC%25A0%2595%25EB%25A6%25AC/</loc>
-        <lastmod>2020-05-29T12:02:11.000Z</lastmod>
+        <lastmod>2020-05-29T13:27:05.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeonukdev.github.io/tags/%25EC%25A0%2595%25EB%25B3%25B4%25EC%25B2%2598%25EB%25A6%25AC%25EA%25B8%25B0%25EC%2582%25AC/</loc>
-        <lastmod>2020-05-29T12:02:11.000Z</lastmod>
+        <lastmod>2020-05-29T13:27:05.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EC%25A1%25B0%25EC%259E%2591%25ED%2594%2584%25EB%25A1%259C%25EC%258B%259C%25EC%25A0%2580%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8/</loc>
+        <lastmod>2020-05-29T13:21:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EC%25A1%25B0%25EC%259E%2591%25ED%2594%2584%25EB%25A1%259C%25EC%258B%259C%25EC%25A0%2580%25EC%259E%2591%25EC%2584%25B1/</loc>
+        <lastmod>2020-05-29T12:27:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -451,14 +465,14 @@
     </url>
 
     <url>
-        <loc>https://hyeonukdev.github.io/tags/%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EC%25A0%2584%25ED%2599%2598%25EC%2588%2598%25ED%2596%2589%25EA%25B3%2584%25ED%259A%258D/</loc>
+        <loc>https://hyeonukdev.github.io/tags/%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EA%25B2%2580%25EC%25A6%259D/</loc>
         <lastmod>2020-05-10T06:39:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hyeonukdev.github.io/tags/%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EA%25B2%2580%25EC%25A6%259D/</loc>
+        <loc>https://hyeonukdev.github.io/tags/%25EB%258D%25B0%25EC%259D%25B4%25ED%2584%25B0%25EC%25A0%2584%25ED%2599%2598%25EC%2588%2598%25ED%2596%2589%25EA%25B3%2584%25ED%259A%258D/</loc>
         <lastmod>2020-05-10T06:39:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
