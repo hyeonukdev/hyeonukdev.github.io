@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-29T13:27:05.000Z</updated>
+  <updated>2020-05-29T13:33:55.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>엑셀을 활용한 통계 기초</title>
+    <link href="https://hyeonukdev.github.io/2020/05/29/DataScience/%EC%97%91%EC%85%80%EC%9D%84%ED%99%9C%EC%9A%A9%ED%95%9C%ED%86%B5%EA%B3%84%EA%B8%B0%EC%B4%88/"/>
+    <id>https://hyeonukdev.github.io/2020/05/29/DataScience/%EC%97%91%EC%85%80%EC%9D%84%ED%99%9C%EC%9A%A9%ED%95%9C%ED%86%B5%EA%B3%84%EA%B8%B0%EC%B4%88/</id>
+    <published>2020-05-29T13:33:55.000Z</published>
+    <updated>2020-05-29T13:33:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="변수의-종류"><a class="markdownIt-Anchor" href="#변수의-종류"></a> 변수의 종류</h2><h3 id="척도에-따른-분류"><a class="markdownIt-Anchor" href="#척도에-따른-분류"></a> 척도에 따른 분류</h3><ul><li>척도 : 입력자료를 수치적으로 측정하는 단위</li><li>명목 척도 : 성별, 직업, 지역 -&gt; 순서와 무관, 수학적 계산 불가</li><li>순서 척도 : 대소, 다과 등 서열적 자료 -&gt; 순서상 상대적 위치 표현</li><li>등간 척도 : 온도, 만족도 -&gt; 수학적 연산 가능</li><li>비율 척도 : 매출액, 가격 -&gt; 절대적 원점 존재, 수학적 연산 가능<br /><img src="/images/datascience/0529_05.png" alt="데이터종류" /></li></ul><h3 id="인과관계예-따른-분류"><a class="markdownIt-Anchor" href="#인과관계예-따른-분류"></a> 인과관계예 따른 분류</h3><ul><li>독립변수(설명변수)<ul><li>다른 변수에 영향을 <u>주는</u> 변수</li><li><b>원인</b>에 해당</li></ul></li><li>종속변수(반응변수)<ul><li>다른 변수에 영향을 <u>받는</u> 변수</li><li><b>결과</b>에 해당<br /><img src="/images/datascience/0529_06.png" alt="독립변수 종속변수 예" /></li></ul></li></ul><h3 id="자료형식에-따른-분류"><a class="markdownIt-Anchor" href="#자료형식에-따른-분류"></a> 자료형식에 따른 분류</h3><ul><li>숫자변수<ul><li>숫자로 처리되는 변수</li></ul></li><li>문자변수<ul><li>문자열로 처리되는 변수</li></ul></li><li>날씨변수<ul><li>날짜 표기형식으로 처리되는 변수</li></ul></li></ul><h3 id="기술통계와-추론통계"><a class="markdownIt-Anchor" href="#기술통계와-추론통계"></a> 기술통계와 추론통계</h3><ul><li>기술통계<ul><li>측정이나 실험으로 수집한 자료의 정리, 표현, 요약, 해석 등을 통해 자료의 특성과 변수 간의 관계를 분석하는 통계적 방법</li><li>도수분포, 백분율, 평균, 표준편차 등 분석 포함</li></ul></li><li>추론통계<ul><li>표본정보를 가지고 그 모집단의 특성 및 가능성 등을 추론해내는 통계적 방법</li><li>표본통계량을 이용하여 모수를 추론</li><li>추론과정에서 모집단의 분포가 정규분포이면 모수검정 실시</li><li>모집단이 정규분포를 가정하지 못하면 비모수검정 실시<br /><img src="/images/datascience/0529_07.png" alt="변수에 따른 분석모형" /></li></ul></li></ul><h2 id="범주형-데이터-기초분석"><a class="markdownIt-Anchor" href="#범주형-데이터-기초분석"></a> 범주형 데이터 기초분석</h2><ul><li>빈도분석<ul><li>실행메뉴<ul><li>분석 -&gt; 기술통계량 -&gt; 빈도분석</li></ul></li><li>분석할 변수의 빈도, 퍼센트, 무응답을 제외한 유효퍼센트, 누적퍼센트 등이 분석</li></ul></li><li>통계량<ul><li>수학적 분석결과 표시</li><li>백분위수</li><li>산포도</li><li>중심경향</li><li>분포</li></ul></li><li>도표<ul><li>범주형 변수<ul><li>막대도표</li><li>원도표</li></ul></li><li>정량적 변수<ul><li>히스토그램</li><li>steam&amp;leaf</li><li>Box-plot</li></ul></li></ul></li></ul><h2 id="연속형-데이터-기초-분석"><a class="markdownIt-Anchor" href="#연속형-데이터-기초-분석"></a> 연속형 데이터 기초 분석</h2><h3 id="기술-통계값"><a class="markdownIt-Anchor" href="#기술-통계값"></a> 기술 통계값</h3><ul><li><u>주어진 데이터를 요약하며 의미 있는 몇 개의 값으로 분석</u></li><li>요약과정에서 정보의 손실에 의한 정확성이 상실되나, 대부분 요약성이 정확성보다 중요한 의미를 갖음<br /><img src="/images/datascience/0529_08.png" alt="기술통계값" /></li></ul><h4 id="평균값-mean"><a class="markdownIt-Anchor" href="#평균값-mean"></a> 평균값 mean</h4><ul><li>AVERAGE()</li><li>평균값은 어디에나 존재</li><li>자료의 모든 값을 고려</li><li>극단치에서 변동의 폭이 심함<br /><img src="/images/datascience/0529_09.png" alt="평균값" /></li></ul><h4 id="중앙값-median"><a class="markdownIt-Anchor" href="#중앙값-median"></a> 중앙값 median</h4><ul><li>MEDIAN()</li><li>중앙값은 어떤 경우에나 존재</li><li>자료의 모든 값 자체를 고려하지는 않고 몇 개의 값이 있는지만 고려</li><li>극단적인 자료에서도 크게 변하지 않음</li><li>극단치가 있다면, 평균값보다 중앙값이 더 대표성을 띔</li></ul><h4 id="최빈값-mode"><a class="markdownIt-Anchor" href="#최빈값-mode"></a> 최빈값 mode</h4><ul><li>MODE()</li><li>특히 이름으로 표현한는 명목변수나 이산변수를 기술할 때 사용</li><li>하나 이상일 수 있지만, 전혀 없을 때도 있음</li><li>모든 값을 반영하지는 않음</li></ul><h4 id="범위-range"><a class="markdownIt-Anchor" href="#범위-range"></a> 범위 range</h4><ul><li>MAX() - MIN()</li><li>연속형 변수에서 사용</li><li>변수의 최고값에서 최소값을 뺀 것</li><li>계산하기에 간편함</li><li>최고값과 최소값에 의해서 범위가 결정되므로 그 사이에 값들의 퍼진 정도는 알수 없음</li><li>극단치가 있을 때는 변동이 큼</li></ul><h4 id="분산-variance"><a class="markdownIt-Anchor" href="#분산-variance"></a> 분산 variance</h4><ul><li>모집단의 분산 VAR.P()</li><li>표본집단의 분산 VAR.S()</li><li>측정값의 편차를 제곱하여 계산</li><li>모 분산의 단위는 관측 값이 갖는 측정단위와 일치하지 않음<br /><img src="/images/datascience/0529_10.png" alt="분산" /></li></ul><h4 id="표준편차-standard-eviation"><a class="markdownIt-Anchor" href="#표준편차-standard-eviation"></a> 표준편차 standard eviation</h4><ul><li>모집단 표준편차 STDEV.P()</li><li>표본집단의 표준편차 STDEV.S()</li><li>분산의 양의 제곱근</li><li>측정값의 측정단위와 일치하기 위함</li><li>크다<ul><li>자료가 평균값을 중심으로 광범위하게 분포</li></ul></li><li>작다<ul><li>평균값을 중심으로 밀접하게 분포<br /><img src="/images/datascience/0529_11.png" alt="표준편차" /></li></ul></li></ul><h4 id="변동계수-coefficient-of-variation-cv"><a class="markdownIt-Anchor" href="#변동계수-coefficient-of-variation-cv"></a> 변동계수 coefficient of variation, CV%</h4><ul><li>변동계수는 표준편차를 평균으로 나눈 값</li><li>측정단위에 따라 표준편차의 값의 크기가 달라지므로, 단위가 다른 두 집단을 비교하는 경우, 두 표준편차의 단위를 같게 하기 위해 표준편차를 평균으로 나눈 값에 100을 곱하여 CV%로 표시(그전에는 단위가 없음)<br /><img src="/images/datascience/0529_12.png" alt="변동계수" /></li></ul><h4 id="사분위수범위-interquartile-range-iqr"><a class="markdownIt-Anchor" href="#사분위수범위-interquartile-range-iqr"></a> 사분위수범위 interquartile range : IQR</h4><ul><li>상위 25%에 해당하는 값과 하위 25%에 해당하는 값을 제외하고 범위를 구한 값</li><li>IQR는 주우이수를 중심으로 상위25%와 하위 25% 관측값의 차이를 의미<br /><img src="/images/datascience/0529_13.png" alt="사분위수범위" /></li></ul><h4 id="왜도-skewness"><a class="markdownIt-Anchor" href="#왜도-skewness"></a> 왜도 skewness</h4><ul><li>SKEW()</li><li>0SKEW.P()</li><li>분포도의 기울어진 방향과 정도를 나타내는 양</li><li>'0’에 가까울수록 정규분포와 비슷<br /><img src="/images/datascience/0529_14.png" alt="왜도" /><br /><img src="/images/datascience/0529_15.png" alt="왜도 표" /></li></ul><h4 id="첨도-kurtosis"><a class="markdownIt-Anchor" href="#첨도-kurtosis"></a> 첨도 kurtosis</h4><ul><li>KURT()</li><li>분포도의 모양이 얼마나 뾰족한 가를 나타내는 양</li><li>'0’에 가까울수록 정규분포와 비슷<br /><img src="/images/datascience/0529_16.png" alt="첨도" /><br /><img src="/images/datascience/0529_17.png" alt="첨도 표" /></li></ul><h2 id="엑셀에서-통계도구-사용하기"><a class="markdownIt-Anchor" href="#엑셀에서-통계도구-사용하기"></a> 엑셀에서 통계도구 사용하기</h2><ul><li>파일 -&gt; 옵션 -&gt; 추가기능 -&gt; 분석도구 -&gt; 이동 -&gt; 분석도구 check</li><li>데이터 탭 -&gt; 데이터분석</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;변수의-종류&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#변수의-종류&quot;&gt;&lt;/a&gt; 변수의 종류&lt;/h2&gt;
+&lt;h3 id=&quot;척도에-따른-분류&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#척도에-따른-분
+      
+    
+    </summary>
+    
+    
+      <category term="데이터사이언스" scheme="https://hyeonukdev.github.io/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/"/>
+    
+      <category term="데이터분석" scheme="https://hyeonukdev.github.io/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/"/>
+    
+    
+      <category term="데이터분석 - 통계기초" scheme="https://hyeonukdev.github.io/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D-%ED%86%B5%EA%B3%84%EA%B8%B0%EC%B4%88/"/>
+    
+  </entry>
   
   <entry>
     <title>데이터입출력구현 - 핵심정리</title>
@@ -607,37 +636,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="핵심정리" scheme="https://hyeonukdev.github.io/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>제품소프트웨어 패키징 - 빌드 자동화 도구</title>
-    <link href="https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/"/>
-    <id>https://hyeonukdev.github.io/2020/05/24/Engineer_Information_Processing/ch07_%EC%A0%9C%ED%92%88%ED%8C%A8%ED%82%A4%EC%A7%95%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EB%B2%84%EC%A0%84%EA%B4%80%EB%A6%AC/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/</id>
-    <published>2020-05-24T14:20:12.000Z</published>
-    <updated>2020-05-24T14:20:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="제품소프트웨어패키징"><a class="markdownIt-Anchor" href="#제품소프트웨어패키징"></a> 제품소프트웨어패키징</h2><h3 id="소프트웨어-빌드-자동화-도구-개념"><a class="markdownIt-Anchor" href="#소프트웨어-빌드-자동화-도구-개념"></a> 소프트웨어 빌드 자동화 도구 개념</h3><ul><li>제품 소프트웨어 <u>실행 파일 생성을 자동화</u>하기 위해서 저장소에 있는 소스를 자동으로 읽어서 빌드를 하여 실행 파일을 만드는 도구</li><li>빌드 자동화 도구는 <u>지속적인 통합</u>과 일맥상통함</li><li>수없이 반복해서 최종 결과물을 만들어내야 하는 소프트웨어 개발 업무에 빌드 자동화 도구는 반드시 갖추어야함</li></ul><h3 id="온라인-빌드-자동화-도구-젠킨스"><a class="markdownIt-Anchor" href="#온라인-빌드-자동화-도구-젠킨스"></a> 온라인 빌드 자동화 도구, 젠킨스</h3><ul><li>빌드 자동화 도구로서 가장 많이 활용</li><li>Java 기반으의 오픈 소스로 지속적 통합관리를 가능</li><li>Apache-tomcat과 같은 서블릿 컨테이너 서버 기반으로 구동되는 시스템</li><li>CVS, SVN, Git 등 다양한 버전 관리 도구를 지원</li><li>특징<ul><li>쉬운 설치</li><li>친숙한 GUI</li><li>저장소 부하 감소</li><li>실시간 피드백</li><li>분산 빌드</li><li>3rd Party 플러그인</li></ul></li></ul><h3 id="gradle-안드로이드-환경에-적합한-도구"><a class="markdownIt-Anchor" href="#gradle-안드로이드-환경에-적합한-도구"></a> Gradle 안드로이드 환경에 적합한 도구</h3><ul><li>여러가지 언어의 빌드 환경 구성이 가능</li><li>안드로이드 개발환경에서 빌드 자동화됨</li><li>모든 그래들 빌드는 하나 이상의 projects로 구성되고 각 project는 하나 이상의 task들로 구성되며 이 task는 어떤 클래스를 컴파일 하거나 jar를 생성하거나 javadoc를 만드는 작업들을 의미함</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;제품소프트웨어패키징&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#제품소프트웨어패키징&quot;&gt;&lt;/a&gt; 제품소프트웨어패키징&lt;/h2&gt;
-&lt;h3 id=&quot;소프트웨어-빌드-자동화-도구-개념&quot;&gt;&lt;a class=&quot;markdownIt-An
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="제품소프트웨어패키징" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%A0%9C%ED%92%88%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%ED%8C%A8%ED%82%A4%EC%A7%95/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="빌드자동화도구" scheme="https://hyeonukdev.github.io/tags/%EB%B9%8C%EB%93%9C%EC%9E%90%EB%8F%99%ED%99%94%EB%8F%84%EA%B5%AC/"/>
     
   </entry>
   
