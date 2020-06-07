@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-05-31T05:35:12.000Z</updated>
+  <updated>2020-06-07T05:44:56.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IoT - Flask 웹 서버 구축</title>
+    <link href="https://hyeonukdev.github.io/2020/06/07/IoT/Flask/"/>
+    <id>https://hyeonukdev.github.io/2020/06/07/IoT/Flask/</id>
+    <published>2020-06-07T05:44:56.000Z</published>
+    <updated>2020-06-07T05:44:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="flask란"><a class="markdownIt-Anchor" href="#flask란"></a> Flask란?</h3><ul><li>경량 웹 프레임워크<ul><li>프레임워크?<ul><li>뼈대, 골조</li></ul></li></ul></li><li>단점<ul><li>개발자가 직접 환경에 맞춰 개발을 하고 라이브러를 찾아서 추가해야한다</li></ul></li></ul><h4 id="vs-django"><a class="markdownIt-Anchor" href="#vs-django"></a> vs Django</h4><ul><li>장고는 풀스택 프레임워크<ul><li>인증과 권한, ORM, 템플릿 라이브러리, 로그처리, 보안, 관리자 기능 요소 포함</li></ul></li></ul><h4 id="url-디스패치"><a class="markdownIt-Anchor" href="#url-디스패치"></a> URL 디스패치</h4><ul><li>Flask에서 URL을 처리하는 것.</li><li>사용자가 입력한 URL을 지켜보다가 URL을 분석하여 올바른 길로 안내</li></ul><h4 id="flask-led-제어-동적-라우팅-산형괄호"><a class="markdownIt-Anchor" href="#flask-led-제어-동적-라우팅-산형괄호"></a> Flask LED 제어 동적 라우팅 &lt;산형괄호&gt;</h4><ul><li>동적으로 변경되는 URL의 뷰 함수를 사용하기 위해서 &lt;&gt;을 이용해서 변수를 전달해야하고 해당 변수가 클라이언트로 부터 URL로 전달되면 함수의 매개변수로 받아줘야 사용 가능</li></ul><h3 id="ip-란"><a class="markdownIt-Anchor" href="#ip-란"></a> IP 란?</h3><ul><li>Internet Protocol의 약자</li><li><u>송/수신 호스트가 데이터를 서로 주고 받는데 필요한 프로토콜을 의미</u></li><li>데이터는 패킷으로 분할되어 전송되고 받은 쪽에서 분할된 패킷을 조립<ul><li><b>패킷 스위칭 방식</b><ul><li>Data를 패킷으로 나누어 전송하기 때문에 동시 전송이 가능</li></ul></li></ul></li><li><b>터널링기술</b><ul><li>IPv6 망에서 인접한 IPv4 망을 거쳐서 건너편 IPv6망으로 통신할 때 IPv4 망에 터널을 만들어 IPv6 패킷을 통과시키는 개념</li></ul></li></ul><h3 id="port-란"><a class="markdownIt-Anchor" href="#port-란"></a> Port 란?</h3><ul><li>컴퓨터 간 상호 통신을 위해 프로토콜에서 이용하는 가상의 연결 단</li></ul><h3 id="process-란"><a class="markdownIt-Anchor" href="#process-란"></a> Process 란?</h3><ul><li>실행중인 프로그램</li><li>프로그램이 명령어와 정적 데이터가 메모리에 적재되면 프로세스가 됨</li><li><code>netstat</code>명령어로 확인</li><li><code>sudo kill [PID]</code>로 종료</li></ul><h3 id="cron-vs-daemon"><a class="markdownIt-Anchor" href="#cron-vs-daemon"></a> cron vs daemon</h3><ul><li>cron<ul><li>주기적인 실행이 필요할 때 사용</li><li><code>crontab -e</code> 에 등록</li></ul></li><li>daemon<ul><li>계속 실행되는 것</li><li>파이를 재부팅했을 때부터 종료 시까지 자동으로 실행</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;flask란&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#flask란&quot;&gt;&lt;/a&gt; Flask란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;경량 웹 프레임워크
+&lt;ul&gt;
+&lt;li&gt;프레임워크?
+&lt;ul&gt;
+&lt;li&gt;뼈대, 골조&lt;/li&gt;
+&lt;/ul&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="IoT" scheme="https://hyeonukdev.github.io/categories/IoT/"/>
+    
+      <category term="Flask" scheme="https://hyeonukdev.github.io/categories/IoT/Flask/"/>
+    
+    
+      <category term="IoT" scheme="https://hyeonukdev.github.io/tags/IoT/"/>
+    
+      <category term="Flask" scheme="https://hyeonukdev.github.io/tags/Flask/"/>
+    
+  </entry>
   
   <entry>
     <title>정보처리기사 - 오답노트</title>
@@ -603,37 +640,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="형상관리도구" scheme="https://hyeonukdev.github.io/tags/%ED%98%95%EC%83%81%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>통합구현 - 현업도구</title>
-    <link href="https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch06_%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%98%84%EC%97%85%EB%8F%84%EA%B5%AC/"/>
-    <id>https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch06_%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%98%84%EC%97%85%EB%8F%84%EA%B5%AC/</id>
-    <published>2020-05-26T05:59:59.000Z</published>
-    <updated>2020-05-26T05:59:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="통합구현"><a class="markdownIt-Anchor" href="#통합구현"></a> 통합구현</h2><h3 id="협업도구의-필요성"><a class="markdownIt-Anchor" href="#협업도구의-필요성"></a> 협업도구의 필요성</h3><ul><li>규모에 따라 소프트웨어 개발 프로젝트는 수명에서 수천 명의 개발자가 참여하기 때문에 그들 간의 협업을 위한 도구 필요</li><li>특히, 통합 규현 관리를 위한 개발자 간 협업도구 필요</li><li>개발자 간에는 전문 분야, 경험, 개인적 목표가 다르기 때문에 다른 의견이 있을 수 있고 다른 개발자와 유대감 형성 및 유대감 지속을 위한 커뮤니케이션 필요</li></ul><h3 id="협업도구의-분류"><a class="markdownIt-Anchor" href="#협업도구의-분류"></a> 협업도구의 분류</h3><ul><li>기능에 따라 문서굥유</li><li>소스 공유</li><li>아이디어 공유</li><li>디자인 공유</li><li>마인드 맵핑</li><li>프로제트 관리</li><li>일정관리<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0526_05.png" alt="협업도구분류1" /><br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0526_06.png" alt="협업도구분류2" /></li></ul><h3 id="협업도구-기능"><a class="markdownIt-Anchor" href="#협업도구-기능"></a> 협업도구 기능</h3><ol><li>개발자간 커뮤니케이션<ul><li>개발자간 작업 공유, 오류 현상 공유, 의견 공유 등 다양한 의사 소통 제공</li></ul></li><li>일정 및 이슈 공유<ul><li>소스 코드 규현 도중 발생하는 오류 및 이슈에 대한 공유 혹은 프로젝트 일정에 대한 공유 기능</li></ul></li><li>개발자간 집단지성 활용<ul><li>구현아이디어의 공유 혹은 새로운 아이디어를 개발자들 간에 공유함으로써 집단지성 활용 가능</li></ul></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;통합구현&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#통합구현&quot;&gt;&lt;/a&gt; 통합구현&lt;/h2&gt;
-&lt;h3 id=&quot;협업도구의-필요성&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#협업도구의-필요성&quot;&gt;&lt;/a
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="통합구현" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="현업도구" scheme="https://hyeonukdev.github.io/tags/%ED%98%84%EC%97%85%EB%8F%84%EA%B5%AC/"/>
     
   </entry>
   

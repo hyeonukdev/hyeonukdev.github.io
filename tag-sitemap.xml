@@ -3,6 +3,20 @@
 
 
     <url>
+        <loc>https://hyeonukdev.github.io/tags/Flask/</loc>
+        <lastmod>2020-06-07T05:44:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/IoT/</loc>
+        <lastmod>2020-06-07T05:44:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://hyeonukdev.github.io/tags/%25EC%2598%25A4%25EB%258B%25B5%25EB%2585%25B8%25ED%258A%25B8/</loc>
         <lastmod>2020-05-31T05:35:12.000Z</lastmod>
         <changefreq>weekly</changefreq>
