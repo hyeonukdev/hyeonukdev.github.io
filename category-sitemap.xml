@@ -8,14 +8,21 @@
     </url>
 
     <url>
-        <loc>https://hyeonukdev.github.io/categories/IoT/Camera/</loc>
-        <lastmod>2020-06-07T06:44:57.000Z</lastmod>
+        <loc>https://hyeonukdev.github.io/categories/IoT/%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25AC%25EC%259B%258C%25EB%2594%25A9/</loc>
+        <lastmod>2020-06-07T07:06:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeonukdev.github.io/categories/IoT/</loc>
+        <lastmod>2020-06-07T07:06:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/categories/IoT/Camera/</loc>
         <lastmod>2020-06-07T06:44:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
