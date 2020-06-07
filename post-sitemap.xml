@@ -8,6 +8,30 @@
     </url>
 
     <url>
+        <loc>https://hyeonukdev.github.io/2020/06/07/post/</loc>
+        <lastmod>2020-06-07T06:50:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/06/07/IoT/camera/</loc>
+        <lastmod>2020-06-07T06:44:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/2020/06/07/IoT/Bluetooth_Beacon/</loc>
+        <lastmod>2020-06-07T06:23:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hyeonukdev.github.io/2020/06/07/IoT/Flask/</loc>
         <lastmod>2020-06-07T05:44:56.000Z</lastmod>
         <changefreq>weekly</changefreq>

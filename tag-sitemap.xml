@@ -3,14 +3,35 @@
 
 
     <url>
-        <loc>https://hyeonukdev.github.io/tags/Flask/</loc>
-        <lastmod>2020-06-07T05:44:56.000Z</lastmod>
+        <loc>https://hyeonukdev.github.io/tags/Camera/</loc>
+        <lastmod>2020-06-07T06:44:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://hyeonukdev.github.io/tags/IoT/</loc>
+        <lastmod>2020-06-07T06:44:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/Beacon/</loc>
+        <lastmod>2020-06-07T06:23:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/Bluetooth/</loc>
+        <lastmod>2020-06-07T06:23:15.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hyeonukdev.github.io/tags/Flask/</loc>
         <lastmod>2020-06-07T05:44:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

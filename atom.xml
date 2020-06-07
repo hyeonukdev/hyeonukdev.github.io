@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hyeonukdev.github.io/"/>
-  <updated>2020-06-07T05:44:56.000Z</updated>
+  <updated>2020-06-07T06:50:39.000Z</updated>
   <id>https://hyeonukdev.github.io/</id>
   
   <author>
@@ -15,6 +15,89 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>post</title>
+    <link href="https://hyeonukdev.github.io/2020/06/07/post/"/>
+    <id>https://hyeonukdev.github.io/2020/06/07/post/</id>
+    <published>2020-06-07T06:50:39.000Z</published>
+    <updated>2020-06-07T06:50:39.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IoT - Camera</title>
+    <link href="https://hyeonukdev.github.io/2020/06/07/IoT/camera/"/>
+    <id>https://hyeonukdev.github.io/2020/06/07/IoT/camera/</id>
+    <published>2020-06-07T06:44:57.000Z</published>
+    <updated>2020-06-07T06:44:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="uv4l-이란"><a class="markdownIt-Anchor" href="#uv4l-이란"></a> UV4L 이란?</h3><ul><li>Userspace Video4Linux</li><li>V4L과 호환되어 실제 또는 가상의 비디오 장치들을 위한 사용자 영역 드라이버를 제공해주는 모델</li><li>스트리밍 서버 플러그인을 포함</li><li>화상통신이 가능한 양방향 스트리밍을 지원</li><li>커스터마이징이 가능한 RESTful API 제공<ul><li>V4L<ul><li>Video4Linux</li><li>리눅스에서 비디오 디비이스 제어하고 사용하기 위한 API</li></ul></li></ul></li></ul><h3 id="api-란"><a class="markdownIt-Anchor" href="#api-란"></a> API 란?</h3><ul><li>Application Programming Interface</li><li>특정 프로그램에서 운영체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 해주는 인터페이스</li></ul><h4 id="frame"><a class="markdownIt-Anchor" href="#frame"></a> frame</h4><ul><li>24frame 은 1초에 24장에 사진이 출력</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;uv4l-이란&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#uv4l-이란&quot;&gt;&lt;/a&gt; UV4L 이란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Userspace Video4Linux&lt;/li&gt;
+&lt;li&gt;V4L과 호환되어 실제 또는 가상의
+      
+    
+    </summary>
+    
+    
+      <category term="IoT" scheme="https://hyeonukdev.github.io/categories/IoT/"/>
+    
+      <category term="Camera" scheme="https://hyeonukdev.github.io/categories/IoT/Camera/"/>
+    
+    
+      <category term="IoT" scheme="https://hyeonukdev.github.io/tags/IoT/"/>
+    
+      <category term="Camera" scheme="https://hyeonukdev.github.io/tags/Camera/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IoT - Bluetooth 와 Beacon</title>
+    <link href="https://hyeonukdev.github.io/2020/06/07/IoT/Bluetooth_Beacon/"/>
+    <id>https://hyeonukdev.github.io/2020/06/07/IoT/Bluetooth_Beacon/</id>
+    <published>2020-06-07T06:23:15.000Z</published>
+    <updated>2020-06-07T06:23:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="bluetooth-란"><a class="markdownIt-Anchor" href="#bluetooth-란"></a> Bluetooth 란?</h3><ul><li>근거리 무선 통신 기술의 표본</li><li>수 ~ 수십미터 정도의 거리에서 정보 교환 용도 사용</li><li>2.4 ~ 2.485 GHz 주파수 대역 사용<ul><li>동일한 주파수를 사용하는 다른 장치 간에 <code>간섭현상</code> 발생 가능</li><li><b>호핑기술</b><ul><li>블루투스 페어링 이후 무선 통신 상황에 따라 주파수를 일정간격으로 건너뛰어 다른 채널의 주파수로 통신하는 것</li></ul></li></ul></li><li>wifi 보다 저전력이고 더 좁은 범위 통신에 적합</li><li>BLE<ul><li>기존의 블루투스보다 전력 소모가 적고 저용량 데이터를 처리하기에 맞도록 설계</li><li>브로드캐스트 모드<ul><li>일정한 주기로 주변의 모든 디바이스에게 일방적으로 데이터를 보내는 모드</li><li>주기적으로 소량의 데이터를 여러 기기에 전달해야 하는 경우에 적합</li></ul></li></ul></li></ul><h3 id="beacon-이란"><a class="markdownIt-Anchor" href="#beacon-이란"></a> Beacon 이란?</h3><ul><li>근거리에 있는 스마트 기기를 자동으로 인식하여 필요한 데이터를 전송할 수 있는 무선 통신 장치</li><li>최대 50m</li><li>전원없이 배터리만으로 설치</li><li>UUID가 포함된 정보 패킷을 광고의 목적으로 사용가능</li><li>RSSI 값을 사용하여 비콘의 출력세기와 신호강도로 비콘과 단말기 사이 거리 측정 가능</li></ul><h4 id="비콘종류"><a class="markdownIt-Anchor" href="#비콘종류"></a> 비콘종류</h4><ol><li>iBeacon</li></ol><ul><li><u>데이터 패킷</u><ol><li>비콘의 고정 고유 번호</li><li>UUID : 범용 고유 식별자</li><li>2 byte의 비콘 그룹을 나타내는 식별 번호</li><li>2 byte의 비콘 그룹 내에서 고유 비콘을 나타내는 식별 번호</li><li>통신 세기를 나타내는 신호</li></ol></li></ul><ol start="2"><li>에디스톤</li></ol><ul><li>오픈소스</li><li>패킷유형<ul><li>UID : Unique identifier<ul><li>설치된 앱을 실행할때 알림</li></ul></li><li>URL<ul><li>효율적이고 쉽게 정보 전달</li></ul></li><li>TLM : Telemetry<ul><li>배터리정보, 기기온도, 패킷 전송 횟수</li></ul></li><li>EID<ul><li>안전성과 보안이 강화된 패킷</li></ul></li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;bluetooth-란&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#bluetooth-란&quot;&gt;&lt;/a&gt; Bluetooth 란?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;근거리 무선 통신 기술의 표본&lt;/li&gt;
+&lt;li&gt;수 ~ 수십미터 정도의
+      
+    
+    </summary>
+    
+    
+      <category term="IoT" scheme="https://hyeonukdev.github.io/categories/IoT/"/>
+    
+      <category term="Bluetooth" scheme="https://hyeonukdev.github.io/categories/IoT/Bluetooth/"/>
+    
+    
+      <category term="IoT" scheme="https://hyeonukdev.github.io/tags/IoT/"/>
+    
+      <category term="Bluetooth" scheme="https://hyeonukdev.github.io/tags/Bluetooth/"/>
+    
+      <category term="Beacon" scheme="https://hyeonukdev.github.io/tags/Beacon/"/>
+    
+  </entry>
   
   <entry>
     <title>IoT - Flask 웹 서버 구축</title>
@@ -546,100 +629,6 @@
       <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
     
       <category term="논리데이터모델개요" scheme="https://hyeonukdev.github.io/tags/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%AA%A8%EB%8D%B8%EA%B0%9C%EC%9A%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>데이터입출력구현 - 자료구조</title>
-    <link href="https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch05_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%85%EC%B6%9C%EB%A0%A5%EA%B5%AC%ED%98%84/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%80%EC%9E%A5%EC%86%8C%ED%99%95%EC%9D%B8/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
-    <id>https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch05_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%85%EC%B6%9C%EB%A0%A5%EA%B5%AC%ED%98%84/%EB%85%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%A0%80%EC%9E%A5%EC%86%8C%ED%99%95%EC%9D%B8/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/</id>
-    <published>2020-05-26T07:21:15.000Z</published>
-    <updated>2020-05-26T07:21:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="데이터입출력구현"><a class="markdownIt-Anchor" href="#데이터입출력구현"></a> 데이터입출력구현</h2><ul><li>업무 분석가, 데이터베이스 엔지니어가 작성한 논리 데이터저장소 설계 내역에서 <u>정의된 데이터의 유형을 확인하고 식별</u></li><li>논리 데이터저장소 설계 내역에서 <u>데이터의 논리적 단위와 데이터 간의 관계를 확인</u></li><li>논리 데이터저장소 설계 내역에서 <u>데이터 또는 데이터간의 제약조건과 이들 간의 관계를 식별</u></li></ul><h3 id="자료구조의-개념"><a class="markdownIt-Anchor" href="#자료구조의-개념"></a> 자료구조의 개념</h3><ul><li><p>컴퓨터에서 자료를 효율적으로 표현하고 저장하고 처리할 수 있도록 만들어진 논리적인 틀</p></li><li><p>분류<br /><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0526_08.png" alt="자료구조" /></p></li><li><p>선형리스트</p></li><li><p>연결리스트</p></li><li><p>스택</p></li><li><p>큐</p></li><li><p>데크</p></li><li><p>트리</p><ul><li>이진트리</li><li>순회</li></ul></li><li><p>그래프<br /><a href="https://www.notion.so/hyeonukdev/Alogorithm-0fe7decd13f344d899ca2e5ba1c4d901">알고리즘스터디</a></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;데이터입출력구현&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#데이터입출력구현&quot;&gt;&lt;/a&gt; 데이터입출력구현&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;업무 분석가, 데이터베이스 엔지니어가 작성한 논리 데이터저장소 설계 내역에서 &lt;u&gt;정의
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="데이터입출력구현" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9E%85%EC%B6%9C%EB%A0%A5%EA%B5%AC%ED%98%84/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="자료구조" scheme="https://hyeonukdev.github.io/tags/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>통합구현 - 핵심정리</title>
-    <link href="https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch06_%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
-    <id>https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch06_%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/</id>
-    <published>2020-05-26T06:17:14.000Z</published>
-    <updated>2020-05-26T06:17:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="통합구현"><a class="markdownIt-Anchor" href="#통합구현"></a> 통합구현</h2><h3 id="1-ide-도구"><a class="markdownIt-Anchor" href="#1-ide-도구"></a> 1. IDE 도구</h3><ul><li>통합 개발 환경은 코드의 작성 및 편집, 디버깅, 컴파일, 배포 등 프로그램 개발에 관련된 모든 작업을 하나씩 프로그램 안에서 처리하는 환경을 제공하는 소프트웨어</li><li>기능<ol><li>개발 환경 지원</li><li>컴파일 및 디버깅 기능 제공</li><li>외부 연계모듈과 통합 기능 제공</li></ol></li></ul><h3 id="2-협업-도구"><a class="markdownIt-Anchor" href="#2-협업-도구"></a> 2. 협업 도구</h3><ul><li>종류<ul><li>기능에 따라 문서굥유</li><li>소스 공유</li><li>아이디어 공유</li><li>디자인 공유</li><li>마인드 맵핑</li><li>프로제트 관리</li><li>일정관리</li></ul></li><li>기능<ol><li>개발자간 커뮤니케이션</li><li>일정 및 이슈 공유</li><li>개발자간 집단지성 활용</li></ol></li></ul><h3 id="3-형상관리-도구"><a class="markdownIt-Anchor" href="#3-형상관리-도구"></a> 3. 형상관리 도구</h3><ul><li>소프트웨어 개발 과정에서 <u>소프트웨어의 변경 사항을 관리</u>하기 위해 변경을 체계적으로 관리, 추적 및 제어하기 위한 일련의 활동</li><li>절차<ol><li>형상 식별</li><li>변경 제어</li><li>형상 감사</li><li>형상 기록</li></ol></li><li>관리 도구<ul><li>CVS</li><li>SVN</li><li>GIT</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;통합구현&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#통합구현&quot;&gt;&lt;/a&gt; 통합구현&lt;/h2&gt;
-&lt;h3 id=&quot;1-ide-도구&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-ide-도구&quot;&gt;&lt;/a&gt; 
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="통합구현" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="핵심정리" scheme="https://hyeonukdev.github.io/tags/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>통합구현 - 형상관리도구</title>
-    <link href="https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch06_%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%98%95%EC%83%81%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/"/>
-    <id>https://hyeonukdev.github.io/2020/05/26/Engineer_Information_Processing/ch06_%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/%ED%98%95%EC%83%81%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/</id>
-    <published>2020-05-26T06:04:41.000Z</published>
-    <updated>2020-05-26T06:04:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="통합구현"><a class="markdownIt-Anchor" href="#통합구현"></a> 통합구현</h2><h3 id="형상관리-configuration-management"><a class="markdownIt-Anchor" href="#형상관리-configuration-management"></a> 형상관리 Configuration Management</h3><ul><li>소프트웨어 개발 과정에서 <u>소프트웨어의 변경 사항을 관리</u>하기 위해 변경을 체계적으로 관리, 추적 및 제어하기 위한 일련의 활동</li><li>소프트웨어 형상은 항상 변하게 되는데 이때 과거의 형상을 기억하고 있어야 하중에 문제가 되더라고 <u>과거의 형상을 원상 복구 가능</u></li><li>형상관리절차<ol><li>형상 식별</li><li>변경 제어</li><li>형상 감사</li><li>형상 기록</li></ol></li></ul><h3 id="형상관리-수행-절차-및-관리조직"><a class="markdownIt-Anchor" href="#형상관리-수행-절차-및-관리조직"></a> 형상관리 수행 절차 및 관리조직</h3><p><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0526_06.png" alt="형상관리 수행 절차" /></p><ul><li>형상 통제 위원회<ul><li>변경 요청에 대한 기술적인 타당성, 부작용, 시스템의 기능 및 형상관리 항목들에 미치는 영향, 수정에 소요되는 기간 및 비용 등을 평가</li></ul></li></ul><h3 id="형상관리의-특징"><a class="markdownIt-Anchor" href="#형상관리의-특징"></a> 형상관리의 특징</h3><ul><li><u>소프트웨어 변경의 원인을 알아내고 제어하며 적절히 변경되고 있는지 확인</u>하여 해당 담당자에게 통보하는 작업</li><li>형상관리는 소프트에어 개발의 전 단계는 물론 유지보수 단계에서도 수행되는 활동</li><li>형상관리는 소프트웨어 개발의 전체 비용을 줄이고, 개발과정의 여러 가지 문제점 발생요인이 최소화 되도록 보증하는 것이 목적</li></ul><h3 id="소프트웨어-형상관리-도구-기능"><a class="markdownIt-Anchor" href="#소프트웨어-형상관리-도구-기능"></a> 소프트웨어 형상관리 도구 기능</h3><ul><li>체크아웃<ul><li>형상관리 도구 Repository로 부터 최신 소프트웨어 형상을 개발자 PC로 다운로드 받는 기능</li></ul></li><li>체크인<ul><li>개발자가 수정한 소스를 형상관리 도구로 업로드하는 기능</li></ul></li><li>커밋<ul><li>개발자가 소스를 형상관리 도구에 업로드 후 최종적으로 업데이트가 되었을 때 형상관리 서버에서 반영되도록 하는 기능</li></ul></li></ul><h3 id="소프트웨어-형상관리-도구개념"><a class="markdownIt-Anchor" href="#소프트웨어-형상관리-도구개념"></a> 소프트웨어 형상관리 도구개념</h3><ul><li>소스 코드나 문서의 버전 관리, 이력 관리, 추적 등 변경사항을 체계적으로 관리할 수 있는 기능을 제공하는 도구</li><li>종류<ul><li>CVS</li><li>SVN</li><li>GIT</li></ul></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;통합구현&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#통합구현&quot;&gt;&lt;/a&gt; 통합구현&lt;/h2&gt;
-&lt;h3 id=&quot;형상관리-configuration-management&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; h
-      
-    
-    </summary>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="통합구현" scheme="https://hyeonukdev.github.io/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%ED%86%B5%ED%95%A9%EA%B5%AC%ED%98%84/"/>
-    
-    
-      <category term="정보처리기사" scheme="https://hyeonukdev.github.io/tags/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/"/>
-    
-      <category term="형상관리도구" scheme="https://hyeonukdev.github.io/tags/%ED%98%95%EC%83%81%EA%B4%80%EB%A6%AC%EB%8F%84%EA%B5%AC/"/>
     
   </entry>
   
