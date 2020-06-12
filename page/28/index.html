@@ -166,6 +166,126 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%BC%EB%A6%AC%EC%86%8D%EC%84%B1%EC%84%A4%EA%B3%84/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 파티셔닝">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-15T04:55:27.000Z">2020-05-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">물리데이터베이스</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6분 읽기 (대략 903 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%BC%EB%A6%AC%EC%86%8D%EC%84%B1%EC%84%A4%EA%B3%84/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/">물리데이터베이스 - 파티셔닝</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2>
+<ul>
+<li>
+<p>식별된 오브젝트의 데이터 타입, 사이즈, 증가 용량을 고려하여 저장 공간을 산출하고, 해당 오브젝트에 대한 테이블 스페이스를 할당</p>
+</li>
+<li>
+<p>할당된 테이블 스페이스 용량을 기반으로 디스크 저장 용량을 산정하고, 데이터베이스 백업 주기, 방식에 따른 별도 저장 공간 용량을 산정</p>
+</li>
+<li>
+<p>분산위치, 엔티티명, 테이블명, 테이블 스페이스명, 테이블 스페이스 용량, 데이터 파일명, 파티셔닝, 클러스터링 정보, 보안정보에 대한 물리 데이터베이스 설계서를 작성</p>
+</li>
+</ul>
+<h3 id="partition-파티션-개념"><a class="markdownIt-Anchor" href="#partition-파티션-개념"></a> Partition 파티션 개념</h3>
+<ul>
+<li>데이터베이스에서 파티션은 <u>대용량의 테이블이나 인덱스를 작은 논리적 단위인 파티션으로 나누는 것 </u>
+<ul>
+<li>대용량 데이터베이스의 경우 중요한 몇 개의 테이블에만 집중되어 데이터가 증가되므로 이런 테이블을 작은 단위로 나눠 분산시키면 <u>성능 저하를 방지와 데이터 관리가 쉬워짐</u></li>
+<li>테이블이나 인덱스를 파티셔닝하면 파티션키 또는 인덱스키에 따라 <u>물리적으로 별도의 공간에 데이터가 저장됨</u></li>
+<li><u>데이터 처리는 테이블 단위로 이뤄지고 데이터 저장은 파티션별로 수행</u></li>
+</ul>
+</li>
+</ul>
+<h3 id="파티션-장단점"><a class="markdownIt-Anchor" href="#파티션-장단점"></a> 파티션 장/단점</h3>
+<ul>
+<li>장점
+<ul>
+<li>데이터 접근 시 액세스 범위를 줄여 <u>쿼리 성능이 향상됨</u></li>
+<li>파티션별로 <u>데이터가 분산되어 저장되므로 디스크의 성능이 향상됨</u></li>
+<li>파티션별로 백업 및 복구를 수행하므로 <u>속도가 빠름</u></li>
+<li>시스템 장애 시 <u>데이터 손상 정도를 최소화</u></li>
+<li>데이터 가용성이 향상됨</li>
+<li>파티션 단위로 <u>입/출력을 분산</u>시킬 수 있음</li>
+</ul>
+</li>
+<li>단점
+<ul>
+<li>하나의 테이블을 세분화하여 관리하므로 세심한 관리가 요구됨</li>
+<li>테이블간 조인에 대한 <u>비용이 증가함</u></li>
+<li><u>용량이 작은 테이블에 파티셔닝을 수행하면 오히려 성능이 저하됨</u></li>
+</ul>
+</li>
+</ul>
+<h3 id="파티션의-종류"><a class="markdownIt-Anchor" href="#파티션의-종류"></a> 파티션의 종류</h3>
+<h4 id="1-range-partitioning-범위-분할"><a class="markdownIt-Anchor" href="#1-range-partitioning-범위-분할"></a> 1. Range Partitioning 범위 분할</h4>
+<ul>
+<li>지정한 열의 값을 기준을 분할
+<ul>
+<li>일별, 월별, 분기별</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-hash-partitioning-해시-분할"><a class="markdownIt-Anchor" href="#2-hash-partitioning-해시-분할"></a> 2. Hash Partitioning 해시 분할</h4>
+<ul>
+<li><u>해시 함수를 적용한 결과 값에 따라 데이터를 분할</u></li>
+<li>특정 파티션에 데이터가 집중되는 범위 분할의 단점을 보완한 것으로 <u>데이터를 고르게 분산할 때 유용함</u></li>
+<li>특정 데이터가 어디에 있는지 판단할 수 없음</li>
+<li>고객번호, 주민번호 등과 같이 데이터가 고른 컬럼에 효과적임</li>
+</ul>
+<h4 id="3-composite-partitoning-조합-분할"><a class="markdownIt-Anchor" href="#3-composite-partitoning-조합-분할"></a> 3. Composite Partitoning 조합 분할</h4>
+<ul>
+<li>범위 분할로 분할한 다음 해시 함수를 적용하여 다시 분할하는 방식</li>
+<li>범위 분할한 파티션이 너무 커서 관리가 어려울 때 유용함</li>
+</ul>
+<h3 id="파티션키-선정시-고려사항"><a class="markdownIt-Anchor" href="#파티션키-선정시-고려사항"></a> 파티션키 선정시 고려사항</h3>
+<ul>
+<li>파티션키는 <u>테이블 접근 유형</u>에 따라 파티셔닝이 이뤄지도록 선정</li>
+<li>데이터 관리의 용이성을 위해 <u>이력성 데이터</u>는 파티션 생성주기와 소멸주기를 일치</li>
+<li><u>매일 생성되는 날짜 컬럼, 백업의 기준이 되는 날짜 컬럼, 파티션 간 이동이 없는 컬럼, I/O 병목을 줄일 수 있는 데이터 분포가 양호한 컬럼</u> 등을 파티션키로 선정</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%ED%95%B5%EC%8B%AC%EC%A0%95%EB%A6%AC/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 핵심정리">
         </a>
@@ -495,119 +615,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%95%94%ED%98%B8%ED%99%94/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 데이터베이스 암호화">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-14T17:35:42.000Z">2020-05-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">물리데이터베이스</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (대략 489 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%95%94%ED%98%B8%ED%99%94/">물리데이터베이스 - 데이터베이스 암호화</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2>
-<h3 id="데이터베이스-보안-기능-적용"><a class="markdownIt-Anchor" href="#데이터베이스-보안-기능-적용"></a> 데이터베이스 보안 기능 적용</h3>
-<ul>
-<li>데이터베이스의 접근 권한 및 데이터베이스 동작 객체(sql, 프로시저, 트리거 등)의 보안 취약점을 보완하기 위해 보안 기능을 적용</li>
-<li>민감 데이터는 데이터 자체의 보안 방안(암호화, 익명화 등)도 고려</li>
-<li>고려사항
-<ul>
-<li>데이터베이스 접근 권한
-<ul>
-<li>데이터베이스, 스키마, 엔티티(테이블)의 접근 권한 관리(접근 권한 객체 관리 수준은 성능과 보안성을 고려하여 관리)</li>
-<li>예시: 테이블 권한 관리 시 성능이 저하, 민감 테이블만 관리</li>
-</ul>
-</li>
-<li>악의적 코드 삽입 금지
-<ul>
-<li>프로시저(Procedure), 트리거(Trigger), 배치(Batch) 등 데이터베이스 객체의 동작상에 악의적인 코드가 삽입되지 않도록 동작 간 처리</li>
-</ul>
-</li>
-<li>민감 데이터 관리
-<ul>
-<li>개인 정보나 업무상 민감 데이터는 암/복호화나 익명화 처리를 통해 데이터베이스에서 관리</li>
-</ul>
-</li>
-<li>악의적 시도시 에러 처리
-<ul>
-<li>공격 패턴에 대한 사용자 정의 예외 처리를 적용하고 에러 처리 내용이 외부에서 조회되지 않도록 권한 관리</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="데이터베이스-암호화encryption-알고리즘"><a class="markdownIt-Anchor" href="#데이터베이스-암호화encryption-알고리즘"></a> 데이터베이스 암호화(Encryption) 알고리즘</h3>
-<ul>
-<li>데이터베이스 암호화 알고리즘은 크게 대칭 키, 해시, 비대칭 키 알고리즘이 사용됨
-<ul>
-<li>대칭 키 암호 알고리즘
-<ul>
-<li>DES</li>
-<li>ARIA 128/192/256</li>
-<li>SEED</li>
-</ul>
-</li>
-<li>해시 알고리즘
-<ul>
-<li>SHA 256/384/512</li>
-<li>HAS-160</li>
-</ul>
-</li>
-<li>비대칭 키 암호 알고리즘
-<ul>
-<li>RSA</li>
-<li>ECDSA</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="데이터베이스-암호화-기법"><a class="markdownIt-Anchor" href="#데이터베이스-암호화-기법"></a> 데이터베이스 암호화 기법</h3>
-<ul>
-<li><u>애플리케이션에서 암호화를 수행하는 API 방식과 데이터베이스에서 암호화를 수행하는 Plug-in 방식, API 방식과 Plug-in 방식을 혼합한 Hybrid 방식</u></li>
-<li><img src="/images/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/0515_01.png" alt="암호화기법" /></li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -683,7 +690,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            223
+                            224
                         </p>
                     </a>
                 </div>
@@ -829,7 +836,7 @@
                 <span class="level-item">데이터사이언스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
@@ -837,7 +844,7 @@
                 <span class="level-item">데이터분석</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">10</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/%EB%8F%85%EC%84%9C/">
@@ -1129,6 +1136,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-12T15:48:14.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 분석의 활용</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/07/IoT/tcp_ip/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - 포트포워딩과 슈퍼디엠지">
@@ -1203,25 +1229,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/31/Engineer_Information_Processing/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="정보처리기사 - 오답노트">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-31T05:35:12.000Z">2020-05-31</time></div>
-                    <a href="/2020/05/31/Engineer_Information_Processing/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">정보처리기사 - 오답노트</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/">오답노트</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1239,7 +1246,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1748,7 +1755,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -1776,7 +1783,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -2490,6 +2497,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-12T15:48:14.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 분석의 활용</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/07/IoT/tcp_ip/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - 포트포워딩과 슈퍼디엠지">
@@ -2564,25 +2590,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/05/31/Engineer_Information_Processing/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B81/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="정보처리기사 - 오답노트">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-31T05:35:12.000Z">2020-05-31</time></div>
-                    <a href="/2020/05/31/Engineer_Information_Processing/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B81/" class="title has-link-black-ter is-size-6 has-text-weight-normal">정보처리기사 - 오답노트</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a> / <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%98%A4%EB%8B%B5%EB%85%B8%ED%8A%B8/">오답노트</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2600,7 +2607,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -3109,7 +3116,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
@@ -3137,7 +3144,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
