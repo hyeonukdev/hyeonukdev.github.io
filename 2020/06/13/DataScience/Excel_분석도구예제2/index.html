@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html  lang="ko">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균 - Hello Engineering</title>
+
+
+    <meta name="description" content="t검정  데이터분석 -&gt; t-검정:쌍제비교  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     F검정  데이터분석 -&gt; F-검정:분산에 대한 두 집단  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     이동평균법  데이터분석 -&gt; 이동 평균법">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균">
+<meta property="og:url" content="https://hyeonukdev.github.io/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C2/index.html">
+<meta property="og:site_name" content="Hello Engineering">
+<meta property="og:description" content="t검정  데이터분석 -&gt; t-검정:쌍제비교  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     F검정  데이터분석 -&gt; F-검정:분산에 대한 두 집단  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     이동평균법  데이터분석 -&gt; 이동 평균법">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%253A%252F%252Ft1.daumcdn.net%252Fcfile%252Ftistory%252F26437D3F56A668C21B">
+<meta property="article:published_time" content="2020-06-13T09:03:01.000Z">
+<meta property="article:modified_time" content="2020-06-13T09:03:01.000Z">
+<meta property="article:author" content="Hyeonukdev">
+<meta property="article:tag" content="데이터분석">
+<meta property="article:tag" content="데이터사이언스개념">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%253A%252F%252Ft1.daumcdn.net%252Fcfile%252Ftistory%252F26437D3F56A668C21B">
+
+
+
+  <meta name="description" content="t검정  데이터분석 -&gt; t-검정:쌍제비교  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     F검정  데이터분석 -&gt; F-검정:분산에 대한 두 집단  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     이동평균법  데이터분석 -&gt; 이동 평균법">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균">
+<meta property="og:url" content="https://hyeonukdev.github.io/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C2/index.html">
+<meta property="og:site_name" content="Hello Engineering">
+<meta property="og:description" content="t검정  데이터분석 -&gt; t-검정:쌍제비교  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     F검정  데이터분석 -&gt; F-검정:분산에 대한 두 집단  -결과  해석  P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음     이동평균법  데이터분석 -&gt; 이동 평균법">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%253A%252F%252Ft1.daumcdn.net%252Fcfile%252Ftistory%252F26437D3F56A668C21B">
+<meta property="article:published_time" content="2020-06-13T09:03:01.000Z">
+<meta property="article:modified_time" content="2020-06-13T09:03:01.000Z">
+<meta property="article:author" content="Hyeonukdev">
+<meta property="article:tag" content="데이터분석">
+<meta property="article:tag" content="데이터사이언스개념">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%253A%252F%252Ft1.daumcdn.net%252Fcfile%252Ftistory%252F26437D3F56A668C21B">
+
+
+
+
+
+<link rel="alternative" href="/atom.xml" title="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균" type="application/atom+xml">
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/Monokai.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165303324-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-165303324-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="canonical" href="https://hyeonukdev.github.io/2020/06/13/datascience/excel_분석도구예제2/"/>
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/piglogo.svg" alt="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">about</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/hyeonukdev">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-image">
+        <span  class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균">
+        </span>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-06-13T09:03:01.000Z">2020-06-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (대략 141 단어)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> Besuche
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균
+            
+        </h1>
+        <div class="content">
+            <h3 id="t검정"><a class="markdownIt-Anchor" href="#t검정"></a> t검정</h3>
+<ul>
+<li>데이터분석 -&gt; t-검정:쌍제비교<br />
+<img src="/images/datascience/0613_16.png" alt="t검정" /><br />
+-결과<br />
+<img src="/images/datascience/0613_17.png" alt="결과" /></li>
+<li>해석
+<ul>
+<li>P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음</li>
+</ul>
+</li>
+</ul>
+<h3 id="f검정"><a class="markdownIt-Anchor" href="#f검정"></a> F검정</h3>
+<ul>
+<li>데이터분석 -&gt; F-검정:분산에 대한 두 집단<br />
+<img src="/images/datascience/0613_18.png" alt="F검정" /><br />
+-결과<br />
+<img src="/images/datascience/0613_19.png" alt="결과" /></li>
+<li>해석
+<ul>
+<li>P가 0.05 이상인지 아닌지로 분석법을 채택할지 안할지 선택할 수 있음</li>
+</ul>
+</li>
+</ul>
+<h3 id="이동평균법"><a class="markdownIt-Anchor" href="#이동평균법"></a> 이동평균법</h3>
+<ul>
+<li>데이터분석 -&gt; 이동 평균법<br />
+<img src="/images/datascience/0613_20.png" alt="이동평균법" /></li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" rel="tag">데이터분석</a>, <a class="has-link-grey -link" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" rel="tag">데이터사이언스개념</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A92/">
+                <span class="level-item">통계의 분석의 활용 - 분산분석, 가설검증</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = 'https://hyeonukdev.github.io/';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 'hyeonuk'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hyeonukdev-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="is-rounded" src="/images/avatar.png"
+                            alt="hyeonukdev">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        hyeonukdev
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        hyeonuk-kang
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Asia/Seoul</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            227
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            2
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            4
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/hyeonukdev" target="_blank"
+                rel="noopener">
+                팔로우</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener" title="Github"
+                href="https://github.com/hyeonukdev">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener" title="Facebook"
+                href="https://www.facebook.com/lego7407">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener" title="Dribbble"
+                href="https://blog.naver.com/lego7407">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener" title="RSS"
+                href="https://hyeonukdev.github.io/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">
+            <span class="level-start">
+                <span class="level-item">데이터사이언스</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
+            <span class="level-start">
+                <span class="level-item">데이터분석</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D/" style="font-size: 10px;">가설검증</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/" style="font-size: 20px;">데이터분석</a> <a href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/" style="font-size: 10px;">데이터사이언스개념</a> <a href="/tags/%EB%B6%84%EC%82%B0%EB%B6%84%EC%84%9D/" style="font-size: 10px;">분산분석</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T09:03:01.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A92/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용 - 분산분석, 가설검증">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T06:12:08.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 분석의 활용 - 분산분석, 가설검증</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제 - 회귀분석, 상관분석">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제 - 회귀분석, 상관분석</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A91/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용 - 회귀분석, 상관분석">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-12T15:48:14.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A91/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 분석의 활용 - 회귀분석, 상관분석</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/07/IoT/tcp_ip/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - 포트포워딩과 슈퍼디엠지">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T07:06:19.000Z">2020-06-07</time></div>
+                    <a href="/2020/06/07/IoT/tcp_ip/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - 포트포워딩과 슈퍼디엠지</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">6월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">164</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">47</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D/">
+                        <span class="tag">가설검증</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
+                        <span class="tag">데이터분석</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
+                        <span class="tag">데이터사이언스개념</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%B6%84%EC%82%B0%EB%B6%84%EC%84%9D/">
+                        <span class="tag">분산분석</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T09:03:01.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A92/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용 - 분산분석, 가설검증">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T06:12:08.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A92/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 분석의 활용 - 분산분석, 가설검증</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제 - 회귀분석, 상관분석">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제 - 회귀분석, 상관분석</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A91/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용 - 회귀분석, 상관분석">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-12T15:48:14.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A91/" class="title has-link-black-ter is-size-6 has-text-weight-normal">통계의 분석의 활용 - 회귀분석, 상관분석</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/06/07/IoT/tcp_ip/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - 포트포워딩과 슈퍼디엠지">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T07:06:19.000Z">2020-06-07</time></div>
+                    <a href="/2020/06/07/IoT/tcp_ip/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - 포트포워딩과 슈퍼디엠지</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">6월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">164</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">4월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">47</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">3월 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EA%B0%80%EC%84%A4%EA%B2%80%EC%A6%9D/">
+                        <span class="tag">가설검증</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
+                        <span class="tag">데이터분석</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
+                        <span class="tag">데이터사이언스개념</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%EB%B6%84%EC%82%B0%EB%B6%84%EC%84%9D/">
+                        <span class="tag">분산분석</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/piglogo.svg" alt="Excel을 분석도구를 활요한 예제 - t검정, F검정, 이동평균" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Hyeonukdev&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+
+                 <!--만약 busuanzi 가 활성화됐으면-->
+                    <br>
+                    <span id="busuanzi_container_site_pv"> 
+                        총 조회 <span id="busuanzi_container_site_pv"></span> 회
+                    </span> |
+                    <span id="busuanzi_container_site_uv">
+                        총 방문자 <span id="busuanzi_value_site_uv"></span> 명
+                    </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://hyeonukdev.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
