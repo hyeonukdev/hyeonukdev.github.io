@@ -166,6 +166,93 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/28/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%BA%A1%EC%8A%90%ED%99%94/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 보안 구현 - 캡슐화">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-28T11:50:46.000Z">2020-04-28</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/">소프트웨어개발보안구현</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4분 읽기 (대략 563 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/28/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%BA%A1%EC%8A%90%ED%99%94/">SW개발 보안 구현 - 캡슐화</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="소프트웨어-개발-보안-구축"><a class="markdownIt-Anchor" href="#소프트웨어-개발-보안-구축"></a> 소프트웨어 개발 보안 구축</h2>
+<h2 id="sw개발-보안-구현"><a class="markdownIt-Anchor" href="#sw개발-보안-구현"></a> SW개발 보안 구현</h2>
+<h3 id="캡슐화의-보안-점검"><a class="markdownIt-Anchor" href="#캡슐화의-보안-점검"></a> 캡슐화의 보안 점검</h3>
+<ul>
+<li><u>정보 은닉이 필요한 중요한 데이터와 기능</u>을 불충분하게 <u><b>캡슐화</b></u>하거나 잘못 사용함으로써 발생할 수 있는 문제를 예방하기 위한 보안 점검 항목들</li>
+<li>캡슐화 보안 약점
+<ul>
+<li><u>잘못된 세션에 의한 정보 노출</u></li>
+<li><u>제거 되지 않고 남은 디버그 코드</u></li>
+<li><u>시스템 데이터 정보 노출</u></li>
+<li>Public 메소드로부터 반환된 Private 배열</li>
+<li>Private 배열에 Public 데이터 할당</li>
+</ul>
+</li>
+</ul>
+<h3 id="캡슐화-보안-약점"><a class="markdownIt-Anchor" href="#캡슐화-보안-약점"></a> 캡슐화 보안 약점</h3>
+<h4 id="1-잘못된-세션에-의한-정보-노출"><a class="markdownIt-Anchor" href="#1-잘못된-세션에-의한-정보-노출"></a> 1. 잘못된 세션에 의한 정보 노출</h4>
+<ul>
+<li>다중 스레드 환경에서 <u>멤버 변수에 정보를 저장할 때</u> 발생하는 보안 약점</li>
+<li>싱글톤 패턴에서 발생하는 레이스컨디션으로 인해 동기화 오류가 발생하거나, 멤버 변수의 정보가 노출 될 수 있음</li>
+<li><u>멤버 변수보다 지역 변수를 활용하여 변수의 범위를 제한</u>하여 방지</li>
+<li>잘못된 세션에 의한 정보 노출은 SW개발 보안 설계의 세션통제 보안 약점으로도 나오는데, <u><b>세션통제는 분석, 설계 단계의 점검 내용이고 캡슐화는 구현단계의 점검내용만 다를 뿐 나머지는 동일</b></u></li>
+</ul>
+<h4 id="2-제거되지-않고-남은-디버그-코드"><a class="markdownIt-Anchor" href="#2-제거되지-않고-남은-디버그-코드"></a> 2. 제거되지 않고 남은 디버그 코드</h4>
+<ul>
+<li>개발 중에 <u>버그 수정이나 결과값 확인을 위해 남겨둔 코드들로 인해 발생하는 보안 약점</u></li>
+<li>디버그 코드에 인증 및 식별 절차를 생략하거나 우회하는 코드가 포함되어 있는 경우 공격자가 악용 가능</li>
+<li>배포전에 <u>코드 검사를 통해 남아있는 디버그 코드를 <b>삭제</b></u>함으로써 방지 가능</li>
+</ul>
+<h4 id="3-시스템-데이터-정보-노출"><a class="markdownIt-Anchor" href="#3-시스템-데이터-정보-노출"></a> 3. 시스템 데이터 정보 노출</h4>
+<ul>
+<li><u>시스템 내부 정보를 시스템 메시지 등을 통해 외부로 출력하도록 코딩했을 때 발생하는 보안 약점</u></li>
+<li>메시지는 최소한의 정보만을 제공함으로써 방지 가능</li>
+</ul>
+<h4 id="4-public-메소드로부터-반환된-private-배열"><a class="markdownIt-Anchor" href="#4-public-메소드로부터-반환된-private-배열"></a> 4. Public 메소드로부터 반환된 Private 배열</h4>
+<h4 id="5-private-배열에-public-데이터-할당"><a class="markdownIt-Anchor" href="#5-private-배열에-public-데이터-할당"></a> 5. Private 배열에 Public 데이터 할당</h4>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/28/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%ED%98%84/%EC%BD%94%EB%93%9C%EC%98%A4%EB%A5%98/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 보안 구현 - 코드오류">
         </a>
@@ -383,129 +470,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="SW개발 보안 설계 - 세션통제">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-27T04:26:09.000Z">2020-04-27</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/">소프트웨어개발보안구축</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5분 읽기 (대략 754 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/27/Engineer_Information_Processing/ch20_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EA%B5%AC%EC%B6%95/SW%EA%B0%9C%EB%B0%9C%EB%B3%B4%EC%95%88%EC%84%A4%EA%B3%84/%EC%84%B8%EC%85%98%ED%86%B5%EC%A0%9C/">SW개발 보안 설계 - 세션통제</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="소프트웨어-개발-보안-구축"><a class="markdownIt-Anchor" href="#소프트웨어-개발-보안-구축"></a> 소프트웨어 개발 보안 구축</h2>
-<h2 id="sw개발-보안-설계"><a class="markdownIt-Anchor" href="#sw개발-보안-설계"></a> SW개발 보안 설계</h2>
-<h3 id="세션통제의-개념"><a class="markdownIt-Anchor" href="#세션통제의-개념"></a> 세션통제의 개념</h3>
-<ul>
-<li>세션
-<ul>
-<li>서버와 클라이언트의 연결</li>
-</ul>
-</li>
-<li>세션통제
-<ul>
-<li><u>세션의 연결과 연결로 인해 발생하는 정보를 관리</u></li>
-</ul>
-</li>
-<li>소프트웨어 개발 과정 중 <b>요구사항 분석 및 설계단계</b>에서 진단해야 하는 보안 점검 내용</li>
-<li>보안 약점
-<ul>
-<li>불충분한 세션 관리</li>
-<li>잘못된 세션에 의한 정보 노출</li>
-</ul>
-</li>
-<li><b><u>인가된 클라이언트만 접근할 수 있도록</u></b>하는 것은 <u><b>기밀성</b></u>에 관한 것</li>
-</ul>
-<h4 id="1-불충분한-세션-관리"><a class="markdownIt-Anchor" href="#1-불충분한-세션-관리"></a> 1. 불충분한 세션 관리</h4>
-<ul>
-<li><u>일정한 규칙이 존재하는 세션ID가 발급되거나 타임아웃이 너무 길게 설정되어 있는 경우 발생할 수 있는 보안 약점</u></li>
-<li>세션 관리가 충분하지 않으면 침입자는 <b>세션 하이재킹</b>와 같은 공격을 통해 획득한 세션ID로 인가되지 않은 시스템의 기능을 이용하거나 중요한 정보에 접근 가능</li>
-</ul>
-<h4 id="2-잘못된-세션에-의한-정보-노출"><a class="markdownIt-Anchor" href="#2-잘못된-세션에-의한-정보-노출"></a> 2. 잘못된 세션에 의한 정보 노출</h4>
-<ul>
-<li>다중 스레드 환경에서 <u>멤버 변수에 정보를 저장할 때 발생하는 보안 약점</u></li>
-<li>싱글톤 패턴에서 발생하는 레이스 컨디션으로 인해 동기화 오류가 발생하거나, 멤버 변수의 정보가 노출
-<ul>
-<li>싱글톤
-<ul>
-<li>하나의 객체를 생성하면 생성된 객체를 어디서든 참조할 수 있지만, 여러 프로세스가 동시에 참조할 수 없는 디자인 패턴</li>
-</ul>
-</li>
-<li>레이스컨디션
-<ul>
-<li>두 개 이상의 프로세스가 공용 자원을 획득하기 위해 경쟁하는 상태</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>멤버 변수보다 지역 변수를 활용하여 변수의 범위를 제한함으로써 방지</li>
-</ul>
-<h3 id="세션-설계-시-고려사항"><a class="markdownIt-Anchor" href="#세션-설계-시-고려사항"></a> 세션 설계 시 고려사항</h3>
-<ul>
-<li>시스템의 <u>모든 페이지에서 로그아웃</u>이 가능하도록 UI 구성</li>
-<li>로그아웃 요청시 할당된 <u>세션이 완전히 제거</u>되도록 함</li>
-<li>세션 타임아웃은 중요도 높을 시 2~5분, 낮을실 15~30분</li>
-<li>이전 세션이 종료되지 않으면 <u>새 세션이 생성되지 못하도록 설계</u></li>
-<li><u>중복 로그인을 허용하지 않는 경우</u> 클라이언트의 중복 접근에 대한 세션 관리 정책을 수립</li>
-<li><u> 패스워드 변경 시 활성화된 세션을 삭제하고 재할당</u></li>
-</ul>
-<h4 id="세션id의-관리방법"><a class="markdownIt-Anchor" href="#세션id의-관리방법"></a> 세션ID의 관리방법</h4>
-<ul>
-<li>안전한 서버에서 <u>최소 128비트</u></li>
-<li>예측이 불가능하도록 안전한 <u>난수 알고리즘</u></li>
-<li>URL Rewrite기능을 사용하지 <b>않는</b> 방향으로 설계
-<ul>
-<li>URL Rewrite
-<ul>
-<li>쿠키를 사용할 수 없는 환경에서 세션ID전달을 위해 URLL에 세션ID를 포함시키는</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>로그인시 로그인 <u>이전의 세션ID를 삭제하고 재할당</u></li>
-<li>장기간 접속하고 있는 세션ID는 <u>주기적으로 재할당</u>되도록 설계</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -581,7 +545,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            224
+                            225
                         </p>
                     </a>
                 </div>
@@ -727,7 +691,7 @@
                 <span class="level-item">데이터사이언스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
@@ -735,7 +699,7 @@
                 <span class="level-item">데이터분석</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/%EB%8F%85%EC%84%9C/">
@@ -1027,6 +991,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -1101,25 +1084,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1137,7 +1101,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1646,7 +1610,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1674,7 +1638,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -2388,6 +2352,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -2462,25 +2445,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2498,7 +2462,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -3007,7 +2971,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -3035,7 +2999,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -3866,7 +3830,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

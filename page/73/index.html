@@ -166,6 +166,259 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/01/python/%ED%81%B4%EB%9E%98%EC%8A%A4%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F99EB65375BBABFD020" alt="클래스란 무엇인가">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-31T15:02:23.000Z">2020-04-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/">파이썬</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%ED%8C%8C%EC%9D%B4%EC%8D%AC/%EB%AC%B8%EB%B2%95/">문법</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    10분 읽기 (대략 1425 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/01/python/%ED%81%B4%EB%9E%98%EC%8A%A4%EB%9E%80%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80/">클래스란 무엇인가</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="class가-무엇인가"><a class="markdownIt-Anchor" href="#class가-무엇인가"></a> Class가 무엇인가?</h2>
+<pre><code># 자동차 1
+car_brand1 = &quot;Kia&quot;
+car_color1 = &quot;Red&quot;
+car_year1  = 1996
+
+# 자동차 2
+car_brand2 = &quot;Hyundai&quot;
+car_color3 = &quot;Blue&quot;
+car_year3  = 2009
+
+
+# 자동차 3
+car_brand3 = &quot;BMW&quot;
+car_color3 = &quot;Black&quot;
+car_year3  = 2000
+</code></pre>
+<p>브랜드, 색상, 제작년도가 있는 코드</p>
+<h3 id="만약-100대-1000대-이상이-되면-일일이-쓰면-비효율적"><a class="markdownIt-Anchor" href="#만약-100대-1000대-이상이-되면-일일이-쓰면-비효율적"></a> 만약 100대, 1000대 이상이 되면 일일이 쓰면 비효율적!</h3>
+<p>→ 클래스를 사용하자</p>
+<pre><code>class Car:
+  def __init__(self, brand, color, year):
+	self.brand = brand
+	self.color = color
+	self.year = year
+
+car1 = Car(&quot;Kia&quot;, &quot;Red&quot;, 1996)
+car2 = Car(&quot;Hyundai&quot;, &quot;Blue&quot;, 2006)
+car3 = Car(&quot;BMW&quot;, &quot;Black&quot;, 2000)
+</code></pre>
+<p>Car 는 자동차 클래스<br />
+car1, car2, car3 객체는 Car 클래스의 ‘인스턴스’</p>
+<p><mark>클래스 : 비슷한 속성을 가진 객체를 묶는 큰 틀</mark></p>
+<hr />
+<h2 id="클래스-변수"><a class="markdownIt-Anchor" href="#클래스-변수"></a> 클래스 변수</h2>
+<pre><code>class Car:
+  honk = &quot;빵빵&quot;
+
+print honk
+# NameError: name 'honk' is not defined
+</code></pre>
+<p>honk이라는 변수는 외부에서 호출이 안된다</p>
+<p>클래스 안에 있는 변수는 '해당 클래스의 인스턴트’를 통해서 호출</p>
+<pre><code>my_car = Car()
+my_car.honk
+# '빵빵'
+Car().honk
+</code></pre>
+<hr />
+<h2 id="self는-뭔가요"><a class="markdownIt-Anchor" href="#self는-뭔가요"></a> self는 뭔가요?</h2>
+<p>클래스 메소드의 첫 번째 인수로 self를 써 줘야지<br />
+해당 메소드를 인스턴스의 메소드로 사용 가능<br />
+쉽게 : 이 메소드를 부르는 객체가 해당 클래스의 인스턴스 인지 확인하려고</p>
+<pre><code>class Car:
+
+  honk = &quot;빵빵&quot;
+
+  def set_info(self, color, year):
+    self.color = color
+    self.year = year
+
+  def get_info(self):
+    print(&quot;color : %s , year: %d&quot; %(self.color, self.year))
+
+my_car1 = Car()
+my_car1.set_info(&quot;Red&quot;, 2017)
+my_car1.get_info()
+#=&gt; color : Red ,year: 2017
+</code></pre>
+<hr />
+<h2 id="init-이란"><a class="markdownIt-Anchor" href="#init-이란"></a> <strong>init</strong> 이란?</h2>
+<pre><code>class Car:
+  honk = &quot;빵빵&quot;
+
+  def set_info(self, color, year):
+    self.color = color
+    self.year = year
+
+  def get_info(self):
+    print &quot;color : %s ,year: %d&quot; % (self.color, self.year)
+
+my_car = Car()
+my_car.set_info(&quot;Red&quot;, 2017)
+my_car.get_info()
+#=&gt; color:Red, year:2017
+
+new_car = Car()0
+new_car.get_info()
+# AttributeError: Car instance has no attribute 'color'
+</code></pre>
+<h3 id="오류발생-set_info를-안하고-get_info를-먼저-불렀다"><a class="markdownIt-Anchor" href="#오류발생-set_info를-안하고-get_info를-먼저-불렀다"></a> 오류발생! set_info()를 안하고 get_info()를 먼저 불렀다…</h3>
+<p>클래스의 인스턴트를 생성할 때, 오류를 줄이고 싶다!</p>
+<p><strong><strong>init</strong></strong> 을 사용하자<br />
+초기화 메소드, 생성자라고 불림<br />
+인스턴스 = 클래스(변수1,변수2…)</p>
+<pre><code>class Car:
+  honk = &quot;빵빵&quot;
+
+  def __init__(self, color, year):
+    self.color = color
+    self.year = year
+	print &quot;새로운 Car 인스턴스가 생성되었습니다.&quot;
+
+  def get_info(self):
+    print &quot;color : %s ,year: %d&quot; % (self.color, self.year)
+
+my_car = Car(&quot;Red&quot;, 2017)
+# 새로운 Car 인스턴스가 생성되었습니다.
+
+my_Car.get_info()
+# color : Red, year: 2017
+</code></pre>
+<p>새로운 인스턴스를 만들고 난 후 “새로운 Car 인스턴스가 생성되었습니다” 출력</p>
+<p>즉 , <strong>init</strong> 메소드가 호출 되었다.</p>
+<hr />
+<h2 id="클래스-상속"><a class="markdownIt-Anchor" href="#클래스-상속"></a> 클래스 상속?</h2>
+<blockquote>
+<p>상속 : 물려받는다? 유산을 상속하다</p>
+</blockquote>
+<p>부모의 클래스가 존재하고 그 부모 클래스를 '상속’받은 자식 클래스를 만들 수 있다.<br />
+자식클래스는 부모가 가진 메소드나 변수를 물려받아 그대로 사용 가능!</p>
+<pre><code>class Person:
+  def __init__(self, name, age):
+	  self.name = name
+	  self.age = age
+
+  def info(self):
+	  print(&quot;이름: %s, 나이: %d&quot; %(self.name, self.age))
+
+class Employee(Person):
+  pass
+
+em = Employee(&quot;goorm&quot;,20)
+em.info()
+#=&gt; 이름: goorm, 나이: 20
+</code></pre>
+<p>Person 클래스는 init 메소드를 통해 이름, 나이를 초기값으로 받는다</p>
+<p>info메소드를 통해 이름과 나이를 출력</p>
+<p>Employee클래스를 보면 Person을 상속받았다</p>
+<p>그래서 info를 동일하게 쓸 수 있다.</p>
+<h2 id="만약-메소드를-변형한다면"><a class="markdownIt-Anchor" href="#만약-메소드를-변형한다면"></a> 만약 메소드를 변형한다면?</h2>
+<p>메소드 오버라이딩이라고 부른다</p>
+<pre><code>class Person:
+  def __init__(self, name, age):
+	self.name =name
+	self.age = age
+
+  def info(self):
+	print &quot;나는 부모 클래스 입니다.&quot;
+
+
+class Employee(Person):
+  def info(self):
+	print &quot;나는 자식 클래스 입니다.&quot;
+
+per = Person(&quot;Python&quot;, 100)
+per.info()
+#=&gt; &quot;나는 부모 클래스 입니다.&quot;
+
+em = Employee(&quot;goorm&quot;,20)
+em.info()
+#=&gt; &quot;나는 자식 클래스 입니다.&quot;
+</code></pre>
+<p>원래는 “나는 부모 클래스 입니다” 이지만</p>
+<p>Person을 상속받아 자식클래스, 즉, Employee에서 메소드를 변형, 즉, 오버라이딩했다</p>
+<p>따라서 &quot;나는 자식 클래스 입니다&quot;가 출력</p>
+<hr />
+<h2 id="예시를-하나-만들어보자"><a class="markdownIt-Anchor" href="#예시를-하나-만들어보자"></a> 예시를 하나 만들어보자</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 클래스명<span class="params">(상속클래스)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, 매개변수)</span>:</span></span><br><span class="line">    	인스턴스 속성</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Klass</span><span class="params">(object)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">    	self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(self)</span>:</span></span><br><span class="line">    	<span class="keyword">return</span> self.name</span><br></pre></td></tr></table></figure>
+<p><code>__init__</code>은 객체 생성 후 초기화 함수이다.<br />
+객체가 생성될 때 내부의 이름공간에 속성을 할당하여 초기화 역할만 한다.</p>
+<p>이제 객체를 생성해 보자</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k = Klass(<span class="string">"객체 생성"</span>)</span><br></pre></td></tr></table></figure>
+<p>이름을 조회해 보자</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k.name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">결과 <span class="string">'객체 생성'</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://k.name">k.name</a> 과 k.getName()은 동일하다</p>
+<p>Python의 가장 큰 특징이다. 굳이 getName을 사용하지 않아도 name로만 조회가 가능하다.</p>
+<h3 id="객체와-인스턴스의-관계"><a class="markdownIt-Anchor" href="#객체와-인스턴스의-관계"></a> 객체와 인스턴스의 관계</h3>
+<p>클래스는 객체를 만드는 도구이다.<br />
+클래스로 객체를 생성하고,<br />
+객체를 사용해서 특정기능을 처리할 수 있다.</p>
+<p>여러개의 객체를 생성해 보자</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">k1 = Klass(<span class="string">"객체 생성1"</span>)</span><br><span class="line">k2 = Klass(<span class="string">"객체 생성2"</span>)</span><br><span class="line">k3 = Klass(<span class="string">"객체 생성3"</span>)</span><br></pre></td></tr></table></figure>
+<h6 id="생성관계"><a class="markdownIt-Anchor" href="#생성관계"></a> 생성관계</h6>
+<p>isinstance : 클래스와 객체의 생성관계를 확인하는 내장함수</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isinstance(k, Klass)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">결과 : <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">isinstance(k1, Klass)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">결과 : <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>즉 k와 k1의 Klass를 통해서 생성된 것이다.</p>
+<h6 id="함수와-메소드-구분하기"><a class="markdownIt-Anchor" href="#함수와-메소드-구분하기"></a> 함수와 메소드 구분하기</h6>
+<p>함수들은 객체가 생성된 다음에 호출하기 때문에 메소드라고한다.<br />
+예를 들면 getName()을 쓰려면 Klass에서 만든 인스턴스를 이용해서 호출할 때 사용하는 것이다.</p>
+<p>클래스에 어떤 메소드가 있는지 확인해보자</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Klass.__dict__</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k.__init__</span><br></pre></td></tr></table></figure>
+<p>객체를 호출할 때는 함수가 아니라 메소드로 처리함을 알 수 있다.<br />
+self에서는 객체에서 자동으로 전달되고 두 번째 인자에만 해당하는 값을 문자열로 전달하면 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k.__init__(<span class="string">"메소드로 갱신"</span>)</span><br><span class="line">k.name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">결과 : <span class="string">'메소드로 갱신'</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/03/31/KoreanEmbedding/%EC%96%B4%EB%96%A4%EB%8B%A8%EC%96%B4%EA%B0%80%EB%A7%8E%EC%9D%B4%EC%93%B0%EC%98%80%EB%8A%94%EA%B0%80/" class="image is-7by1">
             <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="어떤단어가많이쓰였는가">
         </a>
@@ -361,81 +614,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/03/31/KoreanEmbedding/1%EC%9E%A5%EC%A0%95%EB%A6%AC/" class="image is-7by1">
-            <img class="thumbnail" src="https://camo.githubusercontent.com/f198e56bcab0a316baff0923d9246b9346fcf449/68747470733a2f2f692e696d6775722e636f6d2f6a3033454e43632e6a7067" alt="1장정리">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-30T17:55:09.000Z">2020-03-31</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/">자연어처리</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC/%EC%9E%84%EB%B2%A0%EB%94%A9/">임베딩</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2분 읽기 (대략 308 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/31/KoreanEmbedding/1%EC%9E%A5%EC%A0%95%EB%A6%AC/">1장정리</a>
-            
-        </h1>
-        <div class="content">
-            <h1 id="16-1장의-요약"><a class="markdownIt-Anchor" href="#16-1장의-요약"></a> 1.6 1장의 요약</h1>
-<ul>
-<li>
-<p>임베딩이란 자연어를 기계가 이해할 수 있는 숫자의 나열인 벡터로 바꾼 결과 혹은 그 일련의 과정 전체를 가리킴</p>
-</li>
-<li>
-<p>임베딩을 사용하면 단어/문장 간 관련도를 계산할 수 있음</p>
-</li>
-<li>
-<p>임베딩에는 믜미적/문법적 정보가 함축돼 있음</p>
-</li>
-<li>
-<p>임베딩은 다른 딥러닝 모델의 입력값으로 쓰일 수 있음</p>
-</li>
-<li>
-<p>임베딩 기법은 (1) 통계 기반에서 뉴럴 네트워크 기반으로 (2) 단어 수준에서 문장 수준으로 (3) 엔드투엔드에서 프리트레인/파인 튜닝 방식으로 발전해옴</p>
-</li>
-<li>
-<p>임베딩 기법은 크게 행렬 분해 모델, 에측 기반 방법, 토픽 기반 기법 등으로 나눠짐</p>
-</li>
-<li>
-<p>이 책이 다루는 데이터의 최소 단위는 토큰임. 문장은 토큰의 집합, 문서는 문장의 집합, 말뭉치는 문서의 집합을 가리킴. 말뭉치 &gt; 문서 &gt; 문장 &gt; 토큰. 어휘 집합은 말뭉치에 있는 모든 문서를 문장으로 나누고 여기에 토크나이즈를 실시한 후 중복을 제거한 토큰들의 집합임</p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -509,7 +687,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            224
+                            225
                         </p>
                     </a>
                 </div>
@@ -655,7 +833,7 @@
                 <span class="level-item">데이터사이언스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
@@ -663,7 +841,7 @@
                 <span class="level-item">데이터분석</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/%EB%8F%85%EC%84%9C/">
@@ -955,6 +1133,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -1029,25 +1226,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1065,7 +1243,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1574,7 +1752,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1602,7 +1780,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -2316,6 +2494,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -2390,25 +2587,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2426,7 +2604,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -2935,7 +3113,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -2963,7 +3141,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -3794,7 +3972,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

@@ -166,6 +166,87 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/04/18/DataScience/%EC%88%9C%EC%97%B4%EC%A1%B0%ED%95%A9/" class="image is-7by1">
+            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="순열과 조합">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-04-18T06:53:59.000Z">2020-04-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2분 읽기 (대략 230 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/04/18/DataScience/%EC%88%9C%EC%97%B4%EC%A1%B0%ED%95%A9/">순열과 조합</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="순열permutation"><a class="markdownIt-Anchor" href="#순열permutation"></a> 순열(Permutation)</h2>
+<p>-&gt; PERMUT(number, number_chosen)</p>
+<ul>
+<li>서로 다른 n개의 원소에서 r개를 중복없이 골라 순서에 상관 있게 나열하는 것으로 n개에서 r개를 택하는 순열이라고 함</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>P</mi><mi>r</mi><mo>=</mo><mi>n</mi><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo><mo>∗</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>∗</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>r</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo>=</mo><mi>n</mi><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>r</mi><mo stretchy="false">)</mo><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">nPr = n * (n-1) * (n-2) * ... * (n - r + 1) =  n! / (n-r)! 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">!</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mclose">!</span></span></span></span></span></p>
+<ul>
+<li>순열의 종류</li>
+</ul>
+<ol>
+<li>순열</li>
+<li>중복순열 : n개에서 r개를 순서에 상관 있게 뽑는데 중복가능</li>
+<li>등차순열 : n에서 r개를 뽑는데, n개 중에서 똑같은 것이 섞인 경우</li>
+<li>원순열 : n개를 원형으로 나열하는 경우</li>
+</ol>
+<h2 id="조합combination"><a class="markdownIt-Anchor" href="#조합combination"></a> 조합(Combination)</h2>
+<p>-&gt; COMBIN(number, number_chosen)</p>
+<ul>
+<li>서로 다른 n개의 원소에서 순서에 상관없이 r개를 뽑을 때, 이때 n개에서 r개를 택하는 조합</li>
+</ul>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>C</mi><mi>r</mi><mo>=</mo><mi>n</mi><mi>P</mi><mi>r</mi><mi mathvariant="normal">/</mi><mi>r</mi><mo stretchy="false">!</mo><mo>=</mo><mi>n</mi><mo stretchy="false">!</mo><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mi>r</mi><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mi>r</mi><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">nCr =  nPr / r! =  n!/ (n-r)!r! 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">/</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">!</span><span class="mord">/</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">)</span><span class="mclose">!</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mclose">!</span></span></span></span></span></p>
+<ul>
+<li>조합의 종류</li>
+</ul>
+<ol>
+<li>조합</li>
+<li>중복조합 : n개에서 r개를 순서에 상관없이 뽑는데 중복을 허락하는 경우</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/04/16/books/%EC%86%8C%ED%94%84%ED%8A%B8%EC%8A%A4%ED%82%AC_1/" class="image is-7by1">
             <img class="thumbnail" src="/images/bookcover/softskill.png" alt="소프트스킬(1)">
         </a>
@@ -435,140 +516,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-1%EA%B0%95%EC%88%98%EC%8B%9D%EA%B3%BC%ED%95%A8%EC%88%98/" class="image is-7by1">
-            <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="엑셀 수식 사용 - 1강. 수식과 함수">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-16T05:32:13.000Z">2020-04-16</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1분 읽기 (대략 195 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/16/DataScience/%EC%97%91%EC%85%80%EC%88%98%EC%8B%9D%EC%82%AC%EC%9A%A9-1%EA%B0%95%EC%88%98%EC%8B%9D%EA%B3%BC%ED%95%A8%EC%88%98/">엑셀 수식 사용 - 1강. 수식과 함수</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1수식의-이해"><a class="markdownIt-Anchor" href="#1수식의-이해"></a> 1.수식의 이해</h2>
-<ul>
-<li>
-<p>Cell의 자료형식</p>
-<ol>
-<li>숫자형식 : 0 ~ 9<br />
-숫자의 정밀도는 앞에서 15자리, -9.9E+307~9.9E+307 범위</li>
-<li>문자형식 : A ~ Z, a ~ z, 가나다라, 특수문자</li>
-<li>수학형식 : = 으로 시작</li>
-<li>날짜/시간 형식</li>
-</ol>
-</li>
-<li>
-<p>수식 - 연산자(수식연산자, 논리연산자)</p>
-<ol>
-<li>
-<p>수식연산자(Mathematical operators)<br />
-| 연산자 | 설명 |<br />
-| — | — |<br />
-| + | 더하기 |<br />
-| - | 빼기 |<br />
-| * | 곱하기 |<br />
-| / | 나누기 |<br />
-| ^ | 지수|<br />
-| &amp; | 문자열조합|</p>
-</li>
-<li>
-<p>논리연산자(Logical operators)<br />
-| 연산자 | 설명 |<br />
-| — | — |<br />
-| = | 같음 |<br />
-| &gt; | 보다 큼 |<br />
-| &lt; | 보다 작음 |<br />
-| &gt;= | 보다 크거나 같음 |<br />
-| &lt;= | 보다 작거나 같음 |<br />
-| &lt;&gt; | 같지 않음 |</p>
-</li>
-</ol>
-</li>
-<li>
-<p>연산자 우선 순위(Operator precedence)</p>
-<table>
-<thead>
-<tr>
-<th>기호</th>
-<th>연산자</th>
-<th>연산순위</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>^</td>
-<td>지수승</td>
-<td>1</td>
-</tr>
-<tr>
-<td>* , /</td>
-<td>곱하기,나누기</td>
-<td>2</td>
-</tr>
-<tr>
-<td>+ , -</td>
-<td>더하기,빼기</td>
-<td>3</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>문자열 결합</td>
-<td>4</td>
-</tr>
-<tr>
-<td>= , &lt;,&gt;</td>
-<td>같음,작음,큼</td>
-<td>5</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>예시<br />
-<img src="/images/datascience/0416_01.png" alt="수식예" /></p>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -644,7 +591,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            224
+                            225
                         </p>
                     </a>
                 </div>
@@ -790,7 +737,7 @@
                 <span class="level-item">데이터사이언스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
@@ -798,7 +745,7 @@
                 <span class="level-item">데이터분석</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/%EB%8F%85%EC%84%9C/">
@@ -1090,6 +1037,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -1164,25 +1130,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1200,7 +1147,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1709,7 +1656,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1737,7 +1684,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -2451,6 +2398,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -2525,25 +2491,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2561,7 +2508,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -3070,7 +3017,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -3098,7 +3045,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -3929,7 +3876,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>

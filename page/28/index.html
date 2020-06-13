@@ -166,6 +166,81 @@
 <div class="card">
     
     <div class="card-image">
+        <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%BC%EB%A6%AC%EC%86%8D%EC%84%B1%EC%84%A4%EA%B3%84/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/" class="image is-7by1">
+            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 클러스터링">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-05-15T06:08:43.000Z">2020-05-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">물리데이터베이스</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (대략 424 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%BC%EB%A6%AC%EC%86%8D%EC%84%B1%EC%84%A4%EA%B3%84/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%A7%81/">물리데이터베이스 - 클러스터링</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2>
+<h3 id="cluster-클러스터의-개념"><a class="markdownIt-Anchor" href="#cluster-클러스터의-개념"></a> Cluster 클러스터의 개념</h3>
+<ul>
+<li>데이터 저장시 <u>데이터 액세스 효율을 향상</u>시키기 위해 <u>동일한 성격의 데이터를 동일한 데이터 블록에 저장</u>하는 물리적 저장 방법</li>
+<li><u>클러스터링키</u>로 지정된 컬럼 값의 순서대로 저장되고, <u>여러 개의 테이블이 하나의 클러스터에 저장됨</u></li>
+</ul>
+<h3 id="클러스터의-특징"><a class="markdownIt-Anchor" href="#클러스터의-특징"></a> 클러스터의 특징</h3>
+<ul>
+<li>클러스터링 된 테이블은 데이터 <u>조회 속도</u>는 향상시키지만 데이터 입력, 수정, 삭제에 대한 성능은 저하됨</li>
+<li>클러스터는 <u>데이터의 분포도가 넓을수록 유리함</u></li>
+<li>데이터 분포도가 넓은 테이블을 클러스터링 하면 <u>저장 공간을 절약</u>할 수 있음</li>
+<li><u>대용량을 처리하는 트랜잭션은 전체 테이블을 스캔</u>하는 일이 자주 발생하므로 <u>클러스터링을 하지 않는 것이 좋음</u></li>
+<li></u>처리 범위가 넓은 경우에는 단일 테이블 클러스터링을, 조인이 많이 발생하는 경우는 다중 테이블 클러스터링을 사용</u></li>
+<li><u><b>파티셔닝된 테이블에는 클러스터링 불가</b></u></li>
+<li><u>클러스터링된 테이블에 클러스터드 인덱스를 생성하면 접근 성능 향상</u></li>
+</ul>
+<h3 id="클러스터-대상-테이블"><a class="markdownIt-Anchor" href="#클러스터-대상-테이블"></a> 클러스터 대상 테이블</h3>
+<ul>
+<li>분포도가 <b>넓은</b> 테이블</li>
+<li>대량의 범위를 자주 조회하는 테이블</li>
+<li>입력, 수정, 삭제가 자주 발생하지 않는 테이블</li>
+<li><b>자주 조인</b>되어 사용되는 테이블</li>
+<li>ORDER BY, GROUP BY, UNION이 빈번한 테이블</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-image">
         <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EB%AC%BC%EB%A6%AC%EC%86%8D%EC%84%B1%EC%84%A4%EA%B3%84/%ED%8C%8C%ED%8B%B0%EC%85%94%EB%8B%9D/" class="image is-7by1">
             <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 파티셔닝">
         </a>
@@ -427,194 +502,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-image">
-        <a href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/" class="image is-7by1">
-            <img class="thumbnail" src="https://bc.kyobobook.co.kr/crosseditor/binary/images/000615/20190208171457767_MBOF043F.png" alt="물리데이터베이스 - 접근통제">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-05-14T18:04:32.000Z">2020-05-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/">정보처리기사</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC/%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4/">물리데이터베이스</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9분 읽기 (대략 1420 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/05/15/Engineer_Information_Processing/ch13_%EB%AC%BC%EB%A6%AC%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%EC%84%A4%EA%B3%84/%EB%AC%BC%EB%A6%AC%EC%9A%94%EC%86%8C%EC%A1%B0%EC%82%AC%EB%B6%84%EC%84%9D/%EC%A0%91%EA%B7%BC%ED%86%B5%EC%A0%9C/">물리데이터베이스 - 접근통제</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="물리데이터베이스"><a class="markdownIt-Anchor" href="#물리데이터베이스"></a> 물리데이터베이스</h2>
-<h3 id="접근-통제-access-control-개념"><a class="markdownIt-Anchor" href="#접근-통제-access-control-개념"></a> 접근 통제 Access Control 개념</h3>
-<ul>
-<li><u>데이터베이스에 대한 사용자들의 접근을 통제</u>함으로써 데이터를 보호하는 방법</li>
-<li>접근통제는 데이터에 대해 다음과 같은 통제를 함으로써 자원의 불법적인 접근 및 파괴를 예방
-<ul>
-<li>비인가된 사용자의 접근 감시</li>
-<li>접근 요구자의 사용자 식별</li>
-<li>접근 요구의 정당성 확인 및 기록</li>
-<li>보안 정책에 근거한 접근의 승인 및 거부 등</li>
-</ul>
-</li>
-<li>접근통제의 3요소
-<ul>
-<li>접근통제 정책</li>
-<li>접근통제 메커니즘</li>
-<li>접근통제 보안모델</li>
-</ul>
-</li>
-</ul>
-<h3 id="임의-접근통제와-강제-접근-통제"><a class="markdownIt-Anchor" href="#임의-접근통제와-강제-접근-통제"></a> 임의 접근통제와 강제 접근 통제</h3>
-<ul>
-<li>임의 접근통제 DAC; Discretionary Access Control
-<ul>
-<li>임의 접근통제는 <u>데이터에 접근하는 사용자의 신원에 따라 접근 권한을 부여하는 방식</u></li>
-<li>통제 권한이 주체에 있어 주체가 접근통제 권한을 지정하고 제어할 수 있음</li>
-<li>일반적으로 특정 객체에 대한 조작 권한은 데이터베이스 관리 시스템으로 부터 부여 받지만 임의 접근통제에서는 객체를 생성한 사용자가 생성된 객체에 대한 모든 권한을 부여 받고, 부여된 권한을 다른 사용자에게 허가할 수 있음</li>
-<li>임의 접근통제에 사용되는 <u>SQL명령어 : GRANT와 REVOKE</u></li>
-</ul>
-</li>
-<li>강제 접근통제 MAC; Mandatory Access Control
-<ul>
-<li><u>강제 접근통제는 주체와 객체의 등급을 비교하여 접근 권한을 부여하는 방식</u></li>
-<li>제3자가 접근통제 권한을 지정</li>
-<li>데이터베이스 객체별로 보안 등급을 부여할 수 있고, 사용자 별로 인가 등급을 부여할 수 있음</li>
-<li>주체는 자신보다 보안 등급이 높은 객체에 대해 읽기, 수정, 등록이 모두 불가능하고 보안 등급이 같은 객체에 대해서는 읽기, 수정, 등록이 가능함</li>
-</ul>
-</li>
-</ul>
-<h3 id="접근통제의-3요소"><a class="markdownIt-Anchor" href="#접근통제의-3요소"></a> 접근통제의 3요소</h3>
-<h4 id="접근-통제-정책"><a class="markdownIt-Anchor" href="#접근-통제-정책"></a> 접근 통제 정책</h4>
-<ul>
-<li>접근통제 정책은 어떤 주체가 언제, 어디서, 어떤 객체에게, 어떤 행위에 대한 허용 여부를 정의하는 것
-<ul>
-<li>신분 기반 정책
-<ul>
-<li>주체나 그룹의 신분에 근거하여 객체의 접근을 제한. IBP나 GBP가 있음</li>
-<li>IBP(Individual–Based Policy) : 최소 권한 정책으로, 단일 주체에게 하나의</li>
-<li>객체에 대한 허가를 부여 GBP(Group–Based Policy) : 복수 주체에 하나의 객체에 대한 허가를 부여</li>
-</ul>
-</li>
-<li>규칙 기반 정책
-<ul>
-<li>주체가 갖는 권한에 근거하여 객체의 접근을 제한. MLP와 CBP가 있음</li>
-<li>MLP(Multi-Level Policy) : 사용자 및 객체별로 지정된 기밀 분류에 따른 정책</li>
-<li>CBP(Compartment-Based Policy) : 집단별로 지정된 기밀 허가에 따른 정책</li>
-</ul>
-</li>
-<li>역학 기반 정책
-<ul>
-<li>GBP의 변형된 정책으로, 주체의 신분이 아니라 주체가 맡은 역할에 근거하여 객체의 접근을 제한하는 방법</li>
-<li>예) 인사담당자, DBA 등</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="접근통제-매커니즘"><a class="markdownIt-Anchor" href="#접근통제-매커니즘"></a> 접근통제 매커니즘</h4>
-<ul>
-<li>정의된 접근통제 정책을 구현하는 기술적인 방법으로, 접근통제 목록, 능력 리스트, 보안 등급, 패스워드, 암호화 등이 있음
-<ul>
-<li>접근통제 목록
-<ul>
-<li>객체를 기준으로 특정 객체에 대해 어떤 주체가 어떤 행위를 할 수 있는지를 기록한 목록</li>
-</ul>
-</li>
-<li>능력 리스트
-<ul>
-<li>주체를 기준으로 주체에게 허가된 자원 및 권한을 기록한 목록</li>
-</ul>
-</li>
-<li>보안 등급
-<ul>
-<li>주체나 객체 등에 부여된 보안 속성의 집합으로, 이 등급을 기반으로 접근 승인 여부가 결정됨</li>
-</ul>
-</li>
-<li>패스워드
-<ul>
-<li>주체가 자신임을 증명할 때 사용하는 인증 방</li>
-</ul>
-</li>
-<li>암호화
-<ul>
-<li>데이터를 보낼 때 지정된 수신자 이외에는 내용을 알 수 없도록 평문을 암호문으로 변환하는 것으로, 무단 도용을 방지하기 위해 주로 사용함</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="접근통제-보안-모델"><a class="markdownIt-Anchor" href="#접근통제-보안-모델"></a> 접근통제 보안 모델</h4>
-<ul>
-<li>보안 정책을 구현하기 위한 정형화된 모델로, 기밀성 모델, 무결성 모델, 접근 통제 모델이 있음
-<ul>
-<li>기밀성 모델
-<ul>
-<li>시스템 내 정보와 자원은 인가된 사용자에게만 접근이 허용되는 것</li>
-<li>군사적인 목적으로 개발된 최초의 수학적 모델</li>
-<li>제약조건
-<ul>
-<li>단순 보안 규칙 : 주체는 자신보다 높은 등급의 객체는 읽을 수 없음</li>
-<li>스타 보안 규칙 : 주체는 자신보다 낮은 등급의 객체에 정보를 쓸 수 없음</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>무결성 모델
-<ul>
-<li>기밀성 모델에서 발생하는 불법적인 정보 변경을 방지하기 위해 무결성을 기반으로 개발된 모델</li>
-<li>무결성 모델은 데이터의 일관성 유지에 중점을 두어 개발</li>
-<li>무결성 모델은 기밀성 모델과 동일하게 주체와 객체의 보안 등급을 기반으로 함</li>
-<li>제약조건
-<ul>
-<li>단순 조안 규칙 : 주체는 자신보다 낮은 등급의 객체를 읽을 수 없음</li>
-<li>스타 보안 규칙 : 주체는 자신보다 높은 등급의 객체에 정보를 쓸 수 없음</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>접근통제 모델
-<ul>
-<li>접근통제 메카니즘을 보안 모델로 발전시킴. 대표적으로 접근통제 행렬이 있음</li>
-<li>접근통제 행렬은 행은 주체, 열은 객체 즉 행과 열로 주체와 객체의 권한유형을 나타냄</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -690,7 +577,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            224
+                            225
                         </p>
                     </a>
                 </div>
@@ -836,7 +723,7 @@
                 <span class="level-item">데이터사이언스</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
@@ -844,7 +731,7 @@
                 <span class="level-item">데이터분석</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/%EB%8F%85%EC%84%9C/">
@@ -1136,6 +1023,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -1210,25 +1116,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
         
@@ -1246,7 +1133,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1755,7 +1642,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -1783,7 +1670,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -2497,6 +2384,25 @@
         
         <article class="media">
             
+            <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="Excel을 분석도구를 활요한 예제">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-13T05:45:36.000Z">2020-06-13</time></div>
+                    <a href="/2020/06/13/DataScience/Excel_%EB%B6%84%EC%84%9D%EB%8F%84%EA%B5%AC%EC%98%88%EC%A0%9C/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Excel을 분석도구를 활요한 예제</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/">데이터사이언스</a> / <a class="has-link-grey -link" href="/categories/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">데이터분석</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2020/06/13/DataScience/%ED%86%B5%EA%B3%84%EB%B6%84%EC%84%9D%EC%9D%98%ED%99%9C%EC%9A%A9/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F26437D3F56A668C21B" alt="통계의 분석의 활용">
@@ -2571,25 +2477,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2020/06/07/IoT/Flask/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="https://www.devprojournal.com/wp-content/uploads/2019/09/IoT-e1569502440247-696x391.jpg" alt="IoT - Flask 웹 서버 구축">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-06-07T05:44:56.000Z">2020-06-07</time></div>
-                    <a href="/2020/06/07/IoT/Flask/" class="title has-link-black-ter is-size-6 has-text-weight-normal">IoT - Flask 웹 서버 구축</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/IoT/">IoT</a> / <a class="has-link-grey -link" href="/categories/IoT/Flask/">Flask</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -2607,7 +2494,7 @@
                     <span class="level-item">6월 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -3116,7 +3003,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B6%84%EC%84%9D/">
                         <span class="tag">데이터분석</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -3144,7 +3031,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%EC%8A%A4%EA%B0%9C%EB%85%90/">
                         <span class="tag">데이터사이언스개념</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -3975,7 +3862,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<a id="back-to-top" title="Zurück nach oben" href="javascript:;">
+<a id="back-to-top" title="Back to Top" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
