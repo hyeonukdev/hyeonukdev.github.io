@@ -195,7 +195,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4분 읽기 (대략 568 단어)
+                    7분 읽기 (대략 986 단어)
                 </span>
                 
                 
@@ -283,7 +283,49 @@ COUNTIF(범위, “원내”)<br />
 <img src="https://hyeonukdev.github.io/images/datascience/0614_03.png" alt="몬테카를로 시뮬레이션" /></li>
 </ul>
 <h2 id="한-중학생의-시험점수를-이용하여-등수를-구하시오전체성적평균과-표준편차는-제공"><a class="markdownIt-Anchor" href="#한-중학생의-시험점수를-이용하여-등수를-구하시오전체성적평균과-표준편차는-제공"></a> 한 중학생의 시험점수를 이용하여 등수를 구하시오(전체성적평균과 표준편차는 제공)</h2>
-<p>작성중…</p>
+<p>문) 우리집 막내A 는 중학교 2학년에 재학중이다. 이번 중간고사 시험결과가 학교로부터 우편으로 배달되었다. 시험결과 안내는 A의 등수가 아니라 표로 제시되었다. 2학년 전체의 시험성적이 정규분포를 나타낼때 A의 등수는?</p>
+<table>
+<thead>
+<tr>
+<th>A의평균점수</th>
+<th>2학년 평균점수</th>
+<th>2학년 표준편차</th>
+<th>2학년 학생 수</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>81.5</td>
+<td>78.6</td>
+<td>16.4</td>
+<td>347</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>정규분포를 알고 가야한다.<br />
+<img src="https://hyeonukdev.github.io/images/datascience/0530_01.png" alt="정규분포" /></li>
+<li>표준정규분포는 정규분포에서 평균이 0 표준편차가 1인 조건이 추가된다<br />
+<img src="https://hyeonukdev.github.io/images/datascience/0530_04.png" alt="표준정규분포" /><br />
+평균에 가장 많은 수가 몰려있고 평균을 기점으로 좌우 대칭이고 서서히 분포가 낮아지는 종모양이다.</li>
+<li>z값을 구하자<br />
+점수에서 평균을 빼고 그것을 표준 편차로 나누면 z이다<br />
+z = (81.5 - 78.6) / 16.4 = 0.1768</li>
+<li>z에 대응하는 값을 정규분포표에서 찾기<br />
+<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=http%3A%2F%2Fcfs10.tistory.com%2Fimage%2F24%2Ftistory%2F2009%2F10%2F11%2F18%2F50%2F4ad1aa4d9e9e0" alt="표준정규분포표" /><br />
+음수라면 절대값을 취한다<br />
+0.1768이므로 반올림해서 0.18로 하겠다<br />
+대응값 : 0.0714 를 찾았다</li>
+<li>등수구하기<br />
+대응값(면적)을 평균이 아닌 오른쪽 면적으로 바꾸어주고 전체 인원만큼 곱해야한다<br />
+z가 양수라면 0.5-(대응값)<br />
+z가 음수라면 대응값+0.5<br />
+0.18은 양수이므로 0.5 - 0714 = 0.4286<br />
+0.4286에 전체 학생수를 곱한다<br />
+0.43 * 347 = 148.724<br />
+149등이 추정 등수이다.<br />
+<a href="http://blog.iqtest.kr/">참고링크</a></li>
+</ul>
 
         </div>
         
